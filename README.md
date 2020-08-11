@@ -1,11 +1,11 @@
 # primitive-survival
 <h2>Primitive Survival Mod for Vintage Story</h2>
 
-Here's the thing:  I'm a huge fan of Vintage Story and especially it's Wilderness Survival mode.  I also have a keen interest in real life primitive survival. This mod is my attempt to try to meld the two, to give you a more realistic early game experience.  There's still a lot of testing and fine tuning on the docket, so consider this a teaser if this is the sort of thing that floats your boat!
+Here's the thing:  I'm a huge fan of Vintage Story and especially its <i>Wilderness Survival</i> mode.  I also have a keen interest in real life primitive survival. This mod is my attempt to try to meld the two, to give you a more realistic early game experience.  There's still a lot of testing and fine tuning on the docket, so consider this a teaser if this is the sort of thing that floats your boat!
 
 <h3>Traps</h3>
 
-There are two traps - the Deadfall and the Snare - and they are very similar in nature.  They are intended to kill small(er) animals on your behalf.  The only real difference is that the deadfall might kill a chicken or a hare (or a baby anything), while the snare might be able to take down a fox or a boar as well.
+There are two traps - the <b>Deadfall</b> and the <b>Snare</b> - and they are very similar in nature.  They are intended to kill small(er) animals on your behalf.  The only real difference is that the deadfall might kill a chicken or a hare (or a baby anything), while the snare might be able to take down a fox or a boar as well.
 
 In both cases:
 
@@ -34,7 +34,7 @@ Snare (Set and Baited), shapeless: A deadfall and any type of fruit
 
 <h3>Fishing</h3>
 
-There are currently two methods for fishing - a fish basket and a trotline.  They have some similarities but your mileage may vary when it comes to the preferred method.
+There are currently two methods for fishing - a <b>Fish Basket</b> and a <b>Trotline</b>.  They have some similarities but your mileage may vary when it comes to the preferred method.
 
 In both cases:
 
@@ -69,9 +69,7 @@ What do I do with all these raw fish?  Cook 'em up on a fire and eat 'em of cour
 
 <h3>Jerky</h3>
 
-The premise here is that you can "cure" meat simply by cutting it up into small strips and letting it dry in the sun.
-
-So if you cut up your redmeat or bushmeat it will start to cure automatically.  You can still cook it if you like.
+The premise here is that you can "cure" meat to create <b>Jerky</b> simply by cutting it up into small strips and letting it dry in the sun.  So if you cut up your redmeat or bushmeat it will start to cure automatically.  Note: You can still cook it afterwards if you like.
 
 Jerky (Redmeat) shapeless: A knife and a piece of redmeat
 <recipe>
@@ -82,7 +80,7 @@ Jerky (Bushmeat) shapeless: A knife and a piece of bushmeat
 
 <h3>Rope Bridge</h3>
 
-The rope bridge is a bit of an aside from primitive survival, and it's currently the only block that's suitable for Creative Building.  Build it with three boards (any type of wood) and two trotlines.  I added this block because it wasn't much of a stretch after getting that trotline mostly fleshed out.
+The <b>Rope Bridge</b> is a bit of an aside from primitive survival, and it's currently the only block that's suitable for Creative Building.  Build it with three boards (any type of wood) and two trotlines.  I added this block because it wasn't much of a stretch after getting that trotline mostly fleshed out.
 
 <Recipe>
 
@@ -93,9 +91,9 @@ Place it just like you would a trotline - on an elevated dirt block facing anoth
 
 It's mostly going to be testing and tweaking for now, but I've got plans.  Big plans...
 
-Figure out the whole server/client thing.
-Get to the bottom of how to attract animals to my baited traps, much like the trough does.
-Add more types of fish (and perhaps other random aquatic suprises).
-Add additional primitive fishing options - a limb line, a funnel trap, and maybe even a primitive fishing rod.
-Add additonal primitive traps, like figure four (or other) deadfalls, a pitch trap, etc. 
-Vintage Story's Lovecraft inspired theme is also right up my alley as I have a real passion for pulp fiction, so I may just veer off in that direction.
+ - Figure out the whole server/client thing.
+ - Get to the bottom of how to attract animals to my baited traps, much like the trough does.
+ - Add more types of fish (and perhaps other random aquatic suprises).
+ - Add additional primitive fishing options - a limb line, a funnel trap, and maybe even a primitive fishing rod.
+ - Add additonal primitive traps, like figure four (or other) deadfalls, a pitch trap, etc. 
+ - Vintage Story's Lovecraft inspired theme is also right up my alley as I have a real passion for pulp fiction, so I may just veer off in that direction.
