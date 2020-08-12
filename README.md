@@ -14,7 +14,7 @@ There are two traps - the <b>Deadfall</b> and the <b>Snare</b> - and they are ve
  
 <h4>Deadfall (Set)</h4>
 <img src="docs/deadfall.png" alt="Deadfall Set" height="150px">
-<h6>A stone (various types), and a stick</h6><br>
+<h6>A stone (various types), and a stick</h6>
 
 <h4>Deadfall (Set and Baited)</h4>
 <img src="docs/deadfall_baited.png" alt="Deadfall Set and Baited" height="150px">
@@ -22,7 +22,7 @@ There are two traps - the <b>Deadfall</b> and the <b>Snare</b> - and they are ve
 
 <h4>Deadfall (Set and Baited) <i>Shapeless</i></h4>
 <img src="docs/deadfall_baited_shapeless.png" alt="Deadfall Set and Baited Shapeless" height="150px">
-<h6>A deadfall and any type of fruit</h6><br>
+<h6>A deadfall and any type of fruit</h6>
 
 <h4>Snare (Set)</h4>
 <img src="docs/snare.png" alt="Snare Set" height="150px">
