@@ -12,7 +12,7 @@ Here's the thing:  I'm a huge fan of Vintage Story and especially its <i>Wildern
 
 There are two traps - the <b>Deadfall</b> and the <b>Snare</b> - and they are very similar in nature.  They are designed to kill small animals on your behalf.  The only real difference is that the deadfall might kill a chicken or a hare (or a baby anything), while the snare might be able to take down bigger entities (like a fox or a boar) as well.  In both cases:
 
- - Larger entities will take minimal damage when coming into contact with one of these traps, and trip it.  
+ - Even larger entities (like a player or a wolf) will only take a bit of damage when coming into contact with one of these traps, and will trip it.  
  - Once a trap's been tripped, you'll need to break it and place it down to set it again.
  - You can right click on any unbaited set trap to bait it (with fruit in hand).
  
