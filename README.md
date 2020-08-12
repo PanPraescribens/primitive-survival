@@ -13,7 +13,7 @@ In BOTH cases:
  - Once a trap's been tripped, you'll need to break it and place it down to set it again.
  - You can right click on any unbaited set trap to bait it (with fruit in hand).
  
- <table style="width:200px;text-align:center">
+ <table style="width:100%;text-align:center">
   <tr>
     <th><h4>Deadfall (Set)</h4></th>
   </tr>
@@ -25,8 +25,8 @@ In BOTH cases:
   </tr>
 </table>
 
-<table style="width:200px;text-align:center">
-  <tr>
+<table style="width:100%;text-align:center">
+   <tr>
     <th><h4>Deadfall (Set and Baited)</h4></th>
   </tr>
   <tr>
@@ -37,8 +37,8 @@ In BOTH cases:
   </tr>
 </table>
 
-<table style="width:200px;text-align:center">
-  <tr>
+<table style="width:100%;text-align:center">
+   <tr>
     <th><h4>Deadfall (Set and Baited) Shapeless</h4></th>
   </tr>
   <tr>
