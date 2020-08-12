@@ -14,7 +14,8 @@ In BOTH cases:
  - You can right click on any unbaited set trap to bait it (with fruit in hand).
 
 Deadfall (Set): One of a number of stones, and a stick
-<recipe>
+
+![Deadfall Set](docs/deadfall.png)
 
 Deadfall (Set and Baited): One of a number of stones, a stick, and any type of fruit
 <recipe>
