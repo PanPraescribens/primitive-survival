@@ -1,0 +1,11 @@
+{
+  "ingredientPattern": "P_	BS",
+  "width": 2,
+  "height": 2,
+  "ingredients": {
+    "P": { "type": "item", "code": "game:flaxtwine" },
+    "B": { "type": "item", "code": "game:fruit-*" },
+    "S": { "type": "item", "code": "game:stick" }
+  },
+  "output": { "type": "block", "code": "primitivesurvival:snare-baited" }
+}

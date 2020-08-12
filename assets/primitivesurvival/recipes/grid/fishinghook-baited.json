@@ -1,0 +1,17 @@
+{
+  "ingredientPattern": "P,B",
+  "ingredients": {
+    "P": {
+      "type": "item",
+      "code": "primitivesurvival:fishinghook-plain"
+    },
+    "B": { "type": "item", "code": "game:fruit-*" }
+  },
+  "shapeless": true,
+  "width": 1,
+  "height": 2,
+  "output": {
+    "type": "item",
+    "code": "primitivesurvival:fishinghook-baited"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "ingredientPattern": "S_S	_P_	SBS",
+  "width": 3,
+  "height": 3,
+  "ingredients": {
+    "P": { "type": "item", "code": "game:flaxtwine" },
+    "S": { "type": "item", "code": "game:stick" },
+    "B": { "type": "item", "code": "game:fruit-*" }
+  },
+  "output": { "type": "block", "code": "primitivesurvival:fishbasket-baited" }
+}

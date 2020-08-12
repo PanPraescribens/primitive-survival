@@ -1,0 +1,87 @@
+{
+  "code": "psfish",
+  "maxstacksize": 16,
+  "attributes": {
+    "inFirePitProps": {
+      "transform": {
+        "scale": 0.85,
+        "origin": { "x": 0.6, "y": 0.0625, "z": 0.5 },
+        "translation": { "x": -0.03125, "y": 0.125, "z": 0 },
+        "rotation": { "x": 0, "y": 0, "z": 90 }
+      },
+      "useFirepitModel": "Spit"
+    },
+    "nutritionPropsWhenInMeal": { "satiety": 280, "foodcategory": "Protein" },
+    "displaycaseable": true,
+    "shelvable": true
+  },
+  "variantgroups": [
+    { "code": "type", "states": ["trout", "bass"] },
+    { "code": "state", "states": ["raw", "cooked"] }
+  ],
+  "shape": { "base": "entity/fish-{type}" },
+  "textures": {
+    "fish": {
+      "base": "entity/fish-{type}-{state}"
+    }
+  },
+  "creativeinventory": { "general": ["*"], "items": ["*"], "primitive": ["*"] },
+  "nutritionPropsByType": {
+    "*-cooked": { "satiety": 240, "foodcategory": "Protein" }
+  },
+  "materialDensity": 150,
+  "guiTransform": {
+    "translation": { "x": 0, "y": 0, "z": 0 },
+    "rotation": { "x": 180, "y": -158, "z": 34 },
+    "origin": { "x": 0.54, "y": 0.14, "z": 0.64 },
+    "scale": 2
+  },
+  "fpHandTransform": {
+    "translation": { "x": 0, "y": 0.2, "z": 0.2 },
+    "rotation": { "x": 50, "y": 61, "z": 0 },
+    "origin": { "x": 0.5, "y": 0.1, "z": 1 },
+    "scale": 1.47
+  },
+  "tpHandTransform": {
+    "translation": { "x": -0.8, "y": -0.3, "z": -0.6 },
+    "rotation": { "x": 0, "y": 28, "z": -56 },
+    "origin": { "x": 0.5, "y": 0.1, "z": 0.5 },
+    "scale": 0.7
+  },
+  "groundTransform": {
+    "translation": { "x": 0, "y": 0, "z": 0 },
+    "rotation": { "x": 0, "y": 0, "z": 0 },
+    "origin": { "x": 0.5, "y": 0, "z": 0.5 },
+    "scale": 3
+  },
+  "combustiblePropsByType": {
+    "*-raw": {
+      "meltingPoint": 150,
+      "meltingDuration": 30,
+      "smeltedRatio": 1,
+      "smeltingType": "cook",
+      "smeltedStack": { "type": "item", "code": "psfish-{type}-cooked" },
+      "requiresContainer": false
+    }
+  },
+  "transitionablePropsByType": {
+    "*-cooked": [
+      {
+        "type": "Perish",
+        "freshHours": { "avg": 120 },
+        "spoilHours": { "avg": 36 },
+        "transitionedStack": { "type": "item", "code": "game:rot" },
+        "transitionRatio": 1
+      }
+    ],
+    "*-raw": [
+      {
+        "type": "Perish",
+        "freshHours": { "avg": 48 },
+        "spoilHours": { "avg": 12 },
+        "transitionedStack": { "type": "item", "code": "game:rot" },
+        "transitionRatio": 1
+      }
+    ]
+  }
+}

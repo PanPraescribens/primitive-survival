@@ -1,0 +1,13 @@
+{
+  "ingredientPattern": "SPS",
+  "width": 3,
+  "height": 1,
+  "ingredients": {
+    "P": { "type": "item", "code": "game:flaxtwine" },
+    "S": { "type": "item", "code": "game:stick" }
+  },
+  "output": {
+    "type": "block",
+    "code": "primitivesurvival:trotline-middle-north"
+  }
+}

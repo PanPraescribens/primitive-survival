@@ -1,0 +1,14 @@
+{
+  "ingredientPattern": "P,B",
+  "ingredients": {
+    "P": { "type": "block", "code": "primitivesurvival:fishbasket-empty" },
+    "B": { "type": "item", "code": "game:fruit-*" }
+  },
+  "shapeless": true,
+  "width": 1,
+  "height": 2,
+  "output": {
+    "type": "block",
+    "code": "primitivesurvival:fishbasket-baited"
+  }
+}

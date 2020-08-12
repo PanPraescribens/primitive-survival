@@ -1,0 +1,327 @@
+{
+  "editor": {
+    "allAngles": false,
+    "entityTextureMode": false
+  },
+  "textureWidth": 16,
+  "textureHeight": 16,
+  "textureSizes": {},
+  "textures": {},
+  "elements": [
+    {
+      "name": "origin",
+      "from": [16.0, 0.0, 8.0],
+      "to": [16.0, 0.0, 8.0],
+      "rotationOrigin": [8.0, -1.0, 8.0],
+      "rotationY": 90.0,
+      "faces": {
+        "north": {
+          "texture": "#stringmaterial",
+          "uv": [0.0, 0.0, 0.5, 0.5],
+          "enabled": false
+        },
+        "east": {
+          "texture": "#stringmaterial",
+          "uv": [0.0, 0.0, 0.5, 0.5],
+          "enabled": false
+        },
+        "south": {
+          "texture": "#stringmaterial",
+          "uv": [0.0, 0.0, 0.5, 0.5],
+          "enabled": false
+        },
+        "west": {
+          "texture": "#stringmaterial",
+          "uv": [0.0, 0.0, 0.5, 0.5],
+          "enabled": false
+        },
+        "up": {
+          "texture": "#stringmaterial",
+          "uv": [0.0, 0.0, 0.5, 0.5],
+          "enabled": false
+        },
+        "down": {
+          "texture": "#stringmaterial",
+          "uv": [0.0, 0.0, 0.5, 0.5],
+          "enabled": false
+        }
+      },
+      "children": [
+        {
+          "name": "body1",
+          "from": [-16.0, 1.0, -0.12],
+          "to": [0.0, 1.25, 0.13],
+          "rotationOrigin": [-14.0, 0.9, 1.6],
+          "faces": {
+            "north": {
+              "texture": "#stringmaterial",
+              "uv": [5.0, 6.0, 21.0, 6.5]
+            },
+            "east": {
+              "texture": "#stringmaterial",
+              "uv": [2.0, 5.0, 2.5, 5.5]
+            },
+            "south": {
+              "texture": "#stringmaterial",
+              "uv": [4.5, 10.5, 20.5, 11.0]
+            },
+            "west": {
+              "texture": "#stringmaterial",
+              "uv": [2.0, 6.0, 2.5, 6.5]
+            },
+            "up": {
+              "texture": "#stringmaterial",
+              "uv": [4.0, 0.0, 4.5, 16.0],
+              "rotation": 90
+            },
+            "down": {
+              "texture": "#stringmaterial",
+              "uv": [0.0, 3.0, 16.0, 3.5]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "body1",
+      "from": [6.0, -2.0, 7.0],
+      "to": [9.0, -1.5, 7.5],
+      "rotationOrigin": [9.0, -1.8, 8.5],
+      "rotationZ": -67.5,
+      "faces": {
+        "north": { "texture": "#hookmaterial", "uv": [5.0, 6.0, 8.0, 6.5] },
+        "east": { "texture": "#hookmaterial", "uv": [2.0, 5.0, 2.5, 5.5] },
+        "south": { "texture": "#hookmaterial", "uv": [4.5, 10.5, 7.5, 11.0] },
+        "west": { "texture": "#hookmaterial", "uv": [2.0, 6.0, 2.5, 6.5] },
+        "up": {
+          "texture": "#hookmaterial",
+          "uv": [4.0, 0.0, 4.5, 3.0],
+          "rotation": 90
+        },
+        "down": { "texture": "#hookmaterial", "uv": [0.0, 3.0, 3.0, 3.5] }
+      },
+      "children": [
+        {
+          "name": "body14",
+          "from": [-0.4, 0.0, 0.0],
+          "to": [0.25, 0.65, 0.5],
+          "rotationOrigin": [2.0, -0.8, 2.6],
+          "faces": {
+            "north": { "texture": "#hookmaterial", "uv": [3.0, 6.0, 3.5, 6.5] },
+            "east": { "texture": "#hookmaterial", "uv": [2.0, 5.0, 2.5, 5.5] },
+            "south": { "texture": "#hookmaterial", "uv": [2.0, 6.5, 2.5, 7.0] },
+            "west": { "texture": "#hookmaterial", "uv": [2.0, 6.0, 2.5, 6.5] },
+            "up": {
+              "texture": "#hookmaterial",
+              "uv": [4.0, 0.0, 4.5, 0.5],
+              "rotation": 90
+            },
+            "down": { "texture": "#hookmaterial", "uv": [0.0, 3.0, 0.5, 3.5] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "FishBody",
+      "from": [22.8, -13.6, 26.3],
+      "to": [28.8, -9.6, 28.3],
+      "rotationOrigin": [15.8, -13.6, 17.3],
+      "rotationY": 180.0,
+      "rotationZ": 55.0,
+      "faces": {
+        "north": { "texture": "#fish1material", "uv": [0.0, 0.0, 6.0, 4.0] },
+        "east": { "texture": "#fish1material", "uv": [0.0, 0.0, 2.0, 4.0] },
+        "south": { "texture": "#fish1material", "uv": [0.0, 0.0, 6.0, 4.0] },
+        "west": { "texture": "#fish1material", "uv": [0.0, 0.0, 2.0, 4.0] },
+        "up": { "texture": "#fish1material", "uv": [0.0, 0.0, 6.0, 2.0] },
+        "down": { "texture": "#fish1material", "uv": [0.0, 0.0, 6.0, 2.0] }
+      },
+      "children": [
+        {
+          "name": "Head",
+          "from": [4.5, 0.5, -0.1],
+          "to": [7.5, 3.5, 2.1],
+          "rotationOrigin": [6.0, 2.0, -0.1],
+          "rotationZ": 45.0,
+          "faces": {
+            "north": {
+              "texture": "#fish1material",
+              "uv": [13.0, 0.0, 16.0, 3.0]
+            },
+            "east": {
+              "texture": "#fish1material",
+              "uv": [10.0, 0.0, 12.2, 3.0]
+            },
+            "south": {
+              "texture": "#fish1material",
+              "uv": [13.0, 3.0, 16.0, 6.0]
+            },
+            "west": {
+              "texture": "#fish1material",
+              "uv": [11.0, 3.0, 13.2, 6.0]
+            },
+            "up": { "texture": "#fish1material", "uv": [13.0, 0.0, 16.0, 2.2] },
+            "down": {
+              "texture": "#fish1material",
+              "uv": [13.0, 7.0, 16.0, 9.2]
+            }
+          },
+          "children": [
+            {
+              "name": "Jaw",
+              "from": [0.5, 0.0, 0.1],
+              "to": [2.5, 0.5, 2.1],
+              "rotationOrigin": [0.5, 0.0, 1.1],
+              "rotationZ": -8.0,
+              "faces": {
+                "north": {
+                  "texture": "#fish1material",
+                  "uv": [0.0, 0.0, 2.0, 0.5]
+                },
+                "east": {
+                  "texture": "#fish1material",
+                  "uv": [0.0, 0.0, 2.0, 0.5]
+                },
+                "south": {
+                  "texture": "#fish1material",
+                  "uv": [0.0, 0.0, 2.0, 0.5]
+                },
+                "west": {
+                  "texture": "#fish1material",
+                  "uv": [0.0, 0.0, 2.0, 0.5]
+                },
+                "up": {
+                  "texture": "#fish1material",
+                  "uv": [0.0, 0.0, 2.0, 2.0]
+                },
+                "down": {
+                  "texture": "#fish1material",
+                  "uv": [0.0, 0.0, 2.0, 2.0]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "Butt",
+          "from": [-1.4, 0.6, 0.1],
+          "to": [1.4, 3.4, 1.9],
+          "rotationOrigin": [0.0, 2.0, 0.9],
+          "rotationZ": 45.0,
+          "faces": {
+            "north": {
+              "texture": "#fish1material",
+              "uv": [0.0, 0.0, 2.8, 2.8]
+            },
+            "east": { "texture": "#fish1material", "uv": [0.0, 0.0, 1.8, 2.8] },
+            "south": {
+              "texture": "#fish1material",
+              "uv": [0.0, 0.0, 2.8, 2.8]
+            },
+            "west": { "texture": "#fish1material", "uv": [0.0, 0.0, 1.8, 2.8] },
+            "up": { "texture": "#fish1material", "uv": [0.0, 0.0, 2.8, 1.8] },
+            "down": { "texture": "#fish1material", "uv": [0.0, 0.0, 2.8, 1.8] }
+          }
+        },
+        {
+          "name": "Tail",
+          "from": [-3.9, 1.0, 0.5],
+          "to": [-0.9, 3.0, 1.5],
+          "faces": {
+            "north": {
+              "texture": "#fish1material",
+              "uv": [0.0, 0.0, 3.0, 2.0]
+            },
+            "east": { "texture": "#fish1material", "uv": [0.0, 0.0, 1.0, 2.0] },
+            "south": {
+              "texture": "#fish1material",
+              "uv": [0.0, 0.0, 3.0, 2.0]
+            },
+            "west": { "texture": "#fish1material", "uv": [0.0, 0.0, 1.0, 2.0] },
+            "up": { "texture": "#fish1material", "uv": [0.0, 0.0, 3.0, 1.0] },
+            "down": { "texture": "#fish1material", "uv": [0.0, 0.0, 3.0, 1.0] }
+          },
+          "children": [
+            {
+              "name": "FinTail",
+              "from": [-2.0, 0.0, 0.5],
+              "to": [1.0, 3.0, 0.6],
+              "rotationOrigin": [0.0, 1.0, 0.5],
+              "rotationZ": 45.0,
+              "faces": {
+                "north": {
+                  "texture": "#fish1material",
+                  "uv": [1.0, 4.5, 4.0, 7.5]
+                },
+                "east": {
+                  "texture": "#fish1material",
+                  "uv": [0.0, 0.0, 0.5, 3.0]
+                },
+                "south": {
+                  "texture": "#fish1material",
+                  "uv": [2.0, 4.0, 5.0, 7.0]
+                },
+                "west": {
+                  "texture": "#fish1material",
+                  "uv": [0.0, 0.0, 0.5, 3.0]
+                },
+                "up": {
+                  "texture": "#fish1material",
+                  "uv": [0.0, 0.0, 3.0, 0.5]
+                },
+                "down": {
+                  "texture": "#fish1material",
+                  "uv": [0.0, 0.0, 3.0, 0.5]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "FinPectoralRight",
+          "from": [3.0, 0.1, 2.0],
+          "to": [4.5, 1.1, 2.1],
+          "rotationOrigin": [4.5, 1.1, 2.0],
+          "rotationX": -15.0,
+          "rotationY": 10.0,
+          "rotationZ": 6.0,
+          "faces": {
+            "north": {
+              "texture": "#fish1material",
+              "uv": [0.0, 0.0, 1.5, 1.0]
+            },
+            "east": { "texture": "#fish1material", "uv": [0.0, 0.0, 0.5, 1.0] },
+            "south": {
+              "texture": "#fish1material",
+              "uv": [9.0, 11.0, 10.5, 12.0]
+            },
+            "west": { "texture": "#fish1material", "uv": [0.0, 0.0, 0.5, 1.0] },
+            "up": { "texture": "#fish1material", "uv": [0.0, 0.0, 1.5, 0.5] },
+            "down": { "texture": "#fish1material", "uv": [0.0, 0.0, 1.5, 0.5] }
+          }
+        },
+        {
+          "name": "FinDorsal",
+          "from": [0.5, 1.0, 0.9],
+          "to": [4.5, 6.0, 1.1],
+          "rotationOrigin": [2.0, 4.0, 0.9],
+          "rotationZ": 45.0,
+          "faces": {
+            "north": {
+              "texture": "#fish1material",
+              "uv": [6.5, 4.0, 10.5, 9.0]
+            },
+            "east": { "texture": "#fish1material", "uv": [0.0, 0.0, 0.5, 5.0] },
+            "south": {
+              "texture": "#fish1material",
+              "uv": [7.0, 4.0, 11.0, 9.0]
+            },
+            "west": { "texture": "#fish1material", "uv": [0.0, 0.0, 0.5, 5.0] },
+            "up": { "texture": "#fish1material", "uv": [0.0, 0.0, 4.0, 0.5] },
+            "down": { "texture": "#fish1material", "uv": [0.0, 0.0, 4.0, 0.5] }
+          }
+        }
+      ]
+    }
+  ]
+}

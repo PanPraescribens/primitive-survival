@@ -1,0 +1,109 @@
+{
+  "code": "ropebridge",
+  "class": "blockropebridge",
+  "variantgroups": [
+    {
+      "code": "parts",
+      "states": ["middle", "closeend", "farend"]
+    },
+    {
+      "code": "type",
+      "states": ["aged", "birch", "oak", "maple", "pine", "acacia", "kapok"]
+    },
+    { "loadFromProperties": "abstract/horizontalorientation" }
+  ],
+  "shapebytype": {
+    "*-north": {
+      "base": "block/ropebridge/ropebridge-{parts}",
+      "rotateY": 0
+    },
+    "*-east": {
+      "base": "block/ropebridge/ropebridge-{parts}",
+      "rotateY": 270
+    },
+    "*-south": {
+      "base": "block/ropebridge/ropebridge-{parts}",
+      "rotateY": 180
+    },
+    "*-west": {
+      "base": "block/ropebridge/ropebridge-{parts}",
+      "rotateY": 90
+    }
+  },
+  "dropsbytype": {
+    "*": [
+      {
+        "type": "block",
+        "code": "ropebridge-middle-{type}-north",
+        "quantity": { "avg": 1 }
+      }
+    ]
+  },
+  "blockmaterial": "Wood",
+  "drawtype": "json",
+  "selectionboxesByType": {
+    "*middle*": [{ "x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.125, "z2": 1 }],
+    "*": [{ "x1": 0, "y1": 0, "z1": 0, "x2": 0, "y2": 0, "z2": 0 }]
+  },
+
+  "collisionbox": {
+    "x1": 0,
+    "y1": -0.125,
+    "z1": 0,
+    "x2": 1,
+    "y2": 0,
+    "z2": 1
+  },
+  "sideopaque": {
+    "all": false
+  },
+  "sidesolid": {
+    "all": false
+  },
+  "resistance": 0.75,
+  "requiredminingtier": 0,
+  "sounds": {
+    "place": "game:walk/planks",
+    "walk": "game:walk/planks"
+  },
+  "creativeinventory": {
+    "general": ["*-middle-{type}-north"],
+    "primitive": ["*-middle-{type}-north"]
+  },
+  "textures": {
+    "stringmaterial": {
+      "base": "game:block/vines/basket/normal-northsouth"
+    },
+    "woodmaterial": {
+      "base": "game:block/wood/fence/{type}/horizontal"
+    },
+    "null": {
+      "base": "game:block/wood/fence/{type}/vertical"
+    }
+  },
+  "guiTransform": {
+    "translation": { "x": 0, "y": 7, "z": 0 },
+    "origin": { "x": 0.5, "y": 0.0625, "z": 0.5 },
+    "scale": 1.3
+  },
+  "fpHandTransform": {
+    "translation": { "x": 0, "y": 0.1, "z": 0 },
+    "rotation": { "x": -6, "y": -74, "z": -22 },
+    "origin": { "x": 0.5, "y": 0.1, "z": 0.5 },
+    "scale": 2
+  },
+  "tpHandTransform": {
+    "translation": { "x": -0.5, "y": -0.1, "z": 0.2 },
+    "rotation": { "x": -6, "y": -74, "z": -22 },
+    "origin": { "x": 0, "y": 0, "z": 0 },
+    "scale": 0.55
+  },
+  "vertexFlagsbyType": {
+    "*end-*": {
+      "waterWave": false
+    },
+    "*": {
+      "waterWave": true
+    }
+  }
+}
