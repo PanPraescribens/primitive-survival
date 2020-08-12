@@ -1,8 +1,7 @@
 # primitive-survival
-<h2>Primitive Survival Mod for [*Vintage Story*][VS]</h2>
-[VS]: https://www.vintagestory.at/
+<h2>Primitive Survival Mod for Vintage Story</h2>
 
-![Screenshot](docs/screenshot.jpg)
+https://www.vintagestory.at/
 
 <img src="docs/splash.jpg" alt="Splash">
 
