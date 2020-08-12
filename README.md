@@ -18,27 +18,27 @@ There are two traps - the <b>Deadfall</b> and the <b>Snare</b> - and they are ve
  
 <h4>Deadfall (Set)</h4>
 <img src="docs/deadfall.png" alt="Deadfall Set" height="150px">
-<h6>A stone (various types), and a stick</h6><br>
+<sup>A stone (various types), and a stick</sup><br>
 
 <h4>Deadfall (Set and Baited)</h4>
 <img src="docs/deadfall_baited.png" alt="Deadfall Set and Baited" height="150px">
-<h6>A stone (various types), a stick, and any type of fruit</h6><br>
+<sup>A stone (various types), a stick, and any type of fruit</sup><br>
 
 <h4>Deadfall (Set and Baited) <i>Shapeless</i></h4>
 <img src="docs/deadfall_baited_shapeless.png" alt="Deadfall Set and Baited Shapeless" height="150px">
-<h6>A deadfall and any type of fruit</h6><br>
+<sup>A deadfall and any type of fruit</sup><br>
 
 <h4>Snare (Set)</h4>
 <img src="docs/snare.png" alt="Snare Set" height="150px">
-<h6>Twine and a stick</h6><br>
+<sup>Twine and a stick</sup><br>
 
 <h4>Snare (Set and Baited)</h4>
 <img src="docs/snare_baited.png" alt="Snare Set and Baited" height="150px">
-<h6>Twine, a stick, and any type of fruit</h6><br>
+<sup>Twine, a stick, and any type of fruit</sup><br>
 
 <h4>Snare (Set and Baited) <i>Shapeless</i></h4>
 <img src="docs/snare_baited_shapeless.png" alt="Snare Set and Baited Shapeless" height="150px">
-<h6>A snare and any type of fruit</h6><br>
+<sup>A snare and any type of fruit</sup><br>
 
 
 <h3>Fishing</h3>
@@ -53,15 +53,15 @@ The fish basket is pretty strightforward.  Place it in water but make sure there
 
 <h4>Fish Basket</h4>
 <img src="docs/fishbasket.png" alt="Fish Basket" height="150px">
-<h6>Twine and four sticks</h6><br>
+<sup>Twine and four sticks</sup><br>
 
 <h4>Fish Basket (Baited)</h4>
 <img src="docs/fishbasket_baited.png" alt="Fish Basket Baited" height="150px">
-<h6>Twine, four sticks, and any type of fruit</h6><br>
+<sup>Twine, four sticks, and any type of fruit</sup><br>
 
 <h4>Fish Basket (Baited) <i>Shapeless</i></h4>
 <img src="docs/fishbasket_baited_shapeless.png" alt="Fish Basket Baited Shapeless" height="150px">
-<h6>A fish basket and any type of fruit</h6><br>
+<sup>A fish basket and any type of fruit</sup><br>
 
 The trotline is a little more complicated because you're going to need <b>hooks</b>.  Hooks can be knapped with flint or one of several stones.
 
@@ -71,7 +71,7 @@ Place a trotline on a dirt block facing another dirt block of equal height.  Ide
 
 <h4>Trotline</h4>
 <img src="docs/trotline.png" alt="Trotline" height="150px">
-<h6>Twine and two sticks</h6><br>
+<sup>Twine and two sticks</sup><br>
 
 What do I do with all these raw fish?  Cook 'em up on a fire and eat 'em of course.  Note: The official Vintage Story Survival Bass had some issues with it's configuration, so I "borrowed" its json file/shape/texture, and reworked it as <b>Big Bass</b> (for lack of a better name).  I've also added a <b>Trout</b> for variety but it isn't pretty, because modelling (much like coding and documenting) is NOT my forte.
 
@@ -82,11 +82,11 @@ The premise here is that you can "cure" meat to create <b>Jerky</b> by simply cu
 
 <h4>Jerky (Redmeat) Raw <i>Shapeless</i></h4>
 <img src="docs/jerky_redmeat_raw_shapeless.png" alt="Jerky Redmeat Raw Shapeless" height="150px">
-<h6>A knife and a piece of redmeat</h6><br>
+<sup>A knife and a piece of redmeat</sup><br>
 
 <h4>Jerky (Bushmeat) Raw <i>Shapeless</i></h4>
 <img src="docs/jerky_bushmeat_raw_shapeless.png" alt="Jerky Bushmeat Raw Shapeless" height="150px">
-<h6>A knife and a piece of bushmeat</h6><br>
+<sup>A knife and a piece of bushmeat</sup><br>
 
 
 <h3>Rope Bridge</h3>
@@ -95,7 +95,7 @@ The <b>Rope Bridge</b> is a bit of an aside from primitive survival, and it's cu
 
 <h4>Rope bridge</h4>
 <img src="docs/ropebridge.png" alt="Rope Bridge" height="150px">
-<h6>Three boards (any type of wood) and two trotlines</h6><br>
+<sup>Three boards (any type of wood) and two trotlines</sup><br>
 
 Place it just like you would a trotline - on an elevated dirt block facing another elevated dirt block.  To place it successfully, you'll need as many rope bridges as there are empty blocks between the two dirt blocks and a clear line of sight. Whether it's over water or high in the mountains, the rope bridge will get you to your destination quickly!
 
