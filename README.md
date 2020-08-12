@@ -12,13 +12,14 @@ In BOTH cases:
  - Larger entities will take minimal damage when coming into contact with one of these traps, and trip it.  
  - Once a trap's been tripped, you'll need to break it and place it down to set it again.
  - You can right click on any unbaited set trap to bait it (with fruit in hand).
+ 
+ 
+![Deadfall Set](docs/deadfall.png) | <h4>Deadfall (Set)</h4><h6>One of a number of stones, and a stick</h6>
+-|-
 
-Deadfall (Set): One of a number of stones, and a stick
+![Deadfall Set and Baited](docs/deadfall_baited.png) | <h4>Deadfall (Set and Baited)</h4><h6>One of a number of stones, a stick, and any type of fruit</h6>
+-|-
 
-![Deadfall Set](docs/deadfall.png)
-
-Deadfall (Set and Baited): One of a number of stones, a stick, and any type of fruit
-<recipe>
 
 Deadfall (Set and Baited), shapeless: A deadfall and any type of fruit
 <recipe>
