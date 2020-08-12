@@ -5,6 +5,20 @@ https://www.vintagestory.at/
 
 <img src="docs/splash.jpg" alt="Splash">
 
+<h3>Download and Installation</h3>
+
+Available via [GitHub Releases][DL].
+
+To install: 
+ - Run the game
+ - Choose <i>Mod Manager</i> in the main menu
+ - Click the <i>Open Mod Folder</i> button to open file explorer
+ - Copy the `.zip` file you downloaded here (don't extract it).
+
+[DL]: https://github.com/spearandfang/primitive-survival/releases
+
+<h3>Introduction</h3>
+
 Here's the thing:  I'm a huge fan of Vintage Story and especially its <i>Wilderness Survival</i> mode.  I also have a keen interest in real life primitive survival. This mod is my attempt to to meld the two to provide you with a more realistic early game experience.  There's still a lot of testing and fine tuning on the docket so consider this a preview (perpetual beta might be a more accurate description).
 
 
