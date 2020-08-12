@@ -10,9 +10,9 @@ https://www.vintagestory.at/
 Available via [GitHub Releases][DL].
 
 To install: 
- - Run the game
- - Choose <i>Mod Manager</i> in the main menu
- - Click the <i>Open Mod Folder</i> button to open file explorer
+ - Run the game.
+ - Choose <i>Mod Manager</i> in the main menu.
+ - Click the <i>Open Mod Folder</i> button to open file explorer.
  - Copy the `.zip` file you downloaded here (don't extract it).
 
 [DL]: https://github.com/spearandfang/primitive-survival/releases
