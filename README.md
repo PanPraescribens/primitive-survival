@@ -1,13 +1,13 @@
 # primitive-survival
 <h2>Primitive Survival Mod for Vintage Story</h2>
 
-Here's the thing:  I'm a huge fan of Vintage Story and especially its <i>Wilderness Survival</i> mode.  I also have a keen interest in real life primitive survival. This mod is my attempt to try to meld the two, to give you a more realistic early game experience.  There's still a lot of testing and fine tuning on the docket, so consider this a teaser if this is the sort of thing that floats your boat!
+Here's the thing:  I'm a huge fan of Vintage Story and especially its <i>Wilderness Survival</i> mode.  I also have a keen interest in real life primitive survival. This mod is my attempt to to meld the two to provide you with a more realistic early game experience.  There's still a lot of testing and fine tuning on the docket so consider this a preview (perpetual beta might be a more accurate description).
 
 <h3>Traps</h3>
 
-There are two traps - the <b>Deadfall</b> and the <b>Snare</b> - and they are very similar in nature.  They are intended to kill small(er) animals on your behalf.  The only real difference is that the deadfall might kill a chicken or a hare (or a baby anything), while the snare might be able to take down a fox or a boar as well.
+There are two traps - the <b>Deadfall</b> and the <b>Snare</b> - and they are very similar in nature.  They are intended to kill smaller animals on your behalf.  The only real difference is that the deadfall might kill a chicken or a hare (or a baby anything), while the snare might be able to take down bigger entities (like a fox or a boar) as well.
 
-In both cases:
+In BOTH cases:
 
  - Larger entities will take minimal damage when coming into contact with one of these traps, and trip it.  
  - Once a trap's been tripped, you'll need to break it and place it down to set it again.
@@ -36,7 +36,7 @@ Snare (Set and Baited), shapeless: A deadfall and any type of fruit
 
 There are currently two methods for fishing - a <b>Fish Basket</b> and a <b>Trotline</b>.  They have some similarities but your mileage may vary when it comes to the preferred method.
 
-In both cases:
+In BOTH cases:
 
  - A fish might simply steal your bait.
  - You can right click to remove fish.  Careful though, they're a little slippery sometimes!
