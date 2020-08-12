@@ -61,7 +61,7 @@ The fish basket is pretty strightforward.  Place it in water but make sure there
 
 The trotline is a little more complicated because you're going to need <b>hooks</b>.  Hooks can be knapped with flint or one of several stones.
 
-<img src="docs/knapping_fishing_hook.png" alt="Knapping Fishing Hook" height="250px">
+<img src="docs/knapping_fishing_hook.png" alt="Knapping Fishing Hook" width="250px">
 
 Place a trotline on a dirt block facing another dirt block of equal height.  Ideally there's some water between those two dirt blocks.  To place it successfully, you'll need as many trotlines as there are water blocks (between the two dirt blocks), and a clear line of sight.  Once your trotline is in place you'll need to attach hooks (or baited hooks) to it by right clicking on a section of trotline (with hook in hand).  Obviously if your hook isn't in water it's doubtful that you'll catch a fish.
 
