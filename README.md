@@ -13,52 +13,32 @@ In BOTH cases:
  - Once a trap's been tripped, you'll need to break it and place it down to set it again.
  - You can right click on any unbaited set trap to bait it (with fruit in hand).
  
- <table style="width:100%;text-align:center">
-  <tr>
-    <th><h4>Deadfall (Set)</h4></th>
-  </tr>
-  <tr>
-    <td align="center"><img src="docs/deadfall.png" alt="Deadfall Set" height="150px"></td>
-  </tr>
-  <tr>
-    <td><h6>A stone (various types), and a stick</h6></td>
-  </tr>
-</table>
+<h4>Deadfall (Set)</h4>
+<img src="docs/deadfall.png" alt="Deadfall Set" height="150px">
+<h6>A stone (various types), and a stick</h6><br>
 
-<table style="width:100%;text-align:center">
-   <tr>
-    <th><h4>Deadfall (Set and Baited)</h4></th>
-  </tr>
-  <tr>
-    <td align="center"><img src="docs/deadfall_baited.png" alt="Deadfall Set and Baited" height="150px"></td>
-  </tr>
-  <tr>
-    <td><h6>A stone (various types), a stick, and any type of fruit</h6></td>
-  </tr>
-</table>
+<h4>Deadfall (Set and Baited)</h4>
+<img src="docs/deadfall_baited.png" alt="Deadfall Set and Baited" height="150px">
+<h6>A stone (various types), a stick, and any type of fruit</h6><br>
 
-<table style="width:100%;text-align:center">
-   <tr>
-    <th><h4>Deadfall (Set and Baited) Shapeless</h4></th>
-  </tr>
-  <tr>
-    <td align="center"><img src="docs/deadfall_baited_shapeless.png" alt="Deadfall Set and Baited Shapeless" height="150px"></td>
-  </tr>
-  <tr>
-    <td><h6>A deadfall and any type of fruit</h6></td>
-  </tr>
-</table>
+<h4>Deadfall (Set and Baited) <i>Shapeless</i></h4>
+<img src="docs/deadfall_baited_shapeless.png" alt="Deadfall Set and Baited Shapeless" height="150px">
+<h6>A deadfall and any type of fruit</h6><br>
 
 
-Snare (Set): Twine and a stick
-<recipe>
 
-Snare (Set and Baited): Twine, a stick, and any type of fruit
-<recipe>
 
-Snare (Set and Baited), shapeless: A deadfall and any type of fruit
-<recipe>
+<h4>Snare (Set)</h4>
+<img src="docs/snare.png" alt="Snare Set" height="150px">
+<h6>Twine and a stick</h6><br>
 
+<h4>Snare (Set and Baited)</h4>
+<img src="docs/snare_baited.png" alt="Snare Set and Baited" height="150px">
+<h6>Twine, a stick, and any type of fruit</h6><br>
+
+<h4>Snare (Set and Baited) <i>Shapeless</i></h4>
+<img src="docs/snare_baited_shapeless.png" alt="Snare Set and Baited Shapeless" height="150px">
+<h6>A snare and any type of fruit</h6><br>
 
 <h3>Fishing</h3>
 
