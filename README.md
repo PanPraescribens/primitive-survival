@@ -12,8 +12,7 @@ There are two traps - the <b>Deadfall</b> and the <b>Snare</b> - and they are ve
  - Once a trap's been tripped, you'll need to break it and place it down to set it again.
  - You can right click on any unbaited set trap to bait it (with fruit in hand).
  
-<h4>Deadfall (Set)</h4>
-<h6>A stone (various types), and a stick</h6>
+<b>Deadfall (Set)</b> A stone (various types), and a stick<br>
 <img src="docs/deadfall.png" alt="Deadfall Set" height="150px">
 
 <h4>Deadfall (Set and Baited)</h4>
