@@ -54,6 +54,7 @@ There are two traps - the <b>Deadfall</b> and the <b>Snare</b> - and they are ve
 <img src="docs/snare_baited_shapeless.png" alt="Snare Set and Baited Shapeless" height="150px">
 <sup>A snare and any type of fruit</sup><br>
 
+Developer note:  I realize that these traps aren't going to be very effective without additional code that can attract animals to them (like the trough), so still WIP.
 
 <h3>Fishing</h3>
 
@@ -63,7 +64,7 @@ There are currently two methods for fishing - a <b>Fish Basket</b> and a <b>Trot
  - You can right click to remove fish.  Careful though, they're a little slippery!
  - You can right click on an unbaited hook or fish basket to re-bait it (with fruit in hand).
 
-The fish basket is pretty strightforward.  Place it in water but make sure there's a free block of water in front of it.  Now hurry up and wait...and maybe one or two fish will find their way into your basket.  You might want to check on your fish basket a little more frequently than a trotline, since fish can escape quite easily.
+The fish basket is pretty strightforward.  Place it in water but make sure there's a free block of water in front and behind it.  Now hurry up and wait...and maybe one or two fish will find their way into your basket.  You might want to check on your fish basket a little more frequently than a trotline, since fish can escape quite easily.
 
 <h4>Fish Basket</h4>
 <img src="docs/fishbasket.png" alt="Fish Basket" height="150px">
