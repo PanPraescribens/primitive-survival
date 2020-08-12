@@ -77,6 +77,8 @@ Place a trotline on a dirt block facing another dirt block of equal height.  Ide
 
 What do I do with all these raw fish?  Cook 'em up on a fire and eat 'em of course.  Note: The official Vintage Story Survival Bass had some issues with it's configuration, so I "borrowed" its json file/shape/texture, and reworked it as <b>Big Bass</b> (for lack of a better name).  I've also added a <b>Trout</b> for variety but it isn't pretty, because modelling (much like coding and documenting) is NOT my forte.
 
+<h4>Dinner Time...</h4>
+<img src="docs/fishcookout.jpg" alt="Fish Cookout" width="600px">
 
 <h3>Jerky</h3>
 
