@@ -111,5 +111,6 @@ It's mostly going to be testing and tweaking for now, but I've got plans.  Big p
  - Add additonal primitive traps, like figure four (or other) deadfalls, a pitch trap, etc. 
  - Vintage Story's Lovecraft inspired theme is also right up my alley as I have a real passion for pulp fiction, so I may just veer off in that direction.
 
-<img src="docs/creative_inventory.jpg" alt="Creative Inventory" height="350px">
-<h6>Creative Inventory for Primitive Survival</h6><br>
+<h4>Creative Inventory for Primitive Survival...</h4>
+<img src="docs/creative_inventory.jpg" alt="Creative Inventory" height="250px">
+<br><br>
