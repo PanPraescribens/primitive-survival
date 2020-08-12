@@ -21,18 +21,34 @@ In BOTH cases:
     <td align="center"><img src="docs/deadfall.png" alt="Deadfall Set" height="150px"></td>
   </tr>
   <tr>
-    <td><h6>One of a number of stones, and a stick</h6></td>
+    <td><h6>A stone (various types), and a stick</h6></td>
   </tr>
 </table>
- 
 
+<table style="width:200px;text-align:center">
+  <tr>
+    <th><h4>Deadfall (Set and Baited)</h4></th>
+  </tr>
+  <tr>
+    <td align="center"><img src="docs/deadfall_baited.png" alt="Deadfall Set and Baited" height="150px"></td>
+  </tr>
+  <tr>
+    <td><h6>A stone (various types), a stick, and any type of fruit</h6></td>
+  </tr>
+</table>
 
-![Deadfall Set and Baited](docs/deadfall_baited.png) | <h4>Deadfall (Set and Baited)</h4><h6>One of a number of stones, a stick, and any type of fruit</h6>
--|-
+<table style="width:200px;text-align:center">
+  <tr>
+    <th><h4>Deadfall (Set and Baited) Shapeless</h4></th>
+  </tr>
+  <tr>
+    <td align="center"><img src="docs/deadfall_baited_shapeless.png" alt="Deadfall Set and Baited Shapeless" height="150px"></td>
+  </tr>
+  <tr>
+    <td><h6>A deadfall and any type of fruit</h6></td>
+  </tr>
+</table>
 
-
-Deadfall (Set and Baited), shapeless: A deadfall and any type of fruit
-<recipe>
 
 Snare (Set): Twine and a stick
 <recipe>
