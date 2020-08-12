@@ -63,6 +63,7 @@ The fish basket is pretty strightforward.  Place it in water but make sure there
 <img src="docs/fishbasket_baited_shapeless.png" alt="Fish Basket Baited Shapeless" height="150px">
 <sup>A fish basket and any type of fruit</sup><br>
 
+
 The trotline is a little more complicated because you're going to need <b>hooks</b>.  Hooks can be knapped with flint or one of several stones.
 
 <img src="docs/knapping_fishing_hook.png" alt="Knapping Fishing Hook" width="250px">
@@ -72,6 +73,7 @@ Place a trotline on a dirt block facing another dirt block of equal height.  Ide
 <h4>Trotline</h4>
 <img src="docs/trotline.png" alt="Trotline" height="150px">
 <sup>Twine and two sticks</sup><br>
+
 
 What do I do with all these raw fish?  Cook 'em up on a fire and eat 'em of course.  Note: The official Vintage Story Survival Bass had some issues with it's configuration, so I "borrowed" its json file/shape/texture, and reworked it as <b>Big Bass</b> (for lack of a better name).  I've also added a <b>Trout</b> for variety but it isn't pretty, because modelling (much like coding and documenting) is NOT my forte.
 
@@ -96,6 +98,7 @@ The <b>Rope Bridge</b> is a bit of an aside from primitive survival, and it's cu
 <h4>Rope bridge</h4>
 <img src="docs/ropebridge.png" alt="Rope Bridge" height="150px">
 <sup>Three boards (any type of wood) and two trotlines</sup><br>
+
 
 Place it just like you would a trotline - on an elevated dirt block facing another elevated dirt block.  To place it successfully, you'll need as many rope bridges as there are empty blocks between the two dirt blocks and a clear line of sight. Whether it's over water or high in the mountains, the rope bridge will get you to your destination quickly!
 
