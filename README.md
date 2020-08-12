@@ -5,9 +5,9 @@ Here's the thing:  I'm a huge fan of Vintage Story and especially its <i>Wildern
 
 <h3>Traps</h3>
 
-There are two traps - the <b>Deadfall</b> and the <b>Snare</b> - and they are very similar in nature.  They are intended to kill smaller animals on your behalf.  The only real difference is that the deadfall might kill a chicken or a hare (or a baby anything), while the snare might be able to take down bigger entities (like a fox or a boar) as well.
+There are two traps - the <b>Deadfall</b> and the <b>Snare</b> - and they are very similar in nature.  They are designed to kill small animals on your behalf.  The only real difference is that the deadfall might kill a chicken or a hare (or a baby anything), while the snare might be able to take down bigger entities (like a fox or a boar) as well.
 
-In BOTH cases:
+In both cases:
 
  - Larger entities will take minimal damage when coming into contact with one of these traps, and trip it.  
  - Once a trap's been tripped, you'll need to break it and place it down to set it again.
@@ -44,7 +44,7 @@ In BOTH cases:
 
 There are currently two methods for fishing - a <b>Fish Basket</b> and a <b>Trotline</b>.  They have some similarities but your mileage may vary when it comes to a preferred method.
 
-In BOTH cases:
+In both cases:
 
  - A fish might simply steal your bait.
  - You can right click to remove fish.  Careful though, they're a little slippery!
@@ -52,14 +52,17 @@ In BOTH cases:
 
 The fish basket is pretty strightforward.  Place it in water but make sure there's a free block of water in front of it.  Now hurry up and wait...and maybe one or two fish will find their way into your basket.  You might want to check on your fish basket a little more frequently than a trotline, since fish can escape quite easily.
 
-Fish Basket: Twine and four sticks
-<recipe>
+<h4>Fish Basket</h4>
+<img src="docs/fishbasket.png" alt="Fish Basket" height="150px">
+<h6>Twine and four sticks</h6><br>
 
-Fish Basket (Baited): Twine, four sticks, and any type of fruit
-<recipe>
+<h4>Fish Basket (Baited)</h4>
+<img src="docs/fishbasket_baited.png" alt="Fish Basket Baited" height="150px">
+<h6>Twine, four sticks, and any type of fruit</h6><br>
 
-Fish Basket (Baited), shapeless: A fish basket and any type of fruit
-<recipe>
+<h4>Fish Basket (Baited) <i>Shapeless</i></h4>
+<img src="docs/fishbasket_baited_shapeless.png" alt="Fish Basket Baited Shapeless" height="150px">
+<h6>A fish basket and any type of fruit</h6><br>
 
 The trotline is a little more complicated because you're going to need <b>hooks</b>.  Hooks can be knapped with flint or one of several stones.
 
