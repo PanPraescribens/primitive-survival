@@ -1,5 +1,5 @@
 # primitive-survival
-<h2>Primitive Survival Mod for Vintage Story</h2>
+<h2>Primitive Survival mod for Vintage Story</h2>
 
 https://www.vintagestory.at/
 
