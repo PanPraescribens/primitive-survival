@@ -13,28 +13,28 @@ There are two traps - the <b>Deadfall</b> and the <b>Snare</b> - and they are ve
  - You can right click on any unbaited set trap to bait it (with fruit in hand).
  
 <h4>Deadfall (Set)</h4>
-<img src="docs/deadfall.png" alt="Deadfall Set" height="150px">
 <h6>A stone (various types), and a stick</h6>
+<img src="docs/deadfall.png" alt="Deadfall Set" height="150px">
 
 <h4>Deadfall (Set and Baited)</h4>
+<h6>A stone (various types), a stick, and any type of fruit</h6>
 <img src="docs/deadfall_baited.png" alt="Deadfall Set and Baited" height="150px">
-<h6>A stone (various types), a stick, and any type of fruit</h6><br>
 
 <h4>Deadfall (Set and Baited) <i>Shapeless</i></h4>
-<img src="docs/deadfall_baited_shapeless.png" alt="Deadfall Set and Baited Shapeless" height="150px">
 <h6>A deadfall and any type of fruit</h6>
+<img src="docs/deadfall_baited_shapeless.png" alt="Deadfall Set and Baited Shapeless" height="150px">
 
 <h4>Snare (Set)</h4>
+<h6>Twine and a stick</h6>
 <img src="docs/snare.png" alt="Snare Set" height="150px">
-<h6>Twine and a stick</h6><br>
 
 <h4>Snare (Set and Baited)</h4>
+<h6>Twine, a stick, and any type of fruit</h6>
 <img src="docs/snare_baited.png" alt="Snare Set and Baited" height="150px">
-<h6>Twine, a stick, and any type of fruit</h6><br>
 
 <h4>Snare (Set and Baited) <i>Shapeless</i></h4>
+<h6>A snare and any type of fruit</h6>
 <img src="docs/snare_baited_shapeless.png" alt="Snare Set and Baited Shapeless" height="150px">
-<h6>A snare and any type of fruit</h6><br>
 
 
 <h3>Fishing</h3>
