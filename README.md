@@ -98,7 +98,7 @@ Place it just like you would a trotline - on an elevated dirt block facing anoth
 
 <h3>Roadmap</h3>
 
-It's mostly going to be testing and tweaking for now, but I've plans.  Big plans...
+It's mostly going to be testing and tweaking for now, but I've got plans.  Big plans...
 
  - Familiarize myself with the whole server/client thing.
  - Get to the bottom of how to attract animals to the baited traps, much like the trough does.
