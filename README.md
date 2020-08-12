@@ -114,6 +114,7 @@ It's mostly going to be testing and tweaking for now, but I've got plans.  Big p
 
  - Familiarize myself with the whole server/client thing.
  - Get to the bottom of how to attract animals to the baited traps, much like the trough does.
+ - Work on some sounds, which I pretty much ignored.
  - Add more types of fish (and perhaps other random aquatic suprises).
  - Add additional primitive fishing options - a limb line, a funnel trap, and maybe even a primitive fishing rod.
  - Add additonal primitive traps, like figure four (or other) deadfalls, a pitch trap, etc. 
