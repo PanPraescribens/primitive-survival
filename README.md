@@ -127,6 +127,7 @@ Place it just like you would a trotline - on an elevated dirt block facing anoth
 
 It's mostly going to be testing and tweaking for now, but I've got plans.  Big plans...
 
+ - Change the rope bridge recipe to use rope (and maybe sticks) instead of trotlines.
  - Familiarize myself with the whole server/client thing.
  - Get to the bottom of how to attract animals to the baited traps, much like the trough does.
  - Work on some sounds, which I pretty much ignored.
