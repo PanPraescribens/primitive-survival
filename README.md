@@ -1,12 +1,14 @@
 # primitive-survival
 <h2>Primitive Survival mod for Vintage Story</h2>
 
+<h2>NOTE: THIS DOCUMENTATION HAS BEEN UPDATED FOR THE NEW RELEASE (WHICH ISN'T HERE...YET)</h2>
+
 https://www.vintagestory.at/
 
 <img src="docs/splash0.jpg" alt="Splash">
 
-<h2>NOTE: THIS DOCUMENTATION HAS BEEN UPDATED FOR THE NEW RELEASE (WHICH ISN'T HERE...YET)</h2>
-
+<h4>A huge THANKS goes out to <b>Siddly</b> (over on the Vintage Story Discord) for providing a few real cool fish for this mod!</h4>
+<br>
 
 <h3>Download and Installation</h3>
 
@@ -23,9 +25,6 @@ To install:
 <h3>Introduction</h3>
 
 Here's the thing:  I'm a huge fan of Vintage Story and especially its <i>Wilderness Survival</i> mode.  I also have a keen interest in real life primitive survival. This mod is my attempt to to meld the two to provide you with a more realistic early game experience.  It also adds some new things to keep you busy at any point during the game.
-<br>
-
-<h4>A huge THANKS goes out to <b>Siddly</b> (over on the Vintage Story Discord) for providing a few real cool fish for this mod!</h4>
 <br>
 
 <h3>Basics</h3>
