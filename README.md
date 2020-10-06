@@ -123,7 +123,7 @@ The premise here is that you can "cure" meat to create <b>Jerky</b> by simply cu
 
 <h3>Roadmap</h3>
 
-Lot's more code refactoring, testing, and debugging required, and then it's on to:
+A Lot of code refactoring, testing, and debugging required, and then it's on to:
 
  - Possibly animate the fish (get those tails moving anyways).  I mean the particles help, but...
  - Add one more primitive fishing option - a fishing rod.
