@@ -72,9 +72,9 @@ There are two traps - the <b>Deadfall</b> and the <b>Snare</b> - and they are ve
 There are currently four methods for fishing - a <b>Fish Basket</b>, a <b>Weir Trap</b>, a <b>Limb Line</b>, and <b>Trotline</b>.  They have some similarities but your mileage may vary when it comes to a preferred method.  For the most part:
 
  - A fish might simply steal your bait.
- - You can right click to remove fish.  Careful though, they're a little slippery!
+ - You can right click to remove fish (with nothing in your hand).  Careful though, they're a little slippery!
  - You can right click on an unbaited hook or fish basket to re-bait it (with a wide variety of food in hand).  
- - Right click on a baited hook or fish basket to retrieve the bait.
+ - Right click on a baited hook or fish basket to retrieve the bait (with nothing in your hand).
 
 The fish basket is pretty strightforward.  Place it in water but make sure there's free blocks of water all around it.  Now hurry up and wait...and maybe one or two fish will find their way into your basket.  
 
