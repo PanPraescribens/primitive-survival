@@ -52,7 +52,8 @@ A couple of items that are essential for this mod are <b>stakes</b> (used to bui
 There are two traps - the <b>Deadfall</b> and the <b>Snare</b> - and they are very similar in nature.  They are designed to kill small animals on your behalf.  The only real difference is that the deadfall might kill a chicken or a hare (or a baby anything), while the snare might be able to take down bigger entities (like a fox or a boar) as well.  In both cases:
 
  - Larger entities (like a player or a wolf) will only take a bit of damage when coming into contact with one of these traps, and will trip it.  
- - Once a trap's been tripped, you can sneak - right click to set it again.
+ - Bait your traps or it's pretty unlikely you'll catch anything.
+ - Once a trap's been tripped, you can sneak - right click to set it again (with nothing in your hand).
  - You can right click on any unbaited set trap to bait it (with a wide variety of food in hand).
  
 <h4>Deadfall</h4>
