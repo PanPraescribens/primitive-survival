@@ -25,8 +25,8 @@ To install:
 <h3>Introduction</h3>
 
 Here's the thing:  I'm a huge fan of Vintage Story and especially its <i>Wilderness Survival</i> mode.  I also have a keen interest in real life primitive survival. This mod is my attempt to to meld the two to provide you with a more realistic early game experience.  It also adds some new things to keep you busy at any point during the game.
-<br>
-It may not look all that different than the previous release, but a lot of work was done to improve integration with the vanilla world, everything is now "directional", more fish and fishing methods were added, and there's a few other suprises!
+<br><br>
+It may not look all that different than the previous release, but a lot of work was done to improve integration with the vanilla world, everything is now "directional", more fish and fishing methods were added, and there's a few other undocumented suprises, incuding (undoubtedly) a few more bugs!
 <br>
 
 <h3>Basics</h3>
