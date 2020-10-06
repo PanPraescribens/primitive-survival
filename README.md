@@ -78,11 +78,12 @@ The fish basket is pretty strightforward.  Place it in water but make sure there
 
 <h4>Fish Basket</h4>
 <img src="docs/fishbasket.png" alt="Fish Basket" height="150px">
-<sup>Twine and four sticks</sup><br>
-
-<img src="docs/splash3.jpg" alt="Splash3">
+<sup>Four cordage and four sticks</sup><br>
 
 <br>
+<img src="docs/splash3.jpg" alt="Splash3">
+<br>
+
 The weir trap is not so obvious.  You build a fenced in area with stakes, and then sneak-right click on the far side (center) of the fence to complete the trap.  Note: You cannot bait a weir trap.
 <br><br>
 
