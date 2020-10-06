@@ -30,7 +30,7 @@ The handbook now contains relatively complete instructions for this mod.  Look u
 
 <img src="docs/handbook.png" alt="Stake" height="500px">
 
-A couple of items that are essential for this mod are <b>stakes</b> (used to build weir traps and snares) and <b>cordage</b> (used to make limb lines, trot lines, and snares).
+A couple of items that are essential for this mod are <b>stakes</b> (used to build weir traps and snares) and <b>cordage</b> (used to make limb lines, trotlines, fish baskets, and snares).
 
 <h4>Stake <i>Shapeless</i></h4>
 <img src="docs/stake-shapeless.png" alt="Stake" height="150px">
@@ -59,7 +59,7 @@ There are two traps - the <b>Deadfall</b> and the <b>Snare</b> - and they are ve
 
 <h3>Fishing</h3>
 
-There are currently four methods for fishing - a <b>Fish Basket</b>, a <b>Weir Trap</b>, a <b>Limb Line</b>, and <b>Trotline</b>.  They have some similarities but your mileage may vary when it comes to a preferred method.  In all cases:
+There are currently four methods for fishing - a <b>Fish Basket</b>, a <b>Weir Trap</b>, a <b>Limb Line</b>, and <b>Trotline</b>.  They have some similarities but your mileage may vary when it comes to a preferred method.  For the most part:
 
  - A fish might simply steal your bait.
  - You can right click to remove fish.  Careful though, they're a little slippery!
@@ -73,7 +73,7 @@ The fish basket is pretty strightforward.  Place it in water but make sure there
 <sup>Twine and four sticks</sup><br>
 
 <br>
-The weir trap is not so obvious.  You build a fenced in area with stakes, and then sneak-right click on the far side (center) of the fence to complete the trap.
+The weir trap is not so obvious.  You build a fenced in area with stakes, and then sneak-right click on the far side (center) of the fence to complete the trap.  Note: You cannot bait a weir trap.
 
 <img src="docs/weirtrap.jpg" alt="Weir Trap" height="300px">
 
@@ -81,11 +81,11 @@ You might want to check on your fish basket or weir trap a little more frequentl
 
 <br>
 
-The trot line and limb line are a little more complicated because you're going to need <b>hooks</b>.  Hooks can be knapped with flint or one of several stones.
+The trotline and limb line are a little more complicated because you're going to need <b>hooks</b>.  Hooks can be knapped with flint or one of several stones.
 
 <img src="docs/knapping_fishing_hook.png" alt="Knapping Fishing Hook" width="250px">
 
-Face an object near water (i.e. a stake) with cordage in hand, and right click.  If you have enough cordage and there's a block to receive the far end of the cordage, you'll place a trot line.  Otherwise you'll place a limb line.  Once your line is in place you'll need to attach hooks (or baited hooks) to it by right clicking on a section of that line (with hook in hand).  Obviously if your hook isn't in water you won't catch a fish.
+Face an object near water (i.e. a stake) with cordage in hand, and right click.  If you have enough cordage and there's a block to receive the far end of the cordage, you'll place a trotline.  Otherwise you'll place a limb line.  Once your line is in place you'll need to attach hooks (or baited hooks) to it by right clicking on a section of that line (with hook in hand).  Obviously if your hook isn't in water you won't catch a fish.
 
 <br>
 
