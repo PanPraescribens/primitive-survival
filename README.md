@@ -7,7 +7,7 @@ https://www.vintagestory.at/
 
 <img src="docs/splash0.jpg" alt="Splash">
 
-<h4>A huge THANKS goes out to <b>Siddly</b> (over on the Vintage Story Discord) for providing a few real cool fish for this mod!</h4>
+<i>A huge THANKS goes out to <b>Siddly</b> (over on the Vintage Story Discord) for providing a few real cool fish for this mod!</i>
 <br>
 
 <h3>Download and Installation</h3>
