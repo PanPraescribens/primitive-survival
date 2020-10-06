@@ -96,7 +96,7 @@ The trotline and limb line are a little more complicated because you're going to
 
 <img src="docs/knapping_fishing_hook.png" alt="Knapping Fishing Hook" width="250px">
 
-Face an object near water (i.e. a stake) with cordage in hand, and right click.  If you have enough cordage and there's a block to receive the far end of the cordage, you'll place a trotline.  Otherwise you'll place a limb line.  Once your line is in place you'll need to attach hooks (or baited hooks) to it by right clicking on a section of that line (with hook in hand).  Obviously if your hook isn't in water you won't catch a fish.
+Face an object near water (i.e. a stake) with cordage in hand, and right click.  If you have enough cordage and there's a block to receive the far end of the cordage, you'll place a trotline.  Otherwise you'll place a limb line.  Once your line is in place you'll need to attach hooks (and perhaps bait them) by right clicking on a section of that line (with hook in hand).  Obviously if your hook isn't in water you won't catch a fish.
 
 <br>
 
