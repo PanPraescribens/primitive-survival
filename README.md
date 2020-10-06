@@ -61,6 +61,8 @@ There are two traps - the <b>Deadfall</b> and the <b>Snare</b> - and they are ve
 
 <h3>Fishing</h3>
 
+<img src="docs/splash2.jpg" alt="Splash2">
+
 There are currently four methods for fishing - a <b>Fish Basket</b>, a <b>Weir Trap</b>, a <b>Limb Line</b>, and <b>Trotline</b>.  They have some similarities but your mileage may vary when it comes to a preferred method.  For the most part:
 
  - A fish might simply steal your bait.
@@ -84,8 +86,6 @@ The weir trap is not so obvious.  You build a fenced in area with stakes, and th
 
 You might want to check on your fish basket or weir trap a little more frequently than something with a hook, since fish can escape quite easily.  Also note that the occasional sea shell or other trinket might drift into one of these two traps.
 
-<img src="docs/splash4.jpg" alt="Splash4">
-
 <br>
 
 The trotline and limb line are a little more complicated because you're going to need <b>hooks</b>.  Hooks can be knapped with flint or one of several stones.
@@ -93,8 +93,6 @@ The trotline and limb line are a little more complicated because you're going to
 <img src="docs/knapping_fishing_hook.png" alt="Knapping Fishing Hook" width="250px">
 
 Face an object near water (i.e. a stake) with cordage in hand, and right click.  If you have enough cordage and there's a block to receive the far end of the cordage, you'll place a trotline.  Otherwise you'll place a limb line.  Once your line is in place you'll need to attach hooks (or baited hooks) to it by right clicking on a section of that line (with hook in hand).  Obviously if your hook isn't in water you won't catch a fish.
-
-<img src="docs/splash2.jpg" alt="Splash2">
 
 <br>
 
