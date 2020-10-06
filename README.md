@@ -3,7 +3,7 @@
 
 https://www.vintagestory.at/
 
-<img src="docs/splash.jpg" alt="Splash">
+<img src="docs/splash0.jpg" alt="Splash">
 
 <h2>NOTE: THIS DOCUMENTATION HAS BEEN UPDATED FOR THE NEW RELEASE (WHICH ISN'T HERE...YET)</h2>
 
@@ -42,6 +42,8 @@ A couple of items that are essential for this mod are <b>stakes</b> (used to bui
 
 <h3>Traps</h3>
 
+<img src="docs/splash1.jpg" alt="Splash1">
+
 There are two traps - the <b>Deadfall</b> and the <b>Snare</b> - and they are very similar in nature.  They are designed to kill small animals on your behalf.  The only real difference is that the deadfall might kill a chicken or a hare (or a baby anything), while the snare might be able to take down bigger entities (like a fox or a boar) as well.  In both cases:
 
  - Larger entities (like a player or a wolf) will only take a bit of damage when coming into contact with one of these traps, and will trip it.  
@@ -72,6 +74,8 @@ The fish basket is pretty strightforward.  Place it in water but make sure there
 <img src="docs/fishbasket.png" alt="Fish Basket" height="150px">
 <sup>Twine and four sticks</sup><br>
 
+<img src="docs/splash3.jpg" alt="Splash3">
+
 <br>
 The weir trap is not so obvious.  You build a fenced in area with stakes, and then sneak-right click on the far side (center) of the fence to complete the trap.  Note: You cannot bait a weir trap.
 <br><br>
@@ -80,6 +84,8 @@ The weir trap is not so obvious.  You build a fenced in area with stakes, and th
 
 You might want to check on your fish basket or weir trap a little more frequently than something with a hook, since fish can escape quite easily.  Also note that the occasional sea shell or other trinket might drift into one of these two traps.
 
+<img src="docs/splash4.jpg" alt="Splash4">
+
 <br>
 
 The trotline and limb line are a little more complicated because you're going to need <b>hooks</b>.  Hooks can be knapped with flint or one of several stones.
@@ -87,6 +93,8 @@ The trotline and limb line are a little more complicated because you're going to
 <img src="docs/knapping_fishing_hook.png" alt="Knapping Fishing Hook" width="250px">
 
 Face an object near water (i.e. a stake) with cordage in hand, and right click.  If you have enough cordage and there's a block to receive the far end of the cordage, you'll place a trotline.  Otherwise you'll place a limb line.  Once your line is in place you'll need to attach hooks (or baited hooks) to it by right clicking on a section of that line (with hook in hand).  Obviously if your hook isn't in water you won't catch a fish.
+
+<img src="docs/splash2.jpg" alt="Splash2">
 
 <br>
 
