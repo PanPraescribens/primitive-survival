@@ -22,15 +22,15 @@ To install:
 
 <h3>Introduction</h3>
 
-Here's the thing:  I'm a huge fan of Vintage Story and especially its <i>Wilderness Survival</i> mode.  I also have a keen interest in real life primitive survival. This mod is my attempt to to meld the two to provide you with a more realistic early game experience.  There's still a lot of testing to be done so...
+Here's the thing:  I'm a huge fan of Vintage Story and especially its <i>Wilderness Survival</i> mode.  I also have a keen interest in real life primitive survival. This mod is my attempt to to meld the two to provide you with a more realistic early game experience.  It also adds some new things to keep you busy at any point during the game.
 
 <h3>Basics</h3>
 
-The handbook now contains relatively complete instructions for this mod.  Look under <b>Guides - Primitve Survival: Quick Start Guide</b>.
+The handbook now contains relatively complete instructions for this mod.  Look under <b>Guides - Primitive Survival: Quick Start Guide</b>.
 
 <img src="docs/handbook.png" alt="Handbook" height="400px">
 
-A couple of items that are essential for this mod are <b>stakes</b> (used to build weir traps and snares) and <b>cordage</b> (used to make limb lines, trotlines, fish baskets, and snares).
+A couple of items that are essential for this mod are <b>stakes</b> (used to build weir traps and snares) and <b>cordage</b> (used to make limb lines, trotlines, fish baskets, and snares).  Stakes also make a good fence to protect you early on (think "boma").
 
 <h4>Stake <i>(Shapeless)</i></h4>
 <img src="docs/stake-shapeless.png" alt="Stake" height="150px">
@@ -74,6 +74,7 @@ The fish basket is pretty strightforward.  Place it in water but make sure there
 
 <br>
 The weir trap is not so obvious.  You build a fenced in area with stakes, and then sneak-right click on the far side (center) of the fence to complete the trap.  Note: You cannot bait a weir trap.
+<br>
 
 <img src="docs/weirtrap.jpg" alt="Weir Trap" height="300px">
 
@@ -92,7 +93,7 @@ Face an object near water (i.e. a stake) with cordage in hand, and right click. 
 What do I do with all these raw fish?  Cook 'em up on a fire and eat 'em of course.  Note: The official Vintage Story Survival Bass had some issues with it's configuration, so I "borrowed" its json file/shape/texture, and reworked it as <b>Small Bass</b> (for lack of a better name). 
 
 <br>
-<img src="docs/fishcookout.jpg" alt="Fish Cookout" width="600px">
+<img src="docs/fishcookout.jpg" alt="Fish Cookout" width="682px">
 <sup>Dinner Time...</sup>
 <br>
 
