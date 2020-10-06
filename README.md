@@ -5,7 +5,7 @@ https://www.vintagestory.at/
 
 <img src="docs/splash.jpg" alt="Splash">
 
-<h1>NOTE: THIS DOCUMENTATION IS FOR THE NEW RELEASE (WHICH HASN'T BEEN RELEASED YET)</h1>
+<h2>NOTE: THIS DOCUMENTATION HAS BEEN UPDATED FOR THE NEW RELEASE (WHICH ISN'T HERE...YET)</h2>
 
 
 <h3>Download and Installation</h3>
@@ -74,11 +74,11 @@ The fish basket is pretty strightforward.  Place it in water but make sure there
 
 <br>
 The weir trap is not so obvious.  You build a fenced in area with stakes, and then sneak-right click on the far side (center) of the fence to complete the trap.  Note: You cannot bait a weir trap.
-<br>
+<br><br>
 
-<img src="docs/weirtrap.jpg" alt="Weir Trap" height="300px">
+<img src="docs/weirtrap.jpg" alt="Weir Trap" width="682px">
 
-You might want to check on your fish basket or weir trap a little more frequently than something with a hook, since fish can escape quite easily.
+You might want to check on your fish basket or weir trap a little more frequently than something with a hook, since fish can escape quite easily.  Also note that the occasional sea shell or other trinket might drift into one of these two traps.
 
 <br>
 
@@ -113,9 +113,9 @@ The premise here is that you can "cure" meat to create <b>Jerky</b> by simply cu
 
 <h3>Roadmap</h3>
 
-Lot's more testing and tweaking required, and then it's on to...
+Lot's more code refactoring, testing, and debugging required, and then it's on to:
 
- - Possibly animate the fish (get those tails moving anyways).
+ - Possibly animate the fish (get those tails moving anyways).  I mean the particles help, but...
  - Add one more primitive fishing option - a fishing rod.
  - Add additonal primitive traps, like figure four (or other) deadfalls, a pitch trap, etc. 
  - Vintage Story's Lovecraft inspired theme is also right up my alley as I have a real passion for pulp fiction, so I've already started to veer off in that direction.
