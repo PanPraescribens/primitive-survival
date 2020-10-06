@@ -22,21 +22,21 @@ To install:
 
 <h3>Introduction</h3>
 
-Here's the thing:  I'm a huge fan of Vintage Story and especially its <i>Wilderness Survival</i> mode.  I also have a keen interest in real life primitive survival. This mod is my attempt to to meld the two to provide you with a more realistic early game experience.  There's still a lot of testing and fine tuning on the docket so consider this a preview (perpetual beta might be a more accurate description).
+Here's the thing:  I'm a huge fan of Vintage Story and especially its <i>Wilderness Survival</i> mode.  I also have a keen interest in real life primitive survival. This mod is my attempt to to meld the two to provide you with a more realistic early game experience.  There's still a lot of testing to be done so...
 
 <h3>Basics</h3>
 
 The handbook now contains relatively complete instructions for this mod.  Look under <b>Guides - Primitve Survival: Quick Start Guide</b>.
 
-<img src="docs/handbook.png" alt="Stake" height="500px">
+<img src="docs/handbook.png" alt="Handbook" height="400px">
 
 A couple of items that are essential for this mod are <b>stakes</b> (used to build weir traps and snares) and <b>cordage</b> (used to make limb lines, trotlines, fish baskets, and snares).
 
-<h4>Stake <i>Shapeless</i></h4>
+<h4>Stake <i>(Shapeless)</i></h4>
 <img src="docs/stake-shapeless.png" alt="Stake" height="150px">
 <sup>A knife (one of various types), and a stick</sup><br>
 
-<h4>Cordage <i>Shapeless</i></h4>
+<h4>Cordage <i>(Shapeless)</i></h4>
 <img src="docs/cordage-shapeless.png" alt="Cordage" height="150px">
 <sup>Three cattails or wildvine tips, or two wild vines</sup><br>
 
@@ -49,12 +49,12 @@ There are two traps - the <b>Deadfall</b> and the <b>Snare</b> - and they are ve
  - You can right click on any unbaited set trap to bait it (with a wide variety of food in hand).
  
 <h4>Deadfall</h4>
-<img src="docs/deadfall.png" alt="Deadfall Set" height="150px">
+<img src="docs/deadfall.png" alt="Deadfall" height="150px">
 <sup>A stone (one of various types), and a stick</sup><br>
 
 
 <h4>Snare</h4>
-<img src="docs/snare.png" alt="Snare Set" height="150px">
+<img src="docs/snare.png" alt="Snare" height="150px">
 <sup>Cordage and a stake</sup><br>
 
 <h3>Fishing</h3>
@@ -101,11 +101,11 @@ What do I do with all these raw fish?  Cook 'em up on a fire and eat 'em of cour
 
 The premise here is that you can "cure" meat to create <b>Jerky</b> by simply cutting it up into small strips and letting it dry in the sun.  So if you cut up your redmeat or bushmeat it will start to cure automatically.  Note: You can still cook it on a fire afterwards if you like (before it cures).
 
-<h4>Jerky (Redmeat) Raw <i>Shapeless</i></h4>
+<h4>Jerky Redmeat (Raw) <i>(Shapeless)</i></h4>
 <img src="docs/jerky_redmeat_raw_shapeless.png" alt="Jerky Redmeat Raw Shapeless" height="150px">
 <sup>A knife and a piece of redmeat</sup><br>
 
-<h4>Jerky (Bushmeat) Raw <i>Shapeless</i></h4>
+<h4>Jerky Bushmeat (Raw) <i>(Shapeless)</i></h4>
 <img src="docs/jerky_bushmeat_raw_shapeless.png" alt="Jerky Bushmeat Raw Shapeless" height="150px">
 <sup>A knife and a piece of bushmeat</sup><br>
 <br>
