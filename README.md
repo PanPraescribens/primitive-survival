@@ -1,8 +1,6 @@
 # primitive-survival
 <h2>Primitive Survival mod for Vintage Story</h2>
 
-<h2>NOTE: THIS DOCUMENTATION HAS BEEN UPDATED FOR THE NEW RELEASE (WHICH ISN'T HERE...YET)</h2>
-
 https://www.vintagestory.at/
 
 <img src="docs/splash0.jpg" alt="Splash">
