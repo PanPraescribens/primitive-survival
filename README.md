@@ -20,6 +20,7 @@ To install:
 
 [DL]: https://github.com/spearandfang/primitive-survival/releases
 
+<br>
 <h3>Version 1.3 Updates - Coming soon!</h3>
 
  - Added all fish to soup and stew recipes.
