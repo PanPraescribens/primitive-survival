@@ -21,12 +21,12 @@ To install:
 [DL]: https://github.com/spearandfang/primitive-survival/releases
 
 <br>
-<h3>Version 1.3 Updates - Coming soon!</h3>
+<h3>Version 1.3 Updates:</h3>
 
  - Added all fish to soup and stew recipes.
  - Animation added to fish.
  - unbaited fishing is now much more difficult.  To offset this change, I've made it a lot less likely that fish will steal your bait.
- - More updates to the end game items (the things that shall not be named), including some new gear types and an new elusive fish type.  This is all still work in progress.
+ - More updates to the end game items (the things that shall not be named), including some new gear types and a new elusive fish type.
 <br><br>
 <h3>Introduction</h3>
 
