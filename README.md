@@ -132,11 +132,7 @@ The premise here is that you can "cure" meat to create <b>Jerky</b> by simply cu
 
 <h3>Roadmap</h3>
 
-A Lot of code refactoring, testing, and debugging required, and then it's on to:
-
- - Possibly animate the fish (get those tails moving anyways).  I mean the particles help, but...
- - Add one more primitive fishing option - a fishing rod.
- - Add additonal primitive traps, like figure four (or other) deadfalls, a pitch trap, etc. 
+ - I've got some random ideas I may try and implement, but nothing written in stone.
  - Vintage Story's Lovecraft inspired theme is also right up my alley as I have a real passion for pulp fiction, so I've already started to veer off in that direction.
 
 <br>
