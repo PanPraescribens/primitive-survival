@@ -20,6 +20,14 @@ To install:
 
 [DL]: https://github.com/spearandfang/primitive-survival/releases
 
+<br>
+<h3>Version 1.3 Updates:</h3>
+
+ - Added all fish to soup and stew recipes.
+ - Animation added to fish.
+ - unbaited fishing is now much more difficult.  To offset this change, I've made it a lot less likely that fish will steal your bait.
+ - More updates to the end game items (the things that shall not be named), including some new gear types and a new elusive fish type.
+<br><br>
 <h3>Introduction</h3>
 
 Here's the thing:  I'm a huge fan of Vintage Story and especially its <i>Wilderness Survival</i> mode.  I also have a keen interest in real life primitive survival. This mod is my attempt to to meld the two to provide you with a more realistic early game experience.  It also adds some new things to keep you busy at any point during the game.
@@ -124,11 +132,7 @@ The premise here is that you can "cure" meat to create <b>Jerky</b> by simply cu
 
 <h3>Roadmap</h3>
 
-A Lot of code refactoring, testing, and debugging required, and then it's on to:
-
- - Possibly animate the fish (get those tails moving anyways).  I mean the particles help, but...
- - Add one more primitive fishing option - a fishing rod.
- - Add additonal primitive traps, like figure four (or other) deadfalls, a pitch trap, etc. 
+ - I've got some random ideas I may try and implement, but nothing written in stone.
  - Vintage Story's Lovecraft inspired theme is also right up my alley as I have a real passion for pulp fiction, so I've already started to veer off in that direction.
 
 <br>
