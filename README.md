@@ -3,7 +3,7 @@
 
 https://www.vintagestory.at/
 
-<img src="docs/splash0.jpg" alt="Splash">
+<img src="docs/splash0.jpg" alt="Splash" width="682px">
 
 <i>A huge THANKS goes out to <b>Siddly</b> (over on the Vintage Story Discord) for providing a few real cool fish for this mod!</i>
 <br>
@@ -36,6 +36,8 @@ Limb lines and trotlines have undergone a significant change in version 2.0, and
 1. Retrieve all of your existing limb lines, trotlines, and whatever's on them prior to upgrading, or <br><br>
 2. Simply upgrade.  You will lose all limb lines and trotlines and whatever's on them, and will have to remove the old (white) blocks after the fact.
 <br><br><br>
+
+<img src="docs/spiketraps.jpg" alt="Spiketraps" width="682px">
 
 <h3>Version 1.3 Updates:</h3>
 
