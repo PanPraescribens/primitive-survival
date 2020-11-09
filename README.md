@@ -71,7 +71,7 @@ A couple of items that are essential for this mod are <b>stakes</b> (used to bui
 
 <h3>Traps</h3>
 
-<img src="docs/splash1.jpg" alt="Splash1">
+<img src="docs/splash1.jpg" alt="Splash1" width="682px">
 
 There are two traps - the <b>Deadfall</b> and the <b>Snare</b> - and they are very similar in nature.  They are designed to kill small animals on your behalf.  The only real difference is that the deadfall might kill a chicken or a hare (or a baby anything), while the snare might be able to take down bigger entities (like a fox or a boar) as well.  In both cases:
 
@@ -91,7 +91,7 @@ There are two traps - the <b>Deadfall</b> and the <b>Snare</b> - and they are ve
 
 <h3>Fishing</h3>
 
-<img src="docs/splash2.jpg" alt="Splash2">
+<img src="docs/splash2.jpg" alt="Splash2" width="682px">
 
 There are currently four methods for fishing - a <b>Fish Basket</b>, a <b>Weir Trap</b>, a <b>Limb Line</b>, and <b>Trotline</b>.  They have some similarities but your mileage may vary when it comes to a preferred method.  For the most part:
 
@@ -107,7 +107,7 @@ The fish basket is pretty strightforward.  Place it in water but make sure there
 <sup>Four cordage and four sticks</sup><br>
 
 <br>
-<img src="docs/splash3.jpg" alt="Splash3">
+<img src="docs/splash3.jpg" alt="Splash3" width="682px">
 <br>
 
 The weir trap is not so obvious.  You build a fenced in area with stakes, and then sneak-right click on the far side (center) of the fence to complete the trap.  Note: You cannot bait a weir trap.
@@ -154,6 +154,6 @@ The premise here is that you can "cure" meat to create <b>Jerky</b> by simply cu
  - Vintage Story's Lovecraft inspired theme is also right up my alley as I have a real passion for pulp fiction, so I've already started to veer off in that direction.
 
 <br>
-<img src="docs/creative_inventory1.3.0.jpg" alt="Creative Inventory" width="600px">
+<img src="docs/creative_inventory2.0.jpg" alt="Creative Inventory"  width="682px">
 <sup>Creative Inventory for Primitive Survival...</sup>
 <br>
