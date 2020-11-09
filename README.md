@@ -3,7 +3,7 @@
 
 https://www.vintagestory.at/
 
-<img src="docs/splash0.jpg" alt="Splash">
+<img src="docs/splash0.jpg" alt="Splash" width="682px">
 
 <i>A huge THANKS goes out to <b>Siddly</b> (over on the Vintage Story Discord) for providing a few real cool fish for this mod!</i>
 <br>
@@ -21,6 +21,24 @@ To install:
 [DL]: https://github.com/spearandfang/primitive-survival/releases
 
 <br>
+ 
+<h3>Version 2.0 Updates (COMING SOON):</h3>
+
+ - Sharpen a handful of sticks to create a bundle of wood spikes, for pit traps.
+ - Make a bone hook with a knife and a bone.
+ - Use clayforming to make molds for metal fishing hooks, fishing lures, and a metal spike plate (for even better pit traps).
+ - Fixed a couple of minor bugs, including one that was preventing the book from appearing in game (apologies!).
+ <br><br>
+ 
+ <h3>ATTENTION users of versions prior to 2.0:</h3>
+Limb lines and trotlines have undergone a significant change in version 2.0, and will NOT load properly if you simply upgrade to version 2.0.  You have two options: 
+<br><br>
+1. Retrieve all of your existing limb lines, trotlines, and whatever's on them prior to upgrading, or <br><br>
+2. Simply upgrade.  You will lose all limb lines and trotlines and whatever's on them, and will have to remove the old (white) blocks after the fact.
+<br><br><br>
+
+<img src="docs/spiketraps.jpg" alt="Spiketraps" width="682px">
+
 <h3>Version 1.3 Updates:</h3>
 
  - Added all fish to soup and stew recipes.
@@ -32,8 +50,6 @@ To install:
 
 Here's the thing:  I'm a huge fan of Vintage Story and especially its <i>Wilderness Survival</i> mode.  I also have a keen interest in real life primitive survival. This mod is my attempt to to meld the two to provide you with a more realistic early game experience.  It also adds some new things to keep you busy at any point during the game.
 <br><br>
-It may not look all that different than the previous release, but it's practically a full rewrite featuring improved integration with the vanilla game, everything is now "directional", more fish and fishing methods have been added, and there's a few other undocumented suprises incuding (undoubtedly) a few more bugs!
-<br>
 
 <h3>Basics</h3>
 
@@ -136,6 +152,6 @@ The premise here is that you can "cure" meat to create <b>Jerky</b> by simply cu
  - Vintage Story's Lovecraft inspired theme is also right up my alley as I have a real passion for pulp fiction, so I've already started to veer off in that direction.
 
 <br>
-<img src="docs/creative_inventory.jpg" alt="Creative Inventory" width="600px">
+<img src="docs/creative_inventory1.3.0.jpg" alt="Creative Inventory" width="600px">
 <sup>Creative Inventory for Primitive Survival...</sup>
 <br>
