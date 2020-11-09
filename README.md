@@ -38,6 +38,8 @@ Limb lines and trotlines have undergone a significant change in version 2.0, and
 <br><br><br>
 
 <img src="docs/spiketraps.jpg" alt="Spiketraps" width="682px">
+<br>
+<img src="docs/claymolds.jpg" alt="Claymolds" width="682px">
 
 <h3>Version 1.3 Updates:</h3>
 
