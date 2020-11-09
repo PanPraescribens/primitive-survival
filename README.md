@@ -103,7 +103,7 @@ There are currently four methods for fishing - a <b>Fish Basket</b>, a <b>Weir T
 The fish basket is pretty strightforward.  Place it in water but make sure there's free blocks of water all around it.  Now hurry up and wait...and maybe one or two fish will find their way into your basket.  
 
 <h4>Fish Basket</h4>
-<img src="docs/fishbasket.png" alt="Fish Basket"  width="682px">
+<img src="docs/fishbasket.png" alt="Fish Basket" height="150px">
 <sup>Four cordage and four sticks</sup><br>
 
 <br>
@@ -154,6 +154,6 @@ The premise here is that you can "cure" meat to create <b>Jerky</b> by simply cu
  - Vintage Story's Lovecraft inspired theme is also right up my alley as I have a real passion for pulp fiction, so I've already started to veer off in that direction.
 
 <br>
-<img src="docs/creative_inventory1.3.0.jpg" alt="Creative Inventory"  width="682px">
+<img src="docs/creative_inventory1.3.0.jpg" alt="Creative Inventory"  width="600px">
 <sup>Creative Inventory for Primitive Survival...</sup>
 <br>
