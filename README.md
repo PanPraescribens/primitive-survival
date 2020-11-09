@@ -24,7 +24,7 @@ To install:
  
 <h3>Version 2.0 Updates (COMING SOON):</h3>
 
- - Sharpen a handful of sticks to create a bundle of wood spikes, for pit traps.
+ - Sharpen a handful of sticks to create a bundle of wood spikes (for pit traps).
  - Make a bone hook with a knife and a bone.
  - Use clayforming to make molds for metal fishing hooks, fishing lures, and a metal spike plate (for even better pit traps).
  - Fixed a couple of minor bugs, including one that was preventing the book from appearing in game (apologies!).
