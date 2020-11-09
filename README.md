@@ -21,17 +21,22 @@ To install:
 [DL]: https://github.com/spearandfang/primitive-survival/releases
 
 <br>
-<h3>ATTENTION Users of previous versions:</h3>
-Limb lines and trotlines have undergone a significant change, and will not load properly in version 2.0 of this mod.  You have two options:
-- 1. Retrieve all of your existing limb lines, trotlines, and whatever's on them prior to upgrading.
- - 2. Simply upgrade.  You will lose all limb lines and trotlines and whatever's on them, and will have to remove the old (white) blocks after the fact.
  
 <h3>Version 2.0 Updates (COMING SOON):</h3>
 
  - Sharpen a handful of sticks to create a bundle of wood spikes, for pit traps.
  - Make a bone hook with a knife and a bone.
  - Use clayforming to make molds for metal fishing hooks, fishing lures, and a metal spike plate (for even better pit traps).
+ - Fixed a couple of minor bugs, including one that was preventing the book from appearing in game (apologies!).
  br><br>
+ 
+ <h3>ATTENTION Users of previous versions:</h3>
+Limb lines and trotlines have undergone a significant change, and will not load properly in version 2.0 of this mod.  You have two options: 
+<br><br>
+1. Retrieve all of your existing limb lines, trotlines, and whatever's on them prior to upgrading, or
+<br><br>
+2. Simply upgrade.  You will lose all limb lines and trotlines and whatever's on them, and will have to remove the old (white) blocks after the fact.
+<br><br>
 <br>
 <h3>Version 1.3 Updates:</h3>
 
