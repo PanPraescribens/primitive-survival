@@ -38,7 +38,7 @@ To install:
 
  - Sharpen a handful of sticks to create a bundle of wood spikes (for pit traps).
  - Make a bone hook with a knife and a bone.
- - Use clayforming to make molds for metal fishing hooks, fishing lures, and a bed-o-nails (for even better pit traps).  Add lures to hooks to catch more fish.
+ - Use clay forming to make molds for metal fishing hooks, fishing lures, and a bed-o-nails (for even better pit traps).  Add lures to hooks to catch more fish.
  - Fixed a couple of bugs, including one that was preventing the book from appearing in game, and one that was preventing fish from entering fish baskets (it's a good thing I'm not getting paid for this!).
 <br><br><br>
 
