@@ -3,7 +3,7 @@
 
 https://www.vintagestory.at/
 
-<h3>ATTENTION users of versions prior to 2.0:</h3>
+<h3>ATTENTION users of versions 1.3 and older:</h3>
 Limb lines and trotlines have undergone a significant change in version 2.0, and will NOT load properly if you simply upgrade to version 2.0.  I've learned my lesson but there's no going back!  You have two options: 
 <br><br>
 1. Retrieve all of your existing limb lines, trotlines, and whatever's on them prior to upgrading, or <br><br>
