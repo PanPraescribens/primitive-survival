@@ -152,8 +152,7 @@ The premise here is that you can "cure" meat to create <b>Jerky</b> by simply cu
 
 <h3>Roadmap</h3>
 
- - I've got some random ideas I may try and implement, but nothing written in stone.
- - Vintage Story's Lovecraft inspired theme is also right up my alley as I have a real passion for pulp fiction, so I've already started to veer off in that direction.
+ - The road is long, with many a winding turn...that leads us to who knows where, who knows where.
 
 <br>
 <img src="docs/creative_inventory2.0.jpg" alt="Creative Inventory"  width="682px">
