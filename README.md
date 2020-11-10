@@ -41,13 +41,12 @@ To install:
 - Sharpen a handful of sticks to create a bundle of wood spikes (for pit traps).
 - Make a bone hook with a knife and a bone.
 - Use clay forming to make molds for metal fishing hooks, fishing lures, and a bed-o-nails (for even better pit traps). Add lures to hooks to catch more fish.
-- Fixed a couple of bugs, including one that was preventing the book from appearing in game, and one that was preventing fish from entering fish baskets (it's a good thing I'm not getting paid for this!).
-  <br><br><br>
+- Fixed a couple of bugs, including one that was preventing the book from appearing in game, and one that was preventing fish from entering fish baskets (it's a good thing I'm not getting paid for this!).<br><br>
 
 <img src="docs/spiketraps.jpg" alt="Spiketraps" width="682px">
 <br>
 <img src="docs/claymolds.jpg" alt="Claymolds" width="682px">
-
+<br>
 <h3>Version 1.3 Updates:</h3>
 
 - Added all fish to soup and stew recipes.
@@ -134,9 +133,13 @@ You might want to check on your fish basket or weir trap a little more frequentl
 
 <br>
 
-The trotline and limb line are a little more complicated because you're going to need <b>hooks</b>. Hooks can be knapped with flint or one of several stones.
+The trotline and limb line are a little more complicated because you're going to need <b>hooks</b>. Hooks can be knapped with flint or one of several stones, or carved from a bone.
 
 <img src="docs/knapping_fishing_hook.png" alt="Knapping Fishing Hook" width="250px">
+
+<h4>Bone Fishing Hook <i>(Shapeless)</i></h4>
+<img src="docs/bonehook.png" alt="Bone Hook" height="150px">
+<sup>A knife and a bone</sup><br><br>
 
 Face an object near water (i.e. a stake) with cordage in hand, and right click. If you have enough cordage and there's a block to receive the far end of the cordage, you'll place a trotline. Otherwise you'll place a limb line. Once your line is in place you'll need to attach hooks (and perhaps bait them) by right clicking on a section of that line (with hook in hand). Obviously if your hook isn't in water you won't catch a fish.
 
