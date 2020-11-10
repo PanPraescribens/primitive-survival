@@ -12,6 +12,11 @@ Limb lines and trotlines have undergone a significant change in version 2.0, and
 
 <img src="docs/splash0.jpg" alt="Splash" width="682px">
 
+<h3>Introduction</h3>
+
+Here's the thing:  I'm a huge fan of Vintage Story and especially its <i>Wilderness Survival</i> mode.  I also have a keen interest in real life primitive survival. This mod is my attempt to to meld the two to provide you with a more realistic early game experience.  It also adds some new things to keep you busy at any point during the game.
+<br><br>
+
 <i>A huge THANKS goes out to <b>Siddly</b> (over on the Vintage Story Discord) for providing a few real cool fish for this mod!</i>
 <br>
 
@@ -48,10 +53,7 @@ To install:
  - unbaited fishing is now much more difficult.  To offset this change, I've made it a lot less likely that fish will steal your bait.
  - More updates to the end game items (the things that shall not be named), including some new gear types and a new elusive fish type.
 <br><br>
-<h3>Introduction</h3>
 
-Here's the thing:  I'm a huge fan of Vintage Story and especially its <i>Wilderness Survival</i> mode.  I also have a keen interest in real life primitive survival. This mod is my attempt to to meld the two to provide you with a more realistic early game experience.  It also adds some new things to keep you busy at any point during the game.
-<br><br>
 
 <h3>Basics</h3>
 
