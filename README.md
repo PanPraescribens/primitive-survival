@@ -18,7 +18,7 @@ Here's the thing:  I'm a huge fan of Vintage Story and especially its <i>Wildern
 <br><br>
 
 <i>A huge THANKS goes out to <b>Siddly</b> (over on the Vintage Story Discord) for providing a few real cool fish for this mod!</i>
-<br>
+<br><br>
 
 <h3>Download and Installation</h3>
 
