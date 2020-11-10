@@ -3,6 +3,13 @@
 
 https://www.vintagestory.at/
 
+<h3>ATTENTION users of versions prior to 2.0:</h3>
+Limb lines and trotlines have undergone a significant change in version 2.0, and will NOT load properly if you simply upgrade to version 2.0.  I've learned my lesson but there's no going back!  You have two options: 
+<br><br>
+1. Retrieve all of your existing limb lines, trotlines, and whatever's on them prior to upgrading, or <br><br>
+2. Simply upgrade.  You will lose all limb lines and trotlines and whatever's on them, and will have to remove the old (white) blocks after the fact.
+<br><br>
+
 <img src="docs/splash0.jpg" alt="Splash" width="682px">
 
 <i>A huge THANKS goes out to <b>Siddly</b> (over on the Vintage Story Discord) for providing a few real cool fish for this mod!</i>
@@ -22,19 +29,12 @@ To install:
 
 <br>
  
-<h3>Version 2.0 Updates (COMING SOON):</h3>
+<h3>Version 2.0 Updates:</h3>
 
  - Sharpen a handful of sticks to create a bundle of wood spikes (for pit traps).
  - Make a bone hook with a knife and a bone.
  - Use clayforming to make molds for metal fishing hooks, fishing lures, and a bed-o-nails (for even better pit traps).  Add lures to hooks to catch more fish.
  - Fixed a couple of bugs, including one that was preventing the book from appearing in game, and one that was preventing fish from entering fish baskets (it's a good thing I'm not getting paid for this!).
- <br><br>
- 
- <h3>ATTENTION users of versions prior to 2.0:</h3>
-Limb lines and trotlines have undergone a significant change in version 2.0, and will NOT load properly if you simply upgrade to version 2.0.  I've learned my lesson but there's no going back!  You have two options: 
-<br><br>
-1. Retrieve all of your existing limb lines, trotlines, and whatever's on them prior to upgrading, or <br><br>
-2. Simply upgrade.  You will lose all limb lines and trotlines and whatever's on them, and will have to remove the old (white) blocks after the fact.
 <br><br><br>
 
 <img src="docs/spiketraps.jpg" alt="Spiketraps" width="682px">
