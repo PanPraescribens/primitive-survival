@@ -89,13 +89,13 @@ There are two traps - the <b>Deadfall</b> and the <b>Snare</b> - and they are ve
 
 <h4>Snare</h4>
 <img src="docs/snare.png" alt="Snare" height="150px">
-<sup>Cordage and a stake</sup><br>
+<sup>Cordage and a stake</sup><br><br>
 
 While not a trap per se, a handful of sticks can be sharpened at both ends to create a bundle of wood spikes, which can then be pushed into soft ground to create a pit of spikes. They're a little painful to walk across, and even more dangerous to fall on.
 
 <h4>Bundle of Wood Spikes</h4>
 <img src="docs/bundleofwoodspikes.png" alt="Bundle of Wood Spikes" height="150px">
-<sup>A knife (one of various types) surrounded by sticks</sup><br>
+<sup>A knife (one of various types) surrounded by sticks</sup><br><br>
 
 <img src="docs/woodspikes.jpg" alt="Wood Spikes" width="520px">
 
@@ -140,8 +140,8 @@ The trotline and limb line are a little more complicated because you're going to
 
 Face an object near water (i.e. a stake) with cordage in hand, and right click. If you have enough cordage and there's a block to receive the far end of the cordage, you'll place a trotline. Otherwise you'll place a limb line. Once your line is in place you'll need to attach hooks (and perhaps bait them) by right clicking on a section of that line (with hook in hand). Obviously if your hook isn't in water you won't catch a fish.
 
-Once you've started clay forming, you can make a mold for metal fishing hooks and a mold for fishing lures. Lures are added to hooks just like baiting a hook, and will also improve your odds of catching fish.
-<br>
+Once you've started clay forming, you can make a mold for metal fishing hooks and a mold for fishing lures. Lures are added to hooks just like baiting a hook, and will also improve your odds of catching fish.<br><br>
+
 <img src="docs/lureandhookmolds.jpg" alt="Lure and Hook Molds" width="460px">
 
 <br>
