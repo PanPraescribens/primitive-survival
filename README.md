@@ -31,7 +31,7 @@ To install:
  <br><br>
  
  <h3>ATTENTION users of versions prior to 2.0:</h3>
-Limb lines and trotlines have undergone a significant change in version 2.0, and will NOT load properly if you simply upgrade to version 2.0.  You have two options: 
+Limb lines and trotlines have undergone a significant change in version 2.0, and will NOT load properly if you simply upgrade to version 2.0.  I've learned my lesson but there's no going back!  You have two options: 
 <br><br>
 1. Retrieve all of your existing limb lines, trotlines, and whatever's on them prior to upgrading, or <br><br>
 2. Simply upgrade.  You will lose all limb lines and trotlines and whatever's on them, and will have to remove the old (white) blocks after the fact.
