@@ -102,15 +102,15 @@ While not a trap per se, a handful of sticks can be sharpened at both ends to cr
 
 To make a complete pit trap, use these same wood spikes but push them into the sides of the top edge of your pit. You can weave them together to span large areas.
 
-<img src="docs/pittrap1.jpg" alt="Pit Trap" width="520px">
+<img src="docs/pitcover1.jpg" alt="Pit Trap" width="520px">
 
 The next step is to add three layers of dry grass or some other plant based materials to seal up the surface. Pay attention to what it says in the hud. It walks you through the process.
 
-<img src="docs/pittrap2.jpg" alt="Pit Trap" width="520px">
+<img src="docs/pitcover2.jpg" alt="Pit Trap" width="520px">
 
 The final step is to add a layer of dirt or sand to the top. With proper planning, your pit cover will be 100% camouflaged which could be interesting in pvp play.
 
-<img src="docs/pittrap3.jpg" alt="Pit Trap" width="520px">
+<img src="docs/pitcover3.jpg" alt="Pit Trap" width="520px">
 
 With dirt or sand in place, nearby mammals can tell that something still isn't quite right, and are attracted to your pit to investigate (increasing your odds of catching something).
 <br><br>
