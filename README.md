@@ -35,7 +35,13 @@ To install:
 [dl]: https://github.com/spearandfang/primitive-survival/releases
 
 <br>
- 
+
+<h3>Version 2.1 Updates:</h3>
+
+- Use the bundle of wood spikes, some plant based materials, and dirt or sand to create a camouflaged cover for your pits. See the "Traps" section below for details.
+
+<br>
+
 <h3>Version 2.0 Updates:</h3>
 
 - Sharpen a handful of sticks to create a bundle of wood spikes (for pit traps).
