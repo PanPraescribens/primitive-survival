@@ -75,7 +75,9 @@ A couple of items that are essential for this mod are <b>stakes</b> (used to bui
 
 <img src="docs/splash1.jpg" alt="Splash1" width="682px">
 
-There are two traps - the <b>Deadfall</b> and the <b>Snare</b> - and they are very similar in nature. They are designed to kill small animals on your behalf. The only real difference is that the deadfall might kill a chicken or a hare (or a baby anything), while the snare might be able to take down bigger entities (like a fox or a boar) as well. In both cases:
+There are three types of traps - the <b>Deadfall</b>, the <b>Snare</b>, and the <b>Pit Trap</b>.
+<br><br>
+The deadfall and snare are very similar in nature. They are designed to kill small animals on your behalf. The only real difference is that the deadfall might kill a chicken or a hare (or a baby anything), while the snare might be able to take down bigger entities (like a fox or a boar) as well. In both cases:
 
 - Larger entities (like a player or a wolf) will only take a bit of damage when coming into contact with one of these traps, and will trip it.
 - Bait your traps or it's pretty unlikely you'll catch anything.
@@ -98,6 +100,22 @@ While not a trap per se, a handful of sticks can be sharpened at both ends to cr
 
 <img src="docs/woodspikes.jpg" alt="Wood Spikes" width="520px">
 
+To make a complete pit trap, use these same wood spikes but push them into the sides of the top edge of your pit. You can weave them together to span large areas.
+
+<img src="docs/pittrap1.jpg" alt="Pit Trap" width="520px">
+
+The next step is to add three layers of dry grass or some other plant based materials to seal up the surface. Pay attention to what it says in the hud. It walks you through the process.
+
+<img src="docs/pittrap2.jpg" alt="Pit Trap" width="520px">
+
+The final step is to add a layer of dirt or sand to the top. With proper planning, your pit cover will be 100% camouflaged which could be interesting in pvp play.
+
+<img src="docs/pittrap3.jpg" alt="Pit Trap" width="520px">
+
+With dirt or sand in place, nearby mammals can tell that something still isn't quite right, and are attracted to your pit to investigate (increasing your odds of catching something).
+<br><br>
+Note, you can also partially disassemble your pit trap by clicking on it (with nothing in your active inventory slot).
+<br><br>
 Once you've started clay forming, you can make a mold for a "bed-o-nails", which can be place on any surface and act as a much deadlier version of wood spikes.
 
 <img src="docs/bedonails.jpg" alt="Bed-O-Nails" width="520px">
