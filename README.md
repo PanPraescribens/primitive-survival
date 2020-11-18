@@ -4,4 +4,4 @@
 
 Documentation and latest download moved here:
 
-https://www.vintagestory.at/forums/topic/2399-primitive-survival-210/
+https://www.vintagestory.at/forums/topic/2399-primitive-survival-traps-fishing-and-other-surprises/
