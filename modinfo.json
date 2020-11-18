@@ -1,0 +1,11 @@
+{
+  "type": "code",
+  "modid": "primitivesurvival",
+  "name": "Primitive Survival",
+  "description": "Random early game primitive goods",
+  "authors": ["Spear And Fang","Siddly"],
+  "version": "2.0.0",
+  "gameversions": ["1.13.4+"],
+  "website": "https://github.com/SpearAndFang/primitive-survival"
+}
+
