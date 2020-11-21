@@ -8,5 +8,5 @@ https://www.vintagestory.at/forums/topic/2399-primitive-survival-traps-fishing-a
 
 Version 2.2 updates
 
-- moved game: assets (clayforming, knapping, and soup/stew recipes to the primitivesurvival domain
+- moved game: assets (clayforming, knapping, and soup/stew recipes) to the primitivesurvival domain
 - made fishing lure mold and fighing hook mold "rackable"
