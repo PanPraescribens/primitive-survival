@@ -1,7 +1,7 @@
 {
   "ingredient": {
     "type": "item",
-    "code": "stone-*",
+    "code": "game:stone-*",
     "name": "rock",
     "allowedVariants": [
       "granite",

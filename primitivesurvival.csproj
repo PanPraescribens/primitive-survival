@@ -62,10 +62,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\changes.txt" />
     <Content Include="modinfo.json" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="assets\game\" />
     <Folder Include="assets\primitivesurvival\" />
     <Folder Include="src\" />
   </ItemGroup>

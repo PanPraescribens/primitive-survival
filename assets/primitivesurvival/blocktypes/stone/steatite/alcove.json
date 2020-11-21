@@ -13,10 +13,10 @@
 	resistance: 2,
 	lightAbsorption: 99,
 	texturesByType: {
-		"steatitealcove-plain": {
-			all: { base: "primitivesurvival:block/stone/steatite/full/plain*" }
+		"steatitealcove-plain*": {
+			"all": { "base": "primitivesurvival:block/stone/steatite/full/plain-{material}" }
 		},
-		"steatitealcove-ornate": {
+		"steatitealcove-ornate*": {
 			"horizontals": { base: "primitivesurvival:block/stone/steatite/full/ornate-side" },
 			"up": { base: "primitivesurvival:block/stone/steatite/full/ornate-u" },
 			"down": { base: "primitivesurvival:block/stone/steatite/full/ornate-d" },

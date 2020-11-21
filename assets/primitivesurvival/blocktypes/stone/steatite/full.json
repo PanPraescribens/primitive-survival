@@ -1,37 +1,59 @@
 {
-	code: "steatite",
-	class: "Block",
-	variantgroups: [
-		{ code:"type", states: ["plain", "ornate"] },
-		{ code:"material", states: ["temporal", "astral", "ethereal"] }
-	],
-	shape: { base: "game:block/basic/cube" },
-	drawtype: "Cube",
-	blockmaterial: "Stone",
-	creativeinventory: { "general": ["*-{material}"], "construction": ["*-{material}"], "primitive": ["*-{material}"] },
-	replaceable: 700,
-	resistance: 2,
-	lightAbsorption: 99,
-	texturesByType: {
-		"steatite-plain": {
-			all: { base: "primitivesurvival:block/stone/steatite/full/plain*" }
-		},
-		"steatite-ornate": {
-			"horizontals": { base: "primitivesurvival:block/stone/steatite/full/ornate-side" },
-			"up": { base: "primitivesurvival:block/stone/steatite/full/ornate-u" },
-			"down": { base: "primitivesurvival:block/stone/steatite/full/ornate-d" },
-		}
-	},
-	sounds: {
-		walk: "game:walk/stone",
-		byTool: {
-			"Pickaxe": { hit: "game:block/rock-hit-pickaxe", break: "game:block/rock-break-pickaxe" }
-		}
-	},
-	heldTpIdleAnimation: "holdbothhandslarge", heldTpUseAnimation: "twohandplaceblock",
-	tpHandTransform: {
-		translation: { x: -1.2, y: -1.1, z: -0.8 },
-		rotation: { x: -2, y: 25, z: -78 },
-		scale: 0.37
-	}
+    "code": "steatite",
+    "class": "Block",
+    "variantgroups": [
+        {
+            "code": "type",
+            "states": [ "plain", "ornate" ]
+        },
+        {
+            "code": "material",
+            "states": [ "temporal", "astral", "ethereal" ]
+        }
+    ],
+    "shape": { "base": "game:block/basic/cube" },
+    "drawtype": "Cube",
+    "blockmaterial": "Stone",
+    "creativeinventory": {
+        "general": [ "*-{material}" ],
+        "construction": [ "*-{material}" ],
+        "primitive": [ "*-{material}" ]
+    },
+    "replaceable": 700,
+    "resistance": 2,
+    "lightAbsorption": 99,
+    "texturesByType": {
+        "steatite-plain*": {
+            "all": { "base": "primitivesurvival:block/stone/steatite/full/plain-{material}" }
+        },
+        "steatite-ornate*": {
+            "horizontals": { "base": "primitivesurvival:block/stone/steatite/full/ornate-side" },
+            "up": { "base": "primitivesurvival:block/stone/steatite/full/ornate-u" },
+            "down": { "base": "primitivesurvival:block/stone/steatite/full/ornate-d" }
+        }
+    },
+    "sounds": {
+        "walk": "game:walk/stone",
+        "byTool": {
+            "Pickaxe": {
+                "hit": "game:block/rock-hit-pickaxe",
+                "break": "game:block/rock-break-pickaxe"
+            }
+        }
+    },
+    "heldTpIdleAnimation": "holdbothhandslarge",
+    "heldTpUseAnimation": "twohandplaceblock",
+    "tpHandTransform": {
+        "translation": {
+            "x": -1.2,
+            "y": -1.1,
+            "z": -0.8
+        },
+        "rotation": {
+            "x": -2,
+            "y": 25,
+            "z": -78
+        },
+        "scale": 0.37
+    }
 }
