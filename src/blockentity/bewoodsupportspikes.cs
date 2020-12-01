@@ -14,7 +14,7 @@ public class BEWoodSupportSpikes : BlockEntityDisplay, IAnimalFoodSource
     //public string[] baitTypes = { "fruit", "grain", "legume", "meat", "vegetable" };
     protected static Random rnd = new Random();
     public int maxSlots = 4;
-    ICoreClientAPI capi;
+    //ICoreClientAPI capi;
 
     public override void Initialize(ICoreAPI api)
     {

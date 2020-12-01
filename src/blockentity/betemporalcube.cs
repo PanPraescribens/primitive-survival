@@ -87,7 +87,7 @@ public class BETemporalCube : BlockEntityDisplay
             string path = playerStack.Item.Code.Path;
             if (path.Contains("gear-"))
             {
-                 BlockFacing facing = byPlayer.CurrentBlockSelection.Face.GetOpposite();
+                 BlockFacing facing = byPlayer.CurrentBlockSelection.Face.Opposite;
                 string playerFacing = facing.ToString();
 
                 if (playerFacing == "north")
@@ -119,7 +119,7 @@ public class BETemporalCube : BlockEntityDisplay
 
     private bool TryTake(IPlayer byPlayer, BlockSelection blockSel)
     {
-        BlockFacing facing = byPlayer.CurrentBlockSelection.Face.GetOpposite();
+        BlockFacing facing = byPlayer.CurrentBlockSelection.Face.Opposite;
         int index = -1;
         System.Diagnostics.Debug.WriteLine(facing.ToString());
         string playerFacing = facing.ToString();

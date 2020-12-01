@@ -296,7 +296,7 @@ public class BETemporalBase : BlockEntityDisplay
             string path = playerStack.Item.Code.Path;
             if (path.Contains("gear-") && !middleSlot.Empty)
             {
-                BlockFacing facing = byPlayer.CurrentBlockSelection.Face.GetOpposite();
+                BlockFacing facing = byPlayer.CurrentBlockSelection.Face.Opposite;
                 string playerFacing = facing.ToString();
 
                 //see what's in the middle slot, cube or lectern
@@ -329,7 +329,7 @@ public class BETemporalBase : BlockEntityDisplay
                     if (index == 0 || index == 1) //middle or top
                     {
                         //try orienting it directly in the inventory
-                        BlockFacing facing = byPlayer.CurrentBlockSelection.Face.GetOpposite();
+                        BlockFacing facing = byPlayer.CurrentBlockSelection.Face.Opposite;
                         string playerFacing = facing.ToString();
                         if (playerFacing != "north" && playerFacing != "south" && playerFacing != "east" && playerFacing != "west")
                             playerFacing = "north";
@@ -352,7 +352,7 @@ public class BETemporalBase : BlockEntityDisplay
 
     private bool TryTake(IPlayer byPlayer, BlockSelection blockSel)
     {
-        BlockFacing facing = byPlayer.CurrentBlockSelection.Face.GetOpposite();
+        BlockFacing facing = byPlayer.CurrentBlockSelection.Face.Opposite;
         int index = -1;
         System.Diagnostics.Debug.WriteLine(facing.ToString());
         string playerFacing = facing.ToString();

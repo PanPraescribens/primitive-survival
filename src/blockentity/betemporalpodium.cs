@@ -124,7 +124,7 @@ public class BETemporallectern : BlockEntityDisplay
                 Block tmpblock = Api.World.BlockAccessor.GetBlock(Pos);
                 string blockFacing = tmpblock.LastCodePart();
 
-                BlockFacing facing = byPlayer.CurrentBlockSelection.Face.GetOpposite();
+                BlockFacing facing = byPlayer.CurrentBlockSelection.Face.Opposite;
                 string playerFacing = facing.ToString();
 
                 if (playerFacing == blockFacing && gearSlot.Empty)
@@ -144,7 +144,7 @@ public class BETemporallectern : BlockEntityDisplay
 
     private bool TryTake(IPlayer byPlayer, BlockSelection blockSel)
     {
-        BlockFacing facing = byPlayer.CurrentBlockSelection.Face.GetOpposite();
+        BlockFacing facing = byPlayer.CurrentBlockSelection.Face.Opposite;
         string playerFacing = facing.ToString();
         Block tmpblock = Api.World.BlockAccessor.GetBlock(Pos);
         string blockFacing = tmpblock.LastCodePart();

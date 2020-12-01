@@ -117,7 +117,7 @@ public class ItemCordage : Item
         if (byEntity is EntityPlayer) byPlayer = byEntity.World.PlayerByUid(((EntityPlayer)byEntity).PlayerUID);
         if (blockSel == null || byEntity.World == null || byPlayer == null) return;
 
-        BlockFacing facing = byPlayer.CurrentBlockSelection.Face.GetOpposite();
+        BlockFacing facing = byPlayer.CurrentBlockSelection.Face.Opposite;
         IBlockAccessor blockAccessor = byEntity.World.BlockAccessor;
         BlockPos currPos = blockSel.Position.Copy();
         bool validStart = ValidEndpoint(blockAccessor, currPos);

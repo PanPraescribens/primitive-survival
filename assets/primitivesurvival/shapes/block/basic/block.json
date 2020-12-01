@@ -1,0 +1,28 @@
+{
+	"editor": {
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+		"portal": "C:/vsmods/mods/primitivesurvival/assets/primitivesurvival/textures/block/portal"
+	},
+	"elements": [
+		{
+			"name": "Cube1",
+			"from": [ 0.0, 0.0, 3.0 ], 
+			"to": [ 16.0, 16.0, 13.0 ], 
+			"rotationOrigin": [ 0.0, 0.0, 3.0 ],
+			"faces": {
+				"north": { "texture": "#portal", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+				"east": { "texture": "#portal", "uv": [ 0.0, 0.0, 10.0, 16.0 ] },
+				"south": { "texture": "#portal", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+				"west": { "texture": "#portal", "uv": [ 0.0, 0.0, 10.0, 16.0 ] },
+				"up": { "texture": "#portal", "uv": [ 0.0, 0.0, 16.0, 10.0 ] },
+				"down": { "texture": "#portal", "uv": [ 0.0, 0.0, 16.0, 10.0 ] }
+			}
+		}
+	]}

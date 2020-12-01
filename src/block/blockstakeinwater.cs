@@ -94,7 +94,7 @@ public class BlockStakeInWater : BlockWaterPlant
     public bool ShouldConnectAt(IWorldAccessor world, BlockPos ownPos, BlockFacing side)
     {
         Block block = world.BlockAccessor.GetBlock(ownPos.AddCopy(side));
-        return block.FirstCodePart() == FirstCodePart() || block.SideSolid[side.GetOpposite().Index];
+        return block.FirstCodePart() == FirstCodePart() || block.SideSolid[side.Opposite.Index];
     }
 
     static string[] OneDir = new string[] { "n", "e", "s", "w" };
