@@ -40,11 +40,6 @@
             "base": "block/monkeybridge/monkeybridge-null",
         }
     },
-    "creativeinventory": {
-        "general": [ "*-middle-north" ],
-        "items": [ "*-middle-north" ],
-        "primitive": [ "*-middle-north" ]
-    },
     "variantgroups": [
         {
             "code": "type",
@@ -59,8 +54,8 @@
     "dropsbytype": {
         "*": [
             {
-                "type": "block",
-                "code": "monkeybridge-middle-north",
+                "type": "item",
+                "code": "monkeybridge",
                 "quantity": { "avg": 1 }
             }
         ]

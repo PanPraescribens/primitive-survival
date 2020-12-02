@@ -46,6 +46,7 @@ namespace primitiveSurvival
             api.RegisterItemClass("itemcordage", typeof(ItemCordage));
             api.RegisterItemClass("itemwoodspikebundle", typeof(ItemWoodSpikeBundle));
             api.RegisterItemClass("itempsgear", typeof(ItemPSGear));
+            api.RegisterItemClass("itemmonkeybridge", typeof(ItemMonkeyBridge));
         }
 
         public override void StartServerSide(ICoreServerAPI Api)

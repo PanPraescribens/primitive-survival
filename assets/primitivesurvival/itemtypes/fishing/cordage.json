@@ -3,6 +3,6 @@
   "class": "itemcordage",
   "texture": { "base": "item/fishing/cordage" },
   "creativeinventory": { "general": ["*"], "items": ["*"], "primitive": ["*"] },
-  "maxstacksize": 32,
+  "maxstacksize": 64,
   "materialDensity": 410
 }

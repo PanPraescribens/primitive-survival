@@ -33,7 +33,7 @@
     "construction": ["*-{material}-down-free"],
     "primitive": ["*-{material}-down-free"]
   },
-  "drops": [{ "code": "steatite-slab-{material}-down-free" }],
+  "drops": [{ "code": "steatiteslab-{material}-down-free" }],
   "shapeByType": {
     "*-snow": { "base": "game:block/basic/slab/snow-slab-{rot}" },
     "*": { "base": "game:block/basic/slab/slab-{rot}" }
