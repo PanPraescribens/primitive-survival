@@ -55,42 +55,57 @@ public class BlockPSStairs : Block
                 else if (facebase == "north") destPos.Z -= 1;
                 else if (facebase == "south") destPos.Z += 1;
 
-                //System.Diagnostics.Debug.WriteLine("facebase: " + facebase);
-                newPath = newPath.Replace("normal", "outside");
-
-                Block testBlock;
-                BlockPos[] neibPos;
-
-                if (facing == "northwest") neibPos = new BlockPos[] { destPos.NorthCopy(), destPos.WestCopy() }; 
-                else if (facing == "northeast")  neibPos = new BlockPos[] { destPos.NorthCopy(), destPos.EastCopy() }; 
-                else if (facing == "southwest")  neibPos = new BlockPos[] { destPos.SouthCopy(), destPos.WestCopy() }; 
-                else neibPos = new BlockPos[] { destPos.SouthCopy(), destPos.EastCopy() }; 
-
-                int ncnt = 0; int scnt = 0; int ecnt = 0; int wcnt = 0;
-                foreach (BlockPos neib in neibPos)
+                if (byPlayer.Entity.Controls.Sneak)
                 {
-                    testBlock = api.World.BlockAccessor.GetBlock(neib);
-                    if (testBlock.BlockId != 0)
-                    {
-                        if (!testBlock.Code.Path.Contains("outside"))
-                        {
-                            if (testBlock.Code.Path.Contains("north")) ncnt++;
-                            if (testBlock.Code.Path.Contains("south")) scnt++;
-                            if (testBlock.Code.Path.Contains("east")) ecnt++;
-                            if (testBlock.Code.Path.Contains("west")) wcnt++;
-                        }
-                    }
+                    newPath = newPath.Replace(horVer, "-sideways");
+                    string newfacing;
+                    if (halfQuarter == 7) newfacing = "north";
+                    else if (halfQuarter == 1) newfacing = "west";
+                    else if (halfQuarter == 5) newfacing = "east";
+                    else if (halfQuarter == 3) newfacing = "south";
+                    else newfacing = facing;
+                    newPath = newPath.Replace(facing, newfacing);
+                }
+                else
+                { 
+                    //System.Diagnostics.Debug.WriteLine("facebase: " + facebase);
+                    newPath = newPath.Replace("normal", "outside");
 
-                    //System.Diagnostics.Debug.WriteLine("nsew: " + ncnt + " " + scnt + " " + ecnt + " " + wcnt);
-                    if (newPath.Contains("northwest")  && (ncnt > scnt || wcnt > ecnt)) newPath = newPath.Replace("outside", "inside");
-                    else if (newPath.Contains("southwest") && (scnt > ncnt || wcnt > ecnt)) newPath = newPath.Replace("outside", "inside");
-                    else if (newPath.Contains("northeast") && (ncnt > scnt || ecnt > wcnt)) newPath = newPath.Replace("outside", "inside");
-                    else if (scnt > ncnt || ecnt > wcnt) newPath = newPath.Replace("outside", "inside");
+                    Block testBlock;
+                    BlockPos[] neibPos;
+
+                    if (facing == "northwest") neibPos = new BlockPos[] { destPos.NorthCopy(), destPos.WestCopy() }; 
+                    else if (facing == "northeast")  neibPos = new BlockPos[] { destPos.NorthCopy(), destPos.EastCopy() }; 
+                    else if (facing == "southwest")  neibPos = new BlockPos[] { destPos.SouthCopy(), destPos.WestCopy() }; 
+                    else neibPos = new BlockPos[] { destPos.SouthCopy(), destPos.EastCopy() }; 
+
+                    int ncnt = 0; int scnt = 0; int ecnt = 0; int wcnt = 0;
+                    foreach (BlockPos neib in neibPos)
+                    {
+                        testBlock = api.World.BlockAccessor.GetBlock(neib);
+                        if (testBlock.BlockId != 0)
+                        {
+                            if (!testBlock.Code.Path.Contains("outside"))
+                            {
+                                if (testBlock.Code.Path.Contains("north")) ncnt++;
+                                if (testBlock.Code.Path.Contains("south")) scnt++;
+                                if (testBlock.Code.Path.Contains("east")) ecnt++;
+                                if (testBlock.Code.Path.Contains("west")) wcnt++;
+                            }
+                        }
+
+                        //System.Diagnostics.Debug.WriteLine("nsew: " + ncnt + " " + scnt + " " + ecnt + " " + wcnt);
+                        if (newPath.Contains("northwest") && (ncnt > scnt || wcnt > ecnt)) newPath = newPath.Replace("outside", "inside");
+                        else if (newPath.Contains("southwest") && (scnt > ncnt || wcnt > ecnt)) newPath = newPath.Replace("outside", "inside");
+                        else if (newPath.Contains("northeast") && (ncnt > scnt || ecnt > wcnt)) newPath = newPath.Replace("outside", "inside");
+                        else if (scnt > ncnt || ecnt > wcnt) newPath = newPath.Replace("outside", "inside");
+                    }
                 }
             }
             blockToPlace = api.World.GetBlock(blockToPlace.CodeWithPath(newPath));
+            System.Diagnostics.Debug.WriteLine(newPath);
             world.BlockAccessor.SetBlock(blockToPlace.BlockId, blockSel.Position);
-            //System.Diagnostics.Debug.WriteLine("placed");
+            
             return true;
         }
         return false;
