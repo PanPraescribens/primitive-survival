@@ -8,7 +8,7 @@ https://www.vintagestory.at/forums/topic/2399-primitive-survival-traps-fishing-a
 
 Version 2.3 updates
 
-to do - add recipe(s) for metal bucket, finish vertical corners and metal bucket
+to do - add recipe(s) for metal bucket, and finish metal bucket - fix invisible blocks on Monkey Bridge (on break)
 
 Version 2.2 updates
 
