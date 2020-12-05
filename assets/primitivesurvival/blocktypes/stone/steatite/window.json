@@ -40,7 +40,7 @@
     "primitive": ["*-{material}-north"]
   },
   "replaceable": 700,
-  "resistance": 2,
+  "resistance": 3,
   "lightAbsorption": 99,
   "textures": {
     "horizontal": {

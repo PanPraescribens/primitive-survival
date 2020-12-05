@@ -1,38 +1,38 @@
 {
-  "code": "steatitestairs",
-  "class": "blockpsstairs",
-  "variantgroups": [
-    {
-      "code": "material",
-      "states": ["temporal", "astral", "ethereal"]
-    },
-    {
-      "code": "type",
-      "states": ["normal", "inside", "outside"]
-    },
-    {
-      "code": "updown",
-      "states": ["up", "down", "sideways"]
-    },
+    "code": "steatitestairs",
+    "class": "blockpsstairs",
+    "variantgroups": [
+        {
+            "code": "material",
+            "states": [ "temporal", "astral", "ethereal" ]
+        },
+        {
+            "code": "type",
+            "states": [ "normal", "inside", "outside" ]
+        },
+        {
+            "code": "updown",
+            "states": [ "up", "down", "sideways" ]
+        },
 
-    {
-      "code": "dir",
-      "states": [
-        "north",
-        "northeast",
-        "east",
-        "southeast",
-        "south",
-        "southwest",
-        "west",
-        "northwest"
-      ]
-    },
-    {
-      "code": "cover",
-      "states": ["free", "snow"]
-    }
-  ],
+        {
+            "code": "dir",
+            "states": [
+                "north",
+                "northeast",
+                "east",
+                "southeast",
+                "south",
+                "southwest",
+                "west",
+                "northwest"
+            ]
+        },
+        {
+            "code": "cover",
+            "states": [ "free", "snow" ]
+        }
+    ],
     "skipVariants": [
         "*-down-north-snow",
         "*-down-east-snow",
@@ -51,168 +51,184 @@
         "*-sideways-southwest-snow",
         "*-sideways-northwestwest-snow"
     ],
-  "attributes": {
-    "canChisel": true,
-    "chiselShapeFromCollisionBox": true,
-    "partialAttachable": true
-  },
-  "creativeinventory": {
-    "general": ["*-{material}-normal-up-north-free"],
-    "construction": ["*-{material}-normal-up-north-free"],
-    "primitive": ["*-{material}-normal-up-north-free"]
-  },
-  "sidesolidByType": {
-    "*-up-north-*": {
-      "all": false,
-      "down": true,
-      "north": true
+    "attributes": {
+        "canChisel": true,
+        "chiselShapeFromCollisionBox": true,
+        "partialAttachable": true
     },
-    "*-up-west-*": {
-      "all": false,
-      "down": true,
-      "west": true
+    "creativeinventory": {
+        "general": [ "*-{material}-normal-up-north-free" ],
+        "construction": [ "*-{material}-normal-up-north-free" ],
+        "primitive": [ "*-{material}-normal-up-north-free" ]
     },
-    "*-up-south-*": {
-      "all": false,
-      "down": true,
-      "south": true
+    "drops": [
+        {
+            "type": "block",
+            "code": "steatitestairs-{material}-normal-up-north-free",
+            "quantity": { "avg": 1 }
+        }
+    ],
+    "blockmaterial": "Stone",
+    "replaceable": 700,
+    "resistance": 3,
+    "sidesolidByType": {
+        "*-up-north-*": {
+            "all": false,
+            "down": true,
+            "north": true
+        },
+        "*-up-west-*": {
+            "all": false,
+            "down": true,
+            "west": true
+        },
+        "*-up-south-*": {
+            "all": false,
+            "down": true,
+            "south": true
+        },
+        "*-up-east-*": {
+            "all": false,
+            "down": true,
+            "east": true
+        },
+        "*-up-northwest-*": {
+            "all": false,
+            "down": true,
+            "north": true,
+            "west": true
+        },
+        "*-up-southwest-*": {
+            "all": false,
+            "down": true,
+            "south": true,
+            "west": true
+        },
+        "*-up-southeast-*": {
+            "all": false,
+            "down": true,
+            "south": true,
+            "east": true
+        },
+        "*-up-northeast-*": {
+            "all": false,
+            "down": true,
+            "north": true,
+            "east": true
+        },
+        "*-down-north-free": {
+            "all": false,
+            "up": true,
+            "north": true
+        },
+        "*-down-south-free": {
+            "all": false,
+            "up": true,
+            "south": true
+        },
+        "*-down-west-free": {
+            "all": false,
+            "up": true,
+            "west": true
+        },
+        "*-down-east-free": {
+            "all": false,
+            "up": true,
+            "east": true
+        },
+        "*-down-northwest-free": {
+            "all": false,
+            "up": true,
+            "north": true
+        },
+        "*-down-southeast-free": {
+            "all": false,
+            "up": true,
+            "south": true
+        },
+        "*-down-southwest-free": {
+            "all": false,
+            "up": true,
+            "west": true
+        },
+        "*-down-northeast-free": {
+            "all": false,
+            "up": true,
+            "east": true
+        },
+        "*-sideways-*": {
+            "all": false
+        }
     },
-    "*-up-east-*": {
-      "all": false,
-      "down": true,
-      "east": true
+    "sideopaqueByType": {
+        "*-up-north-*": {
+            "all": false,
+            "down": true
+        },
+        "*-up-west-*": {
+            "all": false,
+            "down": true
+        },
+        "*-up-south-*": {
+            "all": false,
+            "down": true
+        },
+        "*-up-east-*": {
+            "all": false,
+            "down": true
+        },
+        "*-up-northwest-*": {
+            "all": false,
+            "down": true
+        },
+        "*-up-southwest-*": {
+            "all": false,
+            "down": true
+        },
+        "*-up-southeast-*": {
+            "all": false,
+            "down": true
+        },
+        "*-up-northeast-*": {
+            "all": false,
+            "down": true
+        },
+        "*-down-north-free": {
+            "all": false,
+            "up": true
+        },
+        "*-down-south-free": {
+            "all": false,
+            "up": true
+        },
+        "*-down-west-free": {
+            "all": false,
+            "up": true
+        },
+        "*-down-east-free": {
+            "all": false,
+            "up": true
+        },
+        "*-down-northwest-free": {
+            "all": false,
+            "up": true
+        },
+        "*-down-southwest-free": {
+            "all": false,
+            "up": true
+        },
+        "*-down-southeast-free": {
+            "all": false,
+            "up": true
+        },
+        "*-down-northeast-free": {
+            "all": false,
+            "up": true
+        },
+        "*-sideways-*": {
+            "all": false
+        }
     },
-    "*-up-northwest-*": {
-      "all": false,
-      "down": true,
-      "north": true,
-      "west": true
-    },
-    "*-up-southwest-*": {
-      "all": false,
-      "down": true,
-      "south": true,
-      "west": true
-    },
-    "*-up-southeast-*": {
-      "all": false,
-      "down": true,
-      "south": true,
-      "east": true
-    },
-    "*-up-northeast-*": {
-      "all": false,
-      "down": true,
-      "north": true,
-      "east": true
-    },
-    "*-down-north-free": {
-      "all": false,
-      "up": true,
-      "north": true
-    },
-    "*-down-south-free": {
-      "all": false,
-      "up": true,
-      "south": true
-    },
-    "*-down-west-free": {
-      "all": false,
-      "up": true,
-      "west": true
-    },
-    "*-down-east-free": {
-      "all": false,
-      "up": true,
-      "east": true
-    },
-    "*-down-northwest-free": {
-      "all": false,
-      "up": true,
-      "north": true
-    },
-    "*-down-southeast-free": {
-      "all": false,
-      "up": true,
-      "south": true
-    },
-    "*-down-southwest-free": {
-      "all": false,
-      "up": true,
-      "west": true
-    },
-    "*-down-northeast-free": {
-      "all": false,
-      "up": true,
-      "east": true
-    }
-  },
-  "sideopaqueByType": {
-    "*-up-north-*": {
-      "all": false,
-      "down": true
-    },
-    "*-up-west-*": {
-      "all": false,
-      "down": true
-    },
-    "*-up-south-*": {
-      "all": false,
-      "down": true
-    },
-    "*-up-east-*": {
-      "all": false,
-      "down": true
-    },
-    "*-up-northwest-*": {
-      "all": false,
-      "down": true
-    },
-    "*-up-southwest-*": {
-      "all": false,
-      "down": true
-    },
-    "*-up-southeast-*": {
-      "all": false,
-      "down": true
-    },
-    "*-up-northeast-*": {
-      "all": false,
-      "down": true
-    },
-    "*-down-north-free": {
-      "all": false,
-      "up": true
-    },
-    "*-down-south-free": {
-      "all": false,
-      "up": true
-    },
-    "*-down-west-free": {
-      "all": false,
-      "up": true
-    },
-    "*-down-east-free": {
-      "all": false,
-      "up": true
-    },
-    "*-down-northwest-free": {
-      "all": false,
-      "up": true
-    },
-    "*-down-southwest-free": {
-      "all": false,
-      "up": true
-    },
-    "*-down-southeast-free": {
-      "all": false,
-      "up": true
-    },
-    "*-down-northeast-free": {
-      "all": false,
-      "up": true
-    }
-  },
     "shapebytype": {
         "*-normal-up-north-free": {
             "base": "game:block/basic/stairs/normal",
@@ -380,29 +396,29 @@
             "rotateY": 90
         }
     },
-  "blockmaterial": "Stone",
-  "textures": {
-    "horizontals": {
-      "base": "primitivesurvival:block/stone/steatite/stairs/side-{material}"
+
+    "textures": {
+        "horizontals": {
+            "base": "primitivesurvival:block/stone/steatite/stairs/side-{material}"
+        },
+        "up": {
+            "base": "primitivesurvival:block/stone/steatite/stairs/top-{material}"
+        },
+        "down": {
+            "base": "primitivesurvival:block/stone/steatite/stairs/bottom-{material}"
+        }
     },
-    "up": {
-        "base": "primitivesurvival:block/stone/steatite/stairs/top-{material}"
+
+    "emitSideAo": { "all": true },
+    "sounds": {
+        "walk": "game:walk/stone",
+        "byTool": {
+            "Pickaxe": {
+                "hit": "game:block/rock-hit-pickaxe",
+                "break": "game:block/rock-break-pickaxe"
+            }
+        }
     },
-    "down": {
-      "base": "primitivesurvival:block/stone/steatite/stairs/bottom-{material}"
-    }
-  },
-  "resistance": 3,
-  "emitSideAo": { "all": true },
-  "sounds": {
-    "walk": "game:walk/stone",
-    "byTool": {
-      "Pickaxe": {
-        "hit": "game:block/rock-hit-pickaxe",
-        "break": "game:block/rock-break-pickaxe"
-      }
-    }
-  },
     "collisionSelectionBoxesByType": {
         "*normal-down-*": [
             {
@@ -456,16 +472,22 @@
             {
                 "x1": 0,
                 "y1": 0,
-                "z1": 0,
+                "z1": 0.5,
                 "x2": 1,
                 "y2": 0.5,
                 "z2": 1,
+                "rotateYByType": {
+                    "*-north-*": 0,
+                    "*-east-*": 270,
+                    "*-south-*": 180,
+                    "*-west-*": 90
+                },
                 "rotateZ": 90
             },
             {
                 "x1": 0,
                 "y1": 0.5,
-                "z1": 0.5,
+                "z1": 0,
                 "x2": 1,
                 "y2": 1,
                 "z2": 1,
@@ -603,19 +625,19 @@
             }
         ]
     },
-  "heldTpIdleAnimation": "holdbothhandslarge",
-  "heldTpUseAnimation": "twohandplaceblock",
-  "tpHandTransform": {
-    "translation": {
-      "x": -1.2,
-      "y": -1.1,
-      "z": -0.8
-    },
-    "rotation": {
-      "x": -2,
-      "y": 25,
-      "z": -78
-    },
-    "scale": 0.37
-  }
+    "heldTpIdleAnimation": "holdbothhandslarge",
+    "heldTpUseAnimation": "twohandplaceblock",
+    "tpHandTransform": {
+        "translation": {
+            "x": -1.2,
+            "y": -1.1,
+            "z": -0.8
+        },
+        "rotation": {
+            "x": -2,
+            "y": 25,
+            "z": -78
+        },
+        "scale": 0.37
+    }
 }
