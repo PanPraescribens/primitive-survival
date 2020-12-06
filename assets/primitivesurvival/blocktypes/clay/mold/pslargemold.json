@@ -112,7 +112,7 @@
     "rotateY": 90
   },
   "sounds": {
-    "walk": "walk/stone"
+    "walk": "game:walk/stone1"
   },
   "collisionboxByType": {
     "*spikeplate": {

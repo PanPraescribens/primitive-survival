@@ -20,8 +20,8 @@
   "resistance": 0.75,
   "requiredminingtier": 0,
   "sounds": {
-    "place": "game:walk/stone",
-    "walk": "game:walk/stone"
+    "place": "game:walk/stone1",
+    "walk": "game:walk/stone1"
   },
   "collisionBoxesByType": {
     "*-tripped-*": [

@@ -49,7 +49,7 @@
     "vertical": { "base": "block/stone/steatite/window/{material}-vertical" }
   },
   "sounds": {
-    "walk": "game:walk/stone",
+    "walk": "game:walk/stone1",
     "byTool": {
       "Pickaxe": {
         "hit": "game:block/rock-hit-pickaxe",

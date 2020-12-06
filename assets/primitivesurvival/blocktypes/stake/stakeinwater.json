@@ -642,8 +642,8 @@
   },
   "requiredminingtier": 0,
   "sounds": {
-    "place": "game:walk/planks",
-    "walk": "game:walk/planks"
+    "place": "game:block/water",
+    "walk": "game:block/water"
   },
   "textures": {
     "woodmaterial": {

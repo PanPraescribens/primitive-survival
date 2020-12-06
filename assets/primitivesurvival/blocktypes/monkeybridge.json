@@ -247,8 +247,8 @@
     "resistance": 0.75,
     "requiredminingtier": 0,
     "sounds": {
-        "place": "game:walk/planks",
-        "walk": "game:walk/planks"
+        "place": "game:block/snow",
+        "walk": "game:walk/default1"
     },
     "texturesByType": {
         "*": {

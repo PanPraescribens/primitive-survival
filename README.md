@@ -6,9 +6,15 @@ Documentation and latest download moved here:
 
 https://www.vintagestory.at/forums/topic/2399-primitive-survival-traps-fishing-and-other-surprises/
 
-Version 2.3 updates
+Version 2.3 updates (wip)
 
-to do - add recipe(s) for metal bucket, and finish metal bucket - fix invisible blocks on Monkey Bridge (on break)
+- fixed monkey bridge drops and break weirdness
+- fixed sounds for everything
+- fixed steatite stair placement etc (as per Better Stairs mod)
+
+to do 
+
+- add recipe(s) for metal bucket, and finish metal bucket
 
 Version 2.2 updates
 
