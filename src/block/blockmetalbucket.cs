@@ -9,6 +9,7 @@ using Vintagestory.API.MathTools;
 using Vintagestory.API.Util;
 using Vintagestory.GameContent;
 
+
 public class BlockMetalBucket : BlockLiquidContainerBase
 {
     
@@ -52,30 +53,6 @@ public class BlockMetalBucket : BlockLiquidContainerBase
                 return;
             }
         }
-        else if (bucketPath.Contains("-filled")) //full bucket?
-        {
-            if (api.World.Side == EnumAppSide.Server)
-            {
-                Block newblock = byEntity.World.GetBlock(new AssetLocation("primitivesurvival:" + bucketPath.Replace("-filled", "-empty")));
-                ItemStack newStack = new ItemStack(newblock);
-                slot.TakeOut(1);
-                slot.MarkDirty();
-
-                if (!byEntity.TryGiveItemStack(newStack))
-                {
-                    api.World.SpawnItemEntity(newStack, byEntity.Pos.XYZ.AddCopy(0, 0.5, 0));
-                }
-
-                newblock = byEntity.World.GetBlock(new AssetLocation("lava-still-7"));
-                BlockPos targetPos;
-                if (block.IsLiquid()) targetPos = pos;
-                else targetPos = blockSel.Position.AddCopy(blockSel.Face);
-                api.World.BlockAccessor.SetBlock(newblock.BlockId, targetPos); //put lava above
-                api.World.BlockAccessor.MarkBlockDirty(targetPos); //let the server know the lava's there
-            }
-            handHandling = EnumHandHandling.PreventDefault;
-            return;
-        }
         else base.OnHeldInteractStart(slot, byEntity, blockSel, entitySel, firstEvent, ref handHandling);
     }
 
@@ -87,7 +64,8 @@ public class BlockMetalBucket : BlockLiquidContainerBase
         bool val = base.DoPlaceBlock(world, byPlayer, blockSel, byItemStack);
         if (val)
         {
-            BlockEntityBucket bect = world.BlockAccessor.GetBlockEntity(blockSel.Position) as BlockEntityBucket;
+            //BlockEntityBucket bect = world.BlockAccessor.GetBlockEntity(blockSel.Position) as BlockEntityBucket;
+            BEMetalBucket bect = world.BlockAccessor.GetBlockEntity(blockSel.Position) as BEMetalBucket;
             if (bect != null)
             {
                 BlockPos targetPos = blockSel.DidOffset ? blockSel.Position.AddCopy(blockSel.Face.Opposite) : blockSel.Position;
@@ -169,7 +147,7 @@ public class BlockMetalBucket : BlockLiquidContainerBase
 
     public MeshData GenMesh(ICoreClientAPI capi, ItemStack contentStack, BlockPos forBlockPos = null)
     {
-        Shape shape = capi.Assets.TryGet("game:shapes/block/wood/bucket/empty.json").ToObject<Shape>();
+        Shape shape = capi.Assets.TryGet("primitivesurvival:shapes/block/metalbucket/empty.json").ToObject<Shape>();
         MeshData bucketmesh;
         capi.Tesselator.TesselateShape(this, shape, out bucketmesh);
 
@@ -310,9 +288,9 @@ public class BlockMetalBucket : BlockLiquidContainerBase
             }
 
         }
-
         return dsc.ToString();
     }
+      
 }
 
 

@@ -5,18 +5,10 @@ using System;
 
 public class BlockMonkeyBridge : Block
 {
-    /*
-    public override void OnBlockBroken(IWorldAccessor world, BlockPos pos, IPlayer player, 1f)
-    {
-        base.OnBlockBroken(world, pos, player, 1f);
-    }
-    */
-
     public void BreakAbove(IWorldAccessor world, BlockPos neibpos)
     {
 
         Block block = world.BlockAccessor.GetBlock(neibpos.UpCopy());
-        //System.Diagnostics.Debug.WriteLine(block.Code.Path);
         if (block.FirstCodePart() == "monkeybridge" && block.FirstCodePart(1) == "null")
             world.BlockAccessor.SetBlock(0, neibpos.UpCopy());  //remove the null block with no drop
     }
@@ -26,11 +18,7 @@ public class BlockMonkeyBridge : Block
 
         Block block = world.BlockAccessor.GetBlock(neibpos);
         Block thisblock = world.BlockAccessor.GetBlock(pos);
-        //BreakAbove(world, neibpos);
-
         float dropQty;
-
-        
 
         if (block.BlockId <= 0) //block removed
         {
@@ -79,7 +67,6 @@ public class BlockMonkeyBridge : Block
                 BreakAbove(world, neibpos.DownCopy());
             }
         }
-        // base.OnNeighbourBlockChange(world, pos, neibpos);
     }
 
     public override void OnEntityCollide(IWorldAccessor world, Entity entity, BlockPos pos, BlockFacing facing, Vec3d collideSpeed, bool isImpact)

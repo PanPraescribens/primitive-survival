@@ -1,14 +1,31 @@
 {
     "code": "metalbucket",
-    "class": "blockmetalbucket",
-    "entityClass": "Bucket",
-    "behaviors": [
-       { "name": "RightClickPickup" }
-    ],
-    "attributes": {
-        "liquidcontainer": true,
-        "capacityLitres": 10,
-        "canhold": [ "water-*" ]
+    "classByType": {
+        "*-empty": "blockmetalbucket",
+        "*-filled": "blockmetalbucketfilled"
+    },
+
+    "entityClassByType": {
+        "*-empty": "bemetalbucket"
+      
+    },
+    "behaviorsbyType": {
+        "*-empty": [
+            { "name": "UnstableFalling" },
+            { "name": "RightClickPickup" },
+            { "name": "MilkingContainer" },
+        ],
+        "*-filled": [
+            { "name": "UnstableFalling" },
+            { "name": "RightClickPickup" }
+        ]
+    },
+    "attributesByType": {
+        "*-empty": {
+            "liquidcontainer": true,
+            "capacityLitres": 10,
+            "canhold": [ "water-*" ]
+        }
     },
     "creativeinventory": {
         "general": [ "metalbucket-empty" ],
@@ -32,25 +49,26 @@
     "sideopaque": {
         "all": false
     },
-    "blockmaterial": "Wood",
+    "blockmaterial": "Metal",
     "textures": {
         "sides": { "base": "block/metalbucket/sides" },
         "inner side": { "base": "block/metalbucket/inner side" },
-        "contents": { "base": "block/metalbucket/lava" }
+        "contents": { "base": "block/metalbucket/lava" },
+        "normal1": { "base": "block/metalbucket/sides" },
+        "honeyportion": { "base": "game:block/liquid/honey" }
     },
     "replaceable": 500,
     "resistance": 1.5,
-    "liquidSelectable": 1,
+    "liquidSelectable": true,
     "lightAbsorption": 0,
     "maxstacksizebytype": {
-        "*-empty": 16,
-        "*-filled": 1
+        "*": 1
     },
     "sounds": {
-        "place": "block/planks",
-        "hit": "block/planks",
-        "break": "block/planks",
-        "walk": "walk/wood"
+        "place": "game:block/plate",
+        "hit": "game:block/plate",
+        "break": "game:block/plate",
+        "walk": "game:block/plate"
     },
     "collisionbox": {
         "x1": 0.25,
