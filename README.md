@@ -11,10 +11,11 @@ Version 2.3 updates (wip)
 - fixed monkey bridge drops and break weirdness
 - fixed sounds for everything
 - fixed steatite stair placement etc (as per Better Stairs mod)
+- metal bucket more or less complete
 
 to do 
 
-- add recipe(s) for metal bucket, and finish metal bucket
+- fix bug that allows you to stomp over a stake in water
 
 Version 2.2 updates
 
