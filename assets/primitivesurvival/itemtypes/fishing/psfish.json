@@ -1,0 +1,419 @@
+{
+    "code": "psfish",
+    "maxstacksize": 16,
+    "attributes": {
+        "inFirePitProps": {
+            "transformbytype": {
+                "*pike*": {
+                    "scale": 0.95,
+                    "origin": {
+                        "x": 0.5,
+                        "y": 0,
+                        "z": 0.5
+                    },
+                    "translation": {
+                        "x": -0.37,
+                        "y": 0.3,
+                        "z": -0.03
+                    },
+                    "rotation": {
+                        "x": 90,
+                        "y": 0,
+                        "z": 120
+                    }
+                },
+                "*bluegill*": {
+                    "scale": 1.3,
+                    "origin": {
+                        "x": 0.5,
+                        "y": 0,
+                        "z": 0.5
+                    },
+                    "translation": {
+                        "x": -0.3,
+                        "y": 0.35,
+                        "z": -0.04
+                    },
+                    "rotation": {
+                        "x": 90,
+                        "y": 0,
+                        "z": 120
+                    }
+                },
+                "*arcticchar*": {
+                    "scale": 0.9,
+                    "origin": {
+                        "x": 0.5,
+                        "y": 0,
+                        "z": 0.5
+                    },
+                    "translation": {
+                        "x": -0.4,
+                        "y": 0.27,
+                        "z": -0.03
+                    },
+                    "rotation": {
+                        "x": 90,
+                        "y": 0,
+                        "z": 117
+                    }
+                },
+                "*catfish*": {
+                    "scale": 0.9,
+                    "origin": {
+                        "x": 0.5,
+                        "y": 0,
+                        "z": 0.5
+                    },
+                    "translation": {
+                        "x": -0.6,
+                        "y": 0.3,
+                        "z": -0.05
+                    },
+                    "rotation": {
+                        "x": 90,
+                        "y": 0,
+                        "z": 117
+                    }
+                },
+                "*": {
+                    "scale": 0.85,
+                    "origin": {
+                        "x": 0.5,
+                        "y": 0,
+                        "z": 0.5
+                    },
+                    "translation": {
+                        "x": -0.4,
+                        "y": 0.3,
+                        "z": -0.03
+                    },
+                    "rotation": {
+                        "x": 90,
+                        "y": 0,
+                        "z": 120
+                    }
+                }
+            },
+            "useFirepitModel": "Spit"
+        },
+        "nutritionPropsWhenInMeal": {
+            "satiety": 280,
+            "foodcategory": "Protein"
+        }
+    },
+    "variantgroups": [
+        {
+            "code": "type",
+            "states": [ "trout", "bass", "pike", "arcticchar", "catfish", "bluegill", "mutant" ]
+        },
+        {
+            "code": "state",
+            "states": [ "raw", "cooked" ]
+        }
+    ],
+    "shape": { "base": "item/fishing/fish-{type}" },
+    "texturesbytype": {
+        "*": {
+            "troutmaterial": { "base": "item/fishing/fish-{type}-{state}" },
+            "bassmaterial": { "base": "item/fishing/fish-{type}-{state}" },
+            "pikematerial": { "base": "item/fishing/fish-{type}-{state}" },
+            "arcticcharmaterial": { "base": "item/fishing/fish-{type}-{state}" },
+            "catfishmaterial": { "base": "item/fishing/fish-{type}-{state}" },
+            "bluegillmaterial": { "base": "item/fishing/fish-{type}-{state}" },
+            "mutantmaterial": { "base": "item/fishing/fish-{type}-{state}" }
+        }
+    },
+    "creativeinventory": {
+        "general": [ "*" ],
+        "items": [ "*" ],
+        "primitive": [ "*" ]
+    },
+    "nutritionPropsByType": {
+        "*catfish-cooked": {
+            "satiety": 300,
+            "foodcategory": "Protein"
+        },
+        "*bluegill-cooked": {
+            "satiety": 200,
+            "foodcategory": "Protein"
+        },
+        "*mutant-cooked": {
+            "satiety": 100,
+            "foodcategory": "Protein"
+        },
+        "*-cooked": {
+            "satiety": 240,
+            "foodcategory": "Protein"
+        }
+    },
+    "materialDensity": 150,
+
+    "guiTransformByType": {
+        "*bluegill*": {
+            "translation": {
+                "x": 3,
+                "y": 0.9,
+                "z": -2.1
+            },
+            "rotation": {
+                "x": 134,
+                "y": -12,
+                "z": -14
+            },
+            "origin": {
+                "x": 0.54,
+                "y": -0.36,
+                "z": 0.54
+            },
+            "scale": 3.22
+        },
+        "*catfish*": {
+            "translation": {
+                "x": 7,
+                "y": -0.5,
+                "z": 3
+            },
+            "rotation": {
+                "x": 134,
+                "y": -12,
+                "z": -14
+            },
+            "origin": {
+                "x": 0.34,
+                "y": -0.66,
+                "z": 0.44
+            },
+            "scale": 2.02
+        },
+        "*arcticchar*": {
+            "translation": {
+                "x": 5,
+                "y": 1,
+                "z": 0
+            },
+            "rotation": {
+                "x": 134,
+                "y": -12,
+                "z": -14
+            },
+            "origin": {
+                "x": 0.34,
+                "y": -0.46,
+                "z": 0.44
+            },
+            "scale": 2.22
+        },
+        "*mutant-*": {
+            "translation": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "rotation": {
+                "x": 134,
+                "y": -12,
+                "z": -14
+            },
+            "origin": {
+                "x": 0.34,
+                "y": -0.46,
+                "z": 0.44
+            },
+            "scale": 2.0
+        },
+        "*": {
+            "translation": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "rotation": {
+                "x": 134,
+                "y": -12,
+                "z": -14
+            },
+            "origin": {
+                "x": 0.34,
+                "y": -0.46,
+                "z": 0.44
+            },
+            "scale": 2.22
+        }
+    },
+
+    "fpHandTransformByType": {
+        "*catfish*": {
+            "translation": {
+                "x": 0.9,
+                "y": -0.3,
+                "z": 0.1
+            },
+            "rotation": {
+                "x": -1,
+                "y": 61,
+                "z": -71
+            },
+            "origin": {
+                "x": -0.55,
+                "y": 1.9,
+                "z": 0.2
+            },
+            "scale": 1.13
+        },
+        "*bluegill*": {
+            "translation": {
+                "x": 0.8,
+                "y": -0.1,
+                "z": 0
+            },
+            "rotation": {
+                "x": -1,
+                "y": 65,
+                "z": -71
+            },
+            "origin": {
+                "x": -0.5,
+                "y": 1.6,
+                "z": 0.2
+            },
+            "scale": 1.34
+        },
+        "*": {
+            "translation": {
+                "x": 0.7,
+                "y": 0,
+                "z": 0
+            },
+            "rotation": {
+                "x": -1,
+                "y": 65,
+                "z": -71
+            },
+            "origin": {
+                "x": -0.5,
+                "y": 1.6,
+                "z": 0.2
+            },
+            "scale": 1.34
+        }
+    },
+
+    "tpHandTransformByType": {
+        "*catfish*": {
+            "translation": {
+                "x": -1.8,
+                "y": -0.9,
+                "z": -0.5
+            },
+            "rotation": {
+                "x": 0,
+                "y": 3,
+                "z": -103
+            },
+            "origin": {
+                "x": 0.6,
+                "y": 0.1,
+                "z": 0.5
+            },
+            "scale": 0.8
+        },
+        "*bluegill*": {
+            "translation": {
+                "x": -1.3,
+                "y": -0.3,
+                "z": -0.75
+            },
+            "rotation": {
+                "x": -5,
+                "y": -5,
+                "z": -103
+            },
+            "origin": {
+                "x": 0.5,
+                "y": 0.1,
+                "z": 0.5
+            },
+            "scale": 0.72
+        },
+        "*": {
+            "translation": {
+                "x": -1.4,
+                "y": -0.5,
+                "z": -0.35
+            },
+            "rotation": {
+                "x": 0,
+                "y": 28,
+                "z": -103
+            },
+            "origin": {
+                "x": 0.5,
+                "y": 0.1,
+                "z": 0.5
+            },
+            "scale": 0.72
+        }
+    },
+
+    "groundTransformByType": {
+        "*": {
+            "translation": {
+                "x": 0,
+                "y": 0.2,
+                "z": 0
+            },
+            "rotation": {
+                "x": 0,
+                "y": -2,
+                "z": -56
+            },
+            "origin": {
+                "x": 0.5,
+                "y": 0,
+                "z": 0.5
+            },
+            "scale": 4
+        }
+    },
+
+    "combustiblePropsByType": {
+        "*-raw": {
+            "meltingPoint": 150,
+            "meltingDuration": 30,
+            "smeltedRatio": 1,
+            "smeltingType": "cook",
+            "smeltedStack": {
+                "type": "item",
+                "code": "psfish-{type}-cooked"
+            },
+            "requiresContainer": false
+        }
+    },
+    "transitionablePropsByType": {
+        "*-cooked": [
+            {
+                "type": "Perish",
+                "freshHours": { "avg": 120 },
+                "spoilHours": { "avg": 36 },
+                "transitionedStack": {
+                    "type": "item",
+                    "code": "game:rot"
+                },
+                "transitionRatio": 1
+            }
+        ],
+        "*-raw": [
+            {
+                "type": "Perish",
+                "freshHours": { "avg": 48 },
+                "spoilHours": { "avg": 12 },
+                "transitionedStack": {
+                    "type": "item",
+                    "code": "game:rot"
+                },
+                "transitionRatio": 1
+            }
+        ]
+    }
+}
