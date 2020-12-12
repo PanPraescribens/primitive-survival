@@ -11,7 +11,7 @@ Version 2.3 updates (wip)
 - fixed monkey bridge drops and break weirdness
 - fixed sounds for everything
 - fixed steatite stair placement etc (as per Better Stairs mod)
-- metal bucket more or less complete
+- New: metal bucket more or less complete - smithing recipes for handles, recipes for buckets
 
 to do 
 
