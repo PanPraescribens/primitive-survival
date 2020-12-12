@@ -67,7 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="assets\primitivesurvival\" />
-    <Folder Include="src\blockbehavior\" />
+    <Folder Include="src\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

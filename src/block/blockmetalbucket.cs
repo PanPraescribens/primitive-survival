@@ -12,7 +12,12 @@ using Vintagestory.GameContent;
 
 public class BlockMetalBucket : BlockLiquidContainerBase
 {
-    
+
+    public override float CapacityLitres { 
+        get  { return 10; } 
+    }
+
+
     public override bool TryPlaceBlock(IWorldAccessor world, IPlayer byPlayer, ItemStack itemstack, BlockSelection blockSel, ref string failureCode)
     {
         if (byPlayer.Entity.Controls.Sneak) //sneak place only
@@ -22,7 +27,6 @@ public class BlockMetalBucket : BlockLiquidContainerBase
         return false;
     }
 
-   
 
     public override void OnHeldInteractStart(ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, bool firstEvent, ref EnumHandHandling handHandling)
     {
@@ -31,7 +35,12 @@ public class BlockMetalBucket : BlockLiquidContainerBase
         string bucketPath = slot.Itemstack.Block.Code.Path;
         BlockPos pos = blockSel.Position;
         Block block = byEntity.World.BlockAccessor.GetBlock(pos);
-        if (block.Code.Path.Contains("lava-") && bucketPath.Contains("-empty")) //lava block and empty bucket?
+
+        
+        ItemStack contentStack = GetContent(byEntity.World, slot.Itemstack);
+        //System.Diagnostics.Debug.WriteLine("interact");
+
+        if (block.Code.Path.Contains("lava-") && bucketPath.Contains("-empty") && contentStack == null) //lava block and empty bucket?
         {
             if (block.Code.Path.Contains("-7")) //lots of lava?
             {
@@ -50,21 +59,23 @@ public class BlockMetalBucket : BlockLiquidContainerBase
                     api.World.BlockAccessor.MarkBlockDirty(pos); //let the server know the lava's gone
                 }
                 handHandling = EnumHandHandling.PreventDefault;
+                if (byEntity as EntityPlayer != null)  //bucket scooping lava animation
+                    if ((byEntity as EntityPlayer).Player as IClientPlayer !=null)
+                        ((byEntity as EntityPlayer).Player as IClientPlayer).TriggerFpAnimation(EnumHandInteract.HeldItemInteract);
+
+
                 return;
             }
         }
         else base.OnHeldInteractStart(slot, byEntity, blockSel, entitySel, firstEvent, ref handHandling);
     }
 
-    public override float CapacityLitres
-    { get { return 10; } }
 
     public override bool DoPlaceBlock(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel, ItemStack byItemStack)
     {
         bool val = base.DoPlaceBlock(world, byPlayer, blockSel, byItemStack);
         if (val)
         {
-            //BlockEntityBucket bect = world.BlockAccessor.GetBlockEntity(blockSel.Position) as BlockEntityBucket;
             BEMetalBucket bect = world.BlockAccessor.GetBlockEntity(blockSel.Position) as BEMetalBucket;
             if (bect != null)
             {
@@ -84,38 +95,31 @@ public class BlockMetalBucket : BlockLiquidContainerBase
 
     public override void OnBeforeRender(ICoreClientAPI capi, ItemStack itemstack, EnumItemRenderTarget target, ref ItemRenderInfo renderinfo)
     {
+        base.OnBeforeRender(capi, itemstack, target, ref renderinfo);
         Dictionary<int, MeshRef> meshrefs = null;
-
         object obj;
-        if (capi.ObjectCache.TryGetValue("bucketMeshRefs", out obj))
+        if (capi.ObjectCache.TryGetValue(this.Code.Path + "MeshRefs", out obj))
         {
             meshrefs = obj as Dictionary<int, MeshRef>;
         }
         else
         {
-            capi.ObjectCache["bucketMeshRefs"] = meshrefs = new Dictionary<int, MeshRef>();
+            capi.ObjectCache[this.Code.Path + "MeshRefs"] = meshrefs = new Dictionary<int, MeshRef>();
         }
+        
 
         ItemStack contentStack = GetContent(capi.World, itemstack);
         if (contentStack == null) return;
-
         int hashcode = GetBucketHashCode(capi.World, contentStack);
-
         MeshRef meshRef = null;
 
         if (!meshrefs.TryGetValue(hashcode, out meshRef))
         {
             MeshData meshdata = GenMesh(capi, contentStack);
-            //meshdata.Rgba2 = null;
-
-
             meshrefs[hashcode] = meshRef = capi.Render.UploadMesh(meshdata);
-
         }
-
         renderinfo.ModelRef = meshRef;
     }
-
 
 
     public int GetBucketHashCode(IClientWorldAccessor world, ItemStack contentStack)
@@ -125,40 +129,38 @@ public class BlockMetalBucket : BlockLiquidContainerBase
     }
 
 
-
     public override void OnUnloaded(ICoreAPI api)
     {
         ICoreClientAPI capi = api as ICoreClientAPI;
         if (capi == null) return;
 
         object obj;
-        if (capi.ObjectCache.TryGetValue("bucketMeshRefs", out obj))
+        if (capi.ObjectCache.TryGetValue(this.Code.Path + "MeshRefs", out obj))
         {
             Dictionary<int, MeshRef> meshrefs = obj as Dictionary<int, MeshRef>;
-
             foreach (var val in meshrefs)
             {
                 val.Value.Dispose();
             }
-
-            capi.ObjectCache.Remove("bucketMeshRefs");
+            capi.ObjectCache.Remove(this.Code.Path + "MeshRefs");
         }
     }
+
 
     public MeshData GenMesh(ICoreClientAPI capi, ItemStack contentStack, BlockPos forBlockPos = null)
     {
         Shape shape = capi.Assets.TryGet("primitivesurvival:shapes/block/metalbucket/empty.json").ToObject<Shape>();
         MeshData bucketmesh;
+        ITexPositionSource tmpTextureSource;
         capi.Tesselator.TesselateShape(this, shape, out bucketmesh);
-
+        
         if (contentStack != null)
         {
             WaterTightContainableProps props = GetInContainerProps(contentStack);
-
             ContainerTextureSource contentSource = new ContainerTextureSource(capi, contentStack, props.Texture);
             shape = capi.Assets.TryGet("game:shapes/block/wood/bucket/contents.json").ToObject<Shape>();
             MeshData contentMesh;
-            capi.Tesselator.TesselateShape("bucket", shape, out contentMesh, contentSource, new Vec3f(Shape.rotateX, Shape.rotateY, Shape.rotateZ));
+            capi.Tesselator.TesselateShape("metalbucket", shape, out contentMesh, contentSource, new Vec3f(Shape.rotateX, Shape.rotateY, Shape.rotateZ));
 
             contentMesh.Translate(0, GameMath.Min(7 / 16f, contentStack.StackSize / props.ItemsPerLitre * 0.7f / 16f), 0);
 
@@ -197,7 +199,6 @@ public class BlockMetalBucket : BlockLiquidContainerBase
             }
         }
 
-
         return bucketmesh;
     }
 
@@ -206,7 +207,6 @@ public class BlockMetalBucket : BlockLiquidContainerBase
     public static string PerishableInfoCompact(ICoreAPI Api, ItemSlot contentSlot, float ripenRate, bool withStackName = true)
     {
         StringBuilder dsc = new StringBuilder();
-
         if (withStackName)
         {
             dsc.Append(contentSlot.Itemstack.GetName());
@@ -223,7 +223,6 @@ public class BlockMetalBucket : BlockLiquidContainerBase
                 string comma = ", ";
 
                 TransitionState state = transitionStates[i];
-
                 TransitionableProperties prop = state.Props;
                 float perishRate = contentSlot.Itemstack.Collectible.GetTransitionRateMul(Api.World, contentSlot, prop.Type);
 
@@ -286,7 +285,6 @@ public class BlockMetalBucket : BlockLiquidContainerBase
                         break;
                 }
             }
-
         }
         return dsc.ToString();
     }

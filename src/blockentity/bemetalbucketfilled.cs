@@ -11,7 +11,7 @@ using Vintagestory.API.Datastructures;
 using Vintagestory.API.MathTools;
 using Vintagestory.GameContent;
  
-public class BEMetalBucket : BlockEntityContainer
+public class BEMetalBucketFilled : BlockEntityContainer
 {
     internal InventoryGeneric inventory;
         
@@ -22,14 +22,14 @@ public class BEMetalBucket : BlockEntityContainer
 
     public override string InventoryClassName
     {
-        get { return "metalbucket"; }
+        get { return "metalbucketfilled"; }
     }
     MeshData currentMesh;
-    BlockMetalBucket ownBlock;
+    BlockMetalBucketFilled ownBlock;
 
     public float MeshAngle;
 
-    public BEMetalBucket()
+    public BEMetalBucketFilled()
     {
         inventory = new InventoryGeneric(1, null, null);
     }
@@ -38,7 +38,7 @@ public class BEMetalBucket : BlockEntityContainer
     {
         base.Initialize(api);
 
-        ownBlock = Block as BlockMetalBucket;
+        ownBlock = Block as BlockMetalBucketFilled;
         if (Api.Side == EnumAppSide.Client)
         {
             currentMesh = GenMesh();
@@ -81,8 +81,9 @@ public class BEMetalBucket : BlockEntityContainer
     internal MeshData GenMesh()
     {
         if (ownBlock == null) return null;
-
+            
         MeshData mesh = ownBlock.GenMesh(Api as ICoreClientAPI, GetContent(), Pos);
+
         if (mesh.CustomInts != null)
         {
             for (int i = 0; i < mesh.CustomInts.Count; i++)
@@ -98,10 +99,10 @@ public class BEMetalBucket : BlockEntityContainer
 
     public override bool OnTesselation(ITerrainMeshPool mesher, ITesselatorAPI tesselator)
     {
-        BlockMetalBucket block = Api.World.BlockAccessor.GetBlock(Pos) as BlockMetalBucket;
+        BlockMetalBucketFilled block = Api.World.BlockAccessor.GetBlock(Pos) as BlockMetalBucketFilled; 
         if (currentMesh != null)
         {
-           mesher.AddMeshData(currentMesh.Clone().Rotate(new Vec3f(0.5f, 0.5f, 0.5f), 0, MeshAngle, 0));
+            mesher.AddMeshData(currentMesh.Clone().Rotate(new Vec3f(0.5f, 0.5f, 0.5f), 0, MeshAngle, 0));
         }
         return true;
     }
@@ -129,18 +130,10 @@ public class BEMetalBucket : BlockEntityContainer
         tree.SetFloat("meshAngle", MeshAngle);
     }
 
-
     public override void GetBlockInfo(IPlayer forPlayer, StringBuilder sb)
     {
-        ItemSlot slot = inventory[0];
-        ItemStack playerStack = slot.Itemstack;
-        if (slot.Empty)
-        {
-            sb.AppendLine(Lang.Get("Empty"));
-        } else
-        {
-            sb.AppendLine(Lang.Get("Contents: {0}x{1}", slot.Itemstack.StackSize, slot.Itemstack.GetName()));
-        }
+        //do nothing to override perishable info
     }
+
 }
 

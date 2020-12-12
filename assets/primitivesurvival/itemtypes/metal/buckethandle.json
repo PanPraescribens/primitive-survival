@@ -35,10 +35,15 @@
 			},
 			"rotation": {
 				"x": -20,
-				"y": 71,
+				"y": 59,
 				"z": 61
 			},
-			"scale": 2.77
+			"origin": {
+				"x": 0.4,
+				"y": 0.4,
+				"z": 1
+			},
+			"scale": 2.42
 		}
 	},
 	"guiTransformByType": {

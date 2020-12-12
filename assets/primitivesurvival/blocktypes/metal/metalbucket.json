@@ -6,7 +6,8 @@
     },
 
     "entityClassByType": {
-        "*-empty*": "bemetalbucket"
+        "*-empty*": "bemetalbucket",
+        "*-filled*": "bemetalbucketfilled"
 
     },
     "behaviorsbyType": {
@@ -21,7 +22,7 @@
         ]
     },
     "attributesByType": {
-        "*-empty*": {
+        "*": {
             "liquidcontainer": true,
             "capacityLitres": 10,
             "canhold": [ "water-*" ]
@@ -63,17 +64,17 @@
         "inner side": { "base": "game:block/metal/ingot/{basematerial}" },
         "contents": { "base": "block/metalbucket/lava" },
         "normal1": {
-            "base": "game:block/metal/ingot/{basematerial}"
+            "base": "game:block/metal/ingot/{handlematerial}"
         },
-        "handle": {
-                    "base": "game:block/metal/ingot/{handlematerial}" },
+        "handle": { "base": "game:block/metal/ingot/{handlematerial}" },
+        "honeyportion": { "base": "game:block/liquid/honey" }
     },
     "replaceable": 500,
     "resistance": 1.5,
     "liquidSelectable": true,
     "lightAbsorption": 0,
     "maxstacksizebytype": {
-        "*": 1
+        "*": 16
     },
     "sounds": {
         "place": "game:block/plate",
@@ -114,7 +115,7 @@
     "guiTransform": {
         "origin": {
             "x": 0.5,
-            "y": 0.3,
+            "y": 0.35,
             "z": 0.5
         },
         "scale": 1.75
