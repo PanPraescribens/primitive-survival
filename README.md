@@ -6,16 +6,13 @@ Documentation and latest download moved here:
 
 https://www.vintagestory.at/forums/topic/2399-primitive-survival-traps-fishing-and-other-surprises/
 
-Version 2.3 updates (wip)
+Version 2.3 updates
 
-- fixed monkey bridge drops and break weirdness
-- fixed sounds for everything
-- fixed steatite stair placement etc (as per Better Stairs mod)
-- New: metal bucket more or less complete - smithing recipes for handles, recipes for buckets
-
-to do 
-
-- fix bug that allows you to stomp over a stake in water
+ - Added - metal buckets, along with smithing recipes for handles and recipes for the buckets themselves.
+ - Fixed monkey bridge break/drops issues.
+ - Fixed sounds for most everything.
+ - Fixed bug that was allowing stakes to be replaced with other blocks.
+ - Fixed steatite stair placement.
 
 Version 2.2 updates
 
