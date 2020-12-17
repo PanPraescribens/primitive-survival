@@ -23,6 +23,7 @@ namespace primitiveSurvival
             api.RegisterBlockEntityClass("bealcove", typeof(BEAlcove));
             api.RegisterBlockEntityClass("bemetalbucket", typeof(BEMetalBucket));
             api.RegisterBlockEntityClass("bemetalbucketfilled", typeof(BEMetalBucketFilled));
+            api.RegisterBlockEntityClass("behide", typeof(BEHide));
 
             api.RegisterBlockClass("blockstake", typeof(BlockStake));
             api.RegisterBlockClass("blockstakeinwater", typeof(BlockStakeInWater));
@@ -44,6 +45,7 @@ namespace primitiveSurvival
 			api.RegisterBlockClass("blockmetalbucket", typeof(BlockMetalBucket));
             api.RegisterBlockClass("blockmetalbucketfilled", typeof(BlockMetalBucketFilled));
             api.RegisterBlockClass("blockmonkeybridge", typeof(BlockMonkeyBridge));
+            api.RegisterBlockClass("blockhide", typeof(BlockHide));
 
             api.RegisterItemClass("itemfishinghook", typeof(ItemFishingHook));
             api.RegisterItemClass("itemcordage", typeof(ItemCordage));

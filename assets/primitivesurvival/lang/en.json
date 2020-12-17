@@ -322,5 +322,41 @@
     "item-buckethandle-gold": "Bucket Handle (Gold)",
     "item-buckethandle-silver": "Bucket Handle (Silver)",
     "item-buckethandle-iron": "Bucket Handle (Iron)",
-    "item-buckethandle-meteoriciron": "Bucket Handle (Meteoric Iron)"
+    "item-buckethandle-meteoriciron": "Bucket Handle (Meteoric Iron)",
+
+    "block-foxhide-forest-female*": "Forest Fox Hide (female)",
+    "block-foxhide-forest-male*": "Forest Fox Hide (male)",
+    "block-foxhide-arctic-female*": "Arctic Fox Hide (female)",
+    "block-foxhide-arctic-male*": "Arctic Fox Hide (male)",
+
+    "block-harehide-arctic-female*": "Arctic Hare Hide (female)",
+    "block-harehide-arctic-male*": "Arctic Hare Hide (male)",
+    "block-harehide-ashgrey-female*": "Ash Grey Hare Hide (female)",
+    "block-harehide-ashgrey-male*": "Ash Grey Hide (male)",
+    "block-harehide-darkbrown-female*": "Dark Brown Hare Hide (female)",
+    "block-harehide-darkbrown-male*": "Dark Brown Hare Hide (male)",
+    "block-harehide-darkgrey-female*": "Dark Grey Hare Hide (female)",
+    "block-harehide-darkgrey-male*": "Dark Grey Hare Hide (male)",
+    "block-harehide-desert-female*": "Desert Hare Hide (female)",
+    "block-harehide-desert-male*": "Desert Hare Hide (male)",
+    "block-harehide-gold-female*": "Gold Hare Hide (female)",
+    "block-harehide-gold-male*": "Gold Hare Hide (male)",
+    "block-harehide-lightbrown-female*": "Light Brown Hare Hide (female)",
+    "block-harehide-lightbrown-male*": "Light Brown Hare Hide (male)",
+    "block-harehide-lightgrey-female*": "Light Grey Hare Hide (female)",
+    "block-harehide-lightgrey-male*": "Light Grey Hare Hide (male)",
+    "block-harehide-silver-female*": "Silver Hare Hide (female)",
+    "block-harehide-silver-male*": "Silver Hare Hide (male)",
+    "block-harehide-smokegrey-female*": "Smoke Grey Hare Hide (female)",
+    "block-harehide-smokegrey-male*": "Smoke Grey Hare Hide (male)",
+
+    "block-raccoonhide-raccoon-female*": "Raccoon Hide (female)",
+    "block-raccoonhide-raccoon-male*": "Raccoon Hide (male)",
+
+    "block-wolfhide-grey-female*": "Grey Wolf Hide (female)",
+    "block-wolfhide-grey-male*": "Grey Wolf Hide (male)",
+    "block-wolfhide-steppe-female*": "Steppe Wolf Hide (female)",
+    "block-wolfhide-steppe-male*": "Steppe Wolf Hide (male)",
+    "block-wolfhide-tundra-female*": "Tundra Wolf Hide (female)",
+    "block-wolfhide-tundra-male*": "Tundra Wolf Hide (male)"
 }
