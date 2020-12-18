@@ -14,7 +14,7 @@ Roadmap
  - Add fillet fish functionality for better inventory management/cooking
  - Investigate fish in soup/stew recipes not rendering in pot/bowl
  - Double check logic around relics in fish traps (i.e. gears)
- - Change 3rd person handheld fish so theyr'e more like a lantern than a club.
+ - Change 3rd person handheld fish so they're more like a lantern than a club.
  - Work on smoking rack
  - Pan dirt for worms, higher soil fertility, better results
  - Remove rotten fish from traps after a certain amount of time - they tend to pile up, especially on multiplayer
