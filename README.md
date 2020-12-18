@@ -6,6 +6,22 @@ Documentation and latest download moved here:
 
 https://www.vintagestory.at/forums/topic/2399-primitive-survival-traps-fishing-and-other-surprises/
 
+
+Roadmap
+
+ - Fix weir trap crash, playtest with Copygirl's mod.
+ - Make deadfell and snare trap more effective, and/or prevent larger mobs from being attracted to them/tripping them.
+ - Add fillet fish functionality for better inventory management/cooking
+ - Investigate fish in soup/stew recipes not rendering in pot/bowl
+ - Double check logic around relics in fish traps (i.e. gears)
+ - Change 3rd person handheld fish so theyr'e more like a lantern than a club.
+ - Work on smoking rack
+ - Pan dirt for worms, higher soil fertility, better results
+ - Remove rotten fish from traps after a certain amount of time - they tend to pile up, especially on multiplayer
+ - Taxidermy
+ 
+
+
 Version 2.3 updates
 
  - Added - metal buckets, along with smithing recipes for handles and recipes for the buckets themselves.
