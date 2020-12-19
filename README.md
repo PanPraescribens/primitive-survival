@@ -17,7 +17,7 @@ Roadmap
  - Work on smoking rack
  - Pan dirt for worms, higher soil fertility, better results
  - Remove rotten fish from traps after a certain amount of time - they tend to pile up, especially on multiplayer
- - Taxidermy
+ - Taxidermy - fix some faces, angle legs down slighty to decrease z-fighting, add game hooks
  - Add mushrooms and meat to bait types
  - Investigate fishing in general - is it too easy?  too hard?  
  
