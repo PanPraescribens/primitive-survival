@@ -16,7 +16,7 @@ Roadmap
  - Work on smoking rack
  - Pan dirt for worms, higher soil fertility, better results
  - Taxidermy - fix some faces, angle legs down slighty to decrease z-fighting, add game hooks
- - Investigate fishing in general - is it too easy?  too hard?  
+ 
  
 Version 2.4 updates
 
@@ -25,6 +25,7 @@ Version 2.4 updates
  - More than likely fixed intermittent weir trap crash - prevented collisions from unsetting trap AND prevented the sneak-click from recreating trap if it was already a weir trap.
 - Added jerky, mushrooms, bread, poultry, pickled vegetables, redmeat, bushmeat, and cheese to accepted bait types for snares, deadfalls, trot lines, limblines, and fish baskets
  - Removed rotten fish from FISHING HOOKS after a certain amount of time (they were already being removed from other fishing traps) - they tend to pile up, especially on multiplayer 
+ - Investigated fishing in general and made some minor changes to catch percents
 
 Version 2.3 updates
 
