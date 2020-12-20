@@ -17,15 +17,15 @@ Roadmap
  - Pan dirt for worms, higher soil fertility, better results
  - Remove rotten fish from traps after a certain amount of time - they tend to pile up, especially on multiplayer
  - Taxidermy - fix some faces, angle legs down slighty to decrease z-fighting, add game hooks
- - Add mushrooms and meat to bait types
  - Investigate fishing in general - is it too easy?  too hard?  
  
 Version 2.4 updates
 
  - Changed 3rd person handheld fish so they're more like holding a lantern than a club.  Changed 1st person to match somewhat.
  - Fixed some minor z-fighting issues with fish.
- - Most likely fixed weir trap crash - prevented collisions from changing it AND prevented the sneak-click from recreating it if it was already a weir trap.
-
+ - More than likely fixed intermittent weir trap crash - prevented collisions from unsetting trap AND prevented the sneak-click from recreating trap if it was already a weir trap.
+- Added jerky, mushrooms, bread, poultry, pickled vegetables, redmeat, bushmeat, and cheese to accepted bait types for snares, deadfalls, trot lines, limblines, and fish baskets
+ 
 
 Version 2.3 updates
 
