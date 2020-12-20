@@ -27,7 +27,7 @@ Version 2.4 updates
  - More frequently removed rotten fish after a certain amount of time (they were already being removed from other fishing traps) - they tend to pile up, especially on multiplayer 
  - Double checked logic around relics in fish traps (i.e. gears) - seems to be aok
  - Investigated fishing in general and made some minor changes to catch percents
- - Removed giant weird shadow from deadfall
+ - Removed giant weird shadow from deadfall and fishbasket on land
 
 Version 2.3 updates
 
