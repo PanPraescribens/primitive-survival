@@ -9,7 +9,8 @@ https://www.vintagestory.at/forums/topic/2399-primitive-survival-traps-fishing-a
 
 Roadmap
 
- - Make deadfall and snare trap more effective, and/or prevent larger mobs from being attracted to them/tripping them.  Investigate blunt attack in 3rd person for snare.
+ - Make deadfall and snare trap more effective?, and/or prevent larger mobs from being attracted to them/tripping them.  Investigate blunt attack in 3rd person for snare.
+ - Remove giant shadow from deadfall
  - Add fillet fish functionality for better inventory management/cooking
  - Investigate fish in soup/stew recipes not rendering in pot/bowl
  - Work on smoking rack
