@@ -15,6 +15,7 @@ Roadmap
  - Work on smoking rack
  - Pan dirt for worms, higher soil fertility, better results
  - Taxidermy - fix some faces, angle legs down slighty to decrease z-fighting, add game hooks
+ - Is grid recipe for the monkey bridge not pulling from the correct slots?
  
  
 Version 2.4 updates
