@@ -358,5 +358,15 @@
     "block-wolfhide-steppe-female*": "Steppe Wolf Hide (female)",
     "block-wolfhide-steppe-male*": "Steppe Wolf Hide (male)",
     "block-wolfhide-tundra-female*": "Tundra Wolf Hide (female)",
-    "block-wolfhide-tundra-male*": "Tundra Wolf Hide (male)"
+    "block-wolfhide-tundra-male*": "Tundra Wolf Hide (male)",
+
+    "block-hyenahide-hyena-female*": "Hyena Hide (female)",
+    "block-hyenahide-hyena-male*": "Hyena Hide (male)",
+
+    "block-pighide-wild-female*": "Wild Pig Hide (female)",
+    "block-pighide-wild-male*": "Wild Pig Hide (male)",
+
+    "block-sheephide-bighorn-female*": "Bighorn Sheep Hide (female)",
+    "block-sheephide-bighorn-male*": "Bighorn Sheep Hide (male)"
+
 }

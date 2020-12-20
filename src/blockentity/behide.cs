@@ -20,8 +20,11 @@ public class BEHide : BlockEntity
         string shapeBase = "primitivesurvival:shapes/";
         BlockHide block = Api.World.BlockAccessor.GetBlock(Pos) as BlockHide;
         ITexPositionSource texture = tesselator.GetTexSource(block);
-        string shapePath = "block/hide/" + block.FirstCodePart();
-        System.Diagnostics.Debug.WriteLine(shapePath);
+        string shapePath = block.FirstCodePart();
+        if (shapePath == "pighide" || shapePath == "sheephide" )
+        { shapePath = block.FirstCodePart(2) + shapePath; }
+        shapePath = "block/hide/" + shapePath;
+        //System.Diagnostics.Debug.WriteLine(shapePath);
         mesh = block.GenMesh(Api as ICoreClientAPI, shapeBase + shapePath, texture, tesselator);
         mesher.AddMeshData(mesh);
         return true;

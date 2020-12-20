@@ -10,7 +10,7 @@ using Vintagestory.API.Common.Entities;
 
 public class BEDeadfall : BlockEntityDisplay, IAnimalFoodSource
 {
-    public string[] baitTypes = { "fruit", "grain", "legume", "meat", "vegetable" };
+    public string[] baitTypes = { "fruit", "grain", "legume", "meat", "vegetable", "jerky", "mushroom", "bread", "poultry", "pickledvegetable", "redmeat", "bushmeat", "cheese" };
     protected static Random rnd = new Random();
     public int maxSlots = 1;
 
@@ -31,11 +31,23 @@ public class BEDeadfall : BlockEntityDisplay, IAnimalFoodSource
     {
         base.Initialize(api);
         if (inventory != null)
+        {
             if (!baitSlot.Empty)
-                if (Array.IndexOf(baitTypes, baitStack.Item.FirstCodePart()) >= 0)
-                    if (Api.Side == EnumAppSide.Server)
-                    { Api.ModLoader.GetModSystem<POIRegistry>().AddPOI(this); }
-
+            {
+                if (baitStack.Item != null)
+                {
+                    if (Array.IndexOf(baitTypes, baitStack.Item.FirstCodePart()) >= 0)
+                        if (Api.Side == EnumAppSide.Server)
+                        { Api.ModLoader.GetModSystem<POIRegistry>().AddPOI(this); }
+                }
+                else if (baitStack.Block != null)
+                {
+                    if (Array.IndexOf(baitTypes, baitStack.Block.FirstCodePart()) >= 0)
+                        if (Api.Side == EnumAppSide.Server)
+                        { Api.ModLoader.GetModSystem<POIRegistry>().AddPOI(this); }
+                }
+            }
+        }
     }
 
     public override void OnBlockRemoved()
@@ -140,7 +152,7 @@ public class BEDeadfall : BlockEntityDisplay, IAnimalFoodSource
 
     private bool TryPut(ItemSlot playerSlot, BlockSelection blockSel)
     {
-        int index;
+        int index = -1;
         ItemStack playerStack = playerSlot.Itemstack;
         if (inventory != null)
         {
@@ -157,7 +169,17 @@ public class BEDeadfall : BlockEntityDisplay, IAnimalFoodSource
                 index = 0;
             }
             else return false;
-
+        }
+        else if (playerStack.Block != null)
+        {
+            if (Array.IndexOf(baitTypes, playerStack.Block.FirstCodePart()) >= 0 && baitSlot.Empty)
+            {
+                index = 0;
+            }
+            else return false;
+        }
+        if (index != -1)
+        {
             int moved = playerSlot.TryPutInto(Api.World, inventory[index]);
             if (moved > 0)
             {
@@ -210,9 +232,16 @@ public class BEDeadfall : BlockEntityDisplay, IAnimalFoodSource
         { sb.Append("It's tripped. Sneak click to set it back up."); }
         else
         {
-            if (!baitSlot.Empty)
+            if (baitStack.Item != null)
             {
                 if (Array.IndexOf(baitTypes, baitStack.Item.FirstCodePart()) < 0)
+                { sb.Append("Your bait has gone rotten. Replace it with fresh bait."); }
+                else
+                { sb.Append("It's baited so your odds of catching something are pretty good."); }
+            }
+            else if (baitStack.Block != null)
+            {
+                if (Array.IndexOf(baitTypes, baitStack.Block.FirstCodePart()) < 0)
                 { sb.Append("Your bait has gone rotten. Replace it with fresh bait."); }
                 else
                 { sb.Append("It's baited so your odds of catching something are pretty good."); }
@@ -247,13 +276,26 @@ public class BEDeadfall : BlockEntityDisplay, IAnimalFoodSource
                 bool tripped = true;
                 if (block.FirstCodePart(1) == "set")
                     tripped = false;
-                if (Array.IndexOf(baitTypes, baitStack.Item.FirstCodePart()) < 0)
+                if (baitStack.Item != null)
                 {
-                    Block tempblock = Api.World.GetBlock(block.CodeWithPath("texturerot"));
-                    tmpTextureSource = ((ICoreClientAPI)Api).Tesselator.GetTexSource(tempblock);
+                    if (Array.IndexOf(baitTypes, baitStack.Item.FirstCodePart()) < 0)
+                    {
+                        Block tempblock = Api.World.GetBlock(block.CodeWithPath("texturerot"));
+                        tmpTextureSource = ((ICoreClientAPI)Api).Tesselator.GetTexSource(tempblock);
+                    }
+                    else
+                        tmpTextureSource = texture;
                 }
-                else
-                    tmpTextureSource = texture;
+                else if (baitStack.Block != null)
+                {
+                    if (Array.IndexOf(baitTypes, baitStack.Block.FirstCodePart()) < 0)
+                    {
+                        Block tempblock = Api.World.GetBlock(block.CodeWithPath("texturerot"));
+                        tmpTextureSource = ((ICoreClientAPI)Api).Tesselator.GetTexSource(tempblock);
+                    }
+                    else
+                        tmpTextureSource = texture;
+                }
                 shapePath = "block/trapbait"; //baited (for now)
                 mesh = block.GenMesh(Api as ICoreClientAPI, shapeBase + shapePath, tmpTextureSource, 0, tripped, tesselator);
                 mesher.AddMeshData(mesh);

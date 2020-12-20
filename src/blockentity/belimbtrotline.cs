@@ -13,18 +13,20 @@ using System.Collections.Generic;
 
 public class BELimbTrotLineLure : BlockEntityDisplay
 {
-    public int catchPercent = 2; //2
+    public int catchPercent = 4; //2
     public int baitedCatchPercent = 10; //10
 
-    public int luredCatchPercent = 6; //6
+    public int luredCatchPercent = 7; //6
     public int baitedLuredCatchPercent = 13; //12
 
     public int baitStolenPercent = 5; //5
     public double updateMinutes = 2.4; //2.4
 
+    public int escapePercent = 100; //10 ONLY APPLIES TO ROTTEN FISH
+
     public int tickSeconds = 5;
     public int maxSlots = 4;
-    public string[] baitTypes = { "fruit", "grain", "legume", "meat", "vegetable" };
+    public string[] baitTypes = { "fruit", "grain", "legume", "meat", "vegetable", "jerky", "mushroom", "bread", "poultry", "pickledvegetable", "redmeat", "bushmeat", "cheese" };
     public string[] fishTypes = { "trout", "bass", "pike", "arcticchar", "catfish", "bluegill" };
     public static Random rnd = new Random();
 
@@ -175,20 +177,32 @@ public class BELimbTrotLineLure : BlockEntityDisplay
                     }
                     else
                     {
-                        int toCatch = baitedCatchPercent;
-                        if (!lureSlot.Empty)
-                        { toCatch = baitedLuredCatchPercent; }
-                        //System.Diagnostics.Debug.WriteLine("catch %" + toCatch);
-                        if (caught < toCatch)
+                        if (!catchSlot.Empty)
                         {
-                            if (catchSlot.Empty)
+                            int escaped = rnd.Next(100);
+                            if (escaped < escapePercent)
                             {
-                                catchStack = new ItemStack(Api.World.GetItem(new AssetLocation("primitivesurvival:psfish-" + fishTypes[rnd.Next(fishTypes.Count())] + "-raw")), 1);
-                                rando = rnd.Next(2);
-                                if (rando == 0)
-                                { baitSlot.TakeOutWhole(); }
-                                Api.World.BlockAccessor.MarkBlockDirty(Pos);
-                                MarkDirty();
+                                ItemStack stack = catchSlot.TakeOut(1);
+                                System.Diagnostics.Debug.WriteLine("rotten fish removed");
+                            }
+                        }
+                        else
+                        {
+                            int toCatch = baitedCatchPercent;
+                            if (!lureSlot.Empty)
+                            { toCatch = baitedLuredCatchPercent; }
+                            //System.Diagnostics.Debug.WriteLine("catch %" + toCatch);
+                            if (caught < toCatch)
+                            {
+                                if (catchSlot.Empty)
+                                {
+                                    catchStack = new ItemStack(Api.World.GetItem(new AssetLocation("primitivesurvival:psfish-" + fishTypes[rnd.Next(fishTypes.Count())] + "-raw")), 1);
+                                    rando = rnd.Next(2);
+                                    if (rando == 0)
+                                    { baitSlot.TakeOutWhole(); }
+                                    Api.World.BlockAccessor.MarkBlockDirty(Pos);
+                                    MarkDirty();
+                                }
                             }
                         }
                     }
@@ -408,10 +422,21 @@ public class BELimbTrotLineLure : BlockEntityDisplay
             //ClearSelectionBox();
             if (!baitSlot.Empty)
             {
-                if (Array.IndexOf(baitTypes, baitStack.Item.FirstCodePart()) < 0)
-                { sb.Append("Your bait has gone rotten. Replace it with fresh bait."); }
-                else
-                { sb.Append("It's baited so your odds of catching something are pretty good."); }
+                if (baitStack.Item != null)
+                {
+                    if (Array.IndexOf(baitTypes, baitStack.Item.FirstCodePart()) < 0)
+                    { sb.Append("Your bait has gone rotten. Replace it with fresh bait."); }
+                    else
+                    { sb.Append("It's baited so your odds of catching something are pretty good."); }
+                }
+                else if (baitStack.Block != null)
+                {
+                    if (Array.IndexOf(baitTypes, baitStack.Block.FirstCodePart()) < 0)
+                    { sb.Append("Your bait has gone rotten. Replace it with fresh bait."); }
+                    else
+                    { sb.Append("It's baited so your odds of catching something are pretty good."); }
+                }
+
             }
             else if (baitSlot.Empty && !hookSlot.Empty)
             { sb.Append("Bait it with something to increase your odds of catching something."); }
@@ -494,12 +519,24 @@ public class BELimbTrotLineLure : BlockEntityDisplay
             }
             if (!baitSlot.Empty)
             {
-                if (Array.IndexOf(baitTypes, baitStack.Item.FirstCodePart()) < 0)
+                if (baitStack.Item != null)
                 {
-                    Block tempblock = Api.World.GetBlock(block.CodeWithPath("texturerot"));
-                    tmpTextureSource = ((ICoreClientAPI)Api).Tesselator.GetTexSource(tempblock);
+                    if (Array.IndexOf(baitTypes, baitStack.Item.FirstCodePart()) < 0)
+                    {
+                        Block tempblock = Api.World.GetBlock(block.CodeWithPath("texturerot"));
+                        tmpTextureSource = ((ICoreClientAPI)Api).Tesselator.GetTexSource(tempblock);
+                    }
+                    else tmpTextureSource = texture;
                 }
-                else tmpTextureSource = texture;
+                else if (baitStack.Block != null)
+                {
+                    if (Array.IndexOf(baitTypes, baitStack.Block.FirstCodePart()) < 0)
+                    {
+                        Block tempblock = Api.World.GetBlock(block.CodeWithPath("texturerot"));
+                        tmpTextureSource = ((ICoreClientAPI)Api).Tesselator.GetTexSource(tempblock);
+                    }
+                    else tmpTextureSource = texture;
+                }
                 shapePath = "item/fishing/hookbait"; //baited (for now)
                 mesh = block.GenMesh(Api as ICoreClientAPI, shapeBase + shapePath, tmpTextureSource, alive, tesselator);
                 mesher.AddMeshData(mesh);

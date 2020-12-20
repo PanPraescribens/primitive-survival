@@ -124,6 +124,7 @@
             "mutantmaterial": { "base": "item/fishing/fish-{type}-{state}" }
         }
     },
+    "heldRightTpIdleAnimation": "holdinglanternrighthand",
     "creativeinventory": {
         "general": [ "*" ],
         "items": [ "*" ],
@@ -241,111 +242,112 @@
             "scale": 2.22
         }
     },
-
     "fpHandTransformByType": {
         "*catfish*": {
             "translation": {
-                "x": 0.9,
-                "y": -0.3,
+                "x": 0.7,
+                "y": -1.3,
                 "z": 0.1
             },
             "rotation": {
                 "x": -1,
-                "y": 61,
-                "z": -71
-            },
-            "origin": {
-                "x": -0.55,
-                "y": 1.9,
-                "z": 0.2
-            },
-            "scale": 1.13
-        },
-        "*bluegill*": {
-            "translation": {
-                "x": 0.8,
-                "y": -0.1,
-                "z": 0
-            },
-            "rotation": {
-                "x": -1,
-                "y": 65,
-                "z": -71
+                "y": 68,
+                "z": -121
             },
             "origin": {
                 "x": -0.5,
                 "y": 1.6,
                 "z": 0.2
+            },
+            "scale": 0.97
+        },
+        "*bluegill*": {
+            "translation": {
+                "x": 0.4,
+                "y": -1.3,
+                "z": 0.2
+            },
+            "rotation": {
+                "x": -1,
+                "y": 68,
+                "z": -121
+            },
+            "origin": {
+                "x": -0.5,
+                "y": 1.6,
+                "z": -0.8
             },
             "scale": 1.34
         },
         "*": {
             "translation": {
                 "x": 0.7,
-                "y": 0,
-                "z": 0
+                "y": -1.2,
+                "z": 0.1
             },
             "rotation": {
                 "x": -1,
-                "y": 65,
-                "z": -71
+                "y": 68,
+                "z": -121
             },
             "origin": {
                 "x": -0.5,
                 "y": 1.6,
                 "z": 0.2
             },
-            "scale": 1.34
+            "scale": 1.13
         }
     },
+
+
 
     "tpHandTransformByType": {
         "*catfish*": {
             "translation": {
-                "x": -1.8,
-                "y": -0.9,
-                "z": -0.5
-            },
-            "rotation": {
-                "x": 0,
-                "y": 3,
-                "z": -103
-            },
-            "origin": {
                 "x": 0.6,
-                "y": 0.1,
-                "z": 0.5
-            },
-            "scale": 0.8
-        },
-        "*bluegill*": {
-            "translation": {
-                "x": -1.3,
-                "y": -0.3,
-                "z": -0.75
+                "y": -0.2,
+                "z": -1
             },
             "rotation": {
-                "x": -5,
-                "y": -5,
-                "z": -103
+                "x": 15,
+                "y": 11,
+                "z": 119
             },
             "origin": {
                 "x": 0.5,
                 "y": 0.1,
                 "z": 0.5
             },
-            "scale": 0.72
+            "scale": 0.75
+        },
+        "*bluegill*": {
+            "translation": {
+                "x": 0,
+                "y": -0.1,
+                "z": -0.7
+            },
+            "rotation": {
+                "x": 10,
+                "y": 9,
+                "z": 111
+            },
+            "origin": {
+                "x": 0.5,
+                "y": 0.1,
+                "z": 0.5
+            },
+            "scale": 0.9
         },
         "*": {
             "translation": {
-                "x": -1.4,
-                "y": -0.5,
-                "z": -0.35
+                "x": 0.2,
+                "y": -0.2,
+                "z": -0.9
             },
             "rotation": {
-                "x": 0,
-                "y": 28,
-                "z": -103
+                "x": 15,
+                "y": 11,
+                "z": 119
             },
             "origin": {
                 "x": 0.5,

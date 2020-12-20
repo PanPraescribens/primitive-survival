@@ -8,9 +8,9 @@ using Vintagestory.API.MathTools;
 using Vintagestory.GameContent;
 using Vintagestory.API.Datastructures;
 
-public class BEWeirTrap : BlockEntityDisplay
+public class BEWeirTrap : BlockEntityDisplay 
 {
-    public int catchPercent = 5; //5  
+    public int catchPercent = 4; //5  
     public int escapePercent = 10; //10
     public double updateMinutes = 2.6; //2.6 
 

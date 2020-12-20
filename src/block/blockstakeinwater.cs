@@ -1,6 +1,7 @@
 using Vintagestory.API.Common;
 using Vintagestory.API.MathTools;
 using System.Collections.Generic;
+using Vintagestory.API.Common.Entities;
 using Vintagestory.GameContent;
 
 public class BlockStakeInWater : BlockWaterPlant
@@ -205,7 +206,6 @@ public class BlockStakeInWater : BlockWaterPlant
                 foreach (BlockPos neighbor in weirBasesPos)
                 {
                     testBlock = world.BlockAccessor.GetBlock(neighbor);
-                    // This might need more work
                     if (testBlock.BlockId == 0 || (testBlock.LiquidCode == "water" && (testBlock.FirstCodePart() != "stakeinwater")))
                     { areaOK = false; }
                 }
@@ -216,12 +216,26 @@ public class BlockStakeInWater : BlockWaterPlant
                     block = world.GetBlock(block.CodeWithPath(path));
                     world.BlockAccessor.SetBlock(block.BlockId, blockSel.Position);
 
-                    testBlock = world.BlockAccessor.GetBlock(new AssetLocation("primitivesurvival:weirtrap-" + facing.ToString()));
-                    world.BlockAccessor.SetBlock(testBlock.BlockId, waterPos);
+                    //make sure it isn't already a weir trap!!!
+                    testBlock = world.BlockAccessor.GetBlock(waterPos);
+                    if (testBlock.Code.Path.Contains("weirtrap"))
+                    {
+                        //System.Diagnostics.Debug.WriteLine("Already a weir trap!");
+                    }
+                    else
+                    {
+                        testBlock = world.BlockAccessor.GetBlock(new AssetLocation("primitivesurvival:weirtrap-" + facing.ToString()));
+                        world.BlockAccessor.SetBlock(testBlock.BlockId, waterPos);
+                    }
 
                 }
             }
         }
         return true;
+    }
+
+    public override void OnEntityCollide(IWorldAccessor world, Entity entity, BlockPos pos, BlockFacing facing, Vec3d collideSpeed, bool isImpact)
+    {
+        //may need this override to prevent server crashing when resetting weir trap
     }
 }
