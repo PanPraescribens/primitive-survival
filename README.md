@@ -6,6 +6,27 @@ Documentation and latest download moved here:
 
 https://www.vintagestory.at/forums/topic/2399-primitive-survival-traps-fishing-and-other-surprises/
 
+
+Roadmap
+
+ - Make deadfall and snare trap more effective, and/or prevent larger mobs from being attracted to them/tripping them.  Investigate blunt attack in 3rd person for snare.
+ - Add fillet fish functionality for better inventory management/cooking
+ - Investigate fish in soup/stew recipes not rendering in pot/bowl
+ - Work on smoking rack
+ - Pan dirt for worms, higher soil fertility, better results
+ - Taxidermy - fix some faces, angle legs down slighty to decrease z-fighting, add game hooks
+ 
+ 
+Version 2.4 updates
+
+ - Changed 3rd person handheld fish so they're more like holding a lantern than a club.  Changed 1st person to match somewhat.
+ - Fixed some minor z-fighting issues with fish.
+ - More than likely fixed intermittent weir trap crash - prevented collisions from unsetting trap AND prevented the sneak-click from recreating trap if it was already a weir trap.
+- Added jerky, mushrooms, bread, poultry, pickled vegetables, redmeat, bushmeat, and cheese to accepted bait types for snares, deadfalls, trot lines, limblines, and fish baskets
+ - Removed rotten fish from FISHING HOOKS after a certain amount of time (they were already being removed from other fishing traps) - they tend to pile up, especially on multiplayer 
+ - Double checked logic around relics in fish traps (i.e. gears) - seems to be aok
+ - Investigated fishing in general and made some minor changes to catch percents
+
 Version 2.3 updates
 
  - Added - metal buckets, along with smithing recipes for handles and recipes for the buckets themselves.
