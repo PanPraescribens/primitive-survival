@@ -12,7 +12,7 @@ Roadmap
  - Make deadfall and snare trap more effective?, and/or prevent larger mobs from being attracted to them/tripping them.  Investigate blunt attack in 3rd person for snare.
  - Work on smoking rack
  - Pan dirt for worms, higher soil fertility, better results
- - Taxidermy - fix some faces, angle legs down slighty to decrease z-fighting, add game hooks
+ - Taxidermy - fix some faces, angle legs down slighty to decrease z-fighting, add game hooks 
  - Is grid recipe for the monkey bridge not pulling from the correct slots?
  
  
