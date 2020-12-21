@@ -18,16 +18,16 @@ Roadmap
  
 Version 2.4 updates
 
- - Added fillet fish functionality for better inventory management/cooking
+ - Added fillet fish functionality for better inventory management/cooking - new item, new recipe, added to soup/stew recipes
  - Changed 3rd person handheld fish so they're more like holding a lantern than a club.  Changed 1st person to match somewhat.
  - Fixed some minor z-fighting issues with fish.
- - More than likely fixed intermittent weir trap crash - prevented collisions from unsetting trap AND prevented the sneak-click from recreating trap if it was already a weir trap.
+ - Fixed (More than likely) intermittent weir trap crash - prevented collisions from unsetting trap AND prevented the sneak-click from recreating trap if it was already a weir trap.
 - Added jerky, mushrooms, bread, poultry, pickled vegetables, redmeat, bushmeat, and cheese to accepted bait types for snares, deadfalls, trot lines, limblines, and fish baskets
- - More frequently removed rotten fish after a certain amount of time (they were already being removed from other fishing traps) - they tend to pile up, especially on multiplayer 
+ - More frequently removed rotten fish after a certain amount of time (they were already being removed from other fishing traps) - they tend to pile up, especially on multiplayer -DEBUG THIS MORE
  - Double checked logic around relics in fish traps (i.e. gears) - seems to be aok
  - Investigated fishing in general and made some minor changes to catch percents
  - Removed giant weird shadow from deadfall and fishbasket on land
- - Fish in soup/stew recipes now rendering properly
+ - Fixed fish in soup/stew recipes now rendering properly in pots and bowls
 
 Version 2.3 updates
 
