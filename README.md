@@ -10,8 +10,6 @@ https://www.vintagestory.at/forums/topic/2399-primitive-survival-traps-fishing-a
 Roadmap
 
  - Make deadfall and snare trap more effective?, and/or prevent larger mobs from being attracted to them/tripping them.  Investigate blunt attack in 3rd person for snare.
- 
- - Investigate fish in soup/stew recipes not rendering in pot/bowl
  - Work on smoking rack
  - Pan dirt for worms, higher soil fertility, better results
  - Taxidermy - fix some faces, angle legs down slighty to decrease z-fighting, add game hooks
@@ -29,6 +27,7 @@ Version 2.4 updates
  - Double checked logic around relics in fish traps (i.e. gears) - seems to be aok
  - Investigated fishing in general and made some minor changes to catch percents
  - Removed giant weird shadow from deadfall and fishbasket on land
+ - Fish in soup/stew recipes now rendering properly
 
 Version 2.3 updates
 
