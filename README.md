@@ -11,7 +11,7 @@ Roadmap
 
  - Make deadfall and snare trap more effective?, and/or prevent larger mobs from being attracted to them/tripping them.  Investigate blunt attack in 3rd person for snare.
  - Is grid recipe for the monkey bridge not pulling from the correct slots?
- - Test ozBillo's bushmeat mod with this mod
+ 
  
  - Pan dirt for worms, higher soil fertility, better results (next version)
  - Work on smoking rack (next version)
@@ -29,6 +29,7 @@ Version 2.4 updates
  - Removed giant weird shadow from deadfall and fishbasket on land
  - Fixed fish in soup/stew recipes now rendering properly in pots and bowls
  - Added basic taxidermy - place pelts on the floor for rugs
+ - Tested ozBillo's bushmeat mod together with this mod - seems good!
 
 Version 2.3 updates
 
