@@ -22,7 +22,7 @@ public class BELimbTrotLineLure : BlockEntityDisplay
     public int baitStolenPercent = 5; //5
     public double updateMinutes = 2.4; //2.4
 
-    public int escapePercent = 100; //10 ONLY APPLIES TO ROTTEN FISH
+    public int rotRemovedPercent = 30; //30
 
     public int tickSeconds = 5;
     public int maxSlots = 4;
@@ -179,11 +179,14 @@ public class BELimbTrotLineLure : BlockEntityDisplay
                     {
                         if (!catchSlot.Empty)
                         {
-                            int escaped = rnd.Next(100);
-                            if (escaped < escapePercent)
+                            if (catchStack.Item.Code.Path.Contains("-rot"))
                             {
-                                ItemStack stack = catchSlot.TakeOut(1);
-                                System.Diagnostics.Debug.WriteLine("rotten fish removed");
+                                int escaped = rnd.Next(100);
+                                if (escaped < rotRemovedPercent)
+                                {
+                                    ItemStack stack = catchSlot.TakeOut(1);
+                                    //System.Diagnostics.Debug.WriteLine("rotten fish removed");
+                                }
                             }
                         }
                         else
@@ -313,7 +316,8 @@ public class BELimbTrotLineLure : BlockEntityDisplay
         {
             if (Array.IndexOf(baitTypes, playerStack.Block.FirstCodePart()) >= 0 && baitSlot.Empty)
             {
-                index = 0;
+                if (hookSlot.Empty || !catchSlot.Empty) return false; //needs a hook and no fish
+                else index = 1;
             }
             if (index > -1)
             {

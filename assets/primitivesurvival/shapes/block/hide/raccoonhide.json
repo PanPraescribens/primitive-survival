@@ -31,7 +31,7 @@
 					"unwrapMode": 4,
 					"uv": [ 0.0, 20.0 ],
 					"rotationOrigin": [ 5.6, 0.2, 5.4 ],
-					"rotationX": 90.0,
+					"rotationX": 88.0,
 					"rotationZ": -22.5,
 					"faces": {
 						"north": { "texture": "#normal", "uv": [ 0.0, 21.5, 1.5, 24.5 ] },
@@ -69,7 +69,7 @@
 					"unwrapMode": 4,
 					"uv": [ 6.0, 20.0 ],
 					"rotationOrigin": [ 5.6, 0.9, 10.7 ],
-					"rotationX": -90.0,
+					"rotationX": -87.0,
 					"rotationZ": -22.5,
 					"faces": {
 						"north": { "texture": "#normal", "uv": [ 6.0, 21.5, 7.5, 24.5 ] },
@@ -107,7 +107,7 @@
 					"unwrapMode": 4,
 					"uv": [ 16.0, 19.0 ],
 					"rotationOrigin": [ 11.1, 0.5, 5.2 ],
-					"rotationX": 90.0,
+					"rotationX": 88.0,
 					"rotationZ": 67.5,
 					"faces": {
 						"north": { "texture": "#normal", "uv": [ 16.0, 21.5, 18.5, 24.5 ] },
@@ -145,7 +145,7 @@
 					"unwrapMode": 4,
 					"uv": [ 24.0, 19.0 ],
 					"rotationOrigin": [ 11.1, 0.2, 11.2 ],
-					"rotationX": -90.0,
+					"rotationX": -87.0,
 					"rotationZ": 67.5,
 					"faces": {
 						"north": { "texture": "#normal", "uv": [ 24.0, 21.5, 26.5, 24.5 ] },
@@ -184,6 +184,7 @@
 					"unwrapRotation": 1,
 					"uv": [ 19.5, 13.0 ],
 					"rotationOrigin": [ 12.9, 0.9, 8.2 ],
+					"rotationX": -3.0,
 					"faces": {
 						"north": { "texture": "#normal", "uv": [ 19.5, 14.0, 20.5, 17.0 ], "rotation": 270 },
 						"east": { "texture": "#normal", "uv": [ 20.5, 13.0, 22.0, 14.0 ], "rotation": 180 },
@@ -272,6 +273,7 @@
 					"unwrapMode": 4,
 					"uv": [ 1.0, 10.5 ],
 					"rotationOrigin": [ 2.4, 1.4, 8.1 ],
+					"rotationX": 3.0,
 					"faces": {
 						"north": { "texture": "#normal", "uv": [ 1.0, 13.0, 3.5, 15.5 ] },
 						"east": { "texture": "#normal", "uv": [ 8.5, 13.0, 11.0, 15.5 ] },
@@ -437,7 +439,7 @@
 							"unwrapRotation": 1,
 							"uv": [ 9.5, 9.0 ],
 							"rotationOrigin": [ 2.6, 0.9, 2.4 ],
-							"rotationX": -90.0,
+							"rotationX": -88.0,
 							"faces": {
 								"north": { "texture": "#normal", "uv": [ 9.5, 9.0, 11.0, 11.5 ], "rotation": 270 },
 								"east": { "texture": "#normal", "uv": [ 11.0, 9.0, 11.5, 10.5 ], "rotation": 180, "enabled": false },
@@ -455,7 +457,7 @@
 							"unwrapRotation": 1,
 							"uv": [ 9.5, 9.0 ],
 							"rotationOrigin": [ 2.6, -0.4, -0.4 ],
-							"rotationX": 90.0,
+							"rotationX": 88.0,
 							"faces": {
 								"north": { "texture": "#normal", "uv": [ 9.5, 9.0, 11.0, 11.5 ], "rotation": 270 },
 								"east": { "texture": "#normal", "uv": [ 11.0, 9.0, 11.5, 10.5 ], "rotation": 180, "enabled": false },

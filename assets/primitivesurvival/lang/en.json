@@ -64,6 +64,11 @@
     "item-psfish-mutant-cooked": "Mutated Fish (Cooked)",
     "itemdesc-psfish-*-cooked": "Dinner time.",
 
+    "item-fishfillet-raw": "Fish Fillet (Raw)",
+    "itemdesc-fishfillet-raw": "A delicious source of protein once cooked.",
+    "item-fishfillet-cooked": "Fish Fillet (Cooked)",
+    "itemdesc-fishfillet-cooked": "Dinner time.",
+
     "item-jerky-redmeat-raw": "Jerky Redmeat (Raw)",
     "item-jerky-redmeat-cured": "Jerky Redmeat (Cured)",
     "item-jerky-redmeat-cooked": "Jerky Redmeat (Cooked)",
@@ -236,6 +241,8 @@
 
     "game:recipeingredient-item-psfish-trout-raw": "Trout",
     "game:recipeingredient-item-psfish-trout-raw-insturmentalcase": "Trout",
+    "recipeingredient-item-psfish-trout-raw": "Trout",
+    "recipeingredient-item-psfish-trout-raw-insturmentalcase": "Trout",
     "game:meal-ingredient-soup-primary-psfish-trout-raw": "Trout",
     "game:meal-ingredient-soup-secondary-psfish-trout-raw": "Trout",
     "game:meal-ingredient-stew-primary-psfish-trout-raw": "Trout",
@@ -243,6 +250,8 @@
 
     "game:recipeingredient-item-psfish-bass-raw": "Bass",
     "game:recipeingredient-item-psfish-bass-raw-insturmentalcase": "Bass",
+    "recipeingredient-item-psfish-bass-raw": "Bass",
+    "recipeingredient-item-psfish-bass-raw-insturmentalcase": "Bass",
     "game:meal-ingredient-soup-primary-psfish-bass-raw": "Bass",
     "game:meal-ingredient-soup-secondary-psfish-bass-raw": "Bass",
     "game:meal-ingredient-stew-primary-psfish-bass-raw": "Bass",
@@ -250,6 +259,8 @@
 
     "game:recipeingredient-item-psfish-pike-raw": "Pike",
     "game:recipeingredient-item-psfish-pike-raw-insturmentalcase": "Pike",
+    "recipeingredient-item-psfish-pike-raw": "Pike",
+    "recipeingredient-item-psfish-pike-raw-insturmentalcase": "Pike",
     "game:meal-ingredient-soup-primary-psfish-pike-raw": "Pike",
     "game:meal-ingredient-soup-secondary-psfish-pike-raw": "Pike",
     "game:meal-ingredient-stew-primary-psfish-pike-raw": "Pike",
@@ -257,6 +268,8 @@
 
     "game:recipeingredient-item-psfish-arcticchar-raw": "Arctic Char",
     "game:recipeingredient-item-psfish-arcticchar-raw-insturmentalcase": "Arctic Char",
+    "recipeingredient-item-psfish-arcticchar-raw": "Arctic Char",
+    "recipeingredient-item-psfish-arcticchar-raw-insturmentalcase": "Arctic Char",
     "game:meal-ingredient-soup-primary-psfish-arcticchar-raw": "Arctic Char",
     "game:meal-ingredient-soup-secondary-psfish-arcticchar-raw": "Arctic Char",
     "game:meal-ingredient-stew-primary-psfish-arcticchar-raw": "Arctic Char",
@@ -264,6 +277,8 @@
 
     "game:recipeingredient-item-psfish-catfish-raw": "Catfish",
     "game:recipeingredient-item-psfish-catfish-raw-insturmentalcase": "Catfish",
+    "recipeingredient-item-psfish-catfish-raw": "Catfish",
+    "recipeingredient-item-psfish-catfish-raw-insturmentalcase": "Catfish",
     "game:meal-ingredient-soup-primary-psfish-catfish-raw": "Catfish",
     "game:meal-ingredient-soup-secondary-psfish-catfish-raw": "Catfish",
     "game:meal-ingredient-stew-primary-psfish-catfish-raw": "Catfish",
@@ -271,10 +286,21 @@
 
     "game:recipeingredient-item-psfish-bluegill-raw": "Bluegill",
     "game:recipeingredient-item-psfish-bluegill-raw-insturmentalcase": "Bluegill",
+    "recipeingredient-item-psfish-bluegill-raw": "Bluegill",
+    "recipeingredient-item-psfish-bluegill-raw-insturmentalcase": "Bluegill",
     "game:meal-ingredient-soup-primary-psfish-bluegill-raw": "Bluegill",
     "game:meal-ingredient-soup-secondary-psfish-bluegill-raw": "Bluegill",
     "game:meal-ingredient-stew-primary-psfish-bluegill-raw": "Bluegill",
     "game:meal-ingredient-stew-secondary-psfish-bluegill-raw": "Bluegill",
+
+    "game:recipeingredient-item-fishfillet-raw": "Fish",
+    "game:recipeingredient-item-fishfillet-raw-insturmentalcase": "Fish",
+    "recipeingredient-item-fishfillet-raw": "Fish",
+    "recipeingredient-item-fishfillet-raw-insturmentalcase": "Fish",
+    "game:meal-ingredient-soup-primary-fishfillet-raw": "Fish",
+    "game:meal-ingredient-soup-secondary-fishfillet-raw": "Fish",
+    "game:meal-ingredient-stew-primary-fishfillet-raw": "Fish",
+    "game:meal-ingredient-stew-secondary-fishfillet-raw": "Fish",
 
     "block-steatitealcove-temporal*": "Temporal Alcove",
     "block-steatitealcove-astral*": "Astral Alcove",

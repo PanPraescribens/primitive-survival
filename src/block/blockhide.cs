@@ -54,16 +54,4 @@ public class BlockHide : Block
         return false;
     }
 
-    public MeshData GenMesh(ICoreClientAPI capi, string shapePath, ITexPositionSource texture, ITesselatorAPI tesselator = null)
-    {
-        Shape shape = null;
-        tesselator = capi.Tesselator;
-        shape = capi.Assets.TryGet(shapePath + ".json").ToObject<Shape>();
-        MeshData mesh;
-        tesselator.TesselateShape(shapePath, shape, out mesh, texture, new Vec3f(0, 0, 0));
-        mesh.Scale(new Vec3f(0.5f, 0f, 0.5f),0.5f, 0.5f, 0.5f);
-        mesh.Rotate(new Vec3f(0.5f, 0, 0.5f), 0, Shape.rotateY * GameMath.DEG2RAD, 0); //orient based on direction last
-        return mesh;
-    }
-
 }

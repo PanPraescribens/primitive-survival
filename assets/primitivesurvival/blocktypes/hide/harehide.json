@@ -1,17 +1,11 @@
 {
 	"code": "harehide",
 	"class": "blockhide",
-	"entityClass": "behide",
 	"behaviors": [ { "name": "Unstable" } ],
-	"attributes": {
-		"handbook": {
-			"exclude": true
-		}
-	},
 	"variantgroups": [
 		{
 			"code": "species",
-			"states": [ "arctic", "ashgrey", "darkbrown", "darkgrey", "desert", "gold", "lightbrown", "lightgrey","silver","smokegrey" ]
+			"states": [ "arctic", "ashgrey", "darkbrown", "darkgrey", "desert", "gold", "lightbrown", "lightgrey", "silver", "smokegrey" ]
 		},
 		{
 			"code": "type",
@@ -29,6 +23,13 @@
 				"west",
 				"northwest"
 			]
+		}
+	],
+	"drops": [
+		{
+			"type": "item",
+			"code": "game:hide-pelt-small",
+			"quantity": { "avg": 1 }
 		}
 	],
 	"shapebytype": {
@@ -87,14 +88,13 @@
 		}
 	},
 	"selectionBox": {
-		"x1": 0.1,
+		"x1": 0,
 		"y1": 0,
-		"z1": 0.1,
-		"x2": 0.9,
+		"z1": 0,
+		"x2": 1,
 		"y2": 0.0625,
-		"z2": 0.9
+		"z2": 1
 	},
-
 	"collisionbox": null,
 	"combustibleProps": {
 		"burnTemperature": 400,

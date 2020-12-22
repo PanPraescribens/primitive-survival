@@ -1,0 +1,17 @@
+{
+  "ingredientPattern": "K,H",
+  "enabled": true,
+  "shapeless": true,
+  "ingredients": {
+    "K": { "type": "item", "code": "game:knife-*", "isTool": true },
+    "H": { "type": "item", "code": "primitivesurvival:psfish-*-raw", "quantity": 1 }
+  },
+  "name": "fishfillet",
+  "width": 1,
+  "height": 2,
+  "output": {
+    "type": "item",
+    "code": "primitivesurvival:fishfillet-raw",
+    "quantity": 1
+  }
+}

@@ -232,19 +232,22 @@ public class BEDeadfall : BlockEntityDisplay, IAnimalFoodSource
         { sb.Append("It's tripped. Sneak click to set it back up."); }
         else
         {
-            if (baitStack.Item != null)
+            if (baitStack != null)
             {
-                if (Array.IndexOf(baitTypes, baitStack.Item.FirstCodePart()) < 0)
-                { sb.Append("Your bait has gone rotten. Replace it with fresh bait."); }
-                else
-                { sb.Append("It's baited so your odds of catching something are pretty good."); }
-            }
-            else if (baitStack.Block != null)
-            {
-                if (Array.IndexOf(baitTypes, baitStack.Block.FirstCodePart()) < 0)
-                { sb.Append("Your bait has gone rotten. Replace it with fresh bait."); }
-                else
-                { sb.Append("It's baited so your odds of catching something are pretty good."); }
+                if (baitStack.Item != null)
+                {
+                    if (Array.IndexOf(baitTypes, baitStack.Item.FirstCodePart()) < 0)
+                    { sb.Append("Your bait has gone rotten. Replace it with fresh bait."); }
+                    else
+                    { sb.Append("It's baited so your odds of catching something are pretty good."); }
+                }
+                else if (baitStack.Block != null)
+                {
+                    if (Array.IndexOf(baitTypes, baitStack.Block.FirstCodePart()) < 0)
+                    { sb.Append("Your bait has gone rotten. Replace it with fresh bait."); }
+                    else
+                    { sb.Append("It's baited so your odds of catching something are pretty good."); }
+                }
             }
             else if (baitSlot.Empty)
             { sb.Append("Bait it with some food to increase your odds of catching something."); }

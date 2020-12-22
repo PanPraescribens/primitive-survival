@@ -312,8 +312,8 @@
     <Content Include="assets\primitivesurvival\textures\item\resource\rustygear.png" />
     <Content Include="assets\primitivesurvival\textures\item\resource\temporalgear.png" />
     <Content Include="modinfo.json" />
-    <Compile Include="src\blockentity\behide.cs" />
     <Compile Include="src\block\blockhide.cs" />
+    <Compile Include="src\item\itemhide.cs" />
     <Compile Include="src\primativesurvival.cs" />
     <Compile Include="src\block\blockalcove.cs" />
     <Compile Include="src\block\blockdeadfall.cs" />
@@ -356,6 +356,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="assets\primitivesurvival\blocktypes\hide\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\primitivesurvival\itemtypes\fishing\fishfillet.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\primitivesurvival\recipes\grid\fishfillet.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\primitivesurvival\patches\hide.json" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

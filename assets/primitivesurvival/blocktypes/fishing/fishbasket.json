@@ -34,7 +34,7 @@
   },
   "drawtype": "JSON",
   "blockmaterial": "wood",
-  "lightAbsorption": 2,
+  "lightAbsorption": 0,
   "collisionbox": {
     "x1": 0.1,
     "y1": 0,

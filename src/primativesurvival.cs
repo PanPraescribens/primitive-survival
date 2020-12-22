@@ -23,8 +23,7 @@ namespace primitiveSurvival
             api.RegisterBlockEntityClass("bealcove", typeof(BEAlcove));
             api.RegisterBlockEntityClass("bemetalbucket", typeof(BEMetalBucket));
             api.RegisterBlockEntityClass("bemetalbucketfilled", typeof(BEMetalBucketFilled));
-            api.RegisterBlockEntityClass("behide", typeof(BEHide));
-
+     
             api.RegisterBlockClass("blockstake", typeof(BlockStake));
             api.RegisterBlockClass("blockstakeinwater", typeof(BlockStakeInWater));
             api.RegisterBlockClass("blockdeadfall", typeof(BlockDeadfall));
@@ -52,6 +51,7 @@ namespace primitiveSurvival
             api.RegisterItemClass("itemwoodspikebundle", typeof(ItemWoodSpikeBundle));
             api.RegisterItemClass("itempsgear", typeof(ItemPSGear));
             api.RegisterItemClass("itemmonkeybridge", typeof(ItemMonkeyBridge));
+            api.RegisterItemClass("itemhide", typeof(ItemHide)); //override for game:hide
         }
 
         public override void StartServerSide(ICoreServerAPI Api)

@@ -1,17 +1,14 @@
 {
 	"code": "wolfhide",
 	"class": "blockhide",
-	"entityClass": "behide",
 	"behaviors": [ { "name": "Unstable" } ],
-	"attributes": {
-		"handbook": {
-			"exclude": true
-		}
-	},
 	"variantgroups": [
 		{
 			"code": "species",
-			"states": [ "grey", "steppe", "tundra"
+			"states": [
+				"grey",
+				"steppe",
+				"tundra"
 			]
 		},
 		{
@@ -30,6 +27,13 @@
 				"west",
 				"northwest"
 			]
+		}
+	],
+	"drops": [
+		{
+			"type": "item",
+			"code": "game:hide-pelt-medium",
+			"quantity": { "avg": 1 }
 		}
 	],
 	"shapebytype": {
@@ -88,70 +92,69 @@
 		}
 	},
 	"selectionBox": {
-		"x1": 0.1,
+		"x1": 0,
 		"y1": 0,
-		"z1": 0.1,
-		"x2": 0.9,
-		"y2": 0.0625,
-		"z2": 0.9
+		"z1": 0,
+		"x2": 1,
+		"y2": 0.3,
+		"z2": 1
 	},
-
-	"collisionbox": null,
-	"combustibleProps": {
-		"burnTemperature": 400,
-		"burnDuration": 10
-	},
-	"sounds": {
-		"place": "game:block/cloth",
-		"walk": "game:walk/cloth"
-	},
-	"guiTransform": {
-		"translation": {
-			"x": 0,
-			"y": 3,
-			"z": 0
+		"collisionbox": null,
+		"combustibleProps": {
+			"burnTemperature": 400,
+			"burnDuration": 10
 		},
-		"origin": {
-			"x": 0.5,
-			"y": 0.0625,
-			"z": 0.5
+		"sounds": {
+			"place": "game:block/cloth",
+			"walk": "game:walk/cloth"
 		},
-		"scale": 0.58
-	},
-	"groundTransform": {
-		"translation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
+		"guiTransform": {
+			"translation": {
+				"x": 0,
+				"y": 3,
+				"z": 0
+			},
+			"origin": {
+				"x": 0.5,
+				"y": 0.0625,
+				"z": 0.5
+			},
+			"scale": 0.58
 		},
-		"rotation": {
-			"x": 0,
-			"y": -45,
-			"z": 0
+		"groundTransform": {
+			"translation": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"rotation": {
+				"x": 0,
+				"y": -45,
+				"z": 0
+			},
+			"origin": {
+				"x": 0.5,
+				"y": -0.02,
+				"z": 0.5
+			},
+			"scale": 1.5
 		},
-		"origin": {
-			"x": 0.5,
-			"y": -0.02,
-			"z": 0.5
+		"tpHandTransform": {
+			"translation": {
+				"x": -1.7,
+				"y": 0.1,
+				"z": -1.5
+			},
+			"rotation": {
+				"x": -46,
+				"y": 0,
+				"z": -2
+			},
+			"origin": {
+				"x": 0.5,
+				"y": 0,
+				"z": 0.5
+			}
 		},
-		"scale": 1.5
-	},
-	"tpHandTransform": {
-		"translation": {
-			"x": -1.7,
-			"y": 0.1,
-			"z": -1.5
-		},
-		"rotation": {
-			"x": -46,
-			"y": 0,
-			"z": -2
-		},
-		"origin": {
-			"x": 0.5,
-			"y": 0,
-			"z": 0.5
-		}
-	},
-	"materialDensity": 200
-}
+		"materialDensity": 200
+	}

@@ -10,7 +10,7 @@
   "behaviors": [{ "name": "Unstable" }],
   "blockmaterial": "Stone",
   "drawtype": "json",
-  "lightabsorption": 20,
+  "lightabsorption": 0,
   "sideopaque": {
     "all": false
   },

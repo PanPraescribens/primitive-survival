@@ -1,13 +1,7 @@
 {
 	"code": "pighide",
 	"class": "blockhide",
-	"entityClass": "behide",
 	"behaviors": [ { "name": "Unstable" } ],
-	"attributes": {
-		"handbook": {
-			"exclude": true
-		}
-	},
 	"variantgroups": [
 		{
 			"code": "species",
@@ -15,7 +9,7 @@
 		},
 		{
 			"code": "type",
-			"states": [ "female", "male" ]
+			"states": [ "male", "female" ]
 		},
 		{
 			"code": "dir",
@@ -31,39 +25,14 @@
 			]
 		}
 	],
+	"drops": [
+		{
+			"type": "item",
+			"code": "game:hide-pelt-medium",
+			"quantity": { "avg": 1 }
+		}
+	],
 	"shapebytype": {
-		"*male-north": {
-			"base": "block/hide/malepighide",
-			"rotateY": 270
-		},
-		"*male-northeast": {
-			"base": "block/hide/malepighide",
-			"rotateY": 225
-		},
-		"*male-east": {
-			"base": "block/hide/malepighide",
-			"rotateY": 180
-		},
-		"*male-southeast": {
-			"base": "block/hide/malepighide",
-			"rotateY": 135
-		},
-		"*male-south": {
-			"base": "block/hide/malepighide",
-			"rotateY": 90
-		},
-		"*male-southwest": {
-			"base": "block/hide/malepighide",
-			"rotateY": 45
-		},
-		"*male-west": {
-			"base": "block/hide/malepighide",
-			"rotateY": 0
-		},
-		"*male-northwest": {
-			"base": "block/hide/malepighide",
-			"rotateY": 315
-		},
 		"*female-north": {
 			"base": "block/hide/femalepighide",
 			"rotateY": 270
@@ -95,6 +64,38 @@
 		"*female-northwest": {
 			"base": "block/hide/femalepighide",
 			"rotateY": 315
+		},
+		"*male-north": {
+			"base": "block/hide/malepighide",
+			"rotateY": 270
+		},
+		"*male-northeast": {
+			"base": "block/hide/malepighide",
+			"rotateY": 225
+		},
+		"*male-east": {
+			"base": "block/hide/malepighide",
+			"rotateY": 180
+		},
+		"*male-southeast": {
+			"base": "block/hide/malepighide",
+			"rotateY": 135
+		},
+		"*male-south": {
+			"base": "block/hide/malepighide",
+			"rotateY": 90
+		},
+		"*male-southwest": {
+			"base": "block/hide/malepighide",
+			"rotateY": 45
+		},
+		"*male-west": {
+			"base": "block/hide/malepighide",
+			"rotateY": 0
+		},
+		"*male-northwest": {
+			"base": "block/hide/malepighide",
+			"rotateY": 315
 		}
 	},
 	"sidesolid": { "all": false },
@@ -119,12 +120,12 @@
 		}
 	},
 	"selectionBox": {
-		"x1": 0.1,
+		"x1": 0,
 		"y1": 0,
-		"z1": 0.1,
-		"x2": 0.9,
-		"y2": 0.0625,
-		"z2": 0.9
+		"z1": 0,
+		"x2": 1,
+		"y2": 0.3,
+		"z2": 1
 	},
 
 	"collisionbox": null,
@@ -146,7 +147,8 @@
 			"x": 0.5,
 			"y": 0.0625,
 			"z": 0.5
-		}
+		},
+		"scale": 0.8
 	},
 	"groundTransform": {
 		"translation": {
