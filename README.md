@@ -16,7 +16,7 @@ Version 2.4 updates
 
  - New: fillet fish functionality for better inventory management/cooking - new item, new recipe, added to soup/stew recipes
  - New: basic taxidermy - place pelts on the floor for rugs
- - New: jerky, mushrooms, bread, poultry, pickled vegetables, redmeat, bushmeat, and cheese to accepted bait types for snares, deadfalls, trot lines, limblines, and fish baskets
+ - Updated: jerky, mushrooms, bread, poultry, pickled vegetables, redmeat, bushmeat, and cheese to accepted bait types for snares, deadfalls, trot lines, limblines, and fish baskets
  - Updated: 3rd person handheld fish so they're more like holding a lantern than a club.  Changed 1st person to match somewhat.
  - Updated: More frequently removed rotten fish after a certain amount of time (they were already being removed from other fishing traps) - they tend to pile up, especially on multiplayer -DEBUG THIS MORE
  - Updated: Investigated fishing in general and made some minor changes to catch percents
