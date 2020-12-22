@@ -9,10 +9,6 @@ https://www.vintagestory.at/forums/topic/2399-primitive-survival-traps-fishing-a
 
 Roadmap
 
- - Make deadfall and snare trap more effective?, and/or prevent larger mobs from being attracted to them/tripping them.  Investigate blunt attack in 3rd person for snare.
-
- 
- 
  - Pan dirt for worms, higher soil fertility, better results (next version)
  - Work on smoking rack (next version)
  
@@ -31,6 +27,7 @@ Version 2.4 updates
  - Added basic taxidermy - place pelts on the floor for rugs
  - Tested ozBillo's bushmeat mod together with this mod - seems good!
  - Removed shapeless from monkey bridge grid recipe so it would pull items from the correct slots
+ - Made deadfall and snare trap slightly more effective to hopefully scare off larger animals
 
 Version 2.3 updates
 
