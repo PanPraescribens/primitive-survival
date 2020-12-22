@@ -12,7 +12,6 @@ Roadmap
  - Make deadfall and snare trap more effective?, and/or prevent larger mobs from being attracted to them/tripping them.  Investigate blunt attack in 3rd person for snare.
  - Work on smoking rack
  - Pan dirt for worms, higher soil fertility, better results
- - Taxidermy - fix some faces, angle legs down slighty to decrease z-fighting, add game hooks 
  - Is grid recipe for the monkey bridge not pulling from the correct slots?
  
  
@@ -28,6 +27,7 @@ Version 2.4 updates
  - Investigated fishing in general and made some minor changes to catch percents
  - Removed giant weird shadow from deadfall and fishbasket on land
  - Fixed fish in soup/stew recipes now rendering properly in pots and bowls
+ - Added basic taxidermy - place pelts on the floor for rugs
 
 Version 2.3 updates
 
