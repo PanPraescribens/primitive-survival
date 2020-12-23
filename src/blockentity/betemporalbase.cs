@@ -354,7 +354,7 @@ public class BETemporalBase : BlockEntityDisplay
     {
         BlockFacing facing = byPlayer.CurrentBlockSelection.Face.Opposite;
         int index = -1;
-        System.Diagnostics.Debug.WriteLine(facing.ToString());
+        //System.Diagnostics.Debug.WriteLine(facing.ToString());
         string playerFacing = facing.ToString();
 
         if (playerFacing == "north")

@@ -151,7 +151,6 @@ public class BlockMetalBucket : BlockLiquidContainerBase
     {
         Shape shape = capi.Assets.TryGet("primitivesurvival:shapes/block/metalbucket/empty.json").ToObject<Shape>();
         MeshData bucketmesh;
-        ITexPositionSource tmpTextureSource;
         capi.Tesselator.TesselateShape(this, shape, out bucketmesh);
         
         if (contentStack != null)

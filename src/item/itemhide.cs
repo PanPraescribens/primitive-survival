@@ -86,7 +86,7 @@ public class ItemHide : Item
         else facing = "north";
 
         outPath = outPath.Replace("north", facing);
-        System.Diagnostics.Debug.WriteLine(outPath);  
+        //System.Diagnostics.Debug.WriteLine(outPath);  
         Block block = world.BlockAccessor.GetBlock(blockSel.Position);
         string face = blockSel.Face.ToString();
         if (face == "down") return;
