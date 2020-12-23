@@ -9,25 +9,25 @@ https://www.vintagestory.at/forums/topic/2399-primitive-survival-traps-fishing-a
 
 Roadmap
 
- - Make deadfall and snare trap more effective?, and/or prevent larger mobs from being attracted to them/tripping them.  Investigate blunt attack in 3rd person for snare.
- - Work on smoking rack
- - Pan dirt for worms, higher soil fertility, better results
- - Taxidermy - fix some faces, angle legs down slighty to decrease z-fighting, add game hooks 
- - Is grid recipe for the monkey bridge not pulling from the correct slots?
- 
+ - Pan dirt for worms, higher soil fertility, better results (next version)
+ - Work on smoking rack (next version)
  
 Version 2.4 updates
 
- - Added fillet fish functionality for better inventory management/cooking - new item, new recipe, added to soup/stew recipes
- - Changed 3rd person handheld fish so they're more like holding a lantern than a club.  Changed 1st person to match somewhat.
- - Fixed some minor z-fighting issues with fish.
- - Fixed (More than likely) intermittent weir trap crash - prevented collisions from unsetting trap AND prevented the sneak-click from recreating trap if it was already a weir trap.
-- Added jerky, mushrooms, bread, poultry, pickled vegetables, redmeat, bushmeat, and cheese to accepted bait types for snares, deadfalls, trot lines, limblines, and fish baskets
- - More frequently removed rotten fish after a certain amount of time (they were already being removed from other fishing traps) - they tend to pile up, especially on multiplayer -DEBUG THIS MORE
- - Double checked logic around relics in fish traps (i.e. gears) - seems to be aok
- - Investigated fishing in general and made some minor changes to catch percents
- - Removed giant weird shadow from deadfall and fishbasket on land
+ - New: fish fillet functionality for better inventory management/cooking - new item, new recipe, added to soup/stew recipes
+ - New: basic taxidermy - place pelts on the floor for rugs.  Made them a little derpy to reduce z-fighting issues with large ones.  Might need a better long term solution.
+ - Updated: jerky, mushrooms, bread, poultry, pickled vegetables, redmeat, bushmeat, and cheese to accepted bait types for snares, deadfalls, trot lines, limblines, and fish baskets
+ - Updated: 3rd person handheld fish so they're more like holding a lantern than a club.  Changed 1st person to match somewhat.
+ - Updated: More frequently removed rotten fish after a certain amount of time (they were already being removed from other fishing traps) - they tend to pile up, especially on multiplayer -DEBUG THIS MORE
+ - Updated: Investigated fishing in general and made some minor changes to catch percents
+ - Updated: Made deadfall and snare trap slightly more effective to hopefully scare off larger animals
+ - Fixed: some minor z-fighting issues with fish.
+ - Fixed: (More than likely) intermittent weir trap crash - prevented collisions from unsetting trap AND prevented the sneak-click from recreating trap if it was already a weir trap.
+ - Fixed: Removed giant weird shadow from deadfall and fishbasket on land
  - Fixed fish in soup/stew recipes now rendering properly in pots and bowls
+ - Fixed: Removed shapeless from monkey bridge grid recipe so it would pull items from the correct slots
+ - Verified: Logic around relics in fish traps (i.e. gears) - seems to be aok
+ - Verified: ozBillo's bushmeat mod together with this mod - seems good!
 
 Version 2.3 updates
 
