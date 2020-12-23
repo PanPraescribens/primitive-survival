@@ -2,7 +2,6 @@
     "ingredientPattern": "P P,_R_",
     "width": 3,
     "height": 2,
-    "shapeless":  true,
     "ingredients": {
         "P": { "type": "item", "code": "primitivesurvival:cordage" },
         "R": { "type": "item", "code": "game:rope" }

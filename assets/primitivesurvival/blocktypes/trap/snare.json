@@ -4,8 +4,8 @@
   "entityclass": "besnare",
   "attributes": {
     "maxAnimalHeight": 0.8,
-    "maxDamageSet": 10,
-    "maxDamageBaited": 20
+    "maxDamageSet": 12,
+    "maxDamageBaited": 24
   },
   "behaviors": [{ "name": "Unstable" }],
   "blockmaterial": "Wood",

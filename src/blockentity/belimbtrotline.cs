@@ -22,7 +22,7 @@ public class BELimbTrotLineLure : BlockEntityDisplay
     public int baitStolenPercent = 5; //5
     public double updateMinutes = 2.4; //2.4
 
-    public int rotRemovedPercent = 30; //30
+    public int rotRemovedPercent = 10; //10
 
     public int tickSeconds = 5;
     public int maxSlots = 4;
@@ -177,35 +177,20 @@ public class BELimbTrotLineLure : BlockEntityDisplay
                     }
                     else
                     {
-                        if (!catchSlot.Empty)
+                        int toCatch = baitedCatchPercent;
+                        if (!lureSlot.Empty)
+                        { toCatch = baitedLuredCatchPercent; }
+                        //System.Diagnostics.Debug.WriteLine("catch %" + toCatch);
+                        if (caught < toCatch)
                         {
-                            if (catchStack.Item.Code.Path.Contains("-rot"))
+                            if (catchSlot.Empty)
                             {
-                                int escaped = rnd.Next(100);
-                                if (escaped < rotRemovedPercent)
-                                {
-                                    ItemStack stack = catchSlot.TakeOut(1);
-                                    //System.Diagnostics.Debug.WriteLine("rotten fish removed");
-                                }
-                            }
-                        }
-                        else
-                        {
-                            int toCatch = baitedCatchPercent;
-                            if (!lureSlot.Empty)
-                            { toCatch = baitedLuredCatchPercent; }
-                            //System.Diagnostics.Debug.WriteLine("catch %" + toCatch);
-                            if (caught < toCatch)
-                            {
-                                if (catchSlot.Empty)
-                                {
-                                    catchStack = new ItemStack(Api.World.GetItem(new AssetLocation("primitivesurvival:psfish-" + fishTypes[rnd.Next(fishTypes.Count())] + "-raw")), 1);
-                                    rando = rnd.Next(2);
-                                    if (rando == 0)
-                                    { baitSlot.TakeOutWhole(); }
-                                    Api.World.BlockAccessor.MarkBlockDirty(Pos);
-                                    MarkDirty();
-                                }
+                                catchStack = new ItemStack(Api.World.GetItem(new AssetLocation("primitivesurvival:psfish-" + fishTypes[rnd.Next(fishTypes.Count())] + "-raw")), 1);
+                                rando = rnd.Next(2);
+                                if (rando == 0)
+                                { baitSlot.TakeOutWhole(); }
+                                Api.World.BlockAccessor.MarkBlockDirty(Pos);
+                                MarkDirty();
                             }
                         }
                     }
@@ -226,6 +211,18 @@ public class BELimbTrotLineLure : BlockEntityDisplay
                         }
                     }
                 }
+            }
+        }
+        if (!catchSlot.Empty)
+        {
+            //remove rot?
+            if (catchStack.Item.Code.Path == "rot")
+            {
+                int rando = rnd.Next(100);
+                if (rando < rotRemovedPercent)
+                { catchSlot.TakeOutWhole(); }
+                Api.World.BlockAccessor.MarkBlockDirty(Pos);
+                MarkDirty();
             }
         }
     }

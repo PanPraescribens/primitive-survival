@@ -21,13 +21,13 @@ public class BlockDeadfall : Block
             { maxdamage = Attributes["maxDamageSet"].AsInt(); }
             if (state != "tripped")
             {
-                int dmg = 1;
+                int dmg = 3;
                 //System.Diagnostics.Debug.WriteLine("Eye height " + entity.Properties.EyeHeight);
 
                 if (entity.Properties.EyeHeight < maxanimalheight)
                 {
                     Random rnd = new Random();
-                    dmg = rnd.Next(3, maxdamage);
+                    dmg = rnd.Next(5, maxdamage);
                 }
 
                 entity.ReceiveDamage(new DamageSource { SourceEntity = null, Type = EnumDamageType.BluntAttack }, dmg);

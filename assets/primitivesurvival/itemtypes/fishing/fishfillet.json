@@ -74,21 +74,21 @@
     },
     "fpHandTransform": {
         "translation": {
-            "x": 2.1,
-            "y": -1.6,
-            "z": 0.1
+            "x": 2.2,
+            "y": -0.9,
+            "z": -0.4
         },
         "rotation": {
-            "x": -132,
-            "y": -6,
-            "z": -159
+            "x": -131,
+            "y": -155,
+            "z": 164
         },
         "origin": {
             "x": 0.4,
-            "y": 1.9,
-            "z": 0.1
+            "y": 1.8,
+            "z": -0.1
         },
-        "scale": 2.11
+        "scale": 2.45
     },
     "tpHandTransform": {
         "translation": {

@@ -13,7 +13,7 @@ public class BEWeirTrap : BlockEntityDisplay
     public int catchPercent = 4; //5  
     public int escapePercent = 10; //10
     public double updateMinutes = 2.6; //2.6 
-    public int rotRemovedPercent = 30; //30
+    public int rotRemovedPercent = 10; //10
 
     public int tickSeconds = 3;
     public int maxSlots = 2;
@@ -175,33 +175,7 @@ public class BEWeirTrap : BlockEntityDisplay
 
     private void WeirTrapUpdate(float par)
     {
-        int escaped;
-        if (!catch1Slot.Empty)
-        {
-            if (catch1Stack.Item != null)
-                if (catch1Stack.Item.Code.Path.Contains("-rot"))
-                {
-                    escaped = rnd.Next(100);
-                    if (escaped < rotRemovedPercent)
-                    {
-                        WorldTake(1, Pos);  //remove rot from slot 1
-                    }
-                }
-        }
-        if (!catch2Slot.Empty)
-        {
-            if (catch2Stack.Item != null)
-                if (catch2Stack.Item.Code.Path.Contains("-rot"))
-                {
-                    escaped = rnd.Next(100);
-                    if (escaped < rotRemovedPercent)
-                    {
-                        WorldTake(2, Pos);  //remove rot from slot 2
-                    }
-                }
-        }
-        
-        escaped = rnd.Next(100);
+        int escaped = rnd.Next(100);
         int caught = rnd.Next(100);
         if (caught < catchPercent)
             WorldPut(0, Pos);
@@ -222,6 +196,30 @@ public class BEWeirTrap : BlockEntityDisplay
             }
         }
 
+        if (!catch1Slot.Empty)
+        {
+            if (catch1Stack.Item != null)
+            {
+                if (catch1Stack.Item.Code.Path == "rot")
+                {
+                    escaped = rnd.Next(100);
+                    if (escaped < rotRemovedPercent)
+                    { WorldTake(0, Pos); } //remove rot from slot 0
+                }
+            }
+        }
+        if (!catch2Slot.Empty)
+        {
+            if (catch2Stack.Item != null)
+            {
+                if (catch2Stack.Item.Code.Path == "rot")
+                {
+                    escaped = rnd.Next(100);
+                    if (escaped < rotRemovedPercent)
+                    { WorldTake(1, Pos); }  //remove rot from slot 1
+                }
+            }
+        }
     }
 
 

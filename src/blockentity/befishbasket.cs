@@ -15,7 +15,7 @@ public class BEFishBasket : BlockEntityDisplay
     public int baitStolenPercent = 5; //5
     public int escapePercent = 15; //15
     public double updateMinutes = 2.2; //2.2
-    public int rotRemovedPercent = 30;
+    public int rotRemovedPercent = 10; //10
 
     public int tickSeconds = 4;
     public int maxSlots = 3;
@@ -174,31 +174,6 @@ public class BEFishBasket : BlockEntityDisplay
         if (waterAllAround)
         {
             int escaped;
-            if (!catch1Slot.Empty)
-            {
-                if (catch1Stack.Item != null)
-                    if (catch1Stack.Item.Code.Path.Contains("-rot"))
-                    {
-                        escaped = rnd.Next(100);
-                        if (escaped < rotRemovedPercent)
-                        {
-                            WorldTake(1, Pos);  //remove rot from slot 1
-                        }
-                    }
-            }
-            if (!catch2Slot.Empty)
-            {
-                if (catch2Stack.Item != null)
-                    if (catch2Stack.Item.Code.Path.Contains("-rot"))
-                    {
-                    escaped = rnd.Next(100);
-                    if (escaped < rotRemovedPercent)
-                    {
-                        WorldTake(2, Pos);  //remove rot from slot 2
-                    }
-                }
-            }
-
             int caught = rnd.Next(100);
             if (!baitSlot.Empty)
             {
@@ -235,6 +210,31 @@ public class BEFishBasket : BlockEntityDisplay
                     }
                     if (escapedOk)
                         GenerateWaterParticles(2, "fish", Pos, Api.World);
+                }
+            }
+
+            if (!catch1Slot.Empty)
+            {
+                if (catch1Stack.Item != null)
+                {
+                    if (catch1Stack.Item.Code.Path == "rot")
+                    {
+                        escaped = rnd.Next(100);
+                        if (escaped < rotRemovedPercent)
+                        { WorldTake(1, Pos); } //remove rot from slot 1
+                    }
+                }
+            }
+            if (!catch2Slot.Empty)
+            {
+                if (catch2Stack.Item != null)
+                {
+                    if (catch2Stack.Item.Code.Path == "rot")
+                    {
+                        escaped = rnd.Next(100);
+                        if (escaped < rotRemovedPercent)
+                        { WorldTake(2, Pos); } //remove rot from slot 2
+                    }
                 }
             }
         }

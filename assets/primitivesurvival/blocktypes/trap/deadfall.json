@@ -4,8 +4,8 @@
   "entityclass": "bedeadfall",
   "attributes": {
     "maxAnimalHeight": 0.7,
-    "maxDamageSet": 8,
-    "maxDamageBaited": 16
+    "maxDamageSet": 10,
+    "maxDamageBaited": 20
   },
   "behaviors": [{ "name": "Unstable" }],
   "blockmaterial": "Stone",

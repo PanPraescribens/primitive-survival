@@ -20,11 +20,11 @@ public class BlockSnare : Block
             { maxdamage = Attributes["maxDamageSet"].AsInt(); }
             if (state != "tripped")
             {
-                int dmg = 1;
+                int dmg = 3;
                 if (entity.Properties.EyeHeight < maxanimalheight)
                 {
                     Random rnd = new Random();
-                    dmg = rnd.Next(3, maxdamage);
+                    dmg = rnd.Next(6, maxdamage);
                 }
 
                 entity.ReceiveDamage(new DamageSource { SourceEntity = null, Type = EnumDamageType.BluntAttack }, dmg);
