@@ -9,8 +9,8 @@ https://www.vintagestory.at/forums/topic/2399-primitive-survival-traps-fishing-a
 
 Roadmap
 
- - Pan dirt for worms, higher soil fertility, better results (next version)
- - Work on smoking rack (next version)
+ - Pan dirt for worms, higher soil fertility, better results (next version?)
+ - Work on smoking rack (next version?)
  
 Version 2.4 updates
 
