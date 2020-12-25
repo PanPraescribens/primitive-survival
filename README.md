@@ -11,7 +11,12 @@ Roadmap
 
  - Pan dirt for worms, higher soil fertility, better results (next version?)
  - Work on smoking rack (next version?)
- 
+
+Version 2.5 updates
+
+ - fixed: Added a patch to re-enable the creation of small pelts.  Didn't realize this got disabled recently.
+
+
 Version 2.4 updates
 
  - New: fish fillet functionality for better inventory management/cooking - new item, new recipe, added to soup/stew recipes
