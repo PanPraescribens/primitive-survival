@@ -9,11 +9,12 @@ https://www.vintagestory.at/forums/topic/2399-primitive-survival-traps-fishing-a
 
 Roadmap
 
- - Pan dirt for worms, higher soil fertility, better results (next version?)
  - Work on smoking rack (next version?)
 
 Version 2.5 updates
 
+ - added: Earthworms
+ - added: Russian translation, courtesy of @zipthehedge.
  - fixed: Added a patch to re-enable the creation of small pelts.  Didn't realize this got disabled recently.
 
 
