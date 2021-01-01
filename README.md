@@ -13,9 +13,9 @@ Roadmap
 
 Version 2.5 updates
 
- - added: Earthworms
- - added: Russian translation, courtesy of @zipthehedge.
- - fixed: Added a patch to re-enable the creation of small pelts.  Didn't realize this got disabled recently.
+ - added: Earthworms.
+ - added: Russian translation, courtesy of zipthehedge.
+ - fixed: Added a patch to re-enable the creation of small pelts.  Didn't realize this got disabled in Vanilla recently.
 
 
 Version 2.4 updates
