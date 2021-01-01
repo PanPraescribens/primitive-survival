@@ -13,8 +13,7 @@
     "behaviorsbyType": {
         "*-empty*": [
             { "name": "UnstableFalling" },
-            { "name": "RightClickPickup" },
-            { "name": "MilkingContainer" }
+            { "name": "RightClickPickup" }
         ],
         "*-filled*": [
             { "name": "UnstableFalling" },

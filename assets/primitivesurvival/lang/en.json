@@ -393,6 +393,12 @@
     "block-pighide-wild-male*": "Wild Pig Hide (male)",
 
     "block-sheephide-bighorn-female*": "Bighorn Sheep Hide (female)",
-    "block-sheephide-bighorn-male*": "Bighorn Sheep Hide (male)"
+    "block-sheephide-bighorn-male*": "Bighorn Sheep Hide (male)",
+
+    "item-earthworm": "Earthworm",
+    "item-creature-earthworm": "Earthworm",
+    "item-dead-creature-earthworm": "Dead Earthworm",
+    "item-earthwormcastings": "Earthworm Castings",
+    "block-earthwormcastings": "Earthworm Castings"
 
 }

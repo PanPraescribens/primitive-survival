@@ -312,7 +312,10 @@
     <Content Include="assets\primitivesurvival\textures\item\resource\rustygear.png" />
     <Content Include="assets\primitivesurvival\textures\item\resource\temporalgear.png" />
     <Content Include="modinfo.json" />
+    <Compile Include="src\blockbehavior\rightclickpickupspawnworm.cs" />
     <Compile Include="src\block\blockhide.cs" />
+    <Compile Include="src\entity\entityearthworm.cs" />
+    <Compile Include="src\item\itemearthworm.cs" />
     <Compile Include="src\item\itemhide.cs" />
     <Compile Include="src\primativesurvival.cs" />
     <Compile Include="src\block\blockalcove.cs" />
@@ -365,6 +368,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\primitivesurvival\patches\hide.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\primitivesurvival\blocktypes\other\earthwormcastings.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\primitivesurvival\itemtypes\other\earthworm.json" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

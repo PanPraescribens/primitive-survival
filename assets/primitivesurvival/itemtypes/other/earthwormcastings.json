@@ -1,0 +1,15 @@
+{
+  "code": "earthwormcastings",
+  "attributes": {
+    "fertilizerProps": { "n": 5, "p": 5, "k": 5 },
+    "dissolveInWater": false
+  },
+  "texture": { "base": "primitivesurvival:item/earthwormcastings" },
+    "creativeinventory": {
+        "general": [ "*" ],
+        "items": [ "*" ],
+        "primitive": [ "*" ]
+    },
+  "maxstacksize": 64,
+  "materialDensity": 900
+}

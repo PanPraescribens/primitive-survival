@@ -26,7 +26,7 @@ public class BELimbTrotLineLure : BlockEntityDisplay
 
     public int tickSeconds = 5;
     public int maxSlots = 4;
-    public string[] baitTypes = { "fruit", "grain", "legume", "meat", "vegetable", "jerky", "mushroom", "bread", "poultry", "pickledvegetable", "redmeat", "bushmeat", "cheese" };
+    public string[] baitTypes = { "fruit", "grain", "legume", "meat", "vegetable", "jerky", "mushroom", "bread", "poultry", "pickledvegetable", "redmeat", "bushmeat", "earthworm", "cheese" };
     public string[] fishTypes = { "trout", "bass", "pike", "arcticchar", "catfish", "bluegill" };
     public static Random rnd = new Random();
 
@@ -240,6 +240,7 @@ public class BELimbTrotLineLure : BlockEntityDisplay
         else
         {
             CollectibleObject colObj = playerSlot.Itemstack.Collectible;
+            //System.Diagnostics.Debug.WriteLine("colobj:" + colObj.Attributes);
             if (colObj.Attributes != null)
             {
                 if (TryPut(playerSlot, blockSel))
@@ -278,6 +279,8 @@ public class BELimbTrotLineLure : BlockEntityDisplay
 
         if (playerStack.Item != null)
         {
+            //System.Diagnostics.Debug.WriteLine("item:" + playerStack.Item.Code.Path);
+
             if (playerStack.Item.Code.Path.Contains("fishinghook") && hookSlot.Empty)
             {
                 if (!baitSlot.Empty || !catchSlot.Empty) return false; //must be bare line
@@ -311,6 +314,7 @@ public class BELimbTrotLineLure : BlockEntityDisplay
         }
         else if (playerStack.Block != null)
         {
+            //System.Diagnostics.Debug.WriteLine("block:" + playerStack.Block.Code.Path);
             if (Array.IndexOf(baitTypes, playerStack.Block.FirstCodePart()) >= 0 && baitSlot.Empty)
             {
                 if (hookSlot.Empty || !catchSlot.Empty) return false; //needs a hook and no fish

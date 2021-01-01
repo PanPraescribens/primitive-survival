@@ -11,6 +11,10 @@ namespace primitiveSurvival
 
         public void RegisterClasses(ICoreAPI api)
         {
+			api.RegisterEntity("entityearthworm", typeof(EntityEarthworm)); 
+			
+			api.RegisterBlockBehaviorClass ("RightClickPickupSpawnWorm", typeof(RightClickPickupSpawnWorm));
+			
             api.RegisterBlockEntityClass("bedeadfall", typeof(BEDeadfall));
             api.RegisterBlockEntityClass("besnare", typeof(BESnare));
             api.RegisterBlockEntityClass("belimbtrotlinelure", typeof(BELimbTrotLineLure));
@@ -52,6 +56,7 @@ namespace primitiveSurvival
             api.RegisterItemClass("itempsgear", typeof(ItemPSGear));
             api.RegisterItemClass("itemmonkeybridge", typeof(ItemMonkeyBridge));
             api.RegisterItemClass("itemhide", typeof(ItemHide)); //override for game:hide
+			api.RegisterItemClass ("itemearthworm", typeof(ItemEarthworm));
         }
 
         public override void StartServerSide(ICoreServerAPI Api)
