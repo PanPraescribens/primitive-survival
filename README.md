@@ -9,16 +9,22 @@ https://www.vintagestory.at/forums/topic/2399-primitive-survival-traps-fishing-a
 
 Roadmap
 
- - Pan dirt for worms, higher soil fertility, better results (next version?)
  - Work on smoking rack (next version?)
- 
+
+Version 2.5 updates
+
+ - added: Earthworms
+ - added: Russian translation, courtesy of @zipthehedge.
+ - fixed: Added a patch to re-enable the creation of small pelts.  Didn't realize this got disabled recently.
+
+
 Version 2.4 updates
 
  - New: fish fillet functionality for better inventory management/cooking - new item, new recipe, added to soup/stew recipes
  - New: basic taxidermy - place pelts on the floor for rugs.  Made them a little derpy to reduce z-fighting issues with large ones.  Might need a better long term solution.
  - Updated: jerky, mushrooms, bread, poultry, pickled vegetables, redmeat, bushmeat, and cheese to accepted bait types for snares, deadfalls, trot lines, limblines, and fish baskets
  - Updated: 3rd person handheld fish so they're more like holding a lantern than a club.  Changed 1st person to match somewhat.
- - Updated: More frequently removed rotten fish after a certain amount of time (they were already being removed from other fishing traps) - they tend to pile up, especially on multiplayer.
+ - Updated: More frequently removed rotten fish after a certain amount of time - they tend to pile up, especially on multiplayer.
  - Updated: Investigated fishing in general and made some minor changes to catch percents
  - Updated: Made deadfall and snare trap slightly more effective to hopefully scare off larger animals
  - Fixed: some minor z-fighting issues with fish.
