@@ -93,8 +93,6 @@ public class ItemHide : Item
 
         if (face == "up")
         {
-            if (block.Fertility <= 0 && !(block.Code.Path.Contains("tallgrass-"))) return;
-
             BlockSelection blockSelAbove = blockSel.Clone();
             blockSelAbove.Position.Y += 1;
             Block blockAbove = world.BlockAccessor.GetBlock(blockSelAbove.Position);
