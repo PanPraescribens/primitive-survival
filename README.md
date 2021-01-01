@@ -11,6 +11,10 @@ Roadmap
 
  - Work on smoking rack (next version?)
 
+Version 2.5.1 updates
+
+ - fixed: Re-enabled placement of hides on ALL surfaces
+ 
 Version 2.5 updates
 
  - added: Earthworms.
