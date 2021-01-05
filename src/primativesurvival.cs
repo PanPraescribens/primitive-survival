@@ -67,7 +67,7 @@ namespace primitiveSurvival
         public override void StartClientSide(ICoreClientAPI Api)
         {
             capi = Api;
-            //capi.ShowChatMessage("Primitive Surival mod installed...");
+            //capi.ShowChatMessage("Primitive Surival installed...");
         }
 
         public override void Start(ICoreAPI api)

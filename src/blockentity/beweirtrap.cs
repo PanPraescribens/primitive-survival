@@ -6,6 +6,7 @@ using Vintagestory.API.Server;
 using Vintagestory.API.Common;
 using Vintagestory.API.MathTools;
 using Vintagestory.GameContent;
+using Vintagestory.API.Config;
 using Vintagestory.API.Datastructures;
 
 public class BEWeirTrap : BlockEntityDisplay 
@@ -367,13 +368,13 @@ public class BEWeirTrap : BlockEntityDisplay
         bool rot = false;
         if (!catch1Slot.Empty || !catch2Slot.Empty)
         {
-            sb.Append("There's something in your trap.");
+            sb.Append(Lang.Get("There's something in your trap."));
             if (!catch1Slot.Empty)
             {
                 if (catch1Stack.Block != null)
                 { }
                 else if (!catch1Stack.Item.Code.Path.Contains("psfish"))
-                { sb.Append(" It smells a little funky in there."); }
+                { sb.Append(" " + Lang.Get("It smells a little funky in there.")); }
                 rot = true;
             }
             else if (!catch2Slot.Empty && !rot)
@@ -381,7 +382,7 @@ public class BEWeirTrap : BlockEntityDisplay
                 if (catch2Stack.Block != null)
                 { }
                 else if (!catch2Stack.Item.Code.Path.Contains("psfish"))
-                { sb.Append(" It smells a little funky in there."); }
+                { sb.Append(" " + Lang.Get("It smells a little funky in there.")); }
             }
             sb.AppendLine().AppendLine();
         }

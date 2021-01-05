@@ -23,6 +23,7 @@ public class EntityEarthworm : EntityAgent
         base.Initialize(properties, api, InChunkIndex3d);
     }
 
+
     public override void OnInteract(EntityAgent byEntity, ItemSlot slot, Vec3d hitPosition, EnumInteractMode mode)
     {
         if (!Alive || World.Side == EnumAppSide.Client || mode == 0)

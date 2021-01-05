@@ -2,6 +2,7 @@ using System;
 using System.Text;
 using Vintagestory.API.Common;
 using Vintagestory.API.MathTools;
+using Vintagestory.API.Config;
 
 public class BEAlcove : BlockEntity
 {
@@ -59,12 +60,12 @@ public class BEAlcove : BlockEntity
         Block block = Api.World.BlockAccessor.GetBlock(Pos);
         if (block.Code.Path.Contains("-unlit"))
         {
-            sb.Append("Right click with a torch or a candle to light the candle.");
+            sb.Append(Lang.Get("Right click with a torch or a candle to light the candle."));
             sb.AppendLine().AppendLine(); 
         }
         else if (block.Code.Path.Contains("-lit"))
         {
-            sb.Append("Right click with nothing in your hand to extinguish the candle.");
+            sb.Append(Lang.Get("Right click with nothing in your hand to extinguish the candle."));
             sb.AppendLine().AppendLine(); 
         }
     }

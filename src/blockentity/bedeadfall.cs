@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using Vintagestory.API.Client;
 using Vintagestory.GameContent;
+using Vintagestory.API.Config;
 using Vintagestory.API.Common.Entities;
 
 
@@ -229,7 +230,7 @@ public class BEDeadfall : BlockEntityDisplay, IAnimalFoodSource
     {
         Block block = Api.World.BlockAccessor.GetBlock(Pos);
         if (block.Code.Path.Contains("tripped"))
-        { sb.Append("It's tripped. Sneak click to set it back up."); }
+        { sb.Append(Lang.Get("It's tripped. Sneak click to set it back up.")); }
         else
         {
             if (baitStack != null)
@@ -237,20 +238,20 @@ public class BEDeadfall : BlockEntityDisplay, IAnimalFoodSource
                 if (baitStack.Item != null)
                 {
                     if (Array.IndexOf(baitTypes, baitStack.Item.FirstCodePart()) < 0)
-                    { sb.Append("Your bait has gone rotten. Replace it with fresh bait."); }
+                    { sb.Append(Lang.Get("Your bait has gone rotten. Replace it with fresh bait.")); }
                     else
-                    { sb.Append("It's baited so your odds of catching something are pretty good."); }
+                    { sb.Append(Lang.Get("It's baited so your odds of catching something are pretty good.")); }
                 }
                 else if (baitStack.Block != null)
                 {
                     if (Array.IndexOf(baitTypes, baitStack.Block.FirstCodePart()) < 0)
-                    { sb.Append("Your bait has gone rotten. Replace it with fresh bait."); }
+                    { sb.Append(Lang.Get("Your bait has gone rotten. Replace it with fresh bait.")); }
                     else
-                    { sb.Append("It's baited so your odds of catching something are pretty good."); }
+                    { sb.Append(Lang.Get("It's baited so your odds of catching something are pretty good.")); }
                 }
             }
             else if (baitSlot.Empty)
-            { sb.Append("Bait it with some food to increase your odds of catching something."); }
+            { sb.Append(Lang.Get("Bait it with some food to increase your odds of catching something.")); }
         }
         sb.AppendLine().AppendLine();
     }

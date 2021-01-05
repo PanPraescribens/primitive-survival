@@ -8,6 +8,7 @@ using Vintagestory.API.MathTools;
 using Vintagestory.GameContent;
 using Vintagestory.API.Common.Entities;
 using Vintagestory.API.Datastructures;
+using Vintagestory.API.Config;
 using System.IO;
 using System.Threading;
 
@@ -423,13 +424,13 @@ public class BETemporalBase : BlockEntityDisplay
             if (middletype == "lectern" && gearCount == 1)
             {
                 if (gearType == "psgear-astral")
-                    sb.Append("The book tells of the Mother Hydra and the Father Dagon.  They're awakened by some sort of cosmic energy and rejuvenated by water. Only then can you feed them and be requited.");
+                    sb.Append(Lang.Get("The book tells of the Mother Hydra and the Father Dagon.  They're awakened by some sort of cosmic energy and rejuvenated by water. Only then can you feed them and be requited."));
                 else if (gearType == "gear-temporal")
-                    sb.Append("The book tells of the Great Cthulhu.  It's awakened by some sort of transitory energy and feeds off the earth itself.  Once those needs are met you can feed it and be requited.");
+                    sb.Append(Lang.Get("The book tells of the Great Cthulhu.  It's awakened by some sort of transitory energy and feeds off the earth itself.  Once those needs are met you can feed it and be requited."));
                 else if (gearType == "psgear-ethereal")
-                    sb.Append("The book tells of distant worlds.  The specifics are beyond your comprehension.");
+                    sb.Append(Lang.Get("The book tells of distant worlds.  The specifics are beyond your comprehension."));
                 else if (gearType == "gear-rusty")
-                    sb.Append("It appears to be complete.");
+                    sb.Append(Lang.Get("It appears to be complete."));
             }
             else 
             {
@@ -451,25 +452,25 @@ public class BETemporalBase : BlockEntityDisplay
                 }
                 if (gearcount > 0 && areaOK)
                 {
-                    string holesize = "fattened hen";
+                    string holesize = Lang.Get("fattened hen");
                     if (gearcount == 2)
-                        holesize = "wolf pack";
+                        holesize = Lang.Get("wolf pack");
                     else if (gearcount == 3)
-                        holesize = "fully grown oak";
+                        holesize = Lang.Get("fully grown oak");
                     else if (gearcount == 4)
-                        holesize = "hovel";
-                    sb.Append("You've opened a gateway the size of a " + holesize + " and have unleashed some sort of cosmic horror!");
+                        holesize = Lang.Get("hovel");
+                    sb.Append(Lang.Get("You've opened a gateway the size of a") + " " + holesize + " " + Lang.Get("and have unleashed some sort of cosmic horror!"));
                 }
                 else if (gearcount > 0)
                 {
-                    sb.Append("It appears to be complete and you can feel a strange energy in the air, but the surrounding conditions aren't quite right.");
+                    sb.Append(Lang.Get("It appears to be complete and you can feel a strange energy in the air, but the surrounding conditions aren't quite right."));
                 }
                 else
-                    sb.Append("It appears to be complete.");
+                    sb.Append(Lang.Get("It appears to be complete."));
             }
         }
         else
-            sb.Append("It looks like something is missing.");
+            sb.Append(Lang.Get("It looks like something is missing."));
         sb.AppendLine().AppendLine();
     }
 

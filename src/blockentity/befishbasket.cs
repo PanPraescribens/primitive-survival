@@ -6,6 +6,7 @@ using Vintagestory.API.Server;
 using Vintagestory.API.Common;
 using Vintagestory.API.MathTools;
 using Vintagestory.GameContent;
+using Vintagestory.API.Config;
 using Vintagestory.API.Datastructures;
 
 public class BEFishBasket : BlockEntityDisplay
@@ -399,13 +400,13 @@ public class BEFishBasket : BlockEntityDisplay
             bool rot = false;
             if (!catch1Slot.Empty || !catch2Slot.Empty)
             {
-                sb.Append("There's something in your basket.");
+                sb.Append(Lang.Get("There's something in your basket."));
                 if (!catch1Slot.Empty)
                 {
                     if (catch1Stack.Block != null)
                     { }
                     else if (!catch1Stack.Item.Code.Path.Contains("psfish"))
-                    { sb.Append(" It smells a little funky in there."); }
+                    { sb.Append(" " + Lang.Get("It smells a little funky in there.")); }
                     rot = true;
                 }
                 if (!catch2Slot.Empty && !rot)
@@ -413,7 +414,7 @@ public class BEFishBasket : BlockEntityDisplay
                     if (catch2Stack.Block != null)
                     { }
                     else if (!catch2Stack.Item.Code.Path.Contains("psfish"))
-                    { sb.Append(" It smells a little funky in there."); }
+                    { sb.Append(" " + Lang.Get("It smells a little funky in there.")); }
                 }
                 sb.AppendLine().AppendLine();
             }
@@ -424,20 +425,20 @@ public class BEFishBasket : BlockEntityDisplay
                     if (baitStack.Item != null)
                     {
                         if (Array.IndexOf(baitTypes, baitStack.Item.FirstCodePart()) < 0)
-                        { sb.Append("Your bait has gone rotten. Replace it with fresh bait."); }
+                        { sb.Append(Lang.Get("Your bait has gone rotten. Replace it with fresh bait.")); }
                         else
-                        { sb.Append("It's baited so your odds of catching something are pretty good."); }
+                        { sb.Append(Lang.Get("It's baited so your odds of catching something are pretty good.")); }
                     }
                     else if (baitStack.Block != null)
                     {
                         if (Array.IndexOf(baitTypes, baitStack.Block.FirstCodePart()) < 0)
-                        { sb.Append("Your bait has gone rotten. Replace it with fresh bait."); }
+                        { sb.Append(Lang.Get("Your bait has gone rotten. Replace it with fresh bait.")); }
                         else
-                        { sb.Append("It's baited so your odds of catching something are pretty good."); }
+                        { sb.Append(Lang.Get("It's baited so your odds of catching something are pretty good.")); }
                     }
                 }
                 else if (baitSlot.Empty)
-                { sb.Append("Bait it with some food to increase your odds of catching something."); }
+                { sb.Append(Lang.Get("Bait it with some food to increase your odds of catching something.")); }
                 sb.AppendLine().AppendLine();
             }
         }

@@ -1,6 +1,7 @@
 using Vintagestory.API.Common;
 using Vintagestory.API.MathTools;
 using System.Collections.Generic;
+using Vintagestory.API.Config;
 using Vintagestory.GameContent;
 
 public class BlockStake : Block
@@ -37,7 +38,7 @@ public class BlockStake : Block
         Block blockBelow = world.BlockAccessor.GetBlock(blockSelBelow.Position);
         if (blockBelow.Fertility <= 0)
         {
-            failureCode = "you need more suitable ground to place this stake";
+            failureCode = Lang.Get("you need more suitable ground to place this stake");
             return false;
         }
         string orientations = GetOrientations(world, pos);

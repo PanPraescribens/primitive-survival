@@ -22,7 +22,7 @@ public class RightClickPickupSpawnWorm : BlockBehavior
     public override bool OnBlockInteractStart(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel, ref EnumHandling handling)
     {
         Block block = world.BlockAccessor.GetBlock(blockSel.Position);
-        System.Diagnostics.Debug.WriteLine("picked up:" + block.Code.Path);
+        //System.Diagnostics.Debug.WriteLine("picked up:" + block.Code.Path);
         int wormOdds = 6;
         if (!block.Code.Path.Contains("flint") && !block.Code.Path.Contains("stick")) wormOdds = 16;
         

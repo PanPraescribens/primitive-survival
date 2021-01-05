@@ -179,7 +179,7 @@ public class BEWoodSupportSpikes : BlockEntityDisplay, IAnimalFoodSource
                 }
             }
         }
-        return "Conceal Your Pit";
+        return Lang.Get("Conceal Your Pit");
     }
 
 
@@ -189,17 +189,17 @@ public class BEWoodSupportSpikes : BlockEntityDisplay, IAnimalFoodSource
         {
             string msg = "";
             if (inventory[0].Empty)
-            { msg = "some"; }
+            { msg = Lang.Get("some"); }
             else if (inventory[1].Empty)
-            { msg = "more"; }
+            { msg = Lang.Get("more"); }
             else if (inventory[2].Empty)
-            { msg = "even more"; }
+            { msg = Lang.Get("even more"); }
             if (msg != "")
             {
-                sb.Append("Add ").Append(msg).Append(" dry grass or some other plant based material to conceal your pit");
+                sb.Append(Lang.Get("Add") + " ").Append(msg).Append(" " + Lang.Get("dry grass or some other plant based material to conceal your pit"));
             }
             else if (inventory[3].Empty)
-            { sb.AppendLine("Add dirt or sand to camouflage your pit"); }
+            { sb.AppendLine(Lang.Get("Add dirt or sand to camouflage your pit")); }
 
             if (inventory[3].Empty)
             { sb.AppendLine().AppendLine(); }
@@ -243,5 +243,4 @@ public class BEWoodSupportSpikes : BlockEntityDisplay, IAnimalFoodSource
         }
         return true;
     }
-    
 }

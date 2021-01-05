@@ -6,6 +6,7 @@ using Vintagestory.API.Server;
 using Vintagestory.API.Common;
 using Vintagestory.API.MathTools;
 using Vintagestory.GameContent;
+using Vintagestory.API.Config;
 using Vintagestory.API.Datastructures;
 
 public class BETemporalCube : BlockEntityDisplay
@@ -149,7 +150,7 @@ public class BETemporalCube : BlockEntityDisplay
 
     public override void GetBlockInfo(IPlayer forPlayer, StringBuilder sb)
     {
-        sb.Append("It looks like something is missing.");
+        sb.Append(Lang.Get("It looks like something is missing."));
         sb.AppendLine().AppendLine();
     }
 

@@ -401,25 +401,25 @@ public class BELimbTrotLineLure : BlockEntityDisplay
         if (!catchSlot.Empty)
         {
             //AddSelectionBox();
-            sb.Append("There's something on your hook.");
+            sb.Append(Lang.Get("There's something on your hook."));
             if (!catchStack.Item.Code.Path.Contains("psfish"))
-            { sb.Append(" Unfortunately, it smells a little funky."); }
+            { sb.Append(" " + Lang.Get("Unfortunately, it smells a little funky.")); }
         }
         else
         {
             if (!hookSlot.Empty)
             {
-                string hookmsg = "None";
-                string baitmsg = "None";
-                string luremsg = "None";
+                string hookmsg = "-";
+                string baitmsg = "-";
+                string luremsg = "-";
 
                 if (!hookSlot.Empty) hookmsg = hookStack.GetName().Split('(', ')')[1];
                 if (!baitSlot.Empty) baitmsg = baitStack.GetName();
                 if (!lureSlot.Empty) luremsg = lureStack.GetName().Split('(', ')')[1];
 
-                sb.AppendLine("Hook type: " + hookmsg);
-                sb.AppendLine("Bait type: " + baitmsg);
-                sb.AppendLine("Lure type: " + luremsg);
+                sb.AppendLine(Lang.Get("Hook type") + ": " + hookmsg);
+                sb.AppendLine(Lang.Get("Bait type") + ": " + baitmsg);
+                sb.AppendLine(Lang.Get("Lure type") + ": " + luremsg);
 
                 sb.AppendLine();
             }
@@ -430,24 +430,24 @@ public class BELimbTrotLineLure : BlockEntityDisplay
                 if (baitStack.Item != null)
                 {
                     if (Array.IndexOf(baitTypes, baitStack.Item.FirstCodePart()) < 0)
-                    { sb.Append("Your bait has gone rotten. Replace it with fresh bait."); }
+                    { sb.Append(Lang.Get("Your bait has gone rotten. Replace it with fresh bait.")); }
                     else
-                    { sb.Append("It's baited so your odds of catching something are pretty good."); }
+                    { sb.Append(Lang.Get("It's baited so your odds of catching something are pretty good.")); }
                 }
                 else if (baitStack.Block != null)
                 {
                     if (Array.IndexOf(baitTypes, baitStack.Block.FirstCodePart()) < 0)
-                    { sb.Append("Your bait has gone rotten. Replace it with fresh bait."); }
+                    { sb.Append(Lang.Get("Your bait has gone rotten. Replace it with fresh bait.")); }
                     else
-                    { sb.Append("It's baited so your odds of catching something are pretty good."); }
+                    { sb.Append(Lang.Get("It's baited so your odds of catching something are pretty good.")); }
                 }
 
             }
             else if (baitSlot.Empty && !hookSlot.Empty)
-            { sb.Append("Bait it with something to increase your odds of catching something."); }
+            { sb.Append(Lang.Get("Bait it with some food to increase your odds of catching something.")); }
             else if (hookSlot.Empty)
             {
-                sb.Append("Put a hook on that line if you expect to catch something.").AppendLine().AppendLine();
+                sb.Append(Lang.Get("Put a hook on that line if you expect to catch something.")).AppendLine().AppendLine();
             }
         }
         sb.AppendLine().AppendLine();

@@ -1,6 +1,7 @@
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.MathTools;
+using Vintagestory.API.Config;
 using System;
 using Vintagestory.API.Common.Entities;
 
@@ -43,7 +44,7 @@ public class BlockSnare : Block
         Block block = world.BlockAccessor.GetBlock(blockSrc.Position);
         if (block.Fertility <= 0)
         {
-            failureCode = "you need more suitable ground to place this trap";
+            failureCode = Lang.Get("you need more suitable ground to place this trap");
             return false;
         }
         string facing = SuggestedHVOrientation(byPlayer, blockSel)[0].ToString();
