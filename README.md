@@ -11,6 +11,12 @@ Roadmap
 
  - Work on smoking rack (next version?)
 
+Version 2.5.2 updates
+
+ - added: Complete support for internationalization
+ - added: More Handbook Guide information
+ - added: More Russian translations
+ 
 Version 2.5.1 updates
 
  - fixed: Re-enabled placement of hides on ALL surfaces
