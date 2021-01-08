@@ -11,6 +11,11 @@ Roadmap
 
  - Work on smoking rack (next version?)
 
+Version 2.5.3 updates
+
+ - fixed: Orientation of the nail and spike molds in the mold rack - thanks @Jelani
+ - fixed: Worm castings something something - thanks @Jelani
+ 
 Version 2.5.2 updates
 
  - added: Complete support for internationalization
