@@ -45,10 +45,11 @@ public class EntityEarthworm : EntityAgent
         base.OnInteract(byEntity, slot, hitPosition, mode);
     }
 
+    
     public override void OnGameTick(float dt)
     {
         base.OnGameTick(dt);
-      
+        
         if (cnt++ > 2000)
         {
             cnt = 0;
@@ -68,6 +69,7 @@ public class EntityEarthworm : EntityAgent
             }
             else
             {
+
                 if (blockBelow.FirstCodePart() == "farmland")
                 {
                     //System.Diagnostics.Debug.WriteLine("firstblock:" + blockBelow.FirstCodePart());
@@ -92,19 +94,25 @@ public class EntityEarthworm : EntityAgent
                             tree.SetFloat("slowP", slowP);
                             befarmland.FromTreeAttributes(tree, World);
                             befarmland.MarkDirty();
-                            World.BlockAccessor.MarkBlockDirty(BelowPos);
+                            //World.BlockAccessor.MarkBlockDirty(BelowPos);
+                            World.BlockAccessor.MarkBlockEntityDirty(BelowPos); //new
+
                         }
                         else
                         {
+                            World.BlockAccessor.BreakBlock(BelowPos, null); //new
+                            //befarmland.MarkDirty();
                             //For better or worse, you've created a block of Worm Castings
                             Block block = World.BlockAccessor.GetBlock(new AssetLocation("primitivesurvival:earthwormcastings"));
                             World.BlockAccessor.SetBlock(block.BlockId, BelowPos);
                             World.BlockAccessor.MarkBlockDirty(BelowPos);
+                            //World.BlockAccessor.MarkBlockEntityDirty(BelowPos); //new
                         }
                     }
                 }
             }
         }
+    
     }
 }
 

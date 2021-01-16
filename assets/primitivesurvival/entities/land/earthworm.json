@@ -10,7 +10,7 @@
     "y": 0.4
   },
   "falldamage": false,
-  "eyeHeight": 0.1,
+  "eyeHeight": 0,
   "client": {
     "renderer": "Shape",
     "shape": { "base": "entity/land/earthworm" },
@@ -20,39 +20,38 @@
             "code": "controlledphysics",
             "stepHeight": 0.2
         },
-      
+
         { "code": "interpolateposition" }
     ],
     "animations": [
-      {
-        "code": "lookaround",
-        "animation": "burrow",
-        "animationSpeed": 1,
-        "weight": 1,
-        "blendMode": "AddAverage"
-      },
-      {
-        "code": "move",
-        "animation": "move",
-        "animationSpeed": 1,
-        "weight": 1,
-        "blendMode": "AddAverage"
-      },
-      {
-        "code": "idle",
-        "animation": "idle",
-        "animationSpeed": 0.5,
-        "weight": 1,
-        "blendMode": "AddAverage"
-      },
-      {
-        "code": "sit",
-        "animation": "sit",
-        "easeInSpeed": 4,
-        "easeOutSpeed": 4,
-        "weight": 1,
-        "blendMode": "AddAverage"
-      }
+        {
+            "code": "move",
+            "animation": "move",
+            "animationSpeed": 1,
+            "weight": 0.4,
+            "blendMode": "AddAverage"
+        },
+        {
+            "code": "idle",
+            "animation": "idle",
+            "animationSpeed": 0,
+            "weight": 1,
+            "blendMode": "AddAverage"
+        },
+        {
+            "code": "lookaround",
+            "animation": "burrow",
+            "animationSpeed": 1,
+            "weight": 0.5,
+            "blendMode": "AddAverage"
+        },
+        {
+            "code": "sit",
+            "animation": "sit",
+            "animationSpeed": 0.5,
+            "weight": 0.4,
+            "blendMode": "AddAverage"
+        }
     ]
   },
   "server": {
@@ -63,46 +62,41 @@
         },
         {
             "code": "floatupwhenstuck",
-            "onlyWhenDead": true
-        },
-        {
-            "code": "despawn",
-            "minPlayerDistance": 48,
-            "minSeconds": 90
+            "onlyWhenDead": false
         },
         {
             "code": "taskai",
             "aitasks": [
                 {
                     "code": "idle",
-                    "priority": 1.1,
-                    "movespeed": 0.0008,
+                    "priority": 1,
+                    "movespeed": 0,
                     "minduration": 1000,
                     "maxduration": 3000,
                     "mincooldown": 2000,
                     "maxcooldown": 5000,
                     "animation": "idle",
-                    "animationSpeed": 0.5,
+                    "animationSpeed": 1,
                     "preferredLightLevel": 15
                 },
                 {
                     "code": "wander",
-                    "priority": 1,
+                    "priority": 0.5,
                     "movespeed": 0.0016,
                     "animationSpeed": 1,
                     "minduration": 1000,
                     "maxduration": 3000,
-                    "mincooldown": 2000,
+                    "mincooldown": 1000,
                     "maxcooldown": 5000,
                     "animation": "move",
                     "preferredLightLevel": 15
                 },
                 {
                     "code": "wander",
-                    "priority": 0.7,
+                    "priority": 0.5,
                     "movespeed": 0.0016,
-                    "minduration": 2000,
-                    "maxduration": 5000,
+                    "minduration": 1500,
+                    "maxduration": 1500,
                     "mincooldown": 2000,
                     "maxcooldown": 5000,
                     "animationSpeed": 1,
@@ -111,7 +105,7 @@
                 },
                 {
                     "code": "lookaround",
-                    "priority": 0.7,
+                    "priority": 0.5,
                     "movespeed": 0.0003,
                     "animationSpeed": 0.5,
                     "minduration": 2000,
@@ -123,20 +117,6 @@
                 }
             ]
         }
-    ],
-    "spawnconditions": {
-      "runtime": {
-        "group": "passive",
-        "maxQuantity": 8,
-        "maxLightLevel": 8,
-        "chance": 1,
-        "lightLevelType": "MaxTimeOfDayLight",
-        "groupSize": { "dist": "invexp", "avg": 6, "var": 2 },
-        "minTemp": 0,
-        "minRain": 0,
-        "tryOnlySurface": true,
-        "insideBlockCodes": ["game:flower-*", "game:*grass-*"]
-      }
-    }
+    ]
   }
 }

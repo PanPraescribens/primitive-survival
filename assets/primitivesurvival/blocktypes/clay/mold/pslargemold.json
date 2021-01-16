@@ -56,6 +56,7 @@
     "pslargemold-burned-nail": {
       "requiredUnits": 100,
       "moldrackable": true,
+      "onmoldrackTransform": { "rotation": { "z": 90 } },
       "fillHeight": 1,
       "drop": {
         "type": "block",
@@ -64,14 +65,15 @@
       }
     },
     "pslargemold-burned-spike": {
-      "requiredUnits": 100,
-      "moldrackable": true,
-      "fillHeight": 1,
-      "drop": {
-        "type": "block",
-        "code": "{tooltype}-{metal}",
-        "quantity": 3
-      }
+        "requiredUnits": 100,
+        "moldrackable": true,
+        "onmoldrackTransform": { "rotation": { "z": 90 } },
+        "fillHeight": 1,
+        "drop": {
+            "type": "block",
+            "code": "{tooltype}-{metal}",
+            "quantity": 3
+        }
     }
   },
   "entityClassByType": {

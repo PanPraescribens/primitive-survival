@@ -1,7 +1,7 @@
 {
   "code": "earthwormcastings",
   "attributes": {
-    "fertilizerProps": { "n": 5, "p": 5, "k": 5 },
+    "fertilizerProps": { "n": 10, "p": 10, "k": 10 },
     "dissolveInWater": false
   },
   "texture": { "base": "primitivesurvival:item/earthwormcastings" },
