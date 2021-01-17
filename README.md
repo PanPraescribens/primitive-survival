@@ -9,7 +9,7 @@ https://www.vintagestory.at/forums/topic/2399-primitive-survival-traps-fishing-a
 
 Roadmap
 
- - Smoking rack/Pit Smoker
+ - Smoking Rack or Pit Smoker
  - Raft
 
 Version 2.5.3 updates
