@@ -14,7 +14,7 @@ Roadmap
 
 Version 2.5.3 updates
 
- - added: Two new fish = Perch and Carp
+ - added: Two new fish - Perch and Carp
  - fixed: Orientation of the nail and spike molds in the mold rack - thanks @Jelani
  - fixed: Worm castings - thanks @Jelani
  - fixed: Worms causing server lag
