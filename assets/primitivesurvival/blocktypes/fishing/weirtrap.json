@@ -48,23 +48,29 @@
   "liquidLevelByType": {
     "*-7": 7
   },
-    "textures": {
-        "bassmaterial": {
-            "base": "primitivesurvival:item/fishing/fish-bass-raw"
-        },
-        "troutmaterial": {
-            "base": "primitivesurvival:item/fishing/fish-trout-raw"
-        },
-        "pikematerial": {
-            "base": "primitivesurvival:item/fishing/fish-pike-raw"
-        },
-        "arcticcharmaterial": { "base": "item/fishing/fish-arcticchar-raw" },
-        "catfishmaterial": { "base": "item/fishing/fish-catfish-raw" },
-        "bluegillmaterial": { "base": "item/fishing/fish-bluegill-raw" },
-        "mutantmaterial": { "base": "item/fishing/fish-mutant-raw" },
-        "all": { "base": "game:block/liquid/water" },
-        "specialSecondTexture": { "base": "game:block/liquid/water2" }
+  "textures": {
+    "bassmaterial": {
+      "base": "primitivesurvival:item/fishing/fish-bass-raw"
     },
+    "troutmaterial": {
+      "base": "primitivesurvival:item/fishing/fish-trout-raw"
+    },
+    "pikematerial": {
+      "base": "primitivesurvival:item/fishing/fish-pike-raw"
+    },
+    "perchmaterial": {
+      "base": "primitivesurvival:item/fishing/fish-perch-raw"
+    },
+    "carpmaterial": {
+      "base": "primitivesurvival:item/fishing/fish-carp-raw"
+    },
+    "arcticcharmaterial": { "base": "item/fishing/fish-arcticchar-raw" },
+    "catfishmaterial": { "base": "item/fishing/fish-catfish-raw" },
+    "bluegillmaterial": { "base": "item/fishing/fish-bluegill-raw" },
+    "mutantmaterial": { "base": "item/fishing/fish-mutant-raw" },
+    "all": { "base": "game:block/liquid/water" },
+    "specialSecondTexture": { "base": "game:block/liquid/water2" }
+  },
   "sidesolid": {
     "all": false
   },

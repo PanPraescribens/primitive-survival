@@ -18,7 +18,7 @@ public class BEWeirTrap : BlockEntityDisplay
 
     public int tickSeconds = 3;
     public int maxSlots = 2;
-    public string[] fishTypes = { "trout", "bass", "pike", "arcticchar", "catfish", "bluegill" };
+    public string[] fishTypes = { "trout", "perch", "carp", "bass", "pike", "arcticchar", "catfish", "bluegill" };
     public string[] shellStates = { "scallop", "sundial", "turritella", "clam", "conch", "seastar", "volute" };
     public string[] shellColors = { "latte", "plain", "seafoam", "darkpurple", "cinnamon", "turquoise" };
     public string[] relics = { "temporalbase", "temporalcube", "temporallectern", "cthulu-statue", "dagon-statue", "hydra-statue", "necronomicon" };

@@ -21,7 +21,7 @@ public class BEFishBasket : BlockEntityDisplay
     public int tickSeconds = 4;
     public int maxSlots = 3;
     public string[] baitTypes = { "fruit", "grain", "legume", "meat", "vegetable","jerky", "mushroom","bread","poultry","pickledvegetable","redmeat","bushmeat", "earthworm", "cheese" };
-    public string[] fishTypes = { "trout", "bass", "pike", "arcticchar", "catfish", "bluegill"};
+    public string[] fishTypes = { "trout", "perch", "carp", "bass", "pike", "arcticchar", "catfish", "bluegill"};
     public string[] shellStates = { "scallop", "sundial", "turritella", "clam", "conch", "seastar", "volute" };
     public string[] shellColors = { "latte", "plain", "seafoam", "darkpurple", "cinnamon", "turquoise" };
 

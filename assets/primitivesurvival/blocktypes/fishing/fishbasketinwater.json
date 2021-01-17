@@ -74,6 +74,12 @@
     "troutmaterial": {
       "base": "primitivesurvival:item/fishing/fish-trout-raw"
     },
+    "perchmaterial": {
+      "base": "primitivesurvival:item/fishing/fish-perch-raw"
+    },
+    "carpmaterial": {
+      "base": "primitivesurvival:item/fishing/fish-carp-raw"
+    },
     "pikematerial": {
       "base": "primitivesurvival:item/fishing/fish-pike-raw"
     },

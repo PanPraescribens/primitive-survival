@@ -18,7 +18,7 @@ public class BETemporalBase : BlockEntityDisplay
     public int maxSlots = 6;
     public static Random rnd = new Random();
     public string[] temporalTypes = { "game:vegetable-cabbage", "game:vegetable-carrot", "game:vegetable-onion", "game:vegetable-parsnip", "game:vegetable-turnip", "game:vegetable-pumpkin", "game:nugget-nativegold", "game:nugget-nativegold", "game:nugget-nativegold" };
-    public string[] astralTypes = { "primitivesurvival:psfish-trout-raw", "primitivesurvival:psfish-bass-raw", "primitivesurvival:psfish-pike-raw", "primitivesurvival:psfish-arcticchar-raw", "primitivesurvival:psfish-catfish-raw", "primitivesurvival:psfish-bluegill-raw", "primitivesurvival:psfish-mutant-raw", "primitivesurvival:psfish-mutant-raw", "game:nugget-nativegold", "game:nugget-nativegold", "game:nugget-nativegold", "game:nugget-nativegold", "game:nugget-nativegold" };
+    public string[] astralTypes = { "primitivesurvival:psfish-trout-raw", "primitivesurvival:psfish-perch-raw", "primitivesurvival:psfish-carp-raw", "primitivesurvival:psfish-bass-raw", "primitivesurvival:psfish-pike-raw", "primitivesurvival:psfish-arcticchar-raw", "primitivesurvival:psfish-catfish-raw", "primitivesurvival:psfish-bluegill-raw", "primitivesurvival:psfish-mutant-raw", "primitivesurvival:psfish-mutant-raw", "game:nugget-nativegold", "game:nugget-nativegold", "game:nugget-nativegold", "game:nugget-nativegold", "game:nugget-nativegold" };
 
     public override string InventoryClassName
     {
