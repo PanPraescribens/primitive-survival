@@ -9,12 +9,15 @@ https://www.vintagestory.at/forums/topic/2399-primitive-survival-traps-fishing-a
 
 Roadmap
 
- - Work on smoking rack (next version?)
+ - Smoking rack/Pit Smoker
+ - Raft
 
 Version 2.5.3 updates
 
+ - added: Two new fish = Perch and Carp
  - fixed: Orientation of the nail and spike molds in the mold rack - thanks @Jelani
- - fixed: Worm castings something something - thanks @Jelani
+ - fixed: Worm castings - thanks @Jelani
+ - fixed: Worms causing server lag
  
 Version 2.5.2 updates
 
