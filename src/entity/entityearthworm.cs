@@ -16,7 +16,7 @@ public class EntityEarthworm : EntityAgent
 {
     int cnt = 0;
     public static Random rnd = new Random();
-    public int escapePercent = 1; // 1
+
 
     public override void Initialize(EntityProperties properties, ICoreAPI api, long InChunkIndex3d)
     {
@@ -49,22 +49,22 @@ public class EntityEarthworm : EntityAgent
     public override void OnGameTick(float dt)
     {
         base.OnGameTick(dt);
-        
-        if (cnt++ > 2000)
+        if (cnt++ > 200) 
         {
             cnt = 0;
-            ItemStack castings = new ItemStack(World.GetItem(new AssetLocation("primitivesurvival:earthwormcastings")));
-            JsonObject obj = castings.Collectible.Attributes["fertilizerProps"];
-            FertilizerProps props = obj.AsObject<FertilizerProps>();
+            //ItemStack castings = new ItemStack(World.GetItem(new AssetLocation("primitivesurvival:earthwormcastings")));
+            //JsonObject obj = castings.Collectible.Attributes["fertilizerProps"];
+            //FertilizerProps props = obj.AsObject<FertilizerProps>();
 
             BlockPos BelowPos = Pos.XYZ.AsBlockPos;
             Block blockBelow = World.BlockAccessor.GetBlock(BelowPos);
 
             //small aside - get the temperature and kill the worm if necessary
             ClimateCondition conds = World.BlockAccessor.GetClimateAt(BelowPos, EnumGetClimateMode.NowValues);
-            int escaped = rnd.Next(100);
-            if (conds.Temperature <= 0 || conds.Temperature >= 35 || escaped < escapePercent)
+            int escaped = rnd.Next(200); //one in two hundred chance the worm leaves
+            if (conds.Temperature <= 0 || conds.Temperature >= 35 || escaped < 1)
             {
+                //System.Diagnostics.Debug.WriteLine("Worm left");
                 Die(); //too cold or hot or the worm just left
             }
             else
@@ -83,9 +83,9 @@ public class EntityEarthworm : EntityAgent
                         float slowN = tree.GetFloat("slowN");
                         float slowK = tree.GetFloat("slowK");
                         float slowP = tree.GetFloat("slowP");
-                        if (slowN <= 150) slowN += props.N;
-                        if (slowK <= 150) slowK += props.K;
-                        if (slowP <= 150) slowP += props.P;
+                        if (slowN <= 150) slowN += 1; //props.N;
+                        if (slowK <= 150) slowK += 1; //props.K;
+                        if (slowP <= 150) slowP += 1; //props.P;
 
                         if (slowN < 150 && slowK < 150 && slowP < 150)
                         {
@@ -95,24 +95,19 @@ public class EntityEarthworm : EntityAgent
                             befarmland.FromTreeAttributes(tree, World);
                             befarmland.MarkDirty();
                             //World.BlockAccessor.MarkBlockDirty(BelowPos);
-                            World.BlockAccessor.MarkBlockEntityDirty(BelowPos); //new
+                            World.BlockAccessor.MarkBlockEntityDirty(BelowPos); 
 
                         }
                         else
                         {
-                            World.BlockAccessor.BreakBlock(BelowPos, null); //new
-                            //befarmland.MarkDirty();
-                            //For better or worse, you've created a block of Worm Castings
+                            World.BlockAccessor.BreakBlock(BelowPos, null); //For better or worse, you've created a block of Worm Castings
                             Block block = World.BlockAccessor.GetBlock(new AssetLocation("primitivesurvival:earthwormcastings"));
                             World.BlockAccessor.SetBlock(block.BlockId, BelowPos);
-                            World.BlockAccessor.MarkBlockDirty(BelowPos);
-                            //World.BlockAccessor.MarkBlockEntityDirty(BelowPos); //new
                         }
                     }
                 }
             }
         }
-    
     }
 }
 

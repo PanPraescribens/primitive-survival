@@ -1,6 +1,5 @@
 {
     "code": "earthwormcastings",
-    "class": "Block",
     "shape": { "base": "game:primitivesurvival:block/earthwormcastings" },
     "drawtype": "JSON",
     "blockmaterial": "Soil",
@@ -42,7 +41,7 @@
         "y1": 0,
         "z1": 0,
         "x2": 1,
-        "y2": 1,
+        "y2": 0.9,
         "z2": 1
     },
     "selectionBox": {
