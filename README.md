@@ -15,7 +15,7 @@ Roadmap
 Version 2.5.4 updates
 
  - add: Attach pelts to vertical surfaces (with a nail or a spike) @Vallen
- - add: updated translation - thanks @Zigthehedge
+ - added: updated translation - thanks @Zigthehedge
  - fix: metal dupe exploit melting down spikes and maybe more - thanks @Tels
  - fix: crouch left click spikes on a wall makes block face invisible - thanks @Tels
  - fix: weir trap broken with latest release?  off center and shift right click sometimes throws error - thanks @TechRabbit
