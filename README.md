@@ -9,7 +9,7 @@ https://www.vintagestory.at/forums/topic/2399-primitive-survival-traps-fishing-a
 
 Roadmap
 
- - Smoking Rack or Pit Smoker
+ - Smoking Rack or Pit Smoker - smoked meat good, jerky strips less good @Boomer Bill
  - Raft
 
 Version 2.5.4 updates
@@ -20,6 +20,7 @@ Version 2.5.4 updates
  - fix: Balance fish fillets - maybe 1 fillets from a Small Bass and a Bluegill, 2 from everything else @Boomer Bill
  - fix: Tin bronze in a lure mold just resets and adds metal to the crucible? @Nozarati
  - test: Pelts in 1.4.7 @Erland
+ - fix: Make monkey bridge a little less expensive to craft (thanks JakeCool for the tip)
  - added: updated translation - thanks @Zigthehedge
  - fix: metal dupe exploit melting down spikes and maybe more - thanks @Tels, @Shibby
  - fix: crouch left click spikes on a wall makes block face invisible - thanks @Tels
