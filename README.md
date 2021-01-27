@@ -19,7 +19,6 @@ Version 2.5.4 updates
  - investigate this mod and medieval expansion not playing nice together @Kai
  - fix: Balance fish fillets - maybe 1 fillets from a Small Bass and a Bluegill, 2 from everything else @Boomer Bill
  - fix: Tin bronze in a lure mold just resets and adds metal to the crucible? @Nozarati
- - test: Pelts in 1.4.7 @Erland
  - fix: Make monkey bridge a little less expensive to craft (thanks JakeCool for the tip)
  - added: updated translation - thanks @Zigthehedge
  - fix: metal dupe exploit melting down spikes and maybe more - thanks @Tels, @Shibby
