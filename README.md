@@ -25,6 +25,7 @@ Version 2.5.4 updates
  - fix: crouch left click spikes on a wall makes block face invisible - thanks @Tels
  - fix: weir trap broken with latest release?  off center and shift right click sometimes throws error - thanks @TechRabbit
  - fix: adding an oddball item (like a mechanical part) to an altar crashes the game - thanks @Hexedian
+ - add: config file to disable assets - thanks @techrabbit
 
 
 Version 2.5.3 updates
