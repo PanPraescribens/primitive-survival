@@ -16,7 +16,7 @@ Version 2.5.4 updates
 
  - added: updated translation - thanks @Zigthehedge
  - COULD NOT RECREATE: weir trap broken with latest release?  off center and shift right click sometimes throws error - thanks @TechRabbit 
- - investigate this mod and medieval expansion not playing nice together @Kai
+ - COULD NOT RECREATE: investigate this mod and medieval expansion not playing nice together @Kai
  - fixed: adding an oddball item (like a mechanical part) to an altar crashes the game - thanks @Hexedian
  - fixed: Added missing textures in pot/bowl for Perch and Carp - thanks @samkee00
  
