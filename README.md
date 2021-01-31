@@ -26,7 +26,7 @@ Version 2.5.4 updates
  - COULD NOT RECREATE: weir trap broken with latest release?  off center and shift right click sometimes throws error - thanks @TechRabbit 
  - fixed: adding an oddball item (like a mechanical part) to an altar crashes the game - thanks @Hexedian
  - add: config file to disable assets - thanks @techrabbit
- - fix: Made a pot of 3 servings of Perch-Bluegill stew with boiled parsnip and turnip. For some reason the veggies show up but the fish base is just invisible? - thanks @samkee00
+ - fixed: Added missing textures in pot/bowl for Perch and Carp - thanks @samkee00
 
 
 Version 2.5.3 updates
