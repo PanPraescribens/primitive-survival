@@ -19,12 +19,11 @@ Version 2.5.4 updates
  - COULD NOT RECREATE: investigate this mod and medieval expansion not playing nice together @Kai
  - fixed: adding an oddball item (like a mechanical part) to an altar crashes the game - thanks @Hexedian
  - fixed: Added missing textures in pot/bowl for Perch and Carp - thanks @samkee00
- 
+ - tweak: Made monkey bridge less expensive to craft (thanks @JakeCool19 for mentioning that on Discord)
  - add: Attach pelts to vertical surfaces (with a nail or a spike) @Vallen
  - add: Fish jerky @l33tmaan
  - fix: Balance fish fillets - maybe 1 fillets from a Small Bass and a Bluegill, 2 from everything else @Boomer Bill
  - fix: Tin bronze in a lure mold just resets and adds metal to the crucible? @Nozarati
- - fix: Make monkey bridge a little less expensive to craft (thanks JakeCool for the tip)
  - fix: metal dupe exploit melting down spikes and maybe more - thanks @Tels, @Shibby
  - fix: crouch left click spikes on a wall makes block face invisible - thanks @Tels
  - add: config file to disable assets - thanks @techrabbit
