@@ -23,7 +23,7 @@ Version 2.5.4 updates
  - added: updated translation - thanks @Zigthehedge
  - fix: metal dupe exploit melting down spikes and maybe more - thanks @Tels, @Shibby
  - fix: crouch left click spikes on a wall makes block face invisible - thanks @Tels
- - fix: weir trap broken with latest release?  off center and shift right click sometimes throws error - thanks @TechRabbit
+ - COULD NOT RECREATE: weir trap broken with latest release?  off center and shift right click sometimes throws error - thanks @TechRabbit 
  - fixed: adding an oddball item (like a mechanical part) to an altar crashes the game - thanks @Hexedian
  - add: config file to disable assets - thanks @techrabbit
  - fix: Made a pot of 3 servings of Perch-Bluegill stew with boiled parsnip and turnip. For some reason the veggies show up but the fish base is just invisible? - thanks @samkee00
