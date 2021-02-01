@@ -60,7 +60,7 @@
       "fillHeight": 1,
       "drop": {
         "type": "block",
-        "code": "{tooltype}-{metal}",
+        "code": "{tooltype}-{metal}-unset-n",
         "quantity": 6
       }
     },
@@ -71,7 +71,7 @@
         "fillHeight": 1,
         "drop": {
             "type": "block",
-            "code": "{tooltype}-{metal}",
+            "code": "{tooltype}-{metal}-unset-n",
             "quantity": 3
         }
     }

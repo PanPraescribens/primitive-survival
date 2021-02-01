@@ -62,6 +62,152 @@
         "*-bismuth": 9790,
         "*-molybdochalkos": 9600
     },
+    "combustiblePropsByType": {
+        "metalfishinghook-copper": {
+            "meltingPoint": 1084,
+            "meltingDuration": 30,
+            "smeltedRatio": 6,
+            "smeltedStack": {
+                "type": "item",
+                "code": "metalfishinghook-copper"
+            }
+        },
+        "metalfishinghook-brass": {
+            "meltingPoint": 920,
+            "meltingDuration": 30,
+            "smeltedRatio": 6,
+            "smeltedStack": {
+                "type": "item",
+                "code": "metalfishinghook-brass"
+            }
+        },
+        "metalfishinghook-tinbronze": {
+            "meltingPoint": 950,
+            "meltingDuration": 30,
+            "smeltedRatio": 6,
+            "smeltedStack": {
+                "type": "item",
+                "code": "metalfishinghook-tinbronze"
+            }
+        },
+        "metalfishinghook-bismuthbronze": {
+            "meltingPoint": 850,
+            "meltingDuration": 30,
+            "smeltedRatio": 6,
+            "smeltedStack": {
+                "type": "item",
+                "code": "metalfishinghook-bismuthbronze"
+            }
+        },
+        "metalfishinghook-blackbronze": {
+            "meltingPoint": 1020,
+            "meltingDuration": 30,
+            "smeltedRatio": 6,
+            "smeltedStack": {
+                "type": "item",
+                "code": "metalfishinghook-blackbronze"
+            }
+        },
+        "metalfishinghook-iron": {
+            "meltingPoint": 1482,
+            "meltingDuration": 30,
+            "smeltedRatio": 6,
+            "smeltedStack": {
+                "type": "item",
+                "code": "metalfishinghook-iron"
+            }
+        },
+        "metalfishinghook-gold": {
+            "meltingPoint": 1063,
+            "meltingDuration": 30,
+            "smeltedRatio": 6,
+            "smeltedStack": {
+                "type": "item",
+                "code": "metalfishinghook-gold"
+            }
+        },
+        "metalfishinghook-lead": {
+            "meltingPoint": 327,
+            "meltingDuration": 30,
+            "smeltedRatio": 6,
+            "smeltedStack": {
+                "type": "item",
+                "code": "metalfishinghook-lead"
+            }
+        },
+        "metalfishinghook-tin": {
+            "meltingPoint": 232,
+            "meltingDuration": 30,
+            "smeltedRatio": 6,
+            "smeltedStack": {
+                "type": "item",
+                "code": "metalfishinghook-tin"
+            }
+        },
+        "metalfishinghook-chromium": {
+            "meltingPoint": 1907,
+            "meltingDuration": 30,
+            "smeltedRatio": 6,
+            "smeltedStack": {
+                "type": "item",
+                "code": "metalfishinghook-chromium"
+            }
+        },
+        "metalfishinghook-platinum": {
+            "meltingPoint": 1770,
+            "meltingDuration": 30,
+            "smeltedRatio": 6,
+            "smeltedStack": {
+                "type": "item",
+                "code": "metalfishinghook-platinum"
+            }
+        },
+        "metalfishinghook-titanium": {
+            "meltingPoint": 1668,
+            "meltingDuration": 30,
+            "smeltedRatio": 6,
+            "smeltedStack": {
+                "type": "item",
+                "code": "metalfishinghook-titanium"
+            }
+        },
+        "metalfishinghook-zinc": {
+            "meltingPoint": 419,
+            "meltingDuration": 30,
+            "smeltedRatio": 6,
+            "smeltedStack": {
+                "type": "item",
+                "code": "metalfishinghook-zinc"
+            }
+        },
+        "metalfishinghook-silver": {
+            "meltingPoint": 961,
+            "meltingDuration": 30,
+            "smeltedRatio": 6,
+            "smeltedStack": {
+                "type": "item",
+                "code": "metalfishinghook-silver"
+            }
+        },
+        "metalfishinghook-bismuth": {
+            "meltingPoint": 271,
+            "meltingDuration": 30,
+            "smeltedRatio": 6,
+            "smeltedStack": {
+                "type": "item",
+                "code": "metalfishinghook-bismuth"
+            }
+        },
+        "metalfishinghook-molybdochalkos": {
+            "meltingPoint": 902,
+            "meltingDuration": 30,
+            "smeltedRatio": 6,
+            "smeltedStack": {
+                "type": "item",
+                "code": "metalfishinghook-molybdochalkos"
+            }
+        }
+    },
     "fpHandTransform": {
         "translation": {
             "x": -0.5,

@@ -49,6 +49,7 @@ namespace primitiveSurvival
             api.RegisterBlockClass("blockmetalbucketfilled", typeof(BlockMetalBucketFilled));
             api.RegisterBlockClass("blockmonkeybridge", typeof(BlockMonkeyBridge));
             api.RegisterBlockClass("blockhide", typeof(BlockHide));
+            api.RegisterBlockClass("blocknailspike", typeof(BlockNailSpike));
 
             api.RegisterItemClass("itemfishinghook", typeof(ItemFishingHook));
             api.RegisterItemClass("itemcordage", typeof(ItemCordage));

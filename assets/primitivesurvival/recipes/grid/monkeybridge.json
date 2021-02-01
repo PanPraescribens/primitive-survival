@@ -6,5 +6,9 @@
         "P": { "type": "item", "code": "primitivesurvival:cordage" },
         "R": { "type": "item", "code": "game:rope" }
   },
-  "output": { "type": "item", "code": "primitivesurvival:monkeybridge" }
+    "output": {
+        "type": "item",
+        "code": "primitivesurvival:monkeybridge",
+        "quantity": 2
+    }
 }

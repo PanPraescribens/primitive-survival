@@ -1,236 +1,295 @@
 {
-  "code": "spike",
-  "maxstacksize": 32,
-  "blockmaterial": "metal",
-  "attributes": {
-    "reinforcementStrengthByType": {
-      "*-copper": 150,
-      "*-tinbronze": 300,
-      "*-bismuthbronze": 300,
-      "*-blackbronze": 400,
-      "*-iron": 800
+    "code": "spike",
+    "class": "blocknailspike",
+    "maxstacksize": 32,
+    "blockmaterial": "metal",
+    "attributes": {
+        "reinforcementStrengthByType": {
+            "*-copper": 150,
+            "*-tinbronze": 300,
+            "*-bismuthbronze": 300,
+            "*-blackbronze": 400,
+            "*-iron": 800
+        },
+        "handbook": {
+            "excludeByType": {
+                "*-chromium": true,
+                "*-platinum": true,
+                "*-titanium": true,
+                "*-rhodium": true,
+                "*-stainlessteel": true,
+                "*-uranium": true
+            }
+        },
+        "displaycaseable": false,
+        "shelvable": false
     },
-    "handbook": {
-      "excludeByType": {
-        "*-chromium": true,
-        "*-platinum": true,
-        "*-titanium": true,
-        "*-rhodium": true,
-        "*-stainlessteel": true,
-        "*-uranium": true
-      }
+    "variantgroups": [
+        {
+            "code": "metal",
+            "loadFromProperties": "game:block/metal"
+        },
+        {
+            "code": "type",
+            "states": [ "unset", "set" ]
+        },
+        {
+            "code": "rotation",
+            "states": [ "n", "s", "e", "w", "u", "d" ]
+        }
+    ],
+    "attributesByType": {
+        "spike-lead-*": {
+            "workableTemperature": 0
+        }
     },
-    "displaycaseable": true,
-    "shelvable": true
-  },
-  "variantgroups": [
-    {
-      "code": "metal",
-      "loadFromProperties": "game:block/metal"
-    }
-  ],
-  "attributesByType": {
-    "spike-lead": {
-      "workableTemperature": 0
-    }
-  },
-  "storageFlags": 5,
+    "storageFlags": 5,
 
-  "shape": { "base": "block/spike" },
-  "textures": {
-    "metal": { "base": "game:block/metal/ingot/{metal}" }
-  },
-  "creativeinventory": {
-    "general": ["*"],
-    "items": ["*"],
-    "primitive": ["*"]
-  },
-  "materialDensityByType": {
-    "*-copper": 8960,
-    "*-brass": 8500,
-    "*-tinbronze": 7600,
-    "*-bismuthbronze": 7900,
-    "*-blackbronze": 9000,
-    "*-iron": 7870,
-    "*-gold": 19300,
-    "*-lead": 11300,
-    "*-tin": 7260,
-    "*-chromium": 7150,
-    "*-platinum": 21500,
-    "*-titanium": 4510,
-    "*-zinc": 7140,
-    "*-silver": 10500,
-    "*-bismuth": 9790,
-    "*-molybdochalkos": 9600
-  },
-  "combustiblePropsByType": {
-    "spike-copper": {
-      "meltingPoint": 1084,
-      "meltingDuration": 30,
-      "smeltedRatio": 1,
-      "smeltedStack": {
-        "type": "block",
-        "code": "spike-copper"
-      }
+    "shape": { "base": "block/spike" },
+    "textures": {
+        "metal": { "base": "game:block/metal/ingot/{metal}" }
     },
-    "spike-brass": {
-      "meltingPoint": 920,
-      "meltingDuration": 30,
-      "smeltedRatio": 1,
-      "smeltedStack": {
-        "type": "block",
-        "code": "spike-brass"
-      }
+    "creativeinventory": {
+        "general": [ "*-unset-n" ],
+        "items": [ "*-unset-n" ],
+        "primitive": [ "*-unset-n" ]
     },
-    "spike-tinbronze": {
-      "meltingPoint": 950,
-      "meltingDuration": 30,
-      "smeltedRatio": 1,
-      "smeltedStack": {
-        "type": "block",
-        "code": "spike-tinbronze"
-      }
+    "sidesolid": { "all": false },
+    "sideopaque": { "all": false },
+    "materialDensityByType": {
+        "*-copper-*": 8960,
+        "*-brass-*": 8500,
+        "*-tinbronze-*": 7600,
+        "*-bismuthbronze-*": 7900,
+        "*-blackbronze-*": 9000,
+        "*-iron-*": 7870,
+        "*-gold-*": 19300,
+        "*-lead-*": 11300,
+        "*-tin-*": 7260,
+        "*-chromium-*": 7150,
+        "*-platinum-*": 21500,
+        "*-titanium-*": 4510,
+        "*-zinc-*": 7140,
+        "*-silver-*": 10500,
+        "*-bismuth-*": 9790,
+        "*-molybdochalkos-*": 9600
     },
-    "spike-bismuthbronze": {
-      "meltingPoint": 850,
-      "meltingDuration": 30,
-      "smeltedRatio": 1,
-      "smeltedStack": {
-        "type": "block",
-        "code": "spike-bismuthbronze"
-      }
+    "combustiblePropsByType": {
+        "spike-copper-*": {
+            "meltingPoint": 1084,
+            "meltingDuration": 30,
+            "smeltedRatio": 3,
+            "smeltedStack": {
+                "type": "block",
+                "code": "spike-copper-unset-n"
+            }
+        },
+        "spike-brass-*": {
+            "meltingPoint": 920,
+            "meltingDuration": 30,
+            "smeltedRatio": 3,
+            "smeltedStack": {
+                "type": "block",
+                "code": "spike-brass-unset-n"
+            }
+        },
+        "spike-tinbronze-*": {
+            "meltingPoint": 950,
+            "meltingDuration": 30,
+            "smeltedRatio": 3,
+            "smeltedStack": {
+                "type": "block",
+                "code": "spike-tinbronze-unset-n"
+            }
+        },
+        "spike-bismuthbronze-*": {
+            "meltingPoint": 850,
+            "meltingDuration": 30,
+            "smeltedRatio": 3,
+            "smeltedStack": {
+                "type": "block",
+                "code": "spike-bismuthbronze-unset-n"
+            }
+        },
+        "spike-blackbronze-*": {
+            "meltingPoint": 1020,
+            "meltingDuration": 30,
+            "smeltedRatio": 3,
+            "smeltedStack": {
+                "type": "block",
+                "code": "spike-blackbronze-unset-n"
+            }
+        },
+        "spike-iron-*": {
+            "meltingPoint": 1482,
+            "meltingDuration": 30,
+            "smeltedRatio": 3,
+            "smeltedStack": {
+                "type": "block",
+                "code": "spike-iron-unset-n"
+            }
+        },
+        "spike-gold-*": {
+            "meltingPoint": 1063,
+            "meltingDuration": 30,
+            "smeltedRatio": 3,
+            "smeltedStack": {
+                "type": "block",
+                "code": "spike-gold-unset-n"
+            }
+        },
+        "spike-lead-*": {
+            "meltingPoint": 327,
+            "meltingDuration": 30,
+            "smeltedRatio": 3,
+            "smeltedStack": {
+                "type": "block",
+                "code": "spike-lead-unset-n"
+            }
+        },
+        "spike-tin-*": {
+            "meltingPoint": 232,
+            "meltingDuration": 30,
+            "smeltedRatio": 3,
+            "smeltedStack": {
+                "type": "block",
+                "code": "spike-tin-unset-n"
+            }
+        },
+        "spike-chromium-*": {
+            "meltingPoint": 1907,
+            "meltingDuration": 30,
+            "smeltedRatio": 3,
+            "smeltedStack": {
+                "type": "block",
+                "code": "spike-chromium-unset-n"
+            }
+        },
+        "spike-platinum-*": {
+            "meltingPoint": 1770,
+            "meltingDuration": 30,
+            "smeltedRatio": 3,
+            "smeltedStack": {
+                "type": "block",
+                "code": "spike-platinum-unset-n"
+            }
+        },
+        "spike-titanium-*": {
+            "meltingPoint": 1668,
+            "meltingDuration": 30,
+            "smeltedRatio": 3,
+            "smeltedStack": {
+                "type": "block",
+                "code": "spike-titanium-unset-n"
+            }
+        },
+        "spike-zinc-*": {
+            "meltingPoint": 419,
+            "meltingDuration": 30,
+            "smeltedRatio": 3,
+            "smeltedStack": {
+                "type": "block",
+                "code": "spike-zinc-unset-n"
+            }
+        },
+        "spike-silver-*": {
+            "meltingPoint": 961,
+            "meltingDuration": 30,
+            "smeltedRatio": 3,
+            "smeltedStack": {
+                "type": "block",
+                "code": "spike-silver-unset-n"
+            }
+        },
+        "spike-bismuth-*": {
+            "meltingPoint": 271,
+            "meltingDuration": 30,
+            "smeltedRatio": 3,
+            "smeltedStack": {
+                "type": "block",
+                "code": "spike-bismuth-unset-n"
+            }
+        },
+        "spike-molybdochalkos-*": {
+            "meltingPoint": 902,
+            "meltingDuration": 30,
+            "smeltedRatio": 3,
+            "smeltedStack": {
+                "type": "block",
+                "code": "spike-molybdochalkos-unset-n"
+            }
+        }
     },
-    "spike-blackbronze": {
-      "meltingPoint": 1020,
-      "meltingDuration": 30,
-      "smeltedRatio": 1,
-      "smeltedStack": {
-        "type": "block",
-        "code": "spike-blackbronze"
-      }
+    "guiTransform": {
+        "translation": {
+            "x": -1.8,
+            "y": 0,
+            "z": 0
+        },
+        "rotation": {
+            "x": 149,
+            "y": -36,
+            "z": 0
+        },
+        "origin": {
+            "x": 0.5,
+            "y": 0,
+            "z": 0.5
+        },
+        "scale": 3
     },
-    "spike-iron": {
-      "meltingPoint": 1482,
-      "meltingDuration": 30,
-      "smeltedRatio": 1,
-      "smeltedStack": {
-        "type": "block",
-        "code": "spike-iron"
-      }
+    "fpHandTransform": {
+        "translation": {
+            "x": 0,
+            "y": 0.1,
+            "z": 0
+        },
+        "rotation": {
+            "x": 58,
+            "y": -69,
+            "z": -6
+        },
+        "origin": {
+            "x": 0.5,
+            "y": 0.1,
+            "z": 0.5
+        },
+        "scale": 2.15
     },
-    "spike-gold": {
-      "meltingPoint": 1063,
-      "meltingDuration": 30,
-      "smeltedRatio": 1,
-      "smeltedStack": {
-        "type": "block",
-        "code": "spike-gold"
-      }
+    "tpHandTransform": {
+        "translation": {
+            "x": -0.77,
+            "y": -0.15,
+            "z": -0.64
+        },
+        "rotation": {
+            "x": 0,
+            "y": -71,
+            "z": 18
+        },
+        "origin": {
+            "x": 0.5,
+            "y": 0.1,
+            "z": 0.5
+        },
+        "scale": 0.75
     },
-    "spike-lead": {
-      "meltingPoint": 327,
-      "meltingDuration": 30,
-      "smeltedRatio": 1,
-      "smeltedStack": {
-        "type": "block",
-        "code": "spike-lead"
-      }
-    },
-    "spike-tin": {
-      "meltingPoint": 232,
-      "meltingDuration": 30,
-      "smeltedRatio": 1,
-      "smeltedStack": {
-        "type": "block",
-        "code": "spike-tin"
-      }
-    },
-    "spike-chromium": {
-      "meltingPoint": 1907,
-      "meltingDuration": 30,
-      "smeltedRatio": 1,
-      "smeltedStack": {
-        "type": "block",
-        "code": "spike-chromium"
-      }
-    },
-    "spike-platinum": {
-      "meltingPoint": 1770,
-      "meltingDuration": 30,
-      "smeltedRatio": 1,
-      "smeltedStack": {
-        "type": "block",
-        "code": "spike-platinum"
-      }
-    },
-    "spike-titanium": {
-      "meltingPoint": 1668,
-      "meltingDuration": 30,
-      "smeltedRatio": 1,
-      "smeltedStack": {
-        "type": "block",
-        "code": "spike-titanium"
-      }
-    },
-    "spike-zinc": {
-      "meltingPoint": 419,
-      "meltingDuration": 30,
-      "smeltedRatio": 1,
-      "smeltedStack": {
-        "type": "block",
-        "code": "spike-zinc"
-      }
-    },
-    "spike-silver": {
-      "meltingPoint": 961,
-      "meltingDuration": 30,
-      "smeltedRatio": 1,
-      "smeltedStack": {
-        "type": "block",
-        "code": "spike-silver"
-      }
-    },
-    "spike-bismuth": {
-      "meltingPoint": 271,
-      "meltingDuration": 30,
-      "smeltedRatio": 1,
-      "smeltedStack": {
-        "type": "block",
-        "code": "spike-bismuth"
-      }
-    },
-    "spike-molybdochalkos": {
-      "meltingPoint": 902,
-      "meltingDuration": 30,
-      "smeltedRatio": 1,
-      "smeltedStack": {
-        "type": "block",
-        "code": "spike-molybdochalkos"
-      }
+    "groundTransform": {
+        "translation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "origin": {
+            "x": 0.5,
+            "y": 0,
+            "z": 0.5
+        },
+        "scale": 4.8
     }
-  },
-  "guiTransform": {
-    "translation": { "x": -1.8, "y": 0, "z": 0 },
-    "rotation": { "x": 149, "y": -36, "z": 0 },
-    "origin": { "x": 0.5, "y": 0, "z": 0.5 },
-    "scale": 3
-  },
-  "fpHandTransform": {
-    "translation": { "x": 0, "y": 0.1, "z": 0 },
-    "rotation": { "x": 58, "y": -69, "z": -6 },
-    "origin": { "x": 0.5, "y": 0.1, "z": 0.5 },
-    "scale": 2.15
-  },
-  "tpHandTransform": {
-    "translation": { "x": -0.77, "y": -0.15, "z": -0.64 },
-    "rotation": { "x": 0, "y": -71, "z": 18 },
-    "origin": { "x": 0.5, "y": 0.1, "z": 0.5 },
-    "scale": 0.75
-  },
-  "groundTransform": {
-    "translation": { "x": 0, "y": 0, "z": 0 },
-    "rotation": { "x": 0, "y": 0, "z": 0 },
-    "origin": { "x": 0.5, "y": 0, "z": 0.5 },
-    "scale": 4.8
-  }
 }

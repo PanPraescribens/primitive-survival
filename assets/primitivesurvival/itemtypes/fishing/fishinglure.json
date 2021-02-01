@@ -62,6 +62,152 @@
         "*-bismuth": 9790,
         "*-molybdochalkos": 9600
     },
+    "combustiblePropsByType": {
+        "fishinglure-copper": {
+            "meltingPoint": 1084,
+            "meltingDuration": 30,
+            "smeltedRatio": 5,
+            "smeltedStack": {
+                "type": "item",
+                "code": "fishinglure-copper"
+            }
+        },
+        "fishinglure-brass": {
+            "meltingPoint": 920,
+            "meltingDuration": 30,
+            "smeltedRatio": 5,
+            "smeltedStack": {
+                "type": "item",
+                "code": "fishinglure-brass"
+            }
+        },
+        "fishinglure-tinbronze": {
+            "meltingPoint": 950,
+            "meltingDuration": 30,
+            "smeltedRatio": 5,
+            "smeltedStack": {
+                "type": "item",
+                "code": "fishinglure-tinbronze"
+            }
+        },
+        "fishinglure-bismuthbronze": {
+            "meltingPoint": 850,
+            "meltingDuration": 30,
+            "smeltedRatio": 5,
+            "smeltedStack": {
+                "type": "item",
+                "code": "fishinglure-bismuthbronze"
+            }
+        },
+        "fishinglure-blackbronze": {
+            "meltingPoint": 1020,
+            "meltingDuration": 30,
+            "smeltedRatio": 5,
+            "smeltedStack": {
+                "type": "item",
+                "code": "fishinglure-blackbronze"
+            }
+        },
+        "fishinglure-iron": {
+            "meltingPoint": 1482,
+            "meltingDuration": 30,
+            "smeltedRatio": 5,
+            "smeltedStack": {
+                "type": "item",
+                "code": "fishinglure-iron"
+            }
+        },
+        "fishinglure-gold": {
+            "meltingPoint": 1063,
+            "meltingDuration": 30,
+            "smeltedRatio": 5,
+            "smeltedStack": {
+                "type": "item",
+                "code": "fishinglure-gold"
+            }
+        },
+        "fishinglure-lead": {
+            "meltingPoint": 327,
+            "meltingDuration": 30,
+            "smeltedRatio": 5,
+            "smeltedStack": {
+                "type": "item",
+                "code": "fishinglure-lead"
+            }
+        },
+        "fishinglure-tin": {
+            "meltingPoint": 232,
+            "meltingDuration": 30,
+            "smeltedRatio": 5,
+            "smeltedStack": {
+                "type": "item",
+                "code": "fishinglure-tin"
+            }
+        },
+        "fishinglure-chromium": {
+            "meltingPoint": 1907,
+            "meltingDuration": 30,
+            "smeltedRatio": 5,
+            "smeltedStack": {
+                "type": "item",
+                "code": "fishinglure-chromium"
+            }
+        },
+        "fishinglure-platinum": {
+            "meltingPoint": 1770,
+            "meltingDuration": 30,
+            "smeltedRatio": 5,
+            "smeltedStack": {
+                "type": "item",
+                "code": "fishinglure-platinum"
+            }
+        },
+        "fishinglure-titanium": {
+            "meltingPoint": 1668,
+            "meltingDuration": 30,
+            "smeltedRatio": 5,
+            "smeltedStack": {
+                "type": "item",
+                "code": "fishinglure-titanium"
+            }
+        },
+        "fishinglure-zinc": {
+            "meltingPoint": 419,
+            "meltingDuration": 30,
+            "smeltedRatio": 5,
+            "smeltedStack": {
+                "type": "item",
+                "code": "fishinglure-zinc"
+            }
+        },
+        "fishinglure-silver": {
+            "meltingPoint": 961,
+            "meltingDuration": 30,
+            "smeltedRatio": 5,
+            "smeltedStack": {
+                "type": "item",
+                "code": "fishinglure-silver"
+            }
+        },
+        "fishinglure-bismuth": {
+            "meltingPoint": 271,
+            "meltingDuration": 30,
+            "smeltedRatio": 5,
+            "smeltedStack": {
+                "type": "item",
+                "code": "fishinglure-bismuth"
+            }
+        },
+        "fishinglure-molybdochalkos": {
+            "meltingPoint": 902,
+            "meltingDuration": 30,
+            "smeltedRatio": 5,
+            "smeltedStack": {
+                "type": "item",
+                "code": "fishinglure-molybdochalkos"
+            }
+        }
+    },
     "guiTransform": {
         "translation": {
             "x": -1,

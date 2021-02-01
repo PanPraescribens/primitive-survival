@@ -269,23 +269,26 @@ public class BETemporalBase : BlockEntityDisplay
 
         if (playerStack.Block != null)
         {
-            if (playerStack.Block.Attributes.Exists == true)
-            {
-                if (playerStack.Block.Attributes["placement"].Exists == true)
+            if (playerStack.Block.Attributes != null)
+            { 
+                if (playerStack.Block.Attributes.Exists == true)
                 {
-                    string placement = playerStack.Block.Attributes["placement"].ToString();
-                    string placetype = playerStack.Block.Attributes["placetype"].ToString();
-                    if (placement == "middle" && middleSlot.Empty)
-                    { index = 0; }
-                    else if (placement == "top" && topSlot.Empty && !middleSlot.Empty)
+                    if (playerStack.Block.Attributes["placement"].Exists == true)
                     {
-                        string middletype = middleStack.Block.Attributes["placetype"].ToString();
-                        if (placetype == "statue" && middletype == "cube")
-                            index = 1;
-                        else if (placetype == "book" && middletype == "lectern")
+                        string placement = playerStack.Block.Attributes["placement"].ToString();
+                        string placetype = playerStack.Block.Attributes["placetype"].ToString();
+                        if (placement == "middle" && middleSlot.Empty)
+                        { index = 0; }
+                        else if (placement == "top" && topSlot.Empty && !middleSlot.Empty)
                         {
-                            index = 1;
-                            bookorient = middleStack.Block.LastCodePart();
+                            string middletype = middleStack.Block.Attributes["placetype"].ToString();
+                            if (placetype == "statue" && middletype == "cube")
+                                index = 1;
+                            else if (placetype == "book" && middletype == "lectern")
+                            {
+                                index = 1;
+                                bookorient = middleStack.Block.LastCodePart();
+                            }
                         }
                     }
                 }
