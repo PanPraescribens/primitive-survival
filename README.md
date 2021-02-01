@@ -23,14 +23,13 @@ Version 2.5.4 updates
  - tweak: Made monkey bridge less expensive to craft (thanks @JakeCool19 for mentioning that on Discord)
  - fixed: metal dupe exploit melting down nails and spikes - thanks @Tels, @Shibby
  - added: melt down lures and metal fishing hooks
- - fixed: nail and spike placement - thanks @Tels
- 
+ - fixed: nail and spike placement visual glitch - thanks @Tels
+
+-------------------
  
  - add: Attach pelts to vertical surfaces (with a nail or a spike) @Vallen
  - add: Fish jerky @l33tmaan
  - fix: Balance fish fillets - maybe 1 fillets from a Small Bass and a Bluegill, 2 from everything else @Boomer Bill
- 
- 
  - fix: crouch left click spikes on a wall makes block face invisible - thanks @Tels
  - add: config file to disable assets - thanks @techrabbit
  
