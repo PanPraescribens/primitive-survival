@@ -108,5 +108,34 @@ public class ItemHide : Item
                 slot.MarkDirty();
             }
         }
+        else
+        {
+            //wall
+            outPath = outPath.Replace("hide", "head");
+            outPath = outPath.Replace(facing, face);
+            //System.Diagnostics.Debug.WriteLine(outPath);
+
+            BlockSelection blockSelBeside = blockSel.Clone();
+            if (face == "east") blockSelBeside.Position.X += 1;
+            else if (face == "west") blockSelBeside.Position.X -= 1;
+            else if (face == "north") blockSelBeside.Position.Z -= 1;
+            else blockSelBeside.Position.Z += 1;
+
+            Block blockBeside = world.BlockAccessor.GetBlock(blockSelBeside.Position);
+            if (blockBeside.BlockId == 0 || blockBeside.Code.Path.Contains("tallgrass-") || block.Code.Path.Contains("tallgrass-"))
+            {
+                Block blockNew = world.GetBlock(new AssetLocation(outPath));
+                if (blockNew != null)
+                {
+                    IBlockAccessor blockAccessor = world.BlockAccessor;
+                    if (block.Code.Path.Contains("tallgrass-"))
+                    { blockAccessor.SetBlock(blockNew.BlockId, blockSel.Position); }
+                    else
+                    { blockAccessor.SetBlock(blockNew.BlockId, blockSelBeside.Position); }
+                    slot.TakeOut(1);
+                    slot.MarkDirty();
+                }
+            }
+        }
     }
 }

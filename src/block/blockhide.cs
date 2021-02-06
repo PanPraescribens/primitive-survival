@@ -6,21 +6,36 @@ using Vintagestory.API.Datastructures;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Client;
 
-public class BlockHide : Block
+public class BlockHide : Block 
 {
 
     public override bool TryPlaceBlock(IWorldAccessor world, IPlayer byPlayer, ItemStack itemstack, BlockSelection blockSel, ref string failureCode)
     {
         Block block = world.BlockAccessor.GetBlock(blockSel.Position);
-        if (!CanPlaceBlock(world, byPlayer, blockSel, ref failureCode))
-        { return false; }
+        //if (!CanPlaceBlock(world, byPlayer, blockSel, ref failureCode))
+        //{ return false; }
 
         string face = blockSel.Face.ToString();
+        string newPath;
+        Block blockToPlace = this;
         if (face != "up" && face != "down")
-        { return false; }
+        {
+            //wall
+            newPath = blockToPlace.Code.Path;
+            newPath = newPath.Replace("north", face);
+            System.Diagnostics.Debug.WriteLine(newPath);
+
+            blockToPlace = api.World.GetBlock(blockToPlace.CodeWithPath(newPath));
+            if (blockToPlace != null)
+            {
+                world.BlockAccessor.SetBlock(blockToPlace.BlockId, blockSel.Position);
+                return true;
+            }
+            return false; 
+        }
         
 
-        Block blockToPlace = this;
+        
         if (blockToPlace != null)
         {
             string facing;
@@ -42,7 +57,7 @@ public class BlockHide : Block
             else if (halfQuarter == 3) facing = "southwest";
             else facing = "north";
 
-            string newPath = blockToPlace.Code.Path;
+            newPath = blockToPlace.Code.Path;
             newPath = newPath.Replace("north", facing);
             blockToPlace = api.World.GetBlock(blockToPlace.CodeWithPath(newPath));
             if (blockToPlace != null)
