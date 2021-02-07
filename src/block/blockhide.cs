@@ -23,7 +23,7 @@ public class BlockHide : Block
             //wall
             newPath = blockToPlace.Code.Path;
             newPath = newPath.Replace("north", face);
-            System.Diagnostics.Debug.WriteLine(newPath);
+            //System.Diagnostics.Debug.WriteLine(newPath);
 
             blockToPlace = api.World.GetBlock(blockToPlace.CodeWithPath(newPath));
             if (blockToPlace != null)
@@ -33,9 +33,7 @@ public class BlockHide : Block
             }
             return false; 
         }
-        
-
-        
+      
         if (blockToPlace != null)
         {
             string facing;

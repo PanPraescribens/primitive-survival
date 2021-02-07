@@ -1,7 +1,6 @@
 {
 	"code": "raccoonhead",
 	"class": "blockhide",
-	"behaviors": [ { "name": "Unstable" } ],
 	"variantgroups": [
 		{
 			"code": "species",
@@ -67,15 +66,40 @@
 			}
 		}
 	},
-	"selectionBox": {
-		"x1": 0,
-		"y1": 0,
-		"z1": 0,
-		"x2": 1,
-		"y2": 0.0625,
-		"z2": 1
+	"selectionBoxByType": {
+		"*-north": {
+			"x1": 0.25,
+			"y1": 0.25,
+			"z1": 0.7,
+			"x2": 0.75,
+			"y2": 0.75,
+			"z2": 1
+		},
+		"*-east": {
+			"x1": 0,
+			"y1": 0.25,
+			"z1": 0.25,
+			"x2": 0.3,
+			"y2": 0.75,
+			"z2": 0.75
+		},
+		"*-south": {
+			"x1": 0.25,
+			"y1": 0.25,
+			"z1": 0,
+			"x2": 0.75,
+			"y2": 0.75,
+			"z2": 0.3
+		},
+		"*-west": {
+			"x1": 0.7,
+			"y1": 0.25,
+			"z1": 0.25,
+			"x2": 1,
+			"y2": 0.75,
+			"z2": 0.75
+		}
 	},
-
 	"collisionbox": null,
 	"combustibleProps": {
 		"burnTemperature": 400,
@@ -88,13 +112,13 @@
 	"guiTransform": {
 		"translation": {
 			"x": 0,
-			"y": 3,
+			"y": 5,
 			"z": 0
 		},
 		"origin": {
 			"x": 0.5,
 			"y": 0.4625,
-			"z": 0.9
+			"z": 0.95
 		},
 		"scale": 3.6
 	},
@@ -114,13 +138,13 @@
 			"y": -0.02,
 			"z": 0.5
 		},
-		"scale": 1.5
+		"scale": 3
 	},
 	"tpHandTransform": {
 		"translation": {
-			"x": -1.7,
-			"y": 0.1,
-			"z": -1.5
+			"x": -0.9,
+			"y": -0.8,
+			"z": -1
 		},
 		"rotation": {
 			"x": -46,
@@ -129,8 +153,16 @@
 		},
 		"origin": {
 			"x": 0.5,
-			"y": 0,
+			"y": 1,
 			"z": 0.5
+		},
+		"scale": 0.69
+	},
+	"fpHandTransform": {
+		"origin": {
+			"x": 0.5,
+			"y": -5.5,
+			"z": 1.9
 		}
 	},
 	"materialDensity": 200

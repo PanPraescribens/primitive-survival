@@ -417,6 +417,52 @@
     "block-sheephide-bighorn-female*": "Bighorn Sheep Hide (female)",
     "block-sheephide-bighorn-male*": "Bighorn Sheep Hide (male)",
 
+    "block-foxhead-forest-female*": "Forest Fox Hide (female)",
+    "block-foxhead-forest-male*": "Forest Fox Hide (male)",
+    "block-foxhead-arctic-female*": "Arctic Fox Hide (female)",
+    "block-foxhead-arctic-male*": "Arctic Fox Hide (male)",
+
+    "block-harehead-arctic-female*": "Arctic Hare Hide (female)",
+    "block-harehead-arctic-male*": "Arctic Hare Hide (male)",
+    "block-harehead-ashgrey-female*": "Ash Grey Hare Hide (female)",
+    "block-harehead-ashgrey-male*": "Ash Grey Hide (male)",
+    "block-harehead-darkbrown-female*": "Dark Brown Hare Hide (female)",
+    "block-harehead-darkbrown-male*": "Dark Brown Hare Hide (male)",
+    "block-harehead-darkgrey-female*": "Dark Grey Hare Hide (female)",
+    "block-harehead-darkgrey-male*": "Dark Grey Hare Hide (male)",
+    "block-harehead-desert-female*": "Desert Hare Hide (female)",
+    "block-harehead-desert-male*": "Desert Hare Hide (male)",
+    "block-harehead-gold-female*": "Gold Hare Hide (female)",
+    "block-harehead-gold-male*": "Gold Hare Hide (male)",
+    "block-harehead-lightbrown-female*": "Light Brown Hare Hide (female)",
+    "block-harehead-lightbrown-male*": "Light Brown Hare Hide (male)",
+    "block-harehead-lightgrey-female*": "Light Grey Hare Hide (female)",
+    "block-harehead-lightgrey-male*": "Light Grey Hare Hide (male)",
+    "block-harehead-silver-female*": "Silver Hare Hide (female)",
+    "block-harehead-silver-male*": "Silver Hare Hide (male)",
+    "block-harehead-smokegrey-female*": "Smoke Grey Hare Hide (female)",
+    "block-harehead-smokegrey-male*": "Smoke Grey Hare Hide (male)",
+
+    "block-raccoonhead-raccoon-female*": "Raccoon Hide (female)",
+    "block-raccoonhead-raccoon-male*": "Raccoon Hide (male)",
+
+    "block-wolfhead-grey-female*": "Grey Wolf Hide (female)",
+    "block-wolfhead-grey-male*": "Grey Wolf Hide (male)",
+    "block-wolfhead-steppe-female*": "Steppe Wolf Hide (female)",
+    "block-wolfhead-steppe-male*": "Steppe Wolf Hide (male)",
+    "block-wolfhead-tundra-female*": "Tundra Wolf Hide (female)",
+    "block-wolfhead-tundra-male*": "Tundra Wolf Hide (male)",
+
+    "block-hyenahead-hyena-female*": "Hyena Hide (female)",
+    "block-hyenahead-hyena-male*": "Hyena Hide (male)",
+
+    "block-pighead-wild-female*": "Wild Pig Hide (female)",
+    "block-pighead-wild-male*": "Wild Pig Hide (male)",
+
+    "block-sheephead-bighorn-female*": "Bighorn Sheep Hide (female)",
+    "block-sheephead-bighorn-male*": "Bighorn Sheep Hide (male)",
+
+
     "item-earthworm": "Earthworm",
     "item-creature-earthworm": "Earthworm",
     "item-dead-creature-earthworm": "Earthworm",
