@@ -15,7 +15,7 @@
       },
       "useFirepitModel": "Spit"
     },
-    "nutritionPropsWhenInMeal": { "satiety": 420, "foodcategory": "Protein" }
+    "nutritionPropsWhenInMeal": { "satiety": 105, "foodcategory": "Protein" }
   },
   "variantgroups": [{ "code": "type", "states": ["raw", "cooked", "cured"] }],
   "shapebytype": {
@@ -65,13 +65,16 @@
       }
     ],
     "*-cured": [
-      {
-        "type": "Perish",
-        "freshHours": { "avg": 120 },
-        "spoilHours": { "avg": 36 },
-        "transitionedStack": { "type": "item", "code": "game:rot" },
-        "transitionRatio": 1
-      }
+        {
+            "type": "Perish",
+            "freshHours": { "avg": 336 },
+            "spoilHours": { "avg": 168 },
+            "transitionedStack": {
+                "type": "item",
+                "code": "game:rot"
+            },
+            "transitionRatio": 1
+        }
     ]
   },
   "materialDensity": 150,

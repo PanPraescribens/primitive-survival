@@ -1,5 +1,5 @@
 {
-  "code": "jerky-bushmeat",
+  "code": "jerky-fish",
   "maxstacksize": 64,
   "attributes": {
     "inContainerTextureByType": {
@@ -15,25 +15,26 @@
       },
       "useFirepitModel": "Spit"
     },
-    "nutritionPropsWhenInMeal": { "satiety": 45, "foodcategory": "Protein" },
+    "nutritionPropsWhenInMeal": { "satiety": 18, "foodcategory": "Protein" },
     "handbook": {
       "extraSections": [
         {
           "title": "handbook-item-sources",
-          "text": "Obtained by harvesting dead wild animals"
+          "text": "Obtained by harvesting fish"
         }
       ]
     }
   },
   "variantgroups": [{ "code": "type", "states": ["raw", "cooked", "cured"] }],
-  "shape": { "base": "item/food/meat/jerky-bushmeat" },
+  "shape": { "base": "item/food/fish/jerky-fish" },
   "textures": {
-    "meat": { "base": "game:item/food/meat/{type}" }
-  },
+    "fish": {
+        "base": "item/fishing/fillet-{state}" }
+    },
   "creativeinventory": { "general": ["*"], "items": ["*"], "primitive": ["*"] },
   "nutritionPropsByType": {
-    "*-cooked": { "satiety": 30, "foodcategory": "Protein" },
-    "*-cured": { "satiety": 22.5, "foodcategory": "Protein" }
+    "*-cooked": { "satiety": 12, "foodcategory": "Protein" },
+    "*-cured": { "satiety": 10, "foodcategory": "Protein" }
   },
   "materialDensity": 150,
   "guiTransformByType": {
@@ -71,12 +72,12 @@
     "scale": 5
   },
   "combustiblePropsByType": {
-    "jerky-bushmeat-raw": {
-      "meltingPoint": 100,
-      "meltingDuration": 8,
+    "jerky-fish-raw": {
+      "meltingPoint": 50,
+      "meltingDuration": 2,
       "smeltedRatio": 1,
       "smeltingType": "cook",
-      "smeltedStack": { "type": "item", "code": "jerky-bushmeat-cooked" },
+      "smeltedStack": { "type": "item", "code": "jerky-fish-cooked" },
       "requiresContainer": false
     }
   },
@@ -85,8 +86,8 @@
       {
         "type": "Cure",
         "freshHours": { "avg": 0 },
-        "transitionHours": { "avg": 4 },
-        "transitionedStack": { "type": "item", "code": "jerky-bushmeat-cured" },
+        "transitionHours": { "avg": 2 },
+        "transitionedStack": { "type": "item", "code": "jerky-fish-cured" },
         "transitionRatio": 1
       }
     ],

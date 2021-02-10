@@ -26,7 +26,7 @@
             "useFirepitModel": "Spit"
         },
         "nutritionPropsWhenInMeal": {
-            "satiety": 260,
+            "satiety": 72,
             "foodcategory": "Protein"
         }
     },
@@ -49,7 +49,7 @@
     },
     "nutritionPropsByType": {
         "*-cooked": {
-            "satiety": 220,
+            "satiety": 48,
             "foodcategory": "Protein"
         }
     },
@@ -129,7 +129,7 @@
     "combustiblePropsByType": {
         "*-raw": {
             "meltingPoint": 150,
-            "meltingDuration": 30,
+            "meltingDuration": 7.5,
             "smeltedRatio": 1,
             "smeltingType": "cook",
             "smeltedStack": {
