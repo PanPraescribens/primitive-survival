@@ -32,7 +32,8 @@ Version 2.5.4 updates
  - add: Fish jerky @l33tmaan
  - fix: Balance fish fillets - maybe 1 fillets from a Small Bass and a Bluegill, 2 from everything else @Boomer Bill
  - add: config file to disable assets - thanks @techrabbit
- - fix: link to stake broken in guide?
+ - fix: link to stake broken in guide? - thanks Quixjote
+ - disappearing fish.  They will pop off the hook then just go poof before I can pick them up.  Maybe ice related? - thanks @willrun4fun
  
 
 
