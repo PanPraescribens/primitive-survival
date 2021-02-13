@@ -16,9 +16,6 @@ Version 2.5.4 updates
 
  - Added: updated Russian translation - thanks @Zigthehedge
  - Added: German translation - thanks Kiava
- - COULD NOT RECREATE: weir trap broken with latest release?  off center and shift right click sometimes throws error - thanks @TechRabbit 
- - COULD NOT RECREATE: investigate this mod and medieval expansion not playing nice together @Kai
- - COULD NOT RECREATE: Tin bronze in a lure mold just resets and adds metal to the crucible? Sounds like server lag so update to the latest version of my mod @Nozarati
  - Added: Attach pelts to vertical surfaces @Vallen
  - Added: melt down lures and metal fishing hooks
  - Tweak: Made monkey bridge less expensive to craft (thanks @JakeCool19 for mentioning that on Discord)
@@ -26,7 +23,9 @@ Version 2.5.4 updates
  - Fixed: metal dupe exploit melting down nails and spikes - thanks @Tels, @Shibby
  - Fixed: adding an oddball item (like a mechanical part) to an altar crashes the game - thanks @Hexedian
  - Fixed: nail and spike placement makes block face invisible glitch - thanks @Tels
-
+ - COULD NOT RECREATE: weir trap broken with latest release?  off center and shift right click sometimes throws error - thanks @TechRabbit 
+ - COULD NOT RECREATE: investigate this mod and medieval expansion not playing nice together @Kai
+ - COULD NOT RECREATE: Tin bronze in a lure mold just resets and adds metal to the crucible? Sounds like server lag so update to the latest version of my mod @Nozarati
 -------------------
  
  - again -  weir traps arn't working "kind of" The latest version offsets them a little, they still work but look bad. Also fishing lure molds will fill up, reset to 0 in a loop @TechRabbit
