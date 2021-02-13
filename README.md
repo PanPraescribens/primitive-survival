@@ -18,6 +18,8 @@ Version 2.5.4 updates
  - Added: German translation - thanks Kiava
  - Added: Attach pelts to vertical surfaces @Vallen
  - Added: melt down lures and metal fishing hooks
+ - Added: Fish jerky and new recipe @l33tmaan
+ - Tweak: Fish satiety, fish fillets - See the newly added tables in the documentation for details - thanks @Boomer Bill
  - Tweak: Made monkey bridge less expensive to craft (thanks @JakeCool19 for mentioning that on Discord)
  - Fixed: Added missing textures in pot/bowl for Perch and Carp - thanks @samkee00
  - Fixed: metal dupe exploit melting down nails and spikes - thanks @Tels, @Shibby
@@ -29,8 +31,6 @@ Version 2.5.4 updates
 -------------------
  
  - again -  weir traps arn't working "kind of" The latest version offsets them a little, they still work but look bad. Also fishing lure molds will fill up, reset to 0 in a loop @TechRabbit
- - add: Fish jerky @l33tmaan
- - fix: Balance fish fillets - maybe 1 fillets from a Small Bass and a Bluegill, 2 from everything else @Boomer Bill
  - add: config file to disable assets - thanks @techrabbit
  - fix: link to stake broken in guide? - thanks Quixjote
  - disappearing fish.  They will pop off the hook then just go poof before I can pick them up.  Maybe ice related? - thanks @willrun4fun
