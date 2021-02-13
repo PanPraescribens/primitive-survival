@@ -30,7 +30,7 @@ Version 2.5.4 updates
  - Fixed: The male ram rug model was showing the female ram horns at the same time - thanks @lich
  - COULD NOT RECREATE: weir trap broken with latest release?  off center and shift right click sometimes throws error - thanks @TechRabbit 
  - COULD NOT RECREATE: investigate this mod and medieval expansion not playing nice together @Kai
- - COULD NOT RECREATE: Tin bronze in a lure mold just resets and adds metal to the crucible? Sounds like server lag so update to the latest version of my mod @Nozarati
+ - COULD NOT RECREATE: Tin bronze/copper in a lure mold just resets and adds metal to the crucible? Sounds like server lag @Nozarati, @TechRabbit
 -------------------
  
  - again -  weir traps arn't working "kind of" The latest version offsets them a little, they still work but look bad. Also fishing lure molds will fill up, reset to 0 in a loop @TechRabbit
