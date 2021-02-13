@@ -27,6 +27,7 @@ Version 2.5.4 updates
  - Fixed: adding an oddball item (like a mechanical part) to an altar crashes the game - thanks @Hexedian
  - Fixed: nail and spike placement makes block face invisible glitch - thanks @Tels
  - Fixed: link to stake broken in guide - thanks Quixjote
+ - Fixed: The male ram rug model was showing the female ram horns at the same time - thanks @lich
  - COULD NOT RECREATE: weir trap broken with latest release?  off center and shift right click sometimes throws error - thanks @TechRabbit 
  - COULD NOT RECREATE: investigate this mod and medieval expansion not playing nice together @Kai
  - COULD NOT RECREATE: Tin bronze in a lure mold just resets and adds metal to the crucible? Sounds like server lag so update to the latest version of my mod @Nozarati
