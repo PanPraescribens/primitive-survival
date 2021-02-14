@@ -31,11 +31,12 @@ Version 2.5.4 updates
  - COULD NOT RECREATE: weir trap broken with latest release?  off center and shift right click sometimes throws error - thanks @TechRabbit 
  - COULD NOT RECREATE: investigate this mod and medieval expansion not playing nice together @Kai
  - COULD NOT RECREATE: Tin bronze/copper in a lure mold just resets and adds metal to the crucible? Sounds like server lag @Nozarati, @TechRabbit
+ - COULD NOT RECREATE: disappearing fish.  They will pop off the hook then just go poof before I can pick them up.  Maybe ice related? - thanks @willrun4fun
 -------------------
  
- - again -  weir traps arn't working "kind of" The latest version offsets them a little, they still work but look bad. Also fishing lure molds will fill up, reset to 0 in a loop @TechRabbit
+ - again -  weir traps arn't working "kind of" The latest version offsets them a little, they still work but look bad. - thanks @TechRabbit
  - add: config file to disable assets - thanks @techrabbit
- - disappearing fish.  They will pop off the hook then just go poof before I can pick them up.  Maybe ice related? - thanks @willrun4fun
+ - 
  - can't pick up worms if i'm carrying a container on my back, the Shift-Rclick conflicts with the carry mod - @Amenophiz
  
 
