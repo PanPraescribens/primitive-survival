@@ -36,6 +36,7 @@ Version 2.5.4 updates
  - again -  weir traps arn't working "kind of" The latest version offsets them a little, they still work but look bad. Also fishing lure molds will fill up, reset to 0 in a loop @TechRabbit
  - add: config file to disable assets - thanks @techrabbit
  - disappearing fish.  They will pop off the hook then just go poof before I can pick them up.  Maybe ice related? - thanks @willrun4fun
+ - can't pick up worms if i'm carrying a container on my back, the Shift-Rclick conflicts with the carry mod - @Amenophiz
  
 
 
