@@ -19,6 +19,7 @@ Version 2.5.4 updates
  - Added: Attach pelts to vertical surfaces @Vallen
  - Added: melt down lures and metal fishing hooks
  - Added: Fish jerky and new recipe @l33tmaan
+ - Added: Soup and stew recipes for all raw jerky types
  - Tweak: Fish satiety, fish fillets - See the newly added tables in the documentation for details - thanks @Boomer Bill
  - Tweak: All jerky stack sizes to 256
  - Tweak: Made monkey bridge less expensive to craft (thanks @JakeCool19 for mentioning that on Discord)
