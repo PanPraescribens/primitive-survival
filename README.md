@@ -14,25 +14,31 @@ Roadmap
 
 Version 2.5.4 updates
 
- - added: updated translation - thanks @Zigthehedge
+ - Added: updated Russian translation - thanks @Zigthehedge
+ - Added: German translation - thanks Kiava
+ - Added: Attach pelts to vertical surfaces @Vallen
+ - Added: melt down lures and metal fishing hooks
+ - Added: Fish jerky and new recipe @l33tmaan
+ - Added: Soup and stew recipes for all raw jerky types
+ - Tweak: Fish satiety, fish fillets - See the newly added tables in the documentation for details - thanks @Boomer Bill
+ - Tweak: All jerky stack sizes to 256
+ - Tweak: Made monkey bridge less expensive to craft (thanks @JakeCool19 for mentioning that on Discord)
+ - Fixed: Added missing textures in pot/bowl for Perch and Carp - thanks @samkee00
+ - Fixed: metal dupe exploit melting down nails and spikes - thanks @Tels, @Shibby
+ - Fixed: adding an oddball item (like a mechanical part) to an altar crashes the game - thanks @Hexedian
+ - Fixed: nail and spike placement makes block face invisible glitch - thanks @Tels
+ - Fixed: link to stake broken in guide - thanks Quixjote
+ - Fixed: The male ram rug model was showing the female ram horns at the same time - thanks @lich
  - COULD NOT RECREATE: weir trap broken with latest release?  off center and shift right click sometimes throws error - thanks @TechRabbit 
  - COULD NOT RECREATE: investigate this mod and medieval expansion not playing nice together @Kai
- - COULD NOT RECREATE: Tin bronze in a lure mold just resets and adds metal to the crucible? Sounds like server lag so update to the latest version of my mod @Nozarati
- - added: Attach pelts to vertical surfaces @Vallen
- - fixed: adding an oddball item (like a mechanical part) to an altar crashes the game - thanks @Hexedian
- - fixed: Added missing textures in pot/bowl for Perch and Carp - thanks @samkee00
- - tweak: Made monkey bridge less expensive to craft (thanks @JakeCool19 for mentioning that on Discord)
- - fixed: metal dupe exploit melting down nails and spikes - thanks @Tels, @Shibby
- - added: melt down lures and metal fishing hooks
- - fixed: nail and spike placement makes block face invisible glitch - thanks @Tels
-
+ - COULD NOT RECREATE: Tin bronze/copper in a lure mold just resets and adds metal to the crucible? Sounds like server lag @Nozarati, @TechRabbit
+ - COULD NOT RECREATE: disappearing fish.  They will pop off the hook then just go poof before I can pick them up.  Maybe ice related? - thanks @willrun4fun
 -------------------
  
- - again -  weir traps arn't working "kind of" The latest version offsets them a little, they still work but look bad. Also fishing lure molds will fill up, reset to 0 in a loop @TechRabbit
- - add: Fish jerky @l33tmaan
- - fix: Balance fish fillets - maybe 1 fillets from a Small Bass and a Bluegill, 2 from everything else @Boomer Bill
+ - again -  weir traps arn't working "kind of" The latest version offsets them a little, they still work but look bad. - thanks @TechRabbit
  - add: config file to disable assets - thanks @techrabbit
- - fix: link to stake broken in guide?
+ - 
+ - can't pick up worms if i'm carrying a container on my back, the Shift-Rclick conflicts with the carry mod - @Amenophiz
  
 
 
