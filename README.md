@@ -12,16 +12,16 @@ Roadmap
  - Smoking Rack or Pit Smoker - smoked meat good, jerky strips less good @Boomer Bill
  - Raft
  - weir traps arn't working "kind of" The latest version offsets them a little, they still work but look bad? @TechRabbit
- - add: config file to disable assets - @techrabbit
+ - new: config file to disable assets - @techrabbit
 
 Version 2.5.4 updates
 
- - Added: updated Russian translation - thanks @Zigthehedge
- - Added: German translation - thanks @Kiava
- - Added: Attach pelts to vertical surfaces @Vallen
- - Added: melt down lures and metal fishing hooks
- - Added: Fish jerky and new recipe @l33tmaan
- - Added: Soup and stew recipes for all raw jerky types and mutated fish
+ - New: updated Russian translation - thanks @Zigthehedge
+ - New: German translation - thanks @Kiava
+ - New: Attach pelts to vertical surfaces @Vallen
+ - New: melt down lures and metal fishing hooks
+ - New: Fish jerky and new recipe @l33tmaan
+ - New: Soup and stew recipes for all raw jerky types and mutated fish
  - Tweak: Fish satiety, fish fillets - See the newly added tables in the documentation for details - thanks @Boomer Bill
  - Tweak: All jerky stack sizes to 256
  - Tweak: Made monkey bridge less expensive to craft (thanks @JakeCool19 for mentioning that on Discord)
