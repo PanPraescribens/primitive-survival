@@ -10,7 +10,7 @@
         },
         "H": {
             "type": "item",
-            "code": "primitivesurvival:fishfillet",
+            "code": "primitivesurvival:fishfillet-raw",
             "quantity": 4
         },
         "S": {
@@ -21,7 +21,7 @@
     },
   "name": "jerky-fish",
   "width": 1,
-  "height": 2,
+  "height": 3,
   "output": {
     "type": "item",
     "code": "primitivesurvival:jerky-fish-raw",

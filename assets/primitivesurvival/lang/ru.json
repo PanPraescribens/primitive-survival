@@ -77,6 +77,10 @@
     "item-fishfillet-cooked": "Рыбное филе (приготовленное)",
     "itemdesc-fishfillet-cooked": "Время обеда.",
 
+    "item-jerky-fish-raw": "Рыбная Вяленое (сырое)",
+    "item-jerky-fish-cured": "Рыбная Вяленое (вяленое)",
+    "item-jerky-fish-cooked": "Рыбная Вяленое (приготовленное)",
+
     "item-jerky-redmeat-raw": "Вяленое красное мясо (сырое)",
     "item-jerky-redmeat-cured": "Вяленое красное мясо (вяленое)",
     "item-jerky-redmeat-cooked": "Вяленое красное мясо (приготовленное)",
@@ -319,6 +323,15 @@
     "game:meal-ingredient-stew-primary-psfish-bluegill-raw": "Карасевое",
     "game:meal-ingredient-stew-secondary-psfish-bluegill-raw": "Карасевое",
 
+    "game:recipeingredient-item-psfish-mutant-raw": "Мутант",
+    "game:recipeingredient-item-psfish-mutant-raw-insturmentalcase": "Мутант",
+    "recipeingredient-item-psfish-mutant-raw": "Мутант",
+    "recipeingredient-item-psfish-mutant-raw-insturmentalcase": "Мутант",
+    "game:meal-ingredient-soup-primary-psfish-mutant-raw": "Мутант",
+    "game:meal-ingredient-soup-secondary-psfish-mutant-raw": "Мутант",
+    "game:meal-ingredient-stew-primary-psfish-mutant-raw": "Мутант",
+    "game:meal-ingredient-stew-secondary-psfish-mutant-raw": "Мутант",
+
     "game:recipeingredient-item-fishfillet-raw": "Рыбное филе",
     "game:recipeingredient-item-fishfillet-raw-insturmentalcase": "Рыбным филе",
     "recipeingredient-item-fishfillet-raw": "Рыбное филе",
@@ -497,5 +510,32 @@
     "more": "еще немного",
     "even more": "и еще немного",
     "dry grass or some other plant based material to conceal your pit": "сухой травы или других растений, чтобы замаскировать свою яму",
-    "Add dirt or sand to camouflage your pit": "Добавьте земли или песка, чтобы замаскировать свою яму"
+    "Add dirt or sand to camouflage your pit": "Добавьте земли или песка, чтобы замаскировать свою яму",
+
+    "game:recipeingredient-item-jerky-fish-raw": "Рыбная Вяленое",
+    "game:recipeingredient-item-jerky-fish-raw-insturmentalcase": "Рыбная Вяленое",
+    "recipeingredient-item-jerky-fish-raw": "Рыбная Вяленое",
+    "recipeingredient-item-jerky-fish-raw-insturmentalcase": "Рыбная Вяленое",
+    "game:meal-ingredient-soup-primary-jerky-fish-raw": "Рыбная Вяленое",
+    "game:meal-ingredient-soup-secondary-jerky-fish-raw": "Рыбная Вяленое",
+    "game:meal-ingredient-stew-primary-jerky-fish-raw": "Рыбная Вяленое",
+    "game:meal-ingredient-stew-secondary-jerky-fish-raw": "Рыбная Вяленое",
+
+    "game:recipeingredient-item-jerky-redmeat-raw": "Вяленое красное мясо",
+    "game:recipeingredient-item-jerky-redmeat-raw-insturmentalcase": "Вяленое красное мясо",
+    "recipeingredient-item-jerky-redmeat-raw": "Вяленое красное мясо",
+    "recipeingredient-item-jerky-redmeat-raw-insturmentalcase": "Вяленое красное мясо",
+    "game:meal-ingredient-soup-primary-jerky-redmeat-raw": "Вяленое красное мясо",
+    "game:meal-ingredient-soup-secondary-jerky-redmeat-raw": "Вяленое красное мясо",
+    "game:meal-ingredient-stew-primary-jerky-redmeat-raw": "Вяленое красное мясо",
+    "game:meal-ingredient-stew-secondary-jerky-redmeat-raw": "Вяленое красное мясо",
+
+    "game:recipeingredient-item-jerky-bushmeat-raw": "Вяленое мясо дичи",
+    "game:recipeingredient-item-jerky-bushmeat-raw-insturmentalcase": "Вяленое мясо дичи",
+    "recipeingredient-item-jerky-bushmeat-raw": "Вяленое мясо дичи",
+    "recipeingredient-item-jerky-bushmeat-raw-insturmentalcase": "Вяленое мясо дичи",
+    "game:meal-ingredient-soup-primary-jerky-bushmeat-raw": "Вяленое мясо дичи",
+    "game:meal-ingredient-soup-secondary-jerky-bushmeat-raw": "Вяленое мясо дичи",
+    "game:meal-ingredient-stew-primary-jerky-bushmeat-raw": "Вяленое мясо дичи",
+    "game:meal-ingredient-stew-secondary-jerky-bushmeat-raw": "Вяленое мясо дичи"
 }

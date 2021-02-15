@@ -1,6 +1,6 @@
 {
   "code": "jerky-redmeat",
-  "maxstacksize": 64,
+  "maxstacksize": 256,
   "attributes": {
     "inContainerTextureByType": {
       "*-raw": { "base": "game:block/wood/barrel/{type}-redmeat" },
