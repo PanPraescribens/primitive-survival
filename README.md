@@ -25,7 +25,7 @@ Version 2.5.4 updates
  - Tweak: Fish satiety and fish fillet modifications - See the newly added tables in the documentation for details - thanks @Boomer Bill
  - Tweak: All jerky stack sizes increased to 256
  - Tweak: Made monkey bridge less expensive to craft (thanks @JakeCool19 for mentioning that on Discord)
- - TO DO:  can't pick up worms if i'm carrying a container on my back, the Shift-Rclick conflicts with the carry mod - @Amenophiz
+ - Tweak: can now pick up worms with right click OR shift right click (shift right click conflicts with Carry Capacity mod) - thanks @Amenophiz
  - Fixed: Added missing textures in pot/bowl for Perch and Carp - thanks @samkee00
  - Fixed: metal dupe exploit melting down nails and spikes - thanks @Tels, @Shibby
  - Fixed: adding an oddball item (like a mechanical part) to an altar crashes the game - thanks @Hexedian
