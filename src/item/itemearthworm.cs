@@ -78,11 +78,13 @@ public class ItemEarthworm : Item
         return new WorldInteraction[] {
                 new WorldInteraction()
                 {
+                    HotKeyCode = "sneak",
                     ActionLangCode = "heldhelp-place",
                     MouseButton = EnumMouseButton.Right,
                 }
             }.Append(base.GetHeldInteractionHelp(inSlot));
     }
+
 
 }
 

@@ -32,17 +32,18 @@ public class EntityEarthworm : EntityAgent
             return;
         }
 
-        if (byEntity.Controls.Sneak)
+        //if (byEntity.Controls.Sneak) 
+        // Sneak conflicts with Carry Capacity so I disabled that - you can still sneak, or not
+        //{
+        ItemStack stack = new ItemStack(byEntity.World.GetItem(new AssetLocation("primitivesurvival:earthworm")));
+        if (!byEntity.TryGiveItemStack(stack))
         {
-            ItemStack stack = new ItemStack(byEntity.World.GetItem(new AssetLocation("primitivesurvival:earthworm")));
-            if (!byEntity.TryGiveItemStack(stack))
-            {
-                byEntity.World.SpawnItemEntity(stack, ServerPos.XYZ);
-            }
-            Die(); //remove from the ground
-            return;
+            byEntity.World.SpawnItemEntity(stack, ServerPos.XYZ);
         }
-        base.OnInteract(byEntity, slot, hitPosition, mode);
+        Die(); //remove from the ground
+        return;
+        //}
+        //base.OnInteract(byEntity, slot, hitPosition, mode);
     }
 
     
@@ -109,5 +110,6 @@ public class EntityEarthworm : EntityAgent
             }
         }
     }
+
 }
 
