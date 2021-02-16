@@ -11,35 +11,31 @@ Roadmap
 
  - Smoking Rack or Pit Smoker - smoked meat good, jerky strips less good @Boomer Bill
  - Raft
+ - create config file to disable assets or at least drop less gold - @techrabbit
 
 Version 2.5.4 updates
 
- - Added: updated Russian translation - thanks @Zigthehedge
- - Added: German translation - thanks Kiava
- - Added: Attach pelts to vertical surfaces @Vallen
- - Added: melt down lures and metal fishing hooks
- - Added: Fish jerky and new recipe @l33tmaan
- - Added: Soup and stew recipes for all raw jerky types
- - Tweak: Fish satiety, fish fillets - See the newly added tables in the documentation for details - thanks @Boomer Bill
- - Tweak: All jerky stack sizes to 256
+ - New: updated Russian translation - thanks @Zigthehedge
+ - New: German translation - thanks @Kiava
+ - New: Attach pelts to vertical surfaces (as animal heads) @Vallen
+ - New: Fish jerky and new grid recipe (1 knife, 4 fillets,1 salt) @l33tmaan
+ - New: melt down lures and metal fishing hooks in a crucible
+ - New: Soup and stew recipes added for all raw jerky types and mutated fish
+ - Tweak: Fish satiety and fish fillet modifications - See the newly added tables in the documentation for details - thanks @Boomer Bill
+ - Tweak: All jerky stack sizes increased to 256
  - Tweak: Made monkey bridge less expensive to craft (thanks @JakeCool19 for mentioning that on Discord)
+ - Tweak: can now pick up worms with right click OR shift right click (shift right click conflicts with Carry Capacity mod) - thanks @Amenophiz
  - Fixed: Added missing textures in pot/bowl for Perch and Carp - thanks @samkee00
  - Fixed: metal dupe exploit melting down nails and spikes - thanks @Tels, @Shibby
  - Fixed: adding an oddball item (like a mechanical part) to an altar crashes the game - thanks @Hexedian
  - Fixed: nail and spike placement makes block face invisible glitch - thanks @Tels
  - Fixed: link to stake broken in guide - thanks Quixjote
  - Fixed: The male ram rug model was showing the female ram horns at the same time - thanks @lich
- - COULD NOT RECREATE: weir trap broken with latest release?  off center and shift right click sometimes throws error - thanks @TechRabbit 
- - COULD NOT RECREATE: investigate this mod and medieval expansion not playing nice together @Kai
- - COULD NOT RECREATE: Tin bronze/copper in a lure mold just resets and adds metal to the crucible? Sounds like server lag @Nozarati, @TechRabbit
- - COULD NOT RECREATE: disappearing fish.  They will pop off the hook then just go poof before I can pick them up.  Maybe ice related? - thanks @willrun4fun
--------------------
- 
- - again -  weir traps arn't working "kind of" The latest version offsets them a little, they still work but look bad. - thanks @TechRabbit
- - add: config file to disable assets - thanks @techrabbit
- - 
- - can't pick up worms if i'm carrying a container on my back, the Shift-Rclick conflicts with the carry mod - @Amenophiz
- 
+ - Known Issue/did not resolve: weir trap, fish baskets, limb/trotlines lose functionality after serious crash - thanks @TechRabbit 
+ - Known Issue/did not resolve: sometimes removing fish from trap causes the fish to flicker/fall repeatedly for several seconds
+ - Could not recreate: investigate this mod and medieval expansion not playing nice together @Kai
+ - Could not recreate: Tin bronze/copper in a lure mold just resets and adds metal to the crucible? Sounds like server lag @Nozarati, @TechRabbit
+ - Could not recreate: disappearing fish.  They will pop off the hook then just go poof before I can pick them up.  Maybe ice related? - thanks @willrun4fun
 
 
 Version 2.5.3 updates
