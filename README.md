@@ -11,8 +11,7 @@ Roadmap
 
  - Smoking Rack or Pit Smoker - smoked meat good, jerky strips less good @Boomer Bill
  - Raft
- - weir traps arn't working "kind of" The latest version offsets them a little, they still work but look bad? @TechRabbit
- - new: config file to disable assets or at least drop less gold - @techrabbit
+ - create config file to disable assets or at least drop less gold - @techrabbit
 
 Version 2.5.4 updates
 
