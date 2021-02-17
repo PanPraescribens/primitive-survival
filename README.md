@@ -13,6 +13,10 @@ Roadmap
  - Raft
  - create config file to disable assets or at least drop less gold - @techrabbit
 
+
+Version 2.5.5 updates
+ - Updated: German translation - thanks @Kiava
+
 Version 2.5.4 updates
 
  - New: updated Russian translation - thanks @Zigthehedge
