@@ -15,9 +15,11 @@ Roadmap
 
 
 Version 2.5.5 updates
+
+ - New: Wooden Lanterns - thanks @Kai
  - Updated: German translation - thanks @Kiava
  - Updated: New textures for cordage, fish fillets, and fish jerky - thanks @Ledyanaya Sonya
-
+ 
 Version 2.5.4 updates
 
  - New: updated Russian translation - thanks @Zigthehedge
