@@ -533,5 +533,16 @@
     "game:meal-ingredient-soup-primary-jerky-bushmeat-raw": "Bushmeat Jerky",
     "game:meal-ingredient-soup-secondary-jerky-bushmeat-raw": "Bushmeat Jerky",
     "game:meal-ingredient-stew-primary-jerky-bushmeat-raw": "Bushmeat Jerky",
-    "game:meal-ingredient-stew-secondary-jerky-bushmeat-raw": "Bushmeat Jerky"
+    "game:meal-ingredient-stew-secondary-jerky-bushmeat-raw": "Bushmeat Jerky",
+
+
+    "block-raft*": "Raft",
+
+    "block-woodlantern-acacia-*": "Wooden Lantern (Acacia)",
+    "block-woodlantern-aged-*": "Wooden Lantern (Aged)",
+    "block-woodlantern-birch*": "Wooden Lantern (Birch)",
+    "block-woodlantern-kapok*": "Wooden Lantern (Kapok)",
+    "block-woodlantern-maple*": "Wooden Lantern (Maple)",
+    "block-woodlantern-oak*": "Wooden Lantern (Oak)",
+    "block-woodlantern-pine*": "Wooden Lantern (Pine)"
 }
