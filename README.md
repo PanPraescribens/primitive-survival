@@ -20,6 +20,7 @@ Version 2.5.5 updates
  - Updated: German translation - thanks @Kiava
  - Updated: New textures for cordage, fish fillets, and fish jerky - thanks @Ledyanaya Sonya
  - Tweak: You can now right click OR shift right click to finalize weir trap (since shift right click conflicts with carry capacity )
+ -  Test cooking up some fish
  - Hey there, for primitive survival mod. I had fish disappear upon moving them into a clay vessel from inventory in cellar. Uncooked, whole fish. - Papa Cheddar
  - Mod conflict with Farm Life and traps - thanks @many people
  - is xlib the issue with filling molds - thanks @unjoyer
