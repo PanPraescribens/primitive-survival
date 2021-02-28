@@ -21,8 +21,8 @@ Version 2.5.5 updates
  - Updated: New textures for cordage, fish fillets, and fish jerky - thanks @Ledyanaya Sonya
  - Tweak: You can now right click OR shift right click to finalize weir trap (since shift right click conflicts with carry capacity )
  - Fixed, maybe. probably: Disappearing fish, invisible fish, fish just behaving badly in general - Thanks PapaCheddar and many others 
- - Mod conflict with Farm Life and traps - thanks @many people
- - Fixed - metal dupe issues related to molds and xlib - lure mold now requires 100 units, bed-o-nails now requires 200 units - thanks @unjoyer and others
+ - Fixed, maybe. probably: Mod conflict with Farm Life and traps hanging game - thanks @many people
+ - Fixed, maybe. probably: metal dupe issues related to molds and xlib - lure mold now requires 100 units, bed-o-nails now requires 200 units - thanks @unjoyer and others
  
 Version 2.5.4 updates
 
