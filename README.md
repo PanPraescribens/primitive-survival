@@ -16,14 +16,13 @@ Roadmap
 
 Version 2.5.5 updates
 
- - New: Wooden Lanterns - A simpler (and primarily cosmetic) lantern made from various wood types (requires a copper plate but no glass) - throws more light than a torch but less than a copper lantern.  thanks @Kai
+ - New: Wooden Lanterns - A simpler (primarily for aesthetics) lantern made from various wood types (requires a copper plate but no glass) - throws more light than a torch but less than a copper lantern.  thanks @Kai
  - Updated: German translation - thanks @Kiava
  - Updated: New textures for cordage, fish fillets, and fish jerky - thanks @Ledyanaya Sonya
  - Tweak: You can now right click OR shift right click to finalize weir trap (since shift right click conflicts with carry capacity )
- -  Test cooking up some fish
- - Hey there, for primitive survival mod. I had fish disappear upon moving them into a clay vessel from inventory in cellar. Uncooked, whole fish. - Papa Cheddar
+ - Fixed, maybe. probably: Disappearing fish, invisible fish, fish just behaving badly in general - Thanks PapaCheddar and many others 
  - Mod conflict with Farm Life and traps - thanks @many people
- - is xlib the issue with filling molds - thanks @unjoyer
+ - Fixed - metal dupe issues related to molds and xlib - lure mold now requires 100 units, bed-o-nails now requires 200 units - thanks @unjoyer and others
  
 Version 2.5.4 updates
 
