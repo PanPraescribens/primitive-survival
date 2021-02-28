@@ -23,7 +23,7 @@
   ],
   "attributesByType": {
     "pslargemold-burned-fishinglure": {
-      "requiredUnits": 80,
+      "requiredUnits": 100,
       "moldrackable": true,
       "onmoldrackTransform": { "rotation": { "z": 90 } },
       "fillHeight": 1,
@@ -45,7 +45,7 @@
       }
     },
     "pslargemold-burned-spikeplate": {
-      "requiredUnits": 230,
+      "requiredUnits": 200,
       "fillHeight": 7,
       "drop": {
         "type": "block",

@@ -17,12 +17,15 @@ public class EntityEarthworm : EntityAgent
     int cnt = 0;
     public static Random rnd = new Random();
 
+    public EntityEarthworm()
+    {
+
+    }
 
     public override void Initialize(EntityProperties properties, ICoreAPI api, long InChunkIndex3d)
     {
         base.Initialize(properties, api, InChunkIndex3d);
     }
-
 
     public override void OnInteract(EntityAgent byEntity, ItemSlot slot, Vec3d hitPosition, EnumInteractMode mode)
     {

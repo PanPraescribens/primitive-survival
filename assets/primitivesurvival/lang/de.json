@@ -487,5 +487,13 @@
     "game:meal-ingredient-soup-primary-jerky-bushmeat-raw": "Buschfleischstreifen (roh)",
     "game:meal-ingredient-soup-secondary-jerky-bushmeat-raw": "Buschfleischstreifen (roh)",
     "game:meal-ingredient-stew-primary-jerky-bushmeat-raw": "Buschfleischstreifen (roh)",
-    "game:meal-ingredient-stew-secondary-jerky-bushmeat-raw": "Buschfleischstreifen (roh)"
+    "game:meal-ingredient-stew-secondary-jerky-bushmeat-raw": "Buschfleischstreifen (roh)",
+
+    "block-woodlantern-acacia-*": "Holzlaterne (Akazie)",
+    "block-woodlantern-aged-*": "Holzlaterne (gealtert)",
+    "block-woodlantern-birch*": "Holzlaterne (Birke)",
+    "block-woodlantern-kapok*": "Holzlaterne (Wollbaum)",
+    "block-woodlantern-maple*": "Holzlaterne (Ahorn)",
+    "block-woodlantern-oak*": "Holzlaterne (Eiche)",
+    "block-woodlantern-pine*": "Holzlaterne (Kiefer)"
 }

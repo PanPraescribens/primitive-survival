@@ -156,80 +156,83 @@ public class BlockStakeInWater : BlockWaterPlant
         Block testBlock;
         BlockPos[] weirSidesPos;
         BlockPos[] weirBasesPos;
-        if (byPlayer.Entity.Controls.Sneak)
+
+
+        //if (byPlayer.Entity.Controls.Sneak)
+        // Sneak conflicts with Carry Capacity so I disabled that - you can still sneak, or not
+        //{
+        BlockPos Pos = blockSel.Position;
+        Block block = world.BlockAccessor.GetBlock(blockSel.Position);
+        string path = block.Code.Path;
+        BlockFacing facing = byPlayer.CurrentBlockSelection.Face;
+        if (facing.IsHorizontal && (path.EndsWith("-ew") || path.EndsWith("-ns")))
         {
-            BlockPos Pos = blockSel.Position;
-            Block block = world.BlockAccessor.GetBlock(blockSel.Position);
-            string path = block.Code.Path;
-            BlockFacing facing = byPlayer.CurrentBlockSelection.Face;
-            if (facing.IsHorizontal && (path.EndsWith("-ew") || path.EndsWith("-ns")))
+            if (facing.ToString() == "north")
             {
-                if (facing.ToString() == "north")
-                {
-                    path = path.Replace("-ew", "-we");
-                    waterPos = Pos.NorthCopy();
-                    weirSidesPos = new BlockPos[] { waterPos.EastCopy(), waterPos.WestCopy() };
-                    weirBasesPos = new BlockPos[] { waterPos.NorthCopy(), waterPos.NorthCopy().EastCopy(), waterPos.NorthCopy().WestCopy() };
+                path = path.Replace("-ew", "-we");
+                waterPos = Pos.NorthCopy();
+                weirSidesPos = new BlockPos[] { waterPos.EastCopy(), waterPos.WestCopy() };
+                weirBasesPos = new BlockPos[] { waterPos.NorthCopy(), waterPos.NorthCopy().EastCopy(), waterPos.NorthCopy().WestCopy() };
 
-                }
-                else if (facing.ToString() == "west")
-                {
-                    path = path.Replace("-ns", "-sn");
-                    waterPos = Pos.WestCopy();
-                    weirSidesPos = new BlockPos[] { waterPos.NorthCopy(), waterPos.SouthCopy() };
-                    weirBasesPos = new BlockPos[] { waterPos.WestCopy(), waterPos.WestCopy().NorthCopy(), waterPos.WestCopy().SouthCopy() };
-                }
-                else if (facing.ToString() == "south")
-                {
-                    waterPos = Pos.SouthCopy();
-                    weirSidesPos = new BlockPos[] { waterPos.EastCopy(), waterPos.WestCopy() };
-                    weirBasesPos = new BlockPos[] { waterPos.SouthCopy(), waterPos.SouthCopy().EastCopy(), waterPos.SouthCopy().WestCopy() };
-                }
-                else //east
-                {
-                    waterPos = Pos.EastCopy();
-                    weirSidesPos = new BlockPos[] { waterPos.NorthCopy(), waterPos.SouthCopy() };
-                    weirBasesPos = new BlockPos[] { waterPos.EastCopy(), waterPos.EastCopy().NorthCopy(), waterPos.EastCopy().SouthCopy() };
-                }
-                waterBlock = world.BlockAccessor.GetBlock(waterPos);
-                bool areaOK = true;
-
-                // Examine sides 
-                foreach (BlockPos neighbor in weirSidesPos)
-                {
-                    testBlock = world.BlockAccessor.GetBlock(neighbor);
-                    if (testBlock.FirstCodePart() != "stakeinwater")
-                    { areaOK = false; }
-                }
-
-                // Examine bases
-                foreach (BlockPos neighbor in weirBasesPos)
-                {
-                    testBlock = world.BlockAccessor.GetBlock(neighbor);
-                    if (testBlock.BlockId == 0 || (testBlock.LiquidCode == "water" && (testBlock.FirstCodePart() != "stakeinwater")))
-                    { areaOK = false; }
-                }
-
-                if (waterBlock.LiquidCode == "water" && areaOK)
-                {
-                    path = path + "open";
-                    block = world.GetBlock(block.CodeWithPath(path));
-                    world.BlockAccessor.SetBlock(block.BlockId, blockSel.Position);
-
-                    //make sure it isn't already a weir trap!!!
-                    testBlock = world.BlockAccessor.GetBlock(waterPos);
-                    if (testBlock.Code.Path.Contains("weirtrap"))
-                    {
-                        //System.Diagnostics.Debug.WriteLine("Already a weir trap!");
-                    }
-                    else
-                    {
-                        testBlock = world.BlockAccessor.GetBlock(new AssetLocation("primitivesurvival:weirtrap-" + facing.ToString()));
-                        world.BlockAccessor.SetBlock(testBlock.BlockId, waterPos);
-                    }
-
-                }
             }
+            else if (facing.ToString() == "west")
+            {
+                path = path.Replace("-ns", "-sn");
+                waterPos = Pos.WestCopy();
+                weirSidesPos = new BlockPos[] { waterPos.NorthCopy(), waterPos.SouthCopy() };
+                weirBasesPos = new BlockPos[] { waterPos.WestCopy(), waterPos.WestCopy().NorthCopy(), waterPos.WestCopy().SouthCopy() };
+            }
+            else if (facing.ToString() == "south")
+            {
+                waterPos = Pos.SouthCopy();
+                weirSidesPos = new BlockPos[] { waterPos.EastCopy(), waterPos.WestCopy() };
+                weirBasesPos = new BlockPos[] { waterPos.SouthCopy(), waterPos.SouthCopy().EastCopy(), waterPos.SouthCopy().WestCopy() };
+            }
+            else //east
+            {
+                waterPos = Pos.EastCopy();
+                weirSidesPos = new BlockPos[] { waterPos.NorthCopy(), waterPos.SouthCopy() };
+                weirBasesPos = new BlockPos[] { waterPos.EastCopy(), waterPos.EastCopy().NorthCopy(), waterPos.EastCopy().SouthCopy() };
+            }
+            waterBlock = world.BlockAccessor.GetBlock(waterPos);
+            bool areaOK = true;
+
+            // Examine sides 
+            foreach (BlockPos neighbor in weirSidesPos)
+            {
+                testBlock = world.BlockAccessor.GetBlock(neighbor);
+                if (testBlock.FirstCodePart() != "stakeinwater")
+                { areaOK = false; }
+            }
+
+            // Examine bases
+            foreach (BlockPos neighbor in weirBasesPos)
+            {
+                testBlock = world.BlockAccessor.GetBlock(neighbor);
+                if (testBlock.BlockId == 0 || (testBlock.LiquidCode == "water" && (testBlock.FirstCodePart() != "stakeinwater")))
+                { areaOK = false; }
+            }
+
+            if (waterBlock.LiquidCode == "water" && areaOK)
+            {
+                path = path + "open";
+                block = world.GetBlock(block.CodeWithPath(path));
+                world.BlockAccessor.SetBlock(block.BlockId, blockSel.Position);
+
+                //make sure it isn't already a weir trap!!!
+                testBlock = world.BlockAccessor.GetBlock(waterPos);
+                if (testBlock.Code.Path.Contains("weirtrap"))
+                {
+                    //System.Diagnostics.Debug.WriteLine("Already a weir trap!");
+                }
+                else
+                {
+                    testBlock = world.BlockAccessor.GetBlock(new AssetLocation("primitivesurvival:weirtrap-" + facing.ToString()));
+                    world.BlockAccessor.SetBlock(testBlock.BlockId, waterPos);
+                }
+
+            }
+        //}
         }
         return true;
     }

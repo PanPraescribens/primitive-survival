@@ -72,7 +72,7 @@ public class BESnare : BlockEntityDisplay, IAnimalFoodSource
     public float ConsumeOnePortion()
     {
         TryClearContents();
-        return 0f;
+        return 1f;
     }
 
     public string Type
@@ -107,12 +107,12 @@ public class BESnare : BlockEntityDisplay, IAnimalFoodSource
         if (!baitSlot.Empty)
         {
             baitSlot.TakeOutWhole();
-            if (Api.Side == EnumAppSide.Server)
+            //MarkDirty(true);
+            /*if (Api.Side == EnumAppSide.Server)
             { 
                 Api.ModLoader.GetModSystem<POIRegistry>().RemovePOI(this);
-                MarkDirty();
-            }
-            //MarkDirty(true);
+                
+            }*/
             return true;
         }
         return false;

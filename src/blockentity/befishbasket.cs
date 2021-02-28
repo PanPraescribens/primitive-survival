@@ -266,8 +266,8 @@ public class BEFishBasket : BlockEntityDisplay
         if (inventory[slot].Empty)
         {
             inventory[slot].Itemstack = newStack;
-            Api.World.BlockAccessor.MarkBlockDirty(pos);
-            MarkDirty();
+            //Api.World.BlockAccessor.MarkBlockDirty(pos);
+            MarkDirty(true);
             return true;
         }
         return false;
@@ -363,10 +363,15 @@ public class BEFishBasket : BlockEntityDisplay
         {
             int rando = rnd.Next(3);
             if (rando < 2 && catch2Stack.Item != null) //fish
-                Api.World.SpawnItemEntity(catch2Stack, Pos.ToVec3d().Add(0.5, 1, 0.5)); //slippery
+            {
+                ItemStack drop = catch2Stack.Clone();
+                drop.StackSize = 1;
+                Api.World.SpawnItemEntity(drop, new Vec3d(Pos.X + 0.5, Pos.Y + 0.5, Pos.Z + 0.5), null);
+                //Api.World.SpawnItemEntity(catch2Stack, Pos.ToVec3d().Add(0.5, 1, 0.5)); //slippery
+            }
             else
                 byPlayer.InventoryManager.TryGiveItemstack(catch2Stack);
-            catch2Slot.TakeOut(1);
+            catch2Slot.TakeOutWhole();
             MarkDirty(true);
             return true;
         }
@@ -374,10 +379,17 @@ public class BEFishBasket : BlockEntityDisplay
         {
             int rando = rnd.Next(3);
             if (rando < 2 && catch1Stack.Item != null) //fish
-                Api.World.SpawnItemEntity(catch1Stack, Pos.ToVec3d().Add(0.5, 1, 0.5)); //slippery
+            {
+                ItemStack drop = catch1Stack.Clone();
+                drop.StackSize = 1;
+                Api.World.SpawnItemEntity(drop, new Vec3d(Pos.X + 0.5, Pos.Y + 0.5, Pos.Z + 0.5), null);
+                //Api.World.SpawnItemEntity(catch1Stack, Pos.ToVec3d().Add(0.5, 1, 0.5)); //slippery
+            }
             else
+            {
                 byPlayer.InventoryManager.TryGiveItemstack(catch1Stack);
-            catch1Slot.TakeOut(1);
+            }
+            catch1Slot.TakeOutWhole();
             MarkDirty(true);
             return true;
         }

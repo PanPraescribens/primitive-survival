@@ -60,7 +60,8 @@
                     }
                 }
             }
-        }
+        },
+        { "name": "RightClickPickup" }
     ],
     "heldRightTpIdleAnimation": "holdinglanternrighthand",
     "heldLeftTpIdleAnimation": "holdinglanternlefthand",

@@ -28,6 +28,7 @@ public class BELimbTrotLineLure : BlockEntityDisplay
     public int maxSlots = 4;
     public string[] baitTypes = { "fruit", "grain", "legume", "meat", "vegetable", "jerky", "mushroom", "bread", "poultry", "pickledvegetable", "redmeat", "bushmeat", "earthworm", "cheese" };
     public string[] fishTypes = { "trout",  "perch", "carp", "bass", "pike", "arcticchar", "catfish", "bluegill" };
+ 
     public static Random rnd = new Random();
 
     public override string InventoryClassName
@@ -186,11 +187,12 @@ public class BELimbTrotLineLure : BlockEntityDisplay
                             if (catchSlot.Empty)
                             {
                                 catchStack = new ItemStack(Api.World.GetItem(new AssetLocation("primitivesurvival:psfish-" + fishTypes[rnd.Next(fishTypes.Count())] + "-raw")), 1);
+                                //Api.World.BlockAccessor.MarkBlockDirty(Pos);
+                                MarkDirty(true);
                                 rando = rnd.Next(2);
                                 if (rando == 0)
                                 { baitSlot.TakeOutWhole(); }
-                                Api.World.BlockAccessor.MarkBlockDirty(Pos);
-                                MarkDirty();
+                                
                             }
                         }
                     }
@@ -206,8 +208,8 @@ public class BELimbTrotLineLure : BlockEntityDisplay
                         if (catchSlot.Empty)
                         {
                             catchStack = new ItemStack(Api.World.GetItem(new AssetLocation("primitivesurvival:psfish-" + fishTypes[rnd.Next(fishTypes.Count())] + "-raw")), 1);
-                            Api.World.BlockAccessor.MarkBlockDirty(Pos);
-                            MarkDirty();
+                            //Api.World.BlockAccessor.MarkBlockDirty(Pos);
+                            MarkDirty(true);
                         }
                     }
                 }
@@ -364,9 +366,16 @@ public class BELimbTrotLineLure : BlockEntityDisplay
             //System.Diagnostics.Debug.WriteLine("Grabbed a " + catchStack.Item.Code.Path);
             int rando = rnd.Next(3);
             if (rando < 2)
-                Api.World.SpawnItemEntity(catchStack, Pos.ToVec3d().Add(0.5, 1, 0.5)); //slippery
+            {
+                ItemStack drop = catchStack.Clone();
+                drop.StackSize = 1;
+                Api.World.SpawnItemEntity(drop, new Vec3d(Pos.X + 0.5, Pos.Y + 0.5, Pos.Z + 0.5), null);
+                //Api.World.SpawnItemEntity(catchStack, Pos.ToVec3d()); //slippery
+            }
             else
+            { 
                 byPlayer.InventoryManager.TryGiveItemstack(catchStack);
+            }
             catchSlot.TakeOutWhole();
             MarkDirty(true);
             return true;

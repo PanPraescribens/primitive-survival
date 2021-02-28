@@ -537,5 +537,13 @@
     "game:meal-ingredient-soup-primary-jerky-bushmeat-raw": "Вяленое мясо дичи",
     "game:meal-ingredient-soup-secondary-jerky-bushmeat-raw": "Вяленое мясо дичи",
     "game:meal-ingredient-stew-primary-jerky-bushmeat-raw": "Вяленое мясо дичи",
-    "game:meal-ingredient-stew-secondary-jerky-bushmeat-raw": "Вяленое мясо дичи"
+    "game:meal-ingredient-stew-secondary-jerky-bushmeat-raw": "Вяленое мясо дичи",
+
+    "block-woodlantern-acacia-*": "деревянный фонарь (Акация)",
+    "block-woodlantern-aged-*": "деревянный фонарь (Древний)",
+    "block-woodlantern-birch*": "деревянный фонарь (Береза)",
+    "block-woodlantern-kapok*": "деревянный фонарь (Капок)",
+    "block-woodlantern-maple*": "деревянный фонарь (Клен)",
+    "block-woodlantern-oak*": "деревянный фонарь (Дуб)",
+    "block-woodlantern-pine*": "деревянный фонарь (Сосна)"
 }

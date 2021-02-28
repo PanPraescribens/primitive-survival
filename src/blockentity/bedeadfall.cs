@@ -73,7 +73,7 @@ public class BEDeadfall : BlockEntityDisplay, IAnimalFoodSource
     public float ConsumeOnePortion()
     {
         //TryClearContents();
-        return 0f;
+        return 1f;
     }
     
 
@@ -108,12 +108,13 @@ public class BEDeadfall : BlockEntityDisplay, IAnimalFoodSource
         if (!baitSlot.Empty)
         {
             baitSlot.TakeOutWhole();
+            //MarkDirty(true);
+            /*
             if (Api.Side == EnumAppSide.Server)
             {
-                MarkDirty();
-                Api.ModLoader.GetModSystem<POIRegistry>().RemovePOI(this); 
-            }
-            //MarkDirty(true);
+                Api.ModLoader.GetModSystem<POIRegistry>().RemovePOI(this);
+                
+            } */
             return true;
         }
         return false;
