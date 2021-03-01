@@ -2,14 +2,11 @@ using System;
 using System.Linq;
 using System.Text;
 using Vintagestory.API.Client;
-using Vintagestory.API.Server;
 using Vintagestory.API.Common;
 using Vintagestory.API.MathTools;
 using Vintagestory.GameContent;
 using Vintagestory.API.Datastructures;
 using Vintagestory.API.Config;
-using Vintagestory.API.Util;
-using System.Collections.Generic;
 
 public class BELimbTrotLineLure : BlockEntityDisplay
 {
@@ -171,9 +168,11 @@ public class BELimbTrotLineLure : BlockEntityDisplay
                         if (!baitSlot.Empty)
                         {
                             baitSlot.TakeOutWhole();
-                            Api.World.BlockAccessor.MarkBlockDirty(Pos);
-                            MarkDirty();
                             GenerateWaterParticles(Pos, Api.World);
+                            MarkDirty();
+                            //Api.World.BlockAccessor.MarkBlockDirty(Pos);
+                            //Api.World.BlockAccessor.MarkBlockEntityDirty(Pos);
+                            //MarkDirty(true);
                         }
                     }
                     else
@@ -187,12 +186,13 @@ public class BELimbTrotLineLure : BlockEntityDisplay
                             if (catchSlot.Empty)
                             {
                                 catchStack = new ItemStack(Api.World.GetItem(new AssetLocation("primitivesurvival:psfish-" + fishTypes[rnd.Next(fishTypes.Count())] + "-raw")), 1);
-                                //Api.World.BlockAccessor.MarkBlockDirty(Pos);
-                                MarkDirty(true);
                                 rando = rnd.Next(2);
                                 if (rando == 0)
                                 { baitSlot.TakeOutWhole(); }
-                                
+                                MarkDirty();
+                                //Api.World.BlockAccessor.MarkBlockDirty(Pos);
+                                //Api.World.BlockAccessor.MarkBlockEntityDirty(Pos);
+                                //MarkDirty(true);
                             }
                         }
                     }
@@ -208,8 +208,10 @@ public class BELimbTrotLineLure : BlockEntityDisplay
                         if (catchSlot.Empty)
                         {
                             catchStack = new ItemStack(Api.World.GetItem(new AssetLocation("primitivesurvival:psfish-" + fishTypes[rnd.Next(fishTypes.Count())] + "-raw")), 1);
+                            MarkDirty();
                             //Api.World.BlockAccessor.MarkBlockDirty(Pos);
-                            MarkDirty(true);
+                            //Api.World.BlockAccessor.MarkBlockEntityDirty(Pos);
+                            //MarkDirty(true);
                         }
                     }
                 }
@@ -223,11 +225,15 @@ public class BELimbTrotLineLure : BlockEntityDisplay
                 int rando = rnd.Next(100);
                 if (rando < rotRemovedPercent)
                 { catchSlot.TakeOutWhole(); }
-                Api.World.BlockAccessor.MarkBlockDirty(Pos);
                 MarkDirty();
+                //Api.World.BlockAccessor.MarkBlockDirty(Pos);
+                //Api.World.BlockAccessor.MarkBlockEntityDirty(Pos);
+                //MarkDirty(true);
             }
         }
     }
+
+
 
 
     internal bool OnInteract(IPlayer byPlayer, BlockSelection blockSel)
@@ -335,30 +341,8 @@ public class BELimbTrotLineLure : BlockEntityDisplay
         return false;
     }
 
-    private void AddSelectionBox()
-    {
-        Block block = this.Api.World.BlockAccessor.GetBlock(Pos);
-        Cuboidf[] selectionBoxes = block.GetSelectionBoxes(Api.World.BlockAccessor, Pos);
-        selectionBoxes[1].X1 = 0;
-        selectionBoxes[1].Y1 = -1;
-        selectionBoxes[1].Z1 = 0;
-        selectionBoxes[1].X2 = 1;
-        selectionBoxes[1].Y2 = 0.2f;
-        selectionBoxes[1].Z2 = 1;
-    }
 
-    private void ClearSelectionBox()
-    {
-        Block block = this.Api.World.BlockAccessor.GetBlock(Pos);
-        Cuboidf[] selectionBoxes = block.GetSelectionBoxes(Api.World.BlockAccessor, Pos);
-        selectionBoxes[1].X1 = 0;
-        selectionBoxes[1].Y1 = 0;
-        selectionBoxes[1].Z1 = 0;
-        selectionBoxes[1].X2 = 0;
-        selectionBoxes[1].Y2 = 0;
-        selectionBoxes[1].Z2 = 0;
-    }
-    
+
     private bool TryTake(IPlayer byPlayer, BlockSelection blockSel)
     {
         if (!catchSlot.Empty)
@@ -369,7 +353,7 @@ public class BELimbTrotLineLure : BlockEntityDisplay
             {
                 ItemStack drop = catchStack.Clone();
                 drop.StackSize = 1;
-                Api.World.SpawnItemEntity(drop, new Vec3d(Pos.X + 0.5, Pos.Y + 0.5, Pos.Z + 0.5), null);
+                Api.World.SpawnItemEntity(drop, new Vec3d(Pos.X + 0.5, Pos.Y + 0.5, Pos.Z + 0.5), null); //slippery
                 //Api.World.SpawnItemEntity(catchStack, Pos.ToVec3d()); //slippery
             }
             else
@@ -405,11 +389,21 @@ public class BELimbTrotLineLure : BlockEntityDisplay
     }
 
 
+    public override void FromTreeAttributes(ITreeAttribute tree, IWorldAccessor worldForResolve)
+    {
+        base.FromTreeAttributes(tree, worldForResolve);
+        if (Api != null)
+        {
+            if (Api.Side == EnumAppSide.Client)
+            {    Api.World.BlockAccessor.MarkBlockDirty(Pos); }
+        }
+    }
+
+
     public override void GetBlockInfo(IPlayer forPlayer, StringBuilder sb)
     {
         if (!catchSlot.Empty)
         {
-            //AddSelectionBox();
             sb.Append(Lang.Get("There's something on your hook."));
             if (!catchStack.Item.Code.Path.Contains("psfish"))
             { sb.Append(" " + Lang.Get("Unfortunately, it smells a little funky.")); }
@@ -433,7 +427,6 @@ public class BELimbTrotLineLure : BlockEntityDisplay
                 sb.AppendLine();
             }
 
-            //ClearSelectionBox();
             if (!baitSlot.Empty)
             {
                 if (baitStack.Item != null)
@@ -462,6 +455,7 @@ public class BELimbTrotLineLure : BlockEntityDisplay
         sb.AppendLine().AppendLine();
     }
 
+
     public override bool OnTesselation(ITerrainMeshPool mesher, ITesselatorAPI tesselator)
     {
         MeshData mesh;
@@ -470,7 +464,7 @@ public class BELimbTrotLineLure : BlockEntityDisplay
         string hookType;
         string lureType;
         bool alive = false;
-
+    
         BlockLimbTrotLineLure block = Api.World.BlockAccessor.GetBlock(Pos) as BlockLimbTrotLineLure;
         Block tmpBlock;
         ITexPositionSource texture = tesselator.GetTexSource(block);

@@ -364,10 +364,10 @@ public class BEFishBasket : BlockEntityDisplay
             int rando = rnd.Next(3);
             if (rando < 2 && catch2Stack.Item != null) //fish
             {
-                ItemStack drop = catch2Stack.Clone();
-                drop.StackSize = 1;
-                Api.World.SpawnItemEntity(drop, new Vec3d(Pos.X + 0.5, Pos.Y + 0.5, Pos.Z + 0.5), null);
-                //Api.World.SpawnItemEntity(catch2Stack, Pos.ToVec3d().Add(0.5, 1, 0.5)); //slippery
+                //ItemStack drop = catch2Stack.Clone();
+                //drop.StackSize = 1;
+                //Api.World.SpawnItemEntity(drop, new Vec3d(Pos.X + 0.5, Pos.Y + 0.5, Pos.Z + 0.5), null);
+                byPlayer.InventoryManager.TryGiveItemstack(catch2Stack);
             }
             else
                 byPlayer.InventoryManager.TryGiveItemstack(catch2Stack);
@@ -380,10 +380,10 @@ public class BEFishBasket : BlockEntityDisplay
             int rando = rnd.Next(3);
             if (rando < 2 && catch1Stack.Item != null) //fish
             {
-                ItemStack drop = catch1Stack.Clone();
-                drop.StackSize = 1;
-                Api.World.SpawnItemEntity(drop, new Vec3d(Pos.X + 0.5, Pos.Y + 0.5, Pos.Z + 0.5), null);
-                //Api.World.SpawnItemEntity(catch1Stack, Pos.ToVec3d().Add(0.5, 1, 0.5)); //slippery
+                //ItemStack drop = catch1Stack.Clone();
+                //drop.StackSize = 1;
+                //Api.World.SpawnItemEntity(drop, new Vec3d(Pos.X + 0.5, Pos.Y + 0.5, Pos.Z + 0.5), null);
+                byPlayer.InventoryManager.TryGiveItemstack(catch1Stack);
             }
             else
             {
@@ -455,6 +455,20 @@ public class BEFishBasket : BlockEntityDisplay
             }
         }
     }
+
+
+    public override void FromTreeAttributes(ITreeAttribute tree, IWorldAccessor worldForResolve)
+    {
+        base.FromTreeAttributes(tree, worldForResolve);
+        if (Api != null)
+        {
+            if (Api.Side == EnumAppSide.Client)
+            { Api.World.BlockAccessor.MarkBlockDirty(Pos); }
+        }
+    }
+
+
+
 
     // Note: There's a bug "of sorts" if the water isn't full block fishbasket is land type not water type...
 

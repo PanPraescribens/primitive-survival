@@ -64,8 +64,8 @@ public class BlockSnare : Block
 
     public override bool OnBlockInteractStart(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel)
     {
-        if (byPlayer.Entity.Controls.Sneak)
-        {
+        //if (byPlayer.Entity.Controls.Sneak)
+        //{
             Block block = world.BlockAccessor.GetBlock(blockSel.Position);
             string path = block.Code.Path;
             if (path.Contains("-tripped"))
@@ -73,9 +73,10 @@ public class BlockSnare : Block
                 path = path.Replace("-tripped", "-set");
                 block = world.GetBlock(block.CodeWithPath(path));
                 world.BlockAccessor.SetBlock(block.BlockId, blockSel.Position);
+                return true;
             }
-            return true;
-        }
+            
+        //}
 
         BESnare bedc = world.BlockAccessor.GetBlockEntity(blockSel.Position) as BESnare;
         if (bedc != null) return bedc.OnInteract(byPlayer, blockSel);
