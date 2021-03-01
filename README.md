@@ -19,7 +19,7 @@ Version 2.5.5 updates
  - New: Wooden Lanterns - A simpler (primarily for aesthetics) lantern made from various wood types (requires a copper plate but no glass) - throws more light than a torch but less than a copper lantern. thanks @Kai Effelsberg
  - Updated: German translation - thanks @Kiava
  - Updated: New textures for cordage, fish fillets, and fish jerky - thanks @Ledyanaya Sonya
- - Tweak: You can now right click OR shift right click to finalize weir trap (since shift right click conflicts with Carry Capacity mod)
+ - Tweak: You can now right click OR shift right click to finalize weir trap, or reset a deadfall/snare (since shift right click conflicts with Carry Capacity mod)
  - Fixed, maybe. probably: Disappearing fish, invisible fish, fish just behaving badly in general - Thanks @Willrun4fun @Tech_Rabbit @Papa Cheddar @Richard Adamsand others
  - Fixed, maybe. probably: Mod conflict with Farm Life and traps hanging game - thanks @KarsT@Lich and others
  - Fixed, maybe. probably: metal dupe issues related to molds and xSkills/XLib mod - lure mold now requires 100 units, bed-o-nails now requires 200 units - thanks @unjoyer@Tech_Rabbit  and others
