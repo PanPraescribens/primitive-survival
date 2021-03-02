@@ -13,6 +13,9 @@ Roadmap
  - Raft
  - create config file to disable assets or at least drop less gold - @techrabbit
 
+Version 2.5.6 Updates
+
+- Wood lantern recipe not showing in the handbook!!! - argh!
 
 Version 2.5.5 updates
 
