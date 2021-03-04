@@ -12,6 +12,7 @@ Roadmap
  - Smoking Rack or Pit Smoker - smoked meat good, jerky strips less good @Boomer Bill
  - Raft
  - create config file to disable assets or at least drop less gold - @techrabbit
+ - re-enable slippery fish
 
 Version 2.5.6 Updates
 
