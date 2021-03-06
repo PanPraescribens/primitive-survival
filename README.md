@@ -16,7 +16,7 @@ Roadmap
 
 Version 2.5.6 Updates
 
-- Wood lantern recipe not showing in the handbook!!! - argh!
+- Fixed: Wooden lanterns recipe now showing up in the handbook
 
 Version 2.5.5 updates
 
