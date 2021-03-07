@@ -1,160 +1,215 @@
-using System.Text;
-using Vintagestory.API.Client;
+using System;
+using Vintagestory.API;
 using Vintagestory.API.Common;
 using Vintagestory.API.Common.Entities;
-using Vintagestory.API.Config;
 using Vintagestory.API.Datastructures;
 using Vintagestory.API.MathTools;
+using Vintagestory.API.Client;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Vintagestory.API.Config;
 using Vintagestory.API.Util;
-using Vintagestory.GameContent;
 
 public class BlockRaft : Block 
 {
-    public static IMountable GetMountable(IWorldAccessor world, TreeAttribute tree)
-    {
-        BlockPos pos = new BlockPos(tree.GetInt("posx"), tree.GetInt("posy"), tree.GetInt("posz"));
-        Block block = world.BlockAccessor.GetBlock(pos);
 
-        BlockFacing facing = BlockFacing.FromCode(block.LastCodePart());
-        BERaft beBed = world.BlockAccessor.GetBlockEntity(block.LastCodePart(1) == "feet" ? pos.AddCopy(facing) : pos) as BERaft;
-
-        return beBed;
-    }
+    ILoadedSound sound;
 
     public override bool TryPlaceBlock(IWorldAccessor world, IPlayer byPlayer, ItemStack itemstack, BlockSelection blockSel, ref string failureCode)
     {
-        if (!world.Claims.TryAccess(byPlayer, blockSel.Position, EnumBlockAccessFlags.BuildOrBreak))
-        {
-            byPlayer.InventoryManager.ActiveHotbarSlot.MarkDirty();
-            return false;
-        }
-
-        if (CanPlaceBlock(world, byPlayer, blockSel, ref failureCode))
-        {
-            //BlockFacing[] horVer = SuggestedHVOrientation(byPlayer, blockSel);
-            base.TryPlaceBlock(world, byPlayer, itemstack, blockSel, ref failureCode);
-            return true;
-        }
-
+        Block block = world.BlockAccessor.GetBlock(blockSel.Position);
+        if (!CanPlaceBlock(world, byPlayer, blockSel, ref failureCode))
+        { return false; }
         return false;
     }
 
-    public override bool OnBlockInteractStart(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel)
+
+    public override void OnHeldIdle(ItemSlot slot, EntityAgent byEntity)
     {
-        if (!world.Claims.TryAccess(byPlayer, blockSel.Position, EnumBlockAccessFlags.Use))
+        if (byEntity.World is IClientWorldAccessor)
         {
-            return false;
-        }
+            //these two lines rotate the raft in hand when idle
+            
 
-        BlockFacing facing = BlockFacing.FromCode(LastCodePart()).Opposite;
-        BERaft beBed = world.BlockAccessor.GetBlockEntity(LastCodePart(1) == "feet" ? blockSel.Position.AddCopy(facing) : blockSel.Position) as BERaft;
-
-        if (beBed == null) return false;
-        if (beBed.MountedBy != null) return false;
-
-        EntityBehaviorTiredness ebt = byPlayer.Entity.GetBehavior("tiredness") as EntityBehaviorTiredness;
-        if (ebt != null && ebt.Tiredness <= 8)
-        {
-            if (world.Side == EnumAppSide.Client) (api as ICoreClientAPI).TriggerIngameError(this, "nottiredenough", Lang.Get("not-tired-enough"));
-            return false;
-        }
-
-        return byPlayer.Entity.TryMount(beBed);
-    }
-
-    public override void OnBlockRemoved(IWorldAccessor world, BlockPos pos)
-    {
-        string headfoot = LastCodePart(1);
-
-        BlockFacing facing = BlockFacing.FromCode(LastCodePart());
-        if (LastCodePart(1) == "feet") facing = facing.Opposite;
-        else
-        {
-            BERaft beBed = world.BlockAccessor.GetBlockEntity(pos) as BERaft;
-            beBed?.MountedBy?.TryUnmount();
-        }
-
-        Block secondPlock = world.BlockAccessor.GetBlock(pos.AddCopy(facing));
-
-        if (secondPlock is BlockBed && secondPlock.LastCodePart(1) != headfoot)
-        {
-            world.BlockAccessor.SetBlock(0, pos.AddCopy(facing));
-        }
-
-        base.OnBlockRemoved(world, pos);
-    }
-
-    public override BlockDropItemStack[] GetDropsForHandbook(ItemStack handbookStack, IPlayer forPlayer)
-    {
-        return GetHandbookDropsFromBreakDrops(handbookStack, forPlayer);
-    }
-
-    public override ItemStack[] GetDrops(IWorldAccessor world, BlockPos pos, IPlayer byPlayer, float dropQuantityMultiplier = 1f)
-    {
-        return new ItemStack[] { new ItemStack(world.BlockAccessor.GetBlock(CodeWithParts("head", "north"))) };
-    }
-
-
-    public override AssetLocation GetRotatedBlockCode(int angle)
-    {
-        BlockFacing beforeFacing = BlockFacing.FromCode(LastCodePart());
-        int rotatedIndex = GameMath.Mod(beforeFacing.HorizontalAngleIndex - angle / 90, 4);
-        BlockFacing nowFacing = BlockFacing.HORIZONTALS_ANGLEORDER[rotatedIndex];
-
-        return CodeWithParts(nowFacing.Code);
-    }
-
-    public override ItemStack OnPickBlock(IWorldAccessor world, BlockPos pos)
-    {
-        return new ItemStack(world.BlockAccessor.GetBlock(CodeWithParts("head", "north")));
-    }
-
-    public override AssetLocation GetHorizontallyFlippedBlockCode(EnumAxis axis)
-    {
-        BlockFacing facing = BlockFacing.FromCode(LastCodePart());
-        if (facing.Axis == axis)
-        {
-            return CodeWithParts(facing.Opposite.Code);
-        }
-        return Code;
-    }
-
-    public override void GetHeldItemInfo(ItemSlot inSlot, StringBuilder dsc, IWorldAccessor world, bool withDebugInfo)
-    {
-        base.GetHeldItemInfo(inSlot, dsc, world, withDebugInfo);
-        dsc.AppendLine("\n" + Lang.Get("Lets go rafting!"));
-    }
-
-    public override string GetPlacedBlockInfo(IWorldAccessor world, BlockPos pos, IPlayer forPlayer)
-    {
-        float sleepEfficiency = 0.5f;
-        if (Attributes?["sleepEfficiency"] != null) sleepEfficiency = Attributes["sleepEfficiency"].AsFloat(0.5f);
-
-        return base.GetPlacedBlockInfo(world, pos, forPlayer) + Lang.Get("Lets you sleep for up to {0} hours", System.Math.Round(sleepEfficiency * world.Calendar.HoursPerDay / 2, 2));
-    }
-
-    public override WorldInteraction[] GetPlacedBlockInteractionHelp(IWorldAccessor world, BlockSelection selection, IPlayer forPlayer)
-    {
-        return new WorldInteraction[]
-        {
-                new WorldInteraction()
-                {
-                    ActionLangCode = "blockhelp-bed-sleep",
-                    MouseButton = EnumMouseButton.Right
-                }
-        }.Append(base.GetPlacedBlockInteractionHelp(world, selection, forPlayer));
-    }
-
-    public override void OnEntityCollide(IWorldAccessor world, Entity entity, BlockPos pos, BlockFacing facing, Vec3d collideSpeed, bool isImpact)
-    {
-        if (isImpact && facing.Axis == EnumAxis.Y)
-        {
-            if (Sounds?.Break != null && System.Math.Abs(collideSpeed.Y) > 0.2)
+            if(byEntity.IsEyesSubmerged())
             {
-                world.PlaySoundAt(Sounds.Break, entity.Pos.X, entity.Pos.Y, entity.Pos.Z);
+                FpHandTransform.Rotation.X = -120;
+                
+                TpHandTransform.Rotation.X = 20;
+                TpHandTransform.Rotation.Y = 35;
+                TpHandTransform.Rotation.Z = 125; //90;
+                
+                //TpHandTransform.Translation.Y = 0.5f; 
+                TpHandTransform.Translation.Z = 0.2f; 
+
+                Vec3d pos = byEntity.Pos.HorizontalAheadCopy(0.05f).XYZ;
+                //System.Diagnostics.Debug.WriteLine("submerged");
+                //byEntity.Pos.Motion.Y = GameMath.Clamp(-byEntity.Pos.Motion.Y * 0.8, -0.5, 0.5);
+                byEntity.Pos.Motion.Y += 0.03;
+                //System.Diagnostics.Debug.WriteLine("X:" + byEntity.Pos.X + "   to X:" + pos.X);
+                double newX = byEntity.Pos.X - pos.X;
+                double newZ = byEntity.Pos.Z - pos.Z;
+                byEntity.Pos.Motion.X -= (newX * 2f);
+                byEntity.Pos.Motion.Z -= (newZ * 2f);
+                byEntity.StartAnimation("swim");
             }
-            entity.Pos.Motion.Y = GameMath.Clamp(-entity.Pos.Motion.Y * 0.8, -0.5, 0.5);
+            else
+            {
+                if (!byEntity.FeetInLiquid)
+                {
+                    byEntity.StopAnimation("swim");
+                    FpHandTransform.Rotation.X = -90;
+                    
+                    TpHandTransform.Rotation.X = 0;
+                    TpHandTransform.Rotation.Y = 0; 
+                    TpHandTransform.Rotation.Z = 45;
+                    
+                    //TpHandTransform.Translation.Y = 0;
+                    TpHandTransform.Translation.Z = 0;
+                }
+                else
+                {
+                    byEntity.StartAnimation("swim");
+                }
+            }
+
+            /*IRenderAPI rapi = (byEntity.World.Api as ICoreClientAPI).Render;
+            Vec3d aboveHeadPos = byEntity.Pos.XYZ.Add(0, byEntity.EyeHeight() - 0.1f, 0);
+            Vec3d pos = MatrixToolsd.Project(aboveHeadPos, rapi.PerspectiveProjectionMat, rapi.PerspectiveViewMat, rapi.ScreenWidth, rapi.ScreenHeight);
+
+
+            particlesHeld.minSize = 0.05f;
+            particlesHeld.minSize = 0.15f;
+
+            SpawnParticles(byEntity.World, pos);*/
+        }
+
+    }
+
+    public override void OnHeldInteractStart(ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, bool firstEvent, ref EnumHandHandling handling)
+    {
+        handling = EnumHandHandling.PreventDefault;
+
+        if (!firstEvent)
+        {
+            return;
+        }
+
+
+        if (!byEntity.FeetInLiquid && api.Side == EnumAppSide.Client)
+        {
+            (api as ICoreClientAPI).TriggerIngameError(this, "notinwater", Lang.Get("Must stand in water to use a raft"));
+            return;
         }
     }
 
+
+    public override bool OnHeldInteractStep(float secondsUsed, ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel)
+    {
+        if (( byEntity.Controls.Jump) && !byEntity.Controls.Sneak) return false; // Cancel if the player jumps or sneaks
+        //byEntity.Controls.TriesToMove ||
+
+        //string blockMaterialCode = GetBlockMaterialCode(slot.Itemstack);
+        //if (blockMaterialCode == null || !slot.Itemstack.TempAttributes.GetBool("canpan")) return false;
+        Vec3d pos = byEntity.Pos.AheadCopy(0.4f).XYZ;
+        pos.Y += byEntity.LocalEyePos.Y - 0.4f;
+
+        if (secondsUsed > 0.5f && api.World.Rand.NextDouble() > 0.5)
+        {
+            //Block block = api.World.GetBlock(new AssetLocation(blockMaterialCode));
+            //Vec3d particlePos = pos.Clone();
+
+            //particlePos.X += GameMath.Sin(-secondsUsed * 20) / 5f;
+            //particlePos.Z += GameMath.Cos(-secondsUsed * 20) / 5f;
+            //particlePos.Y -= 0.07f;
+
+            //byEntity.World.SpawnCubeParticles(particlePos, new ItemStack(block), 0.3f, (int)(1.5f + (float)api.World.Rand.NextDouble()), 0.3f + (float)api.World.Rand.NextDouble() / 6f, (byEntity as EntityPlayer)?.Player);
+        }
+
+
+        if (byEntity.World is IClientWorldAccessor)
+        {
+            ModelTransform tf = new ModelTransform();
+
+            tf.EnsureDefaultValues();
+
+            tf.Translation.Set(-1f * (float)Easings.EaseOutBack(Math.Min(secondsUsed * 1.5f, 1)), (float)Easings.EaseOutBack(Math.Min(1, secondsUsed * 1.5f)) * 0.3f, -1 * (float)Easings.EaseOutBack(Math.Min(secondsUsed * 1.5f, 1)));
+
+            if (secondsUsed > 0.5f)
+            {
+                tf.Translation.X += (float)GameMath.MurmurHash3Mod((int)(secondsUsed * 3), 0, 0, 10) / 600f;
+                tf.Translation.Y += (float)GameMath.MurmurHash3Mod(0, (int)(secondsUsed * 3), 0, 10) / 600f;
+
+                if (sound == null)
+                {
+                    sound = (api as ICoreClientAPI).World.LoadSound(new SoundParams()
+                    {
+                        Location = new AssetLocation("sounds/player/swim.ogg"),
+                        ShouldLoop = false,
+                        RelativePosition = true,
+                        Position = new Vec3f(),
+                        DisposeOnFinish = true,
+                        Volume = 0.5f,
+                        Range = 8
+                    });
+
+                    sound.Start();
+                }
+            }
+
+       
+            tf.Scale = 1 + Math.Min(0.6f, 2 * secondsUsed);
+
+
+            byEntity.Controls.UsingHeldItemTransformBefore = tf;
+
+            return secondsUsed <= 1f;
+        }
+
+        // Let the client decide when he is done rafting
+        return true;
+    }
+
+
+    public override bool OnHeldInteractCancel(float secondsUsed, ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, EnumItemUseCancelReason cancelReason)
+    {
+        if (cancelReason == EnumItemUseCancelReason.ReleasedMouse)
+        {
+            return false;
+        }
+
+        if (api.Side == EnumAppSide.Client)
+        {
+            if (sound != null)
+                sound.Stop();
+            sound = null;
+        }
+        return true;
+    }
+
+
+    public override void OnHeldInteractStop(float secondsUsed, ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel)
+    {
+        if (sound != null)
+            sound.Stop();
+        sound = null;
+
+        if (secondsUsed >= 3.4f)
+        {
+            //string code = GetBlockMaterialCode(slot.Itemstack);
+
+            if (api.Side == EnumAppSide.Server)
+            {
+                //CreateDrop(byEntity, code);
+            }
+
+            //RemoveMaterial(slot);
+            //slot.MarkDirty();
+            //(byEntity as EntityPlayer)?.Player?.InventoryManager.BroadcastHotbarSlot();
+
+            //byEntity.GetBehavior<EntityBehaviorHunger>()?.ConsumeSaturation(4f);
+        }
+    }
 }

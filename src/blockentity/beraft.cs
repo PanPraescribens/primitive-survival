@@ -10,8 +10,6 @@ using Vintagestory.API.Datastructures;
 using Vintagestory.API.MathTools;
 using Vintagestory.GameContent;
 
-
-
 public class BERaft : BlockEntity, IMountable
 {
     float sleepEfficiency = 0.5f;
@@ -41,7 +39,8 @@ public class BERaft : BlockEntity, IMountable
 
     public string SuggestedAnimation
     {
-        get { return "sleep"; }
+        //get { return "sleep"; }
+        get { return "swim"; }
     }
 
     public EntityControls Controls
@@ -117,7 +116,7 @@ public class BERaft : BlockEntity, IMountable
 
     public void MountableToTreeAttributes(TreeAttribute tree)
     {
-        tree.SetString("className", "bed");
+        tree.SetString("className", "raft");
         tree.SetInt("posx", Pos.X);
         tree.SetInt("posy", Pos.Y);
         tree.SetInt("posz", Pos.Z);
@@ -156,4 +155,6 @@ public class BERaft : BlockEntity, IMountable
         EntityBehaviorTiredness ebt = MountedBy?.GetBehavior("tiredness") as EntityBehaviorTiredness;
         if (ebt != null) ebt.IsSleeping = true;
     }
+
 }
+

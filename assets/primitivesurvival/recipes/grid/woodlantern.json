@@ -4,8 +4,7 @@
         "ingredients": {
             "P": {
                 "type": "item",
-                "code": "game:metalplate-*",
-                "allowedVariants": [ "copper" ]
+                "code": "game:metalplate-copper"
             },
             "C": {
                 "type": "item",
@@ -20,12 +19,7 @@
         "height": 3,
         "output": {
             "type": "block",
-            "code": "woodlantern-acacia-up",
-            "attributes": {
-                "material": "wood",
-                "lining": "copper",
-                "glass": ""
-            }
+            "code": "primitivesurvival:woodlantern-acacia-up"
         }
     },
     {
@@ -33,8 +27,7 @@
         "ingredients": {
             "P": {
                 "type": "item",
-                "code": "game:metalplate-*",
-                "allowedVariants": [ "copper" ]
+                "code": "game:metalplate-copper"
             },
             "C": {
                 "type": "item",
@@ -49,12 +42,7 @@
         "height": 3,
         "output": {
             "type": "block",
-            "code": "woodlantern-aged-up",
-            "attributes": {
-                "material": "wood",
-                "lining": "copper",
-                "glass": ""
-            }
+            "code": "primitivesurvival:woodlantern-aged-up"
         }
     },
     {
@@ -62,8 +50,7 @@
         "ingredients": {
             "P": {
                 "type": "item",
-                "code": "game:metalplate-*",
-                "allowedVariants": [ "copper" ]
+                "code": "game:metalplate-copper"
             },
             "C": {
                 "type": "item",
@@ -78,12 +65,7 @@
         "height": 3,
         "output": {
             "type": "block",
-            "code": "woodlantern-birch-up",
-            "attributes": {
-                "material": "wood",
-                "lining": "copper",
-                "glass": ""
-            }
+            "code": "primitivesurvival:woodlantern-birch-up"
         }
     },
     {
@@ -91,8 +73,7 @@
         "ingredients": {
             "P": {
                 "type": "item",
-                "code": "game:metalplate-*",
-                "allowedVariants": [ "copper" ]
+                "code": "game:metalplate-copper"
             },
             "C": {
                 "type": "item",
@@ -107,12 +88,7 @@
         "height": 3,
         "output": {
             "type": "block",
-            "code": "woodlantern-kapok-up",
-            "attributes": {
-                "material": "wood",
-                "lining": "copper",
-                "glass": ""
-            }
+            "code": "primitivesurvival:woodlantern-kapok-up"
         }
     },
     {
@@ -120,8 +96,7 @@
         "ingredients": {
             "P": {
                 "type": "item",
-                "code": "game:metalplate-*",
-                "allowedVariants": [ "copper" ]
+                "code": "game:metalplate-copper"
             },
             "C": {
                 "type": "item",
@@ -136,12 +111,7 @@
         "height": 3,
         "output": {
             "type": "block",
-            "code": "woodlantern-maple-up",
-            "attributes": {
-                "material": "wood",
-                "lining": "copper",
-                "glass": ""
-            }
+            "code": "primitivesurvival:woodlantern-maple-up"
         }
     },
     {
@@ -149,8 +119,7 @@
         "ingredients": {
             "P": {
                 "type": "item",
-                "code": "game:metalplate-*",
-                "allowedVariants": [ "copper" ]
+                "code": "game:metalplate-copper"
             },
             "C": {
                 "type": "item",
@@ -165,12 +134,7 @@
         "height": 3,
         "output": {
             "type": "block",
-            "code": "woodlantern-oak-up",
-            "attributes": {
-                "material": "wood",
-                "lining": "copper",
-                "glass": ""
-            }
+            "code": "primitivesurvival:woodlantern-oak-up"
         }
     },
     {
@@ -178,8 +142,7 @@
         "ingredients": {
             "P": {
                 "type": "item",
-                "code": "game:metalplate-*",
-                "allowedVariants": [ "copper" ]
+                "code": "game:metalplate-copper"
             },
             "C": {
                 "type": "item",
@@ -194,12 +157,7 @@
         "height": 3,
         "output": {
             "type": "block",
-            "code": "woodlantern-pine-up",
-            "attributes": {
-                "material": "wood",
-                "lining": "copper",
-                "glass": ""
-            }
+            "code": "primitivesurvival:woodlantern-pine-up"
         }
     }
 ]

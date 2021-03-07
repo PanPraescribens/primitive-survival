@@ -541,5 +541,8 @@
     "block-woodlantern-kapok*": "Wooden Lantern (Kapok)",
     "block-woodlantern-maple*": "Wooden Lantern (Maple)",
     "block-woodlantern-oak*": "Wooden Lantern (Oak)",
-    "block-woodlantern-pine*": "Wooden Lantern (Pine)"
+    "block-woodlantern-pine*": "Wooden Lantern (Pine)",
+
+    "raft-north": "Raft",
+    "Must stand in water to use a raft": "Must stand in water to use a raft"
 }

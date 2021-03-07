@@ -360,9 +360,10 @@ public class BEWeirTrap : BlockEntityDisplay
             int rando = rnd.Next(3);
             if (rando < 2 && catch1Stack.Item != null) //fish
             {
-                ItemStack drop = catch1Stack.Clone();
-                drop.StackSize = 1;
-                Api.World.SpawnItemEntity(drop, new Vec3d(Pos.X + 0.5, Pos.Y + 2, Pos.Z + 0.5), null);
+                byPlayer.InventoryManager.TryGiveItemstack(catch1Stack);
+                //ItemStack drop = catch1Stack.Clone();
+                //drop.StackSize = 1;
+                //Api.World.SpawnItemEntity(drop, new Vec3d(Pos.X + 0.5, Pos.Y + 2, Pos.Z + 0.5), null);
                 //Api.World.SpawnItemEntity(catch1Stack, Pos.ToVec3d().Add(0.5, 2, 0.5)); //slippery
             }
             else

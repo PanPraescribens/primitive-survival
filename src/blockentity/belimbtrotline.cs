@@ -351,9 +351,10 @@ public class BELimbTrotLineLure : BlockEntityDisplay
             int rando = rnd.Next(3);
             if (rando < 2)
             {
-                ItemStack drop = catchStack.Clone();
-                drop.StackSize = 1;
-                Api.World.SpawnItemEntity(drop, new Vec3d(Pos.X + 0.5, Pos.Y + 0.5, Pos.Z + 0.5), null); //slippery
+                byPlayer.InventoryManager.TryGiveItemstack(catchStack);
+                //ItemStack drop = catchStack.Clone();
+                //drop.StackSize = 1;
+                //Api.World.SpawnItemEntity(drop, new Vec3d(Pos.X + 0.5, Pos.Y + 0.5, Pos.Z + 0.5), null); //slippery
                 //Api.World.SpawnItemEntity(catchStack, Pos.ToVec3d()); //slippery
             }
             else
