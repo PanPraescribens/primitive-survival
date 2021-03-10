@@ -1,0 +1,8 @@
+{
+  "code": "cordage",
+  "class": "itemcordage",
+  "texture": { "base": "item/fishing/cordage" },
+  "creativeinventory": { "general": ["*"], "items": ["*"], "primitive": ["*"] },
+  "maxstacksize": 64,
+  "materialDensity": 410
+}
