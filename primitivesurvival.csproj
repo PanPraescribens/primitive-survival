@@ -1,0 +1,429 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{10D2C045-ABC6-4450-8CF3-F97EC64EE755}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>primitivesurvival</RootNamespace>
+    <AssemblyName>primitivesurvival</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>$(ProjectDir)\bin</OutputPath>
+    <IntermediateOutputPath>..\..\obj\Debug\primitivesurvival\</IntermediateOutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>$(ProjectDir)\bin</OutputPath>
+    <IntermediateOutputPath>..\..\obj\Release\primitivesurvival\</IntermediateOutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="VintagestoryAPI">
+      <HintPath>$(AppData)\Vintagestory\VintagestoryAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VSSurvivalMod">
+      <HintPath>$(AppData)\Vintagestory\Mods\VSSurvivalMod.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VSEssentials">
+      <HintPath>$(AppData)\Vintagestory\Mods\VSEssentials.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VSCreativeMod">
+      <HintPath>$(AppData)\Vintagestory\Mods\VSCreativeMod.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>$(AppData)\Vintagestory\Lib\Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\primitivesurvival\blocktypes\clay\mold\pslargemold.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\fishing\fishbasket.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\fishing\fishbasketinwater.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\fishing\limbtrotline.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\fishing\weirtrap.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\metal\metalbucket.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\metal\nail.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\metal\spike.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\other\monkeybridge.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\relic\necronomicon.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\relic\temporalbase.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\relic\temporalcube.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\relic\temporallectern.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\relic\statue\cthulu.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\relic\statue\dagon.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\relic\statue\hydra.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\stake\stake.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\stake\stakeinwater.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\stone\steatite\alcove.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\stone\steatite\full.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\stone\steatite\pillar.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\stone\steatite\rail.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\stone\steatite\slab.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\stone\steatite\stairs.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\stone\steatite\window.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\textureoverride\textureandesite.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\textureoverride\textureastral.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\textureoverride\texturebasalt.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\textureoverride\texturebismuth.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\textureoverride\texturebismuthbronze.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\textureoverride\textureblackbronze.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\textureoverride\texturebone.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\textureoverride\texturebrass.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\textureoverride\texturechromium.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\textureoverride\texturecooked.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\textureoverride\texturecopper.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\textureoverride\textureethereal.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\textureoverride\textureflint.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\textureoverride\texturegold.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\textureoverride\texturegranite.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\textureoverride\textureiron.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\textureoverride\texturelead.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\textureoverride\texturemeteoriciron.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\textureoverride\texturemolybdochalkos.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\textureoverride\texturenecromonicon.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\textureoverride\textureobsidian.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\textureoverride\textureperidotite.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\textureoverride\textureplatinum.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\textureoverride\texturerhodium.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\textureoverride\texturerot.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\textureoverride\texturerusty.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\textureoverride\texturesilver.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\textureoverride\texturestainlesssteel.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\textureoverride\texturesteel.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\textureoverride\texturetemporal.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\textureoverride\texturetin.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\textureoverride\texturetinbronze.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\textureoverride\texturetitanium.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\textureoverride\textureuranium.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\textureoverride\texturezinc.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\trap\deadfall.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\trap\foilage.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\trap\snare.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\trap\spikeplate.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\trap\woodspikes.json" />
+    <Content Include="assets\primitivesurvival\blocktypes\trap\woodsupportspikes.json" />
+    <Content Include="assets\primitivesurvival\config\handbook\ps-quickstart.json" />
+    <Content Include="assets\primitivesurvival\itemtypes\fishing\bonefishinghook.json" />
+    <Content Include="assets\primitivesurvival\itemtypes\fishing\cordage.json" />
+    <Content Include="assets\primitivesurvival\itemtypes\fishing\fishinghook.json" />
+    <Content Include="assets\primitivesurvival\itemtypes\fishing\fishinglure.json" />
+    <Content Include="assets\primitivesurvival\itemtypes\fishing\metalfishinghook.json" />
+    <Content Include="assets\primitivesurvival\itemtypes\fishing\psfish.json" />
+    <Content Include="assets\primitivesurvival\itemtypes\food\jerky-bushmeat.json" />
+    <Content Include="assets\primitivesurvival\itemtypes\food\jerky-redmeat.json" />
+    <Content Include="assets\primitivesurvival\itemtypes\metal\buckethandle.json" />
+    <Content Include="assets\primitivesurvival\itemtypes\other\monkeybridge.json" />
+    <Content Include="assets\primitivesurvival\itemtypes\resource\psgear.json" />
+    <Content Include="assets\primitivesurvival\itemtypes\wood\woodspikebundle.json" />
+    <Content Include="assets\primitivesurvival\lang\en.json" />
+    <Content Include="assets\primitivesurvival\patches\psfish-meals.json" />
+    <Content Include="assets\primitivesurvival\recipes\clayforming\hookmold.json" />
+    <Content Include="assets\primitivesurvival\recipes\clayforming\luremold.json" />
+    <Content Include="assets\primitivesurvival\recipes\clayforming\nailmold.json" />
+    <Content Include="assets\primitivesurvival\recipes\clayforming\spikemold.json" />
+    <Content Include="assets\primitivesurvival\recipes\clayforming\spikesplatemold.json" />
+    <Content Include="assets\primitivesurvival\recipes\grid\bonefishinghook.json" />
+    <Content Include="assets\primitivesurvival\recipes\grid\cordage.json" />
+    <Content Include="assets\primitivesurvival\recipes\grid\deadfall.json" />
+    <Content Include="assets\primitivesurvival\recipes\grid\fishbasket.json" />
+    <Content Include="assets\primitivesurvival\recipes\grid\jerky-bushmeat.json" />
+    <Content Include="assets\primitivesurvival\recipes\grid\jerky-redmeat.json" />
+    <Content Include="assets\primitivesurvival\recipes\grid\metalbucket.json" />
+    <Content Include="assets\primitivesurvival\recipes\grid\monkeybridge.json" />
+    <Content Include="assets\primitivesurvival\recipes\grid\snare.json" />
+    <Content Include="assets\primitivesurvival\recipes\grid\spikebundleandstake.json" />
+    <Content Include="assets\primitivesurvival\recipes\knapping\flint-fishinghook.json" />
+    <Content Include="assets\primitivesurvival\recipes\knapping\stone-fishinghook.json" />
+    <Content Include="assets\primitivesurvival\recipes\smithing\buckethandle.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\foilage.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\nail.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\spike.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\spikeplate.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\trapbait.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\woodspikes.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\woodsupportspikes.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\basic\pillar\bottom.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\basic\pillar\middle.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\basic\pillar\top.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\basic\stairs\inside-flipped.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\basic\stairs\outside-flipped.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\clay\mold\fishinglure.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\clay\mold\metalfishinghook.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\clay\mold\nail.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\clay\mold\spike.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\clay\mold\spikeplate.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\deadfall\deadfall-set.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\deadfall\deadfall-tripped.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\fishbasket\fishbasket.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\fishbasket\fishbasketinwater.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\limbtrotline\limbtrotline-end-extension.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\limbtrotline\limbtrotline-end-large.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\limbtrotline\limbtrotline-end-medium.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\limbtrotline\limbtrotline-end-small.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\limbtrotline\limbtrotline-middle.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\metalbucket\empty.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\metalbucket\filled.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\monkeybridge\monkeybridge-end.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\monkeybridge\monkeybridge-middle.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\monkeybridge\monkeybridge-null.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\relic\necronomicon-closed.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\relic\necronomicon-open.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\relic\temporalbase.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\relic\temporalcube.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\relic\temporallectern.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\relic\statue\cthulu.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\relic\statue\dagon.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\relic\statue\hydra.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\snare\snare-set.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\snare\snare-tripped.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\stake\empty.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\stake\ew.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\stake\ewopen.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\stake\nesw.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\stake\nsw.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\stake\sw.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\stake\w.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\stone\steatite\alcove-lit.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\stone\steatite\alcove-unlit.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\stone\steatite\window.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\stone\steatite\rail\empty.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\stone\steatite\rail\ew.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\stone\steatite\rail\nesw.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\stone\steatite\rail\nsw.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\stone\steatite\rail\sw.json" />
+    <Content Include="assets\primitivesurvival\shapes\block\stone\steatite\rail\w.json" />
+    <Content Include="assets\primitivesurvival\shapes\item\buckethandle.json" />
+    <Content Include="assets\primitivesurvival\shapes\item\woodspikebundle.json" />
+    <Content Include="assets\primitivesurvival\shapes\item\fishing\fish-arcticchar.json" />
+    <Content Include="assets\primitivesurvival\shapes\item\fishing\fish-bass.json" />
+    <Content Include="assets\primitivesurvival\shapes\item\fishing\fish-bluegill.json" />
+    <Content Include="assets\primitivesurvival\shapes\item\fishing\fish-catfish.json" />
+    <Content Include="assets\primitivesurvival\shapes\item\fishing\fish-mutant.json" />
+    <Content Include="assets\primitivesurvival\shapes\item\fishing\fish-pike.json" />
+    <Content Include="assets\primitivesurvival\shapes\item\fishing\fish-trout.json" />
+    <Content Include="assets\primitivesurvival\shapes\item\fishing\fishinghook.json" />
+    <Content Include="assets\primitivesurvival\shapes\item\fishing\fishinglure.json" />
+    <Content Include="assets\primitivesurvival\shapes\item\fishing\hookbait.json" />
+    <Content Include="assets\primitivesurvival\shapes\item\food\meat\jerky-bushmeat.json" />
+    <Content Include="assets\primitivesurvival\shapes\item\food\meat\jerky-red.json" />
+    <Content Include="assets\primitivesurvival\textures\block\necronomicon.png" />
+    <Content Include="assets\primitivesurvival\textures\block\relic.png" />
+    <Content Include="assets\primitivesurvival\textures\block\stake.png" />
+    <Content Include="assets\primitivesurvival\textures\block\stakeinwater.png" />
+    <Content Include="assets\primitivesurvival\textures\block\foilage\foilage-1.png" />
+    <Content Include="assets\primitivesurvival\textures\block\foilage\foilage-2.png" />
+    <Content Include="assets\primitivesurvival\textures\block\foilage\foilage-3.png" />
+    <Content Include="assets\primitivesurvival\textures\block\metalbucket\inner side.png" />
+    <Content Include="assets\primitivesurvival\textures\block\metalbucket\lava.png" />
+    <Content Include="assets\primitivesurvival\textures\block\metalbucket\sides.png" />
+    <Content Include="assets\primitivesurvival\textures\block\stone\steatite\alcove\astral.png" />
+    <Content Include="assets\primitivesurvival\textures\block\stone\steatite\alcove\ethereal.png" />
+    <Content Include="assets\primitivesurvival\textures\block\stone\steatite\alcove\temporal.png" />
+    <Content Include="assets\primitivesurvival\textures\block\stone\steatite\full\ornate-d-astral.png" />
+    <Content Include="assets\primitivesurvival\textures\block\stone\steatite\full\ornate-d-ethereal.png" />
+    <Content Include="assets\primitivesurvival\textures\block\stone\steatite\full\ornate-d-temporal.png" />
+    <Content Include="assets\primitivesurvival\textures\block\stone\steatite\full\ornate-side-astral.png" />
+    <Content Include="assets\primitivesurvival\textures\block\stone\steatite\full\ornate-side-ethereal.png" />
+    <Content Include="assets\primitivesurvival\textures\block\stone\steatite\full\ornate-side-temporal.png" />
+    <Content Include="assets\primitivesurvival\textures\block\stone\steatite\full\ornate-u-astral.png" />
+    <Content Include="assets\primitivesurvival\textures\block\stone\steatite\full\ornate-u-ethereal.png" />
+    <Content Include="assets\primitivesurvival\textures\block\stone\steatite\full\ornate-u-temporal.png" />
+    <Content Include="assets\primitivesurvival\textures\block\stone\steatite\full\plain-astral.png" />
+    <Content Include="assets\primitivesurvival\textures\block\stone\steatite\full\plain-ethereal.png" />
+    <Content Include="assets\primitivesurvival\textures\block\stone\steatite\full\plain-temporal.png" />
+    <Content Include="assets\primitivesurvival\textures\block\stone\steatite\pillar\side-astral.png" />
+    <Content Include="assets\primitivesurvival\textures\block\stone\steatite\pillar\side-ethereal.png" />
+    <Content Include="assets\primitivesurvival\textures\block\stone\steatite\pillar\side-temporal.png" />
+    <Content Include="assets\primitivesurvival\textures\block\stone\steatite\pillar\topbottom-astral.png" />
+    <Content Include="assets\primitivesurvival\textures\block\stone\steatite\pillar\topbottom-ethereal.png" />
+    <Content Include="assets\primitivesurvival\textures\block\stone\steatite\pillar\topbottom-temporal.png" />
+    <Content Include="assets\primitivesurvival\textures\block\stone\steatite\rail\astral-horizontal.png" />
+    <Content Include="assets\primitivesurvival\textures\block\stone\steatite\rail\astral-vertical.png" />
+    <Content Include="assets\primitivesurvival\textures\block\stone\steatite\rail\ethereal-horizontal.png" />
+    <Content Include="assets\primitivesurvival\textures\block\stone\steatite\rail\ethereal-vertical.png" />
+    <Content Include="assets\primitivesurvival\textures\block\stone\steatite\rail\temporal-horizontal.png" />
+    <Content Include="assets\primitivesurvival\textures\block\stone\steatite\rail\temporal-vertical.png" />
+    <Content Include="assets\primitivesurvival\textures\block\stone\steatite\slab\topbottom-astral.png" />
+    <Content Include="assets\primitivesurvival\textures\block\stone\steatite\slab\topbottom-ethereal.png" />
+    <Content Include="assets\primitivesurvival\textures\block\stone\steatite\slab\topbottom-temporal.png" />
+    <Content Include="assets\primitivesurvival\textures\block\stone\steatite\stairs\bottom-astral.png" />
+    <Content Include="assets\primitivesurvival\textures\block\stone\steatite\stairs\bottom-ethereal.png" />
+    <Content Include="assets\primitivesurvival\textures\block\stone\steatite\stairs\bottom-temporal.png" />
+    <Content Include="assets\primitivesurvival\textures\block\stone\steatite\stairs\side-astral.png" />
+    <Content Include="assets\primitivesurvival\textures\block\stone\steatite\stairs\side-ethereal.png" />
+    <Content Include="assets\primitivesurvival\textures\block\stone\steatite\stairs\side-temporal.png" />
+    <Content Include="assets\primitivesurvival\textures\block\stone\steatite\stairs\top-astral.png" />
+    <Content Include="assets\primitivesurvival\textures\block\stone\steatite\stairs\top-ethereal.png" />
+    <Content Include="assets\primitivesurvival\textures\block\stone\steatite\stairs\top-temporal.png" />
+    <Content Include="assets\primitivesurvival\textures\block\stone\steatite\window\astral-horizontal.png" />
+    <Content Include="assets\primitivesurvival\textures\block\stone\steatite\window\astral-vertical.png" />
+    <Content Include="assets\primitivesurvival\textures\block\stone\steatite\window\ethereal-horizontal.png" />
+    <Content Include="assets\primitivesurvival\textures\block\stone\steatite\window\ethereal-vertical.png" />
+    <Content Include="assets\primitivesurvival\textures\block\stone\steatite\window\temporal-horizontal.png" />
+    <Content Include="assets\primitivesurvival\textures\block\stone\steatite\window\temporal-vertical.png" />
+    <Content Include="assets\primitivesurvival\textures\block\wood\lantern\woodlantern-acacia.png" />
+    <Content Include="assets\primitivesurvival\textures\block\wood\lantern\woodlantern-aged.png" />
+    <Content Include="assets\primitivesurvival\textures\block\wood\lantern\woodlantern-birch.png" />
+    <Content Include="assets\primitivesurvival\textures\block\wood\lantern\woodlantern-kapok.png" />
+    <Content Include="assets\primitivesurvival\textures\block\wood\lantern\woodlantern-maple.png" />
+    <Content Include="assets\primitivesurvival\textures\block\wood\lantern\woodlantern-oak.png" />
+    <Content Include="assets\primitivesurvival\textures\block\wood\lantern\woodlantern-pine.png" />
+    <Content Include="assets\primitivesurvival\textures\block\wood\lantern\woodlantern.png" />
+    <Content Include="assets\primitivesurvival\textures\item\cordage.png" />
+    <Content Include="assets\primitivesurvival\textures\item\monkeybridge.png" />
+    <Content Include="assets\primitivesurvival\textures\item\spikebundle.png" />
+    <Content Include="assets\primitivesurvival\textures\item\fishing\bait.png" />
+    <Content Include="assets\primitivesurvival\textures\item\fishing\cordage.png" />
+    <Content Include="assets\primitivesurvival\textures\item\fishing\fish-arcticchar-cooked.png" />
+    <Content Include="assets\primitivesurvival\textures\item\fishing\fish-arcticchar-raw.png" />
+    <Content Include="assets\primitivesurvival\textures\item\fishing\fish-bass-cooked.png" />
+    <Content Include="assets\primitivesurvival\textures\item\fishing\fish-bass-raw.png" />
+    <Content Include="assets\primitivesurvival\textures\item\fishing\fish-bluegill-cooked.png" />
+    <Content Include="assets\primitivesurvival\textures\item\fishing\fish-bluegill-raw.png" />
+    <Content Include="assets\primitivesurvival\textures\item\fishing\fish-catfish-cooked.png" />
+    <Content Include="assets\primitivesurvival\textures\item\fishing\fish-catfish-raw.png" />
+    <Content Include="assets\primitivesurvival\textures\item\fishing\fish-mutant-cooked.png" />
+    <Content Include="assets\primitivesurvival\textures\item\fishing\fish-mutant-raw.png" />
+    <Content Include="assets\primitivesurvival\textures\item\fishing\fish-pike-cooked.png" />
+    <Content Include="assets\primitivesurvival\textures\item\fishing\fish-pike-raw.png" />
+    <Content Include="assets\primitivesurvival\textures\item\fishing\fish-trout-cooked.png" />
+    <Content Include="assets\primitivesurvival\textures\item\fishing\fish-trout-raw.png" />
+    <Content Include="assets\primitivesurvival\textures\item\fishing\rot.png" />
+    <Content Include="assets\primitivesurvival\textures\item\resource\astralgear.png" />
+    <Content Include="assets\primitivesurvival\textures\item\resource\etherealgear.png" />
+    <Content Include="assets\primitivesurvival\textures\item\resource\rustygear.png" />
+    <Content Include="assets\primitivesurvival\textures\item\resource\temporalgear.png" />
+    <Content Include="modinfo.json" />
+    <Compile Include="src\blockbehavior\rightclickpickupspawnworm.cs" />
+    <Compile Include="src\blockentity\beraft.cs" />
+    <Compile Include="src\block\blockraft.cs" />
+    <Compile Include="src\block\blocknailspike.cs" />
+    <Compile Include="src\block\blockhide.cs" />
+    <Compile Include="src\entity\entityearthworm.cs" />
+    <Compile Include="src\item\itemearthworm.cs" />
+    <Compile Include="src\item\itemhide.cs" />
+    <Compile Include="src\primativesurvival.cs" />
+    <Compile Include="src\block\blockalcove.cs" />
+    <Compile Include="src\block\blockdeadfall.cs" />
+    <Compile Include="src\block\blockfishbasket.cs" />
+    <Compile Include="src\block\blocklimbtrotline.cs" />
+    <Compile Include="src\block\blockmetalbucket.cs" />
+    <Compile Include="src\block\blockmetalbucketfilled.cs" />
+    <Compile Include="src\block\blockmonkeybridge.cs" />
+    <Compile Include="src\block\blocknsew.cs" />
+    <Compile Include="src\block\blockpspillar.cs" />
+    <Compile Include="src\block\blockpsstairs.cs" />
+    <Compile Include="src\block\blocksnare.cs" />
+    <Compile Include="src\block\blockspiketrap.cs" />
+    <Compile Include="src\block\blockstake.cs" />
+    <Compile Include="src\block\blockstakeinwater.cs" />
+    <Compile Include="src\block\blocktemporal.cs" />
+    <Compile Include="src\block\blocktemporalbase.cs" />
+    <Compile Include="src\block\blocktemporalcube.cs" />
+    <Compile Include="src\block\blocktemporalpodium.cs" />
+    <Compile Include="src\block\blockweirtrap.cs" />
+    <Compile Include="src\block\blockwoodsupportspikes.cs" />
+    <Compile Include="src\blockentity\bealcove.cs" />
+    <Compile Include="src\blockentity\bedeadfall.cs" />
+    <Compile Include="src\blockentity\befishbasket.cs" />
+    <Compile Include="src\blockentity\belimbtrotline.cs" />
+    <Compile Include="src\blockentity\bemetalbucket.cs" />
+    <Compile Include="src\blockentity\bemetalbucketfilled.cs" />
+    <Compile Include="src\blockentity\besnare.cs" />
+    <Compile Include="src\blockentity\betemporalbase.cs" />
+    <Compile Include="src\blockentity\betemporalcube.cs" />
+    <Compile Include="src\blockentity\betemporalpodium.cs" />
+    <Compile Include="src\blockentity\beweirtrap.cs" />
+    <Compile Include="src\blockentity\bewoodsupportspikes.cs" />
+    <Compile Include="src\debugging\RedirectLogs.cs" />
+    <Compile Include="src\item\itemcordage.cs" />
+    <Compile Include="src\item\itemfishinghook.cs" />
+    <Compile Include="src\item\itemmonkeybridge.cs" />
+    <Compile Include="src\item\itempsgear.cs" />
+    <Compile Include="src\item\itemwoodspikebundle.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="assets\primitivesurvival\blocktypes\hide\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\primitivesurvival\itemtypes\fishing\fishfillet.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\primitivesurvival\recipes\grid\fishfillet.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\primitivesurvival\patches\hide.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\primitivesurvival\blocktypes\other\earthwormcastings.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\primitivesurvival\itemtypes\other\earthworm.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\primitivesurvival\itemtypes\food\jerky-fish.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\primitivesurvival\shapes\item\food\fish\jerky-fish.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\primitivesurvival\recipes\grid\jerky-fish.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\primitivesurvival\patches\jerky-meals.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\primitivesurvival\blocktypes\wood\woodlantern.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\primitivesurvival\recipes\grid\woodlantern.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\primitivesurvival\shapes\block\wood\lantern\woodlanternceiling.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\primitivesurvival\shapes\block\wood\lantern\woodlanternground.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\primitivesurvival\shapes\block\wood\lantern\woodlanternwall.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\primitivesurvival\blocktypes\raft\raft.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\primitivesurvival\shapes\block\raft\raft.json" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+copy "$(TargetPath)" "$(ProjectDir)" 
+copy "$(TargetDir)\$(TargetName).pdb" "$(ProjectDir)" 
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
