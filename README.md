@@ -10,12 +10,13 @@ https://www.vintagestory.at/forums/topic/2399-primitive-survival-traps-fishing-a
 Roadmap
 
  - Smoking Rack or Pit Smoker - smoked meat good, jerky strips less good @Boomer Bill
- - Raft
  - create config file to disable assets or at least drop less gold - @techrabbit
  - re-enable slippery fish
+ - fishing lures dont smelt back into the original materials but some sub labeled material... (and wont stack with actual bismuth) - thanks @TechRabbit
 
 Version 2.5.6 Updates
 
+- New: Raft 
 - Fixed: Wooden lanterns recipe now showing up in the handbook
 
 Version 2.5.5 updates
