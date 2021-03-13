@@ -27,8 +27,6 @@ namespace primitiveSurvival
             api.RegisterBlockEntityClass("bealcove", typeof(BEAlcove));
             api.RegisterBlockEntityClass("bemetalbucket", typeof(BEMetalBucket));
             api.RegisterBlockEntityClass("bemetalbucketfilled", typeof(BEMetalBucketFilled));
-            api.RegisterBlockEntityClass("beraft", typeof(BERaft));
-
 
             api.RegisterBlockClass("blockstake", typeof(BlockStake));
             api.RegisterBlockClass("blockstakeinwater", typeof(BlockStakeInWater));

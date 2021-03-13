@@ -7,4 +7,4 @@
     "S": { "type": "item", "code": "game:stick" }
   },
   "output": { "type": "block", "code": "primitivesurvival:fishbasket-north" }
-}
+} 

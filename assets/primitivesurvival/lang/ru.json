@@ -545,5 +545,7 @@
     "block-woodlantern-kapok*": "деревянный фонарь (Капок)",
     "block-woodlantern-maple*": "деревянный фонарь (Клен)",
     "block-woodlantern-oak*": "деревянный фонарь (Дуб)",
-    "block-woodlantern-pine*": "деревянный фонарь (Сосна)"
+    "block-woodlantern-pine*": "деревянный фонарь (Сосна)",
+
+    "block-raft-*": "плот"
 }

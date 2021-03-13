@@ -495,5 +495,7 @@
     "block-woodlantern-kapok*": "Holzlaterne (Wollbaum)",
     "block-woodlantern-maple*": "Holzlaterne (Ahorn)",
     "block-woodlantern-oak*": "Holzlaterne (Eiche)",
-    "block-woodlantern-pine*": "Holzlaterne (Kiefer)"
+    "block-woodlantern-pine*": "Holzlaterne (Kiefer)",
+
+    "block-raft-*": "Floß"
 }
