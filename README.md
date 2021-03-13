@@ -16,7 +16,7 @@ Roadmap
 
 Version 2.5.6 Updates
 
-- New: Raft 
+- New: Raft - 9 logs and 4 cordage
 - Fixed: Wooden lanterns recipe now showing up in the handbook
 
 Version 2.5.5 updates
