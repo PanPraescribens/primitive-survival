@@ -14,6 +14,11 @@ Roadmap
  - re-enable slippery fish
  - fishing lures dont smelt back into the original materials but some sub labeled material... (and wont stack with actual bismuth) - thanks @TechRabbit
 
+Version 2.5.7 Updates
+
+- Fixed: Bug in German language file - thanks @Kiava
+
+
 Version 2.5.6 Updates
 
 - New: Raft - 9 logs and 4 cordage
