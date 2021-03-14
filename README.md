@@ -13,6 +13,7 @@ Roadmap
  - create config file to disable assets or at least drop less gold - @techrabbit
  - re-enable slippery fish
  - fishing lures dont smelt back into the original materials but some sub labeled material... (and wont stack with actual bismuth) - thanks @TechRabbit
+ - finalizing a weir trap but still had a stake in hand cause crash (when clicking from wrong direction) - thanks @BotenRedWolf
 
 Version 2.5.7 Updates
 
