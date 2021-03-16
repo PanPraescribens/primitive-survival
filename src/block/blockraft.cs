@@ -32,6 +32,15 @@ public class BlockRaft : Block
             handlerId = byEntity.World.RegisterCallback(AfterAwhile, 1350);
         }
 
+        //register a gameticklistener next, i.e.
+        // get byEntity inside of it if possible
+
+        //api.World.RegisterGameTickListener(OnGameTick, 2000);
+
+        //then run everything below in the tick listener 
+        // hopefully that will throttle the speed of the raft
+        //don't forget to unregister it again, perhaps in the AfterAwhile callback
+
         if (byEntity.World is IClientWorldAccessor)
         {
             byEntity.StopAnimation("swim");
@@ -57,22 +66,42 @@ public class BlockRaft : Block
 
                 if (byEntity.IsEyesSubmerged()) //under water
                 {
+                    // Get relevant attributes
+                    
+                    float flotationModifier = 0.03f;
+
+                    if (Attributes != null)
+                    {
+                         if (Attributes["gravitySpeedModifier"] != null)
+                            flotationModifier = Attributes["flotationModifier"].AsFloat(0.03f);
+                    }
+                    
                     // a bit of forward motion to prevent using waterfalla as elevators
                     // but mostly a floatation device when under water
-                    Vec3d pos = byEntity.Pos.HorizontalAheadCopy(0.05f).XYZ;
+                    Vec3d pos = byEntity.Pos.HorizontalAheadCopy(0.01f).XYZ;
                     double newX = byEntity.Pos.X - pos.X;
                     double newZ = byEntity.Pos.Z - pos.Z;
-                    byEntity.Pos.Motion.X -= newX / 4;
-                    byEntity.Pos.Motion.Z -= newZ / 4;
-                    byEntity.Pos.Motion.Y += 0.03;
+                    byEntity.Pos.Motion.X -= newX; 
+                    byEntity.Pos.Motion.Z -= newZ; 
+                    byEntity.Pos.Motion.Y += flotationModifier; 
                 }
                 else //feet in water
                 {
+                    // Get relevant attributes
+                    float waterSpeedModifier = 0.75f;
+
+                    if (Attributes != null)
+                    {
+                        if (Attributes["waterSpeedModifier"] != null)
+                            waterSpeedModifier = Attributes["waterSpeedModifier"].AsFloat(0.75f);
+                    }
+
                     Vec3d pos = byEntity.Pos.HorizontalAheadCopy(0.05f).XYZ;
                     double newX = byEntity.Pos.X - pos.X;
                     double newZ = byEntity.Pos.Z - pos.Z;
-                    byEntity.Pos.Motion.X -= newX / 1.25;
-                    byEntity.Pos.Motion.Z -= newZ / 1.25;
+                    byEntity.Pos.Motion.X -= newX * waterSpeedModifier; // /1.25
+                    byEntity.Pos.Motion.Z -= newZ * waterSpeedModifier;  // /1.25
+                    //byEntity.Pos.Motion.Add(-newX * onWaterSpeedModifier, byEntity.Pos.Y, -newZ * onWaterSpeedModifier);
                 }
                 
             }
