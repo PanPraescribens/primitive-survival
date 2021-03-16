@@ -18,6 +18,7 @@ Roadmap
 Version 2.5.7 Updates
 
 - Fixed: Bug in German language file - thanks @Kiava
+- Added: Speed and flotation values to raft.json (as a last resort) - thanks @Quixjote
 
 
 Version 2.5.6 Updates
