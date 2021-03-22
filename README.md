@@ -17,7 +17,7 @@ Roadmap
 Version 2.5.7 Updates
 
 - Fixed: Bug in German language file - thanks @Kiava
-- Added: common configuration file ..\VintagestoryData\ModConfig\PrimitiveSurvival257Config.json to configure raft speed and prevent altars from dropping gold - thanks @techrabbit, @Quixjote
+- Added: common configuration file ..\VintagestoryData\ModConfig\PrimitiveSurvival257Config.json to configure raft speed, prevent altars from dropping gold, and more - thanks @techrabbit, @Quixjote
 - Added: right click pick up raft - thanks @PapaCheddar
 
 
