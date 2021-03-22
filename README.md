@@ -12,6 +12,7 @@ Roadmap
  - Smoking Rack or Pit Smoker - smoked meat good, jerky strips less good @Boomer Bill
  - re-enable slippery fish
  - fishing lures dont smelt back into the original materials but some sub labeled material... (and wont stack with actual bismuth) - thanks @TechRabbit
+ - pair up fillets so they have more satiety in meals.
 
 
 Version 2.5.7 Updates
