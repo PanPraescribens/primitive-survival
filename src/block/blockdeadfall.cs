@@ -3,6 +3,7 @@ using Vintagestory.API.Common;
 using Vintagestory.API.MathTools;
 using System;
 using Vintagestory.API.Common.Entities;
+using primitiveSurvival;
 
 public class BlockDeadfall : Block
 {
@@ -15,10 +16,10 @@ public class BlockDeadfall : Block
             Block block = api.World.BlockAccessor.GetBlock(pos);
             string blockPath = block.Code.Path;
             string state = block.FirstCodePart(1);
-            double maxanimalheight = Attributes["maxAnimalHeight"].AsDouble();
-            int maxdamage = Attributes["maxDamageBaited"].AsInt();
+            double maxanimalheight = PrimitiveSurvivalConfig.Loaded.deadfallMaxAnimalHeight;
+            int maxdamage = PrimitiveSurvivalConfig.Loaded.deadfallMaxDamageBaited;
             if (state == "set")
-            { maxdamage = Attributes["maxDamageSet"].AsInt(); }
+            { maxdamage = PrimitiveSurvivalConfig.Loaded.deadfallMaxDamageSet; }
             if (state != "tripped")
             {
                 int dmg = 3;

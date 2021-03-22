@@ -7,19 +7,17 @@ using Vintagestory.API.MathTools;
 using Vintagestory.GameContent;
 using Vintagestory.API.Datastructures;
 using Vintagestory.API.Config;
+using primitiveSurvival;
 
 public class BELimbTrotLineLure : BlockEntityDisplay
 {
-    public int catchPercent = 4; //2
-    public int baitedCatchPercent = 10; //10
-
-    public int luredCatchPercent = 7; //6
-    public int baitedLuredCatchPercent = 13; //12
-
-    public int baitStolenPercent = 5; //5
-    public double updateMinutes = 2.4; //2.4
-
-    public int rotRemovedPercent = 10; //10
+    public int catchPercent = PrimitiveSurvivalConfig.Loaded.limbTrotlineCatchPercent; //4
+    public int baitedCatchPercent = PrimitiveSurvivalConfig.Loaded.limbTrotlineBaitedCatchPercent; //10
+    public int luredCatchPercent = PrimitiveSurvivalConfig.Loaded.limbTrotlineLuredCatchPercent; //7
+    public int baitedLuredCatchPercent = PrimitiveSurvivalConfig.Loaded.limbTrotlineBaitedLuredCatchPercent; //13
+    public int baitStolenPercent = PrimitiveSurvivalConfig.Loaded.limbTrotlineBaitStolenPercent; //5
+    public double updateMinutes = PrimitiveSurvivalConfig.Loaded.limbTrotlineUpdateMinutes; //2.4
+    public int rotRemovedPercent = PrimitiveSurvivalConfig.Loaded.limbTrotlineRotRemovedPercent; //10
 
     public int tickSeconds = 5;
     public int maxSlots = 4;

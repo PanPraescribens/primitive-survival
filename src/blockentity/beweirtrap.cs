@@ -8,13 +8,14 @@ using Vintagestory.API.MathTools;
 using Vintagestory.GameContent;
 using Vintagestory.API.Config;
 using Vintagestory.API.Datastructures;
+using primitiveSurvival;
 
 public class BEWeirTrap : BlockEntityDisplay 
 {
-    public int catchPercent = 4; //5  
-    public int escapePercent = 10; //10
-    public double updateMinutes = 2.6; //2.6 
-    public int rotRemovedPercent = 10; //10
+    public int catchPercent = PrimitiveSurvivalConfig.Loaded.weirTrapCatchPercent; //4  
+    public int escapePercent = PrimitiveSurvivalConfig.Loaded.weirTrapEscapePercent; //10
+    public double updateMinutes = PrimitiveSurvivalConfig.Loaded.weirTrapUpdateMinutes; //2.6 
+    public int rotRemovedPercent = PrimitiveSurvivalConfig.Loaded.weirTrapRotRemovedPercent; //10
 
     public int tickSeconds = 3;
     public int maxSlots = 2;

@@ -2,11 +2,6 @@
   "code": "deadfall",
   "class": "blockdeadfall",
   "entityclass": "bedeadfall",
-  "attributes": {
-    "maxAnimalHeight": 0.7,
-    "maxDamageSet": 10,
-    "maxDamageBaited": 20
-  },
   "behaviors": [{ "name": "Unstable" }],
   "blockmaterial": "Stone",
   "drawtype": "json",

@@ -4,6 +4,7 @@ using Vintagestory.API.MathTools;
 using Vintagestory.API.Config;
 using System;
 using Vintagestory.API.Common.Entities;
+using primitiveSurvival;
 
 public class BlockSnare : Block
 {
@@ -15,10 +16,10 @@ public class BlockSnare : Block
             Block block = api.World.BlockAccessor.GetBlock(pos);
             string blockPath = block.Code.Path;
             string state = block.FirstCodePart(1);
-            double maxanimalheight = Attributes["maxAnimalHeight"].AsDouble();
-            int maxdamage = Attributes["maxDamageBaited"].AsInt();
+            double maxanimalheight = PrimitiveSurvivalConfig.Loaded.snareMaxAnimalHeight;
+            int maxdamage = PrimitiveSurvivalConfig.Loaded.snareMaxDamageBaited;
             if (state == "set")
-            { maxdamage = Attributes["maxDamageSet"].AsInt(); }
+            { maxdamage = PrimitiveSurvivalConfig.Loaded.snareMaxDamageSet; }
             if (state != "tripped")
             {
                 int dmg = 3;

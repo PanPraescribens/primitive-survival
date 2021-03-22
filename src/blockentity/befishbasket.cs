@@ -2,21 +2,21 @@ using System;
 using System.Linq;
 using System.Text;
 using Vintagestory.API.Client;
-using Vintagestory.API.Server;
 using Vintagestory.API.Common;
 using Vintagestory.API.MathTools;
 using Vintagestory.GameContent;
 using Vintagestory.API.Config;
 using Vintagestory.API.Datastructures;
+using primitiveSurvival;
 
 public class BEFishBasket : BlockEntityDisplay
 {
-    public int catchPercent = 4; //2
-    public int baitedCatchPercent = 10; //10
-    public int baitStolenPercent = 5; //5
-    public int escapePercent = 15; //15
-    public double updateMinutes = 2.2; //2.2
-    public int rotRemovedPercent = 10; //10
+    public int catchPercent = PrimitiveSurvivalConfig.Loaded.fishBasketCatchPercent; //4
+    public int baitedCatchPercent = PrimitiveSurvivalConfig.Loaded.fishBasketBaitedCatchPercent; //10
+    public int baitStolenPercent = PrimitiveSurvivalConfig.Loaded.fishBasketBaitStolenPercent; //5
+    public int escapePercent = PrimitiveSurvivalConfig.Loaded.fishBasketEscapePercent; //15
+    public double updateMinutes = PrimitiveSurvivalConfig.Loaded.fishBasketUpdateMinutes; //2.2
+    public int rotRemovedPercent = PrimitiveSurvivalConfig.Loaded.fishBasketRotRemovedPercent; //10
 
     public int tickSeconds = 4;
     public int maxSlots = 3;

@@ -1,12 +1,6 @@
 {
     "code": "raft",
     "class": "blockraft",
-    "attributes": {
-        "waterSpeedModifier": 0.7,
-        "flotationModifier": 0.03,
-        "__comment1": "waterSpeedModifier: default 0.5 - higher is faster",
-        "__comment3": "flotationModifier:  default 0.03 - 0 = You Sink, 1 = To the clouds, and beyond!"
-    },
     "sidesolid": {
         "all": false
     },

@@ -1,6 +1,7 @@
 using Vintagestory.API.Common;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Client;
+using primitiveSurvival;
 
 public class BlockRaft : Block
 {
@@ -32,15 +33,6 @@ public class BlockRaft : Block
             handlerId = byEntity.World.RegisterCallback(AfterAwhile, 1350);
         }
 
-        //register a gameticklistener next, i.e.
-        // get byEntity inside of it if possible
-
-        //api.World.RegisterGameTickListener(OnGameTick, 2000);
-
-        //then run everything below in the tick listener 
-        // hopefully that will throttle the speed of the raft
-        //don't forget to unregister it again, perhaps in the AfterAwhile callback
-
         if (byEntity.World is IClientWorldAccessor)
         {
             byEntity.StopAnimation("swim");
@@ -60,50 +52,31 @@ public class BlockRaft : Block
                 TpHandTransform.Rotation.Y = -24;
                 TpHandTransform.Rotation.Z = 43;
                 TpHandTransform.Origin.X = -0.1f;
-                TpHandTransform.Origin.Y = 0.5f; 
+                TpHandTransform.Origin.Y = 0.5f;
                 TpHandTransform.Origin.Z = 0.4f;
                 TpHandTransform.Scale = 1.06f;
 
                 if (byEntity.IsEyesSubmerged()) //under water
                 {
-                    // Get relevant attributes
-                    
-                    float flotationModifier = 0.03f;
 
-                    if (Attributes != null)
-                    {
-                         if (Attributes["gravitySpeedModifier"] != null)
-                            flotationModifier = Attributes["flotationModifier"].AsFloat(0.03f);
-                    }
-                    
                     // a bit of forward motion to prevent using waterfalla as elevators
                     // but mostly a floatation device when under water
                     Vec3d pos = byEntity.Pos.HorizontalAheadCopy(0.01f).XYZ;
                     double newX = byEntity.Pos.X - pos.X;
                     double newZ = byEntity.Pos.Z - pos.Z;
-                    byEntity.Pos.Motion.X -= newX; 
-                    byEntity.Pos.Motion.Z -= newZ; 
-                    byEntity.Pos.Motion.Y += flotationModifier; 
+                    byEntity.Pos.Motion.X -= newX;
+                    byEntity.Pos.Motion.Z -= newZ;
+                    byEntity.Pos.Motion.Y += PrimitiveSurvivalConfig.Loaded.raftFlotationModifier;
                 }
                 else //feet in water
                 {
-                    // Get relevant attributes
-                    float waterSpeedModifier = 0.75f;
-
-                    if (Attributes != null)
-                    {
-                        if (Attributes["waterSpeedModifier"] != null)
-                            waterSpeedModifier = Attributes["waterSpeedModifier"].AsFloat(0.75f);
-                    }
-
                     Vec3d pos = byEntity.Pos.HorizontalAheadCopy(0.05f).XYZ;
                     double newX = byEntity.Pos.X - pos.X;
                     double newZ = byEntity.Pos.Z - pos.Z;
-                    byEntity.Pos.Motion.X -= newX * waterSpeedModifier; // /1.25
-                    byEntity.Pos.Motion.Z -= newZ * waterSpeedModifier;  // /1.25
-                    //byEntity.Pos.Motion.Add(-newX * onWaterSpeedModifier, byEntity.Pos.Y, -newZ * onWaterSpeedModifier);
+                    byEntity.Pos.Motion.X -= newX * PrimitiveSurvivalConfig.Loaded.raftWaterSpeedModifier;
+                    byEntity.Pos.Motion.Z -= newZ * PrimitiveSurvivalConfig.Loaded.raftWaterSpeedModifier;
                 }
-                
+
             }
             else //on land
             {

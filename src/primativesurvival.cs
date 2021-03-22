@@ -2,12 +2,19 @@ using Vintagestory.API.Common;
 using Vintagestory.API.Client;
 using Vintagestory.API.Server;
 
+
+
 namespace primitiveSurvival
 {
+    
+
     public partial class PrimitaveSurvivalMod : ModSystem
     {
         ICoreClientAPI capi;
         ICoreServerAPI sapi;
+
+        public string startMsg;
+        public string cfgMsg;
 
         public void RegisterClasses(ICoreAPI api)
         {
@@ -69,17 +76,91 @@ namespace primitiveSurvival
         public override void StartClientSide(ICoreClientAPI Api)
         {
             capi = Api;
-            //capi.ShowChatMessage("Primitive Surival installed...");
+            
+            if (startMsg != null) 
+                capi.ShowChatMessage(startMsg);
+            if (cfgMsg != null) 
+                capi.ShowChatMessage(cfgMsg);
+
+
         }
 
         public override void Start(ICoreAPI api)
         {
             base.Start(api);
             RegisterClasses(api);
+
+            string thisModID = "primitivesurvival";
+            string thisName = api.ModLoader.GetMod(thisModID).Info.Name.ToString();
+            string thisVersion = api.ModLoader.GetMod(thisModID).Info.Version.ToString();
+            startMsg = thisName + " " + thisVersion + " installed...";
+
+            // Load/create common config file in ..\VintageStoryData\ModConfig\PrimitiveSurvival[ver]Config.json
+            string cfgFileName = "PrimitiveSurvival" + thisVersion.Replace(".","") + "Config.json";
+            try
+            {
+                PrimitiveSurvivalConfig FromDisk;
+                if ((FromDisk = api.LoadModConfig<PrimitiveSurvivalConfig>(cfgFileName)) == null)
+                {
+                    
+                    api.StoreModConfig<PrimitiveSurvivalConfig>(PrimitiveSurvivalConfig.Loaded, cfgFileName);
+                }
+                else
+                {
+                    PrimitiveSurvivalConfig.Loaded = FromDisk;
+                }
+
+                if (FromDisk != null)
+                    cfgMsg = "Config file created: ..\\ModConfig\\" + cfgFileName;
+                else
+                    cfgMsg = "Config file loaded: ..\\ModConfig\\" + cfgFileName;
+            }
+            catch
+            {
+                cfgMsg = "Error in config file: ..\\ModConfig\\" + cfgFileName;
+                api.StoreModConfig<PrimitiveSurvivalConfig>(PrimitiveSurvivalConfig.Loaded, "PrimitiveSurvivalConfig.json");
+            }
         }
     }
-}
 
+
+    public class PrimitiveSurvivalConfig
+    {
+        public static PrimitiveSurvivalConfig Loaded { get; set; } = new PrimitiveSurvivalConfig();
+        public bool altarDropsGold { get; set; } = true;
+
+        public float deadfallMaxAnimalHeight { get; set; } = 0.7f;
+        public int deadfallMaxDamageSet { get; set; } = 10;
+        public int deadfallMaxDamageBaited { get; set; } = 20;
+
+        public int fishBasketCatchPercent { get; set; } = 4;
+        public int fishBasketBaitedCatchPercent { get; set; } = 10;
+        public int fishBasketBaitStolenPercent { get; set; } = 5;
+        public int fishBasketEscapePercent { get; set; } = 15;
+        public double fishBasketUpdateMinutes { get; set; } = 2.2;
+        public int fishBasketRotRemovedPercent { get; set; } = 10;
+
+        public int limbTrotlineCatchPercent { get; set; } = 4;
+        public int limbTrotlineBaitedCatchPercent { get; set; } = 10;
+        public int limbTrotlineLuredCatchPercent { get; set; } = 7;
+        public int limbTrotlineBaitedLuredCatchPercent { get; set; } = 13;
+        public int limbTrotlineBaitStolenPercent { get; set; } = 5;
+        public double limbTrotlineUpdateMinutes { get; set; } = 2.4;
+        public int limbTrotlineRotRemovedPercent { get; set; } = 10;
+
+        public float raftWaterSpeedModifier { get; set; } = 0.5f;
+        public float raftFlotationModifier { get; set; } = 0.03f;
+
+        public float snareMaxAnimalHeight { get; set; } = 0.8f;
+        public int snareMaxDamageSet { get; set; } = 12;
+        public int snareMaxDamageBaited { get; set; } = 24;
+
+        public int weirTrapCatchPercent { get; set; } = 4;
+         public int weirTrapEscapePercent { get; set; } = 10;
+        public double weirTrapUpdateMinutes { get; set; } = 2.6;
+        public int weirTrapRotRemovedPercent { get; set; } = 10;
+    }
+}
 
 
 

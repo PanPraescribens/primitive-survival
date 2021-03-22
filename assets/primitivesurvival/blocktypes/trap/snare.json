@@ -2,11 +2,6 @@
   "code": "snare",
   "class": "blocksnare",
   "entityclass": "besnare",
-  "attributes": {
-    "maxAnimalHeight": 0.8,
-    "maxDamageSet": 12,
-    "maxDamageBaited": 24
-  },
   "behaviors": [{ "name": "Unstable" }],
   "blockmaterial": "Wood",
   "drawtype": "json",

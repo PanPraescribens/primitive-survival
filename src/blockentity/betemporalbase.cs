@@ -7,19 +7,17 @@ using Vintagestory.API.Common;
 using Vintagestory.API.MathTools;
 using Vintagestory.GameContent;
 using Vintagestory.API.Common.Entities;
-using Vintagestory.API.Datastructures;
 using Vintagestory.API.Config;
-using System.IO;
-using System.Threading;
+using primitiveSurvival;
 
 public class BETemporalBase : BlockEntityDisplay
 {
     public int tickSeconds = 1;
     public int maxSlots = 6;
     public static Random rnd = new Random();
-    public string[] temporalTypes = { "game:vegetable-cabbage", "game:vegetable-carrot", "game:vegetable-onion", "game:vegetable-parsnip", "game:vegetable-turnip", "game:vegetable-pumpkin", "game:nugget-nativegold", "game:nugget-nativegold", "game:nugget-nativegold" };
-    public string[] astralTypes = { "primitivesurvival:psfish-trout-raw", "primitivesurvival:psfish-perch-raw", "primitivesurvival:psfish-carp-raw", "primitivesurvival:psfish-bass-raw", "primitivesurvival:psfish-pike-raw", "primitivesurvival:psfish-arcticchar-raw", "primitivesurvival:psfish-catfish-raw", "primitivesurvival:psfish-bluegill-raw", "primitivesurvival:psfish-mutant-raw", "primitivesurvival:psfish-mutant-raw", "game:nugget-nativegold", "game:nugget-nativegold", "game:nugget-nativegold", "game:nugget-nativegold", "game:nugget-nativegold" };
 
+    public bool dropsGold = PrimitiveSurvivalConfig.Loaded.altarDropsGold;
+  
     public override string InventoryClassName
     {
         get { return "temporalbase"; }
@@ -144,6 +142,22 @@ public class BETemporalBase : BlockEntityDisplay
     {
         string toptype = "";
         int gearcount = 0;
+
+        string[] temporalTypes = { "game:vegetable-cabbage", "game:vegetable-carrot", "game:vegetable-onion", "game:vegetable-parsnip", "game:vegetable-turnip", "game:vegetable-pumpkin" };
+        string[] astralTypes = { "primitivesurvival:psfish-trout-raw", "primitivesurvival:psfish-perch-raw", "primitivesurvival:psfish-carp-raw", "primitivesurvival:psfish-bass-raw", "primitivesurvival:psfish-pike-raw", "primitivesurvival:psfish-arcticchar-raw", "primitivesurvival:psfish-catfish-raw", "primitivesurvival:psfish-bluegill-raw", "primitivesurvival:psfish-mutant-raw", "primitivesurvival:psfish-mutant-raw" };
+
+
+        if (dropsGold)
+        {
+            for (int i=1;i<4;i++)
+            {
+                Array.Resize(ref temporalTypes, temporalTypes.Length + 1);
+                temporalTypes[temporalTypes.Length - 1] = "game:nugget-nativegold";
+                Array.Resize(ref astralTypes, astralTypes.Length + 1);
+                astralTypes[astralTypes.Length - 1] = "game:nugget-nativegold";
+            }
+        }
+
         if (!inventory[1].Empty)
         {
             toptype = topStack.Block.FirstCodePart(1);
