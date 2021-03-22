@@ -10,16 +10,14 @@ https://www.vintagestory.at/forums/topic/2399-primitive-survival-traps-fishing-a
 Roadmap
 
  - Smoking Rack or Pit Smoker - smoked meat good, jerky strips less good @Boomer Bill
- - create config file to disable assets or at least drop less gold - @techrabbit
  - re-enable slippery fish
  - fishing lures dont smelt back into the original materials but some sub labeled material... (and wont stack with actual bismuth) - thanks @TechRabbit
- - finalizing a weir trap but still had a stake in hand cause crash (when clicking from wrong direction) - thanks @BotenRedWolf
  - Pick up raft - @PapaCheddar
 
 Version 2.5.7 Updates
 
 - Fixed: Bug in German language file - thanks @Kiava
-- Added: common configuration file ..\VintagestoryData\ModConfig\PrimitiveSurvival257Config.json - thanks @Quixjote
+- Added: common configuration file ..\VintagestoryData\ModConfig\PrimitiveSurvival257Config.json to configure raft speed and prevent altars from dropping gold - thanks @techrabbit, @Quixjote
 
 
 Version 2.5.6 Updates
