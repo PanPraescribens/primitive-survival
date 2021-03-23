@@ -11,16 +11,17 @@ Roadmap
 
  - Smoking Rack or Pit Smoker - smoked meat good, jerky strips less good @Boomer Bill
  - re-enable slippery fish
- - fishing lures dont smelt back into the original materials but some sub labeled material... (and wont stack with actual bismuth) - thanks @TechRabbit
  - pair up fillets so they have more satiety in meals.
  - fish as bait - maybe
 
 
 Version 2.5.7 Updates
 
-- Fixed: Bug in German language file - thanks @Kiava
+
 - Added: common configuration file ..\VintagestoryData\ModConfig\PrimitiveSurvival257Config.json to configure raft speed, prevent altars from dropping gold, and more - thanks @techrabbit, @Quixjote
 - Added: right click pick up raft - thanks @PapaCheddar
+- Fixed: Bug in German language file - thanks @Kiava
+- Fixed: fishing hooks/lures dont smelt back into the original materials but some sub labeled material... (and wont stack with actual metal) - thanks @TechRabbit
 
 
 Version 2.5.6 Updates
