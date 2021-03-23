@@ -80,8 +80,8 @@
             "meltingDuration": 30,
             "smeltedRatio": 6,
             "smeltedStack": {
-                "type": "block",
-                "code": "nail-copper-unset-n"
+                "type": "item",
+                "code": "game:ingot-copper"
             }
         },
         "nail-brass-*": {
@@ -89,8 +89,8 @@
             "meltingDuration": 30,
             "smeltedRatio": 6,
             "smeltedStack": {
-                "type": "block",
-                "code": "nail-brass-unset-n"
+                "type": "item",
+                "code": "game:ingot-brass"
             }
         },
         "nail-tinbronze-*": {
@@ -98,8 +98,8 @@
             "meltingDuration": 30,
             "smeltedRatio": 6,
             "smeltedStack": {
-                "type": "block",
-                "code": "nail-tinbronze-unset-n"
+                "type": "item",
+                "code": "game:ingot-tinbronze"
             }
         },
         "nail-bismuthbronze-*": {
@@ -107,8 +107,8 @@
             "meltingDuration": 30,
             "smeltedRatio": 6,
             "smeltedStack": {
-                "type": "block",
-                "code": "nail-bismuthbronze-unset-n"
+                "type": "item",
+                "code": "game:ingot-bismuthbronze"
             }
         },
         "nail-blackbronze-*": {
@@ -116,8 +116,8 @@
             "meltingDuration": 30,
             "smeltedRatio": 6,
             "smeltedStack": {
-                "type": "block",
-                "code": "nail-blackbronze-unset-n"
+                "type": "item",
+                "code": "game:ingot-blackbronze"
             }
         },
         "nail-iron-*": {
@@ -125,8 +125,8 @@
             "meltingDuration": 30,
             "smeltedRatio": 6,
             "smeltedStack": {
-                "type": "block",
-                "code": "nail-iron-unset-n"
+                "type": "item",
+                "code": "game:ingot-iron"
             }
         },
         "nail-gold-*": {
@@ -134,8 +134,8 @@
             "meltingDuration": 30,
             "smeltedRatio": 6,
             "smeltedStack": {
-                "type": "block",
-                "code": "nail-gold-unset-n"
+                "type": "item",
+                "code": "game:ingot-gold"
             }
         },
         "nail-lead-*": {
@@ -143,8 +143,8 @@
             "meltingDuration": 30,
             "smeltedRatio": 6,
             "smeltedStack": {
-                "type": "block",
-                "code": "nail-lead-unset-n"
+                "type": "item",
+                "code": "game:ingot-lead"
             }
         },
         "nail-tin-*": {
@@ -152,8 +152,8 @@
             "meltingDuration": 30,
             "smeltedRatio": 6,
             "smeltedStack": {
-                "type": "block",
-                "code": "nail-tin-unset-n"
+                "type": "item",
+                "code": "game:ingot-tin"
             }
         },
         "nail-chromium-*": {
@@ -161,8 +161,8 @@
             "meltingDuration": 30,
             "smeltedRatio": 6,
             "smeltedStack": {
-                "type": "block",
-                "code": "nail-chromium-unset-n"
+                "type": "item",
+                "code": "game:ingot-chromium"
             }
         },
         "nail-platinum-*": {
@@ -170,8 +170,8 @@
             "meltingDuration": 30,
             "smeltedRatio": 6,
             "smeltedStack": {
-                "type": "block",
-                "code": "nail-platinum-unset-n"
+                "type": "item",
+                "code": "game:ingot-platinum"
             }
         },
         "nail-titanium-*": {
@@ -179,8 +179,8 @@
             "meltingDuration": 30,
             "smeltedRatio": 6,
             "smeltedStack": {
-                "type": "block",
-                "code": "nail-titanium-unset-n"
+                "type": "item",
+                "code": "game:ingot-titanium"
             }
         },
         "nail-zinc-*": {
@@ -188,8 +188,8 @@
             "meltingDuration": 30,
             "smeltedRatio": 6,
             "smeltedStack": {
-                "type": "block",
-                "code": "nail-zinc-unset-n"
+                "type": "item",
+                "code": "game:ingot-zinc"
             }
         },
         "nail-silver-*": {
@@ -197,8 +197,8 @@
             "meltingDuration": 30,
             "smeltedRatio": 6,
             "smeltedStack": {
-                "type": "block",
-                "code": "nail-silver-unset-n"
+                "type": "item",
+                "code": "game:ingot-silver"
             }
         },
         "nail-bismuth-*": {
@@ -206,8 +206,8 @@
             "meltingDuration": 30,
             "smeltedRatio": 6,
             "smeltedStack": {
-                "type": "block",
-                "code": "nail-bismuth-unset-n"
+                "type": "item",
+                "code": "game:ingot-bismuth"
             }
         },
         "nail-molybdochalkos-*": {
@@ -215,8 +215,8 @@
             "meltingDuration": 30,
             "smeltedRatio": 6,
             "smeltedStack": {
-                "type": "block",
-                "code": "nail-molybdochalkos-unset-n"
+                "type": "item",
+                "code": "game:ingot-molybdochalkos"
             }
         }
     },

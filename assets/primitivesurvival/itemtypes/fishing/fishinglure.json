@@ -66,145 +66,145 @@
         "fishinglure-copper": {
             "meltingPoint": 1084,
             "meltingDuration": 30,
-            "smeltedRatio": 5,
+            "smeltedRatio": 4,
             "smeltedStack": {
                 "type": "item",
-                "code": "fishinglure-copper"
+                "code": "game:ingot-copper"
             }
         },
         "fishinglure-brass": {
             "meltingPoint": 920,
             "meltingDuration": 30,
-            "smeltedRatio": 5,
+            "smeltedRatio": 4,
             "smeltedStack": {
                 "type": "item",
-                "code": "fishinglure-brass"
+                "code": "game:ingot-brass"
             }
         },
         "fishinglure-tinbronze": {
             "meltingPoint": 950,
             "meltingDuration": 30,
-            "smeltedRatio": 5,
+            "smeltedRatio": 4,
             "smeltedStack": {
                 "type": "item",
-                "code": "fishinglure-tinbronze"
+                "code": "game:ingot-tinbronze"
             }
         },
         "fishinglure-bismuthbronze": {
             "meltingPoint": 850,
             "meltingDuration": 30,
-            "smeltedRatio": 5,
+            "smeltedRatio": 4,
             "smeltedStack": {
                 "type": "item",
-                "code": "fishinglure-bismuthbronze"
+                "code": "game:ingot-bismuthbronze"
             }
         },
         "fishinglure-blackbronze": {
             "meltingPoint": 1020,
             "meltingDuration": 30,
-            "smeltedRatio": 5,
+            "smeltedRatio": 4,
             "smeltedStack": {
                 "type": "item",
-                "code": "fishinglure-blackbronze"
+                "code": "game:ingot-blackbronze"
             }
         },
         "fishinglure-iron": {
             "meltingPoint": 1482,
             "meltingDuration": 30,
-            "smeltedRatio": 5,
+            "smeltedRatio": 4,
             "smeltedStack": {
                 "type": "item",
-                "code": "fishinglure-iron"
+                "code": "game:ingot-iron"
             }
         },
         "fishinglure-gold": {
             "meltingPoint": 1063,
             "meltingDuration": 30,
-            "smeltedRatio": 5,
+            "smeltedRatio": 4,
             "smeltedStack": {
                 "type": "item",
-                "code": "fishinglure-gold"
+                "code": "game:ingot-gold"
             }
         },
         "fishinglure-lead": {
             "meltingPoint": 327,
             "meltingDuration": 30,
-            "smeltedRatio": 5,
+            "smeltedRatio": 4,
             "smeltedStack": {
                 "type": "item",
-                "code": "fishinglure-lead"
+                "code": "game:ingot-lead"
             }
         },
         "fishinglure-tin": {
             "meltingPoint": 232,
             "meltingDuration": 30,
-            "smeltedRatio": 5,
+            "smeltedRatio": 4,
             "smeltedStack": {
                 "type": "item",
-                "code": "fishinglure-tin"
+                "code": "game:ingot-tin"
             }
         },
         "fishinglure-chromium": {
             "meltingPoint": 1907,
             "meltingDuration": 30,
-            "smeltedRatio": 5,
+            "smeltedRatio": 4,
             "smeltedStack": {
                 "type": "item",
-                "code": "fishinglure-chromium"
+                "code": "game:ingot-chromium"
             }
         },
         "fishinglure-platinum": {
             "meltingPoint": 1770,
             "meltingDuration": 30,
-            "smeltedRatio": 5,
+            "smeltedRatio": 4,
             "smeltedStack": {
                 "type": "item",
-                "code": "fishinglure-platinum"
+                "code": "game:ingot-platinum"
             }
         },
         "fishinglure-titanium": {
             "meltingPoint": 1668,
             "meltingDuration": 30,
-            "smeltedRatio": 5,
+            "smeltedRatio": 4,
             "smeltedStack": {
                 "type": "item",
-                "code": "fishinglure-titanium"
+                "code": "game:ingot-titanium"
             }
         },
         "fishinglure-zinc": {
             "meltingPoint": 419,
             "meltingDuration": 30,
-            "smeltedRatio": 5,
+            "smeltedRatio": 4,
             "smeltedStack": {
                 "type": "item",
-                "code": "fishinglure-zinc"
+                "code": "game:ingot-zinc"
             }
         },
         "fishinglure-silver": {
             "meltingPoint": 961,
             "meltingDuration": 30,
-            "smeltedRatio": 5,
+            "smeltedRatio": 4,
             "smeltedStack": {
                 "type": "item",
-                "code": "fishinglure-silver"
+                "code": "game:ingot-silver"
             }
         },
         "fishinglure-bismuth": {
             "meltingPoint": 271,
             "meltingDuration": 30,
-            "smeltedRatio": 5,
+            "smeltedRatio": 4,
             "smeltedStack": {
                 "type": "item",
-                "code": "fishinglure-bismuth"
+                "code": "game:ingot-bismuth"
             }
         },
         "fishinglure-molybdochalkos": {
             "meltingPoint": 902,
             "meltingDuration": 30,
-            "smeltedRatio": 5,
+            "smeltedRatio": 4,
             "smeltedStack": {
                 "type": "item",
-                "code": "fishinglure-molybdochalkos"
+                "code": "game:ingot-molybdochalkos"
             }
         }
     },

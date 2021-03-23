@@ -80,8 +80,8 @@
             "meltingDuration": 30,
             "smeltedRatio": 3,
             "smeltedStack": {
-                "type": "block",
-                "code": "spike-copper-unset-n"
+                "type": "item",
+                "code": "game:ingot-copper"
             }
         },
         "spike-brass-*": {
@@ -89,8 +89,8 @@
             "meltingDuration": 30,
             "smeltedRatio": 3,
             "smeltedStack": {
-                "type": "block",
-                "code": "spike-brass-unset-n"
+                "type": "item",
+                "code": "game:ingot-brass"
             }
         },
         "spike-tinbronze-*": {
@@ -98,8 +98,8 @@
             "meltingDuration": 30,
             "smeltedRatio": 3,
             "smeltedStack": {
-                "type": "block",
-                "code": "spike-tinbronze-unset-n"
+                "type": "item",
+                "code": "game:ingot-tinbronze"
             }
         },
         "spike-bismuthbronze-*": {
@@ -107,8 +107,8 @@
             "meltingDuration": 30,
             "smeltedRatio": 3,
             "smeltedStack": {
-                "type": "block",
-                "code": "spike-bismuthbronze-unset-n"
+                "type": "item",
+                "code": "game:ingot-bismuthbronze"
             }
         },
         "spike-blackbronze-*": {
@@ -116,8 +116,8 @@
             "meltingDuration": 30,
             "smeltedRatio": 3,
             "smeltedStack": {
-                "type": "block",
-                "code": "spike-blackbronze-unset-n"
+                "type": "item",
+                "code": "game:ingot-blackbronze"
             }
         },
         "spike-iron-*": {
@@ -125,8 +125,8 @@
             "meltingDuration": 30,
             "smeltedRatio": 3,
             "smeltedStack": {
-                "type": "block",
-                "code": "spike-iron-unset-n"
+                "type": "item",
+                "code": "game:ingot-iron"
             }
         },
         "spike-gold-*": {
@@ -134,8 +134,8 @@
             "meltingDuration": 30,
             "smeltedRatio": 3,
             "smeltedStack": {
-                "type": "block",
-                "code": "spike-gold-unset-n"
+                "type": "item",
+                "code": "game:ingot-gold"
             }
         },
         "spike-lead-*": {
@@ -143,8 +143,8 @@
             "meltingDuration": 30,
             "smeltedRatio": 3,
             "smeltedStack": {
-                "type": "block",
-                "code": "spike-lead-unset-n"
+                "type": "item",
+                "code": "game:ingot-lead"
             }
         },
         "spike-tin-*": {
@@ -152,8 +152,8 @@
             "meltingDuration": 30,
             "smeltedRatio": 3,
             "smeltedStack": {
-                "type": "block",
-                "code": "spike-tin-unset-n"
+                "type": "item",
+                "code": "game:ingot-tin"
             }
         },
         "spike-chromium-*": {
@@ -161,8 +161,8 @@
             "meltingDuration": 30,
             "smeltedRatio": 3,
             "smeltedStack": {
-                "type": "block",
-                "code": "spike-chromium-unset-n"
+                "type": "item",
+                "code": "game:ingot-chromium"
             }
         },
         "spike-platinum-*": {
@@ -170,8 +170,8 @@
             "meltingDuration": 30,
             "smeltedRatio": 3,
             "smeltedStack": {
-                "type": "block",
-                "code": "spike-platinum-unset-n"
+                "type": "item",
+                "code": "game:ingot-platinum"
             }
         },
         "spike-titanium-*": {
@@ -179,8 +179,8 @@
             "meltingDuration": 30,
             "smeltedRatio": 3,
             "smeltedStack": {
-                "type": "block",
-                "code": "spike-titanium-unset-n"
+                "type": "item",
+                "code": "game:ingot-titanium"
             }
         },
         "spike-zinc-*": {
@@ -188,8 +188,8 @@
             "meltingDuration": 30,
             "smeltedRatio": 3,
             "smeltedStack": {
-                "type": "block",
-                "code": "spike-zinc-unset-n"
+                "type": "item",
+                "code": "game:ingot-zinc"
             }
         },
         "spike-silver-*": {
@@ -197,8 +197,8 @@
             "meltingDuration": 30,
             "smeltedRatio": 3,
             "smeltedStack": {
-                "type": "block",
-                "code": "spike-silver-unset-n"
+                "type": "item",
+                "code": "game:ingot-silver"
             }
         },
         "spike-bismuth-*": {
@@ -206,8 +206,8 @@
             "meltingDuration": 30,
             "smeltedRatio": 3,
             "smeltedStack": {
-                "type": "block",
-                "code": "spike-bismuth-unset-n"
+                "type": "item",
+                "code": "game:ingot-bismuth"
             }
         },
         "spike-molybdochalkos-*": {
@@ -215,8 +215,8 @@
             "meltingDuration": 30,
             "smeltedRatio": 3,
             "smeltedStack": {
-                "type": "block",
-                "code": "spike-molybdochalkos-unset-n"
+                "type": "item",
+                "code": "game:ingot-molybdochalkos"
             }
         }
     },

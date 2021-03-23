@@ -69,7 +69,7 @@
             "smeltedRatio": 6,
             "smeltedStack": {
                 "type": "item",
-                "code": "metalfishinghook-copper"
+                "code": "game:ingot-copper"
             }
         },
         "metalfishinghook-brass": {
@@ -78,7 +78,7 @@
             "smeltedRatio": 6,
             "smeltedStack": {
                 "type": "item",
-                "code": "metalfishinghook-brass"
+                "code": "game:ingot-brass"
             }
         },
         "metalfishinghook-tinbronze": {
@@ -87,7 +87,7 @@
             "smeltedRatio": 6,
             "smeltedStack": {
                 "type": "item",
-                "code": "metalfishinghook-tinbronze"
+                "code": "game:ingot-tinbronze"
             }
         },
         "metalfishinghook-bismuthbronze": {
@@ -96,7 +96,7 @@
             "smeltedRatio": 6,
             "smeltedStack": {
                 "type": "item",
-                "code": "metalfishinghook-bismuthbronze"
+                "code": "game:ingot-bismuthbronze"
             }
         },
         "metalfishinghook-blackbronze": {
@@ -105,7 +105,7 @@
             "smeltedRatio": 6,
             "smeltedStack": {
                 "type": "item",
-                "code": "metalfishinghook-blackbronze"
+                "code": "game:ingot-blackbronze"
             }
         },
         "metalfishinghook-iron": {
@@ -114,7 +114,7 @@
             "smeltedRatio": 6,
             "smeltedStack": {
                 "type": "item",
-                "code": "metalfishinghook-iron"
+                "code": "game:ingot-iron"
             }
         },
         "metalfishinghook-gold": {
@@ -123,7 +123,7 @@
             "smeltedRatio": 6,
             "smeltedStack": {
                 "type": "item",
-                "code": "metalfishinghook-gold"
+                "code": "game:ingot-gold"
             }
         },
         "metalfishinghook-lead": {
@@ -132,7 +132,7 @@
             "smeltedRatio": 6,
             "smeltedStack": {
                 "type": "item",
-                "code": "metalfishinghook-lead"
+                "code": "game:ingot-lead"
             }
         },
         "metalfishinghook-tin": {
@@ -141,7 +141,7 @@
             "smeltedRatio": 6,
             "smeltedStack": {
                 "type": "item",
-                "code": "metalfishinghook-tin"
+                "code": "game:ingot-tin"
             }
         },
         "metalfishinghook-chromium": {
@@ -150,7 +150,7 @@
             "smeltedRatio": 6,
             "smeltedStack": {
                 "type": "item",
-                "code": "metalfishinghook-chromium"
+                "code": "game:ingot-chromium"
             }
         },
         "metalfishinghook-platinum": {
@@ -159,7 +159,7 @@
             "smeltedRatio": 6,
             "smeltedStack": {
                 "type": "item",
-                "code": "metalfishinghook-platinum"
+                "code": "game:ingot-platinum"
             }
         },
         "metalfishinghook-titanium": {
@@ -168,7 +168,7 @@
             "smeltedRatio": 6,
             "smeltedStack": {
                 "type": "item",
-                "code": "metalfishinghook-titanium"
+                "code": "game:ingot-titanium"
             }
         },
         "metalfishinghook-zinc": {
@@ -177,7 +177,7 @@
             "smeltedRatio": 6,
             "smeltedStack": {
                 "type": "item",
-                "code": "metalfishinghook-zinc"
+                "code": "game:ingot-zinc"
             }
         },
         "metalfishinghook-silver": {
@@ -186,7 +186,7 @@
             "smeltedRatio": 6,
             "smeltedStack": {
                 "type": "item",
-                "code": "metalfishinghook-silver"
+                "code": "game:ingot-silver"
             }
         },
         "metalfishinghook-bismuth": {
@@ -195,7 +195,7 @@
             "smeltedRatio": 6,
             "smeltedStack": {
                 "type": "item",
-                "code": "metalfishinghook-bismuth"
+                "code": "game:ingot-bismuth"
             }
         },
         "metalfishinghook-molybdochalkos": {
@@ -204,7 +204,7 @@
             "smeltedRatio": 6,
             "smeltedStack": {
                 "type": "item",
-                "code": "metalfishinghook-molybdochalkos"
+                "code": "game:ingot-molybdochalkos"
             }
         }
     },

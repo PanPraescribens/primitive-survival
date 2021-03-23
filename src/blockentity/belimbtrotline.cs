@@ -21,7 +21,7 @@ public class BELimbTrotLineLure : BlockEntityDisplay
 
     public int tickSeconds = 5;
     public int maxSlots = 4;
-    public string[] baitTypes = { "fruit", "grain", "legume", "meat", "vegetable", "jerky", "mushroom", "bread", "poultry", "pickledvegetable", "redmeat", "bushmeat", "earthworm", "cheese" };
+    public string[] baitTypes = { "fruit", "grain", "legume", "meat", "vegetable", "jerky", "mushroom", "bread", "poultry", "pickledvegetable", "redmeat", "bushmeat", "earthworm", "cheese","fishfillet" };
     public string[] fishTypes = { "trout",  "perch", "carp", "bass", "pike", "arcticchar", "catfish", "bluegill" };
  
     public static Random rnd = new Random();

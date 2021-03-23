@@ -3,25 +3,24 @@ using Vintagestory.API.Client;
 using Vintagestory.API.Server;
 
 
-
 namespace primitiveSurvival
 {
-    
-
     public partial class PrimitaveSurvivalMod : ModSystem
     {
+        string thisModID = "primitivesurvival";
+        string startMsg;
+        string cfgMsg;
+
         ICoreClientAPI capi;
         ICoreServerAPI sapi;
-
-        public string startMsg;
-        public string cfgMsg;
 
         public void RegisterClasses(ICoreAPI api)
         {
 			api.RegisterEntity("entityearthworm", typeof(EntityEarthworm)); 
 			
 			api.RegisterBlockBehaviorClass ("RightClickPickupSpawnWorm", typeof(RightClickPickupSpawnWorm));
-			
+            api.RegisterBlockBehaviorClass("RightClickPickupRaft", typeof(RightClickPickupRaft));
+
             api.RegisterBlockEntityClass("bedeadfall", typeof(BEDeadfall));
             api.RegisterBlockEntityClass("besnare", typeof(BESnare));
             api.RegisterBlockEntityClass("belimbtrotlinelure", typeof(BELimbTrotLineLure));
@@ -64,7 +63,7 @@ namespace primitiveSurvival
             api.RegisterItemClass("itemwoodspikebundle", typeof(ItemWoodSpikeBundle));
             api.RegisterItemClass("itempsgear", typeof(ItemPSGear));
             api.RegisterItemClass("itemmonkeybridge", typeof(ItemMonkeyBridge));
-            api.RegisterItemClass("itemhide", typeof(ItemHide)); //override for game:hide
+            api.RegisterItemClass("itemhide", typeof(ItemHide)); 
 			api.RegisterItemClass ("itemearthworm", typeof(ItemEarthworm));
         }
 
@@ -76,13 +75,12 @@ namespace primitiveSurvival
         public override void StartClientSide(ICoreClientAPI Api)
         {
             capi = Api;
-            
+            /*
             if (startMsg != null) 
                 capi.ShowChatMessage(startMsg);
             if (cfgMsg != null) 
                 capi.ShowChatMessage(cfgMsg);
-
-
+            */
         }
 
         public override void Start(ICoreAPI api)
@@ -90,36 +88,27 @@ namespace primitiveSurvival
             base.Start(api);
             RegisterClasses(api);
 
-            string thisModID = "primitivesurvival";
             string thisName = api.ModLoader.GetMod(thisModID).Info.Name.ToString();
             string thisVersion = api.ModLoader.GetMod(thisModID).Info.Version.ToString();
-            startMsg = thisName + " " + thisVersion + " installed...";
+            startMsg = thisName + " " + thisVersion + " loaded...";
 
             // Load/create common config file in ..\VintageStoryData\ModConfig\PrimitiveSurvival[ver]Config.json
-            string cfgFileName = "PrimitiveSurvival" + thisVersion.Replace(".","") + "Config.json";
+            string cfgFileName = thisModID + thisVersion.Replace(".","") + "config.json";
+            cfgMsg = "Using config file";
             try
             {
                 PrimitiveSurvivalConfig FromDisk;
                 if ((FromDisk = api.LoadModConfig<PrimitiveSurvivalConfig>(cfgFileName)) == null)
-                {
-                    
-                    api.StoreModConfig<PrimitiveSurvivalConfig>(PrimitiveSurvivalConfig.Loaded, cfgFileName);
-                }
+                {    api.StoreModConfig<PrimitiveSurvivalConfig>(PrimitiveSurvivalConfig.Loaded, cfgFileName); }
                 else
-                {
-                    PrimitiveSurvivalConfig.Loaded = FromDisk;
-                }
-
-                if (FromDisk != null)
-                    cfgMsg = "Config file created: ..\\ModConfig\\" + cfgFileName;
-                else
-                    cfgMsg = "Config file loaded: ..\\ModConfig\\" + cfgFileName;
+                {    PrimitiveSurvivalConfig.Loaded = FromDisk; }
             }
             catch
             {
-                cfgMsg = "Error in config file: ..\\ModConfig\\" + cfgFileName;
+                cfgMsg = "Error in config file";
                 api.StoreModConfig<PrimitiveSurvivalConfig>(PrimitiveSurvivalConfig.Loaded, "PrimitiveSurvivalConfig.json");
             }
+            cfgMsg += ": ..\\ModConfig\\" + cfgFileName;
         }
     }
 

@@ -11,7 +11,7 @@ using Vintagestory.API.Common.Entities;
 
 public class BESnare : BlockEntityDisplay, IAnimalFoodSource
 {
-    public string[] baitTypes = { "fruit", "grain", "legume", "meat", "vegetable", "jerky", "mushroom", "bread", "poultry", "pickledvegetable", "redmeat", "bushmeat", "cheese" };
+    public string[] baitTypes = { "fruit", "grain", "legume", "meat", "vegetable", "jerky", "mushroom", "bread", "poultry", "pickledvegetable", "redmeat", "bushmeat", "cheese", "fishfillet" };
     protected static Random rnd = new Random();
     public int maxSlots = 1;
 
