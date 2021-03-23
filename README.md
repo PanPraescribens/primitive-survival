@@ -18,7 +18,7 @@ Roadmap
 Version 2.5.7 Updates
 
 
-- Added: common configuration file ..\VintagestoryData\ModConfig\PrimitiveSurvival257Config.json to configure raft speed, prevent altars from dropping gold, and more - thanks @techrabbit, @Quixjote
+- Added: common configuration file ..\VintagestoryData\ModConfig\primitivesurvival[version]config.json to configure raft speed, prevent altars from dropping gold, customize traps and fishing - thanks @techrabbit, @Quixjote
 - Added: right click pick up raft - thanks @PapaCheddar
 - Fixed: Bug in German language file - thanks @Kiava
 - Fixed: fishing hooks/lures dont smelt back into the original materials but some sub labeled material... (and wont stack with actual metal) - thanks @TechRabbit
