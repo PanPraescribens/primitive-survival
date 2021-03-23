@@ -10,18 +10,16 @@ https://www.vintagestory.at/forums/topic/2399-primitive-survival-traps-fishing-a
 Roadmap
 
  - Smoking Rack or Pit Smoker - smoked meat good, jerky strips less good @Boomer Bill
- - re-enable slippery fish
- - pair up fillets so they have more satiety in meals.
- - fish as bait - maybe
-
-
+ - re-enable slippery fish?
+ - pair up fillets so they have more satiety in meals - thanks @l33tmaan
+ 
 Version 2.5.7 Updates
-
 
 - Added: common configuration file ..\VintagestoryData\ModConfig\primitivesurvival[version]config.json to configure raft speed, prevent altars from dropping gold, customize traps and fishing - thanks @techrabbit, @Quixjote
 - Added: right click pick up raft - thanks @PapaCheddar
+- Added: fish fillets as bait for traps and fishing - thanks Ketrai
 - Fixed: Bug in German language file - thanks @Kiava
-- Fixed: fishing hooks/lures dont smelt back into the original materials but some sub labeled material... (and wont stack with actual metal) - thanks @TechRabbit
+- Fixed: fishing hooks, lures, nails, spikes dont smelt back into the original materials but some sub labeled material... (and wont stack with actual metal) - thanks @TechRabbit
 
 
 Version 2.5.6 Updates
