@@ -13,7 +13,6 @@ Roadmap
  - re-enable slippery fish
  - fishing lures dont smelt back into the original materials but some sub labeled material... (and wont stack with actual bismuth) - thanks @TechRabbit
  - pair up fillets so they have more satiety in meals.
- - center the raft a little better in the gui
  - fish as bait - maybe
 
 
