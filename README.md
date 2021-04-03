@@ -12,6 +12,7 @@ Roadmap
  - Smoking Rack or Pit Smoker - smoked meat good, jerky strips less good @Boomer Bill
  - re-enable slippery fish?
  - pair up fillets so they have more satiety in meals - thanks @l33tmaan
+ - double the monkey bridge recipe (again) - thanks @Quixote
  
 Version 2.5.7 Updates
 
