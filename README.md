@@ -14,6 +14,7 @@ Roadmap
  - pair up fillets so they have more satiety in meals - thanks @l33tmaan
  - double the monkey bridge recipe (again) - thanks @Quixote
  - different stack sizes? Like keeping catfish at 16, bumping up trout/carp/whatever up to 32, and bluegill/mutants/bass up to 64? Thanks @l33tmaan
+ - is there a reason you can't go from copper plate to the wooden lantern recipe?
  
 Version 2.5.7 Updates
 
