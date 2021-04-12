@@ -17,6 +17,7 @@ Roadmap
  - is there a reason you can't go from copper plate to the wooden lantern recipe?
  - make worm castings edible for a bit of satiety and a bit less health.
  - Fish not updating in a timely fashion when picked up (i.e. apparent duplication?) - Thanks @boten
+ - raft not always reverting to raft-north when you pick it up/break it - Thanks @Gox
  
 Version 2.5.7 Updates
 
