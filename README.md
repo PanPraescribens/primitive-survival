@@ -19,6 +19,7 @@ Roadmap
  - Fish not updating in a timely fashion when picked up (i.e. apparent duplication?) - Thanks @boten
  - raft not always reverting to raft-north when you pick it up/break it - Thanks @Gox
  - make sure the wooden lantern lighting doesn't bug out like in that screenshot Windego posted.
+ - bug fix:  change POI on pit traps like I did to snares/deadfalls to eliminate the farm life conflict - thanks Thranos!
  
 Version 2.5.7 Updates
 
