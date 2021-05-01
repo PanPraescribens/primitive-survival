@@ -26,7 +26,7 @@
             "useFirepitModel": "Spit"
         },
         "nutritionPropsWhenInMeal": {
-            "satiety": 72,
+            "satiety": 144,
             "foodcategory": "Protein"
         }
     },
@@ -49,7 +49,7 @@
     },
     "nutritionPropsByType": {
         "*-cooked": {
-            "satiety": 48,
+            "satiety": 96,
             "foodcategory": "Protein"
         }
     },

@@ -1,74 +1,75 @@
-using System;
 using Vintagestory.API.Common;
-using Vintagestory.API.MathTools;
 
-public class BlockAlcove : Block
+namespace primitiveSurvival
 {
-    public override bool TryPlaceBlock(IWorldAccessor world, IPlayer byPlayer, ItemStack itemstack, BlockSelection blockSel, ref string failureCode)
+    public class BlockAlcove : Block
     {
-        string facing = SuggestedHVOrientation(byPlayer, blockSel)[0].ToString();
-        bool placed;
-        placed = base.TryPlaceBlock(world, byPlayer, itemstack, blockSel, ref failureCode);
-        if (placed)
+        public override bool TryPlaceBlock(IWorldAccessor world, IPlayer byPlayer, ItemStack itemstack, BlockSelection blockSel, ref string failureCode)
         {
-            Block block = api.World.BlockAccessor.GetBlock(blockSel.Position);
-            string newPath = block.Code.Path;
-            newPath = newPath.Replace("north", facing);
-            block = api.World.GetBlock(block.CodeWithPath(newPath));
-            api.World.BlockAccessor.SetBlock(block.BlockId, blockSel.Position);
+            string facing = SuggestedHVOrientation(byPlayer, blockSel)[0].ToString();
+            bool placed;
+            placed = base.TryPlaceBlock(world, byPlayer, itemstack, blockSel, ref failureCode);
+            if (placed)
+            {
+                Block block = api.World.BlockAccessor.GetBlock(blockSel.Position);
+                string newPath = block.Code.Path;
+                newPath = newPath.Replace("north", facing);
+                block = api.World.GetBlock(block.CodeWithPath(newPath));
+                api.World.BlockAccessor.SetBlock(block.BlockId, blockSel.Position);
+            }
+            return placed;
         }
-        return placed;
-    }
 
-    public override bool OnBlockInteractStart(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel)
-    {
-        ItemSlot playerSlot = byPlayer.InventoryManager.ActiveHotbarSlot;
-        if (!playerSlot.Empty)
+        public override bool OnBlockInteractStart(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel)
         {
-            ItemStack playerStack = playerSlot.Itemstack;
-            if (playerStack.Block != null)
+            ItemSlot playerSlot = byPlayer.InventoryManager.ActiveHotbarSlot;
+            if (!playerSlot.Empty)
             {
-                if ( playerStack.Block.Code.Path.Contains("torch-up"))
+                ItemStack playerStack = playerSlot.Itemstack;
+                if (playerStack.Block != null)
                 {
-                    Block blockToPlace = this;
-                    string newPath = blockToPlace.Code.Path;
-                    if (newPath.Contains("-unlit"))
+                    if (playerStack.Block.Code.Path.Contains("torch-up"))
                     {
-                        newPath = newPath.Replace("-unlit", "-lit");
-                        blockToPlace = api.World.GetBlock(blockToPlace.CodeWithPath(newPath));
-                        world.BlockAccessor.SetBlock(blockToPlace.BlockId, blockSel.Position);
-                        return true;
+                        Block blockToPlace = this;
+                        string newPath = blockToPlace.Code.Path;
+                        if (newPath.Contains("-unlit"))
+                        {
+                            newPath = newPath.Replace("-unlit", "-lit");
+                            blockToPlace = api.World.GetBlock(blockToPlace.CodeWithPath(newPath));
+                            world.BlockAccessor.SetBlock(blockToPlace.BlockId, blockSel.Position);
+                            return true;
+                        }
+                    }
+                }
+                else if (playerStack.Item != null)
+                {
+                    if (playerStack.Item.Code.Path.Contains("candle"))
+                    {
+                        Block blockToPlace = this;
+                        string newPath = blockToPlace.Code.Path;
+                        if (newPath.Contains("-unlit"))
+                        {
+                            newPath = newPath.Replace("-unlit", "-lit");
+                            blockToPlace = api.World.GetBlock(blockToPlace.CodeWithPath(newPath));
+                            world.BlockAccessor.SetBlock(blockToPlace.BlockId, blockSel.Position);
+                            return true;
+                        }
                     }
                 }
             }
-            else if (playerStack.Item != null)
+            else
             {
-                if ( playerStack.Item.Code.Path.Contains("candle"))
+                Block blockToPlace = this;
+                string newPath = blockToPlace.Code.Path;
+                if (newPath.Contains("-lit"))
                 {
-                    Block blockToPlace = this;
-                    string newPath = blockToPlace.Code.Path;
-                    if (newPath.Contains("-unlit"))
-                    {
-                        newPath = newPath.Replace("-unlit", "-lit");
-                        blockToPlace = api.World.GetBlock(blockToPlace.CodeWithPath(newPath));
-                        world.BlockAccessor.SetBlock(blockToPlace.BlockId, blockSel.Position);
-                        return true;
-                    }
+                    newPath = newPath.Replace("-lit", "-unlit");
+                    blockToPlace = api.World.GetBlock(blockToPlace.CodeWithPath(newPath));
+                    world.BlockAccessor.SetBlock(blockToPlace.BlockId, blockSel.Position);
+                    return true;
                 }
             }
-        } 
-        else
-        {
-            Block blockToPlace = this;
-            string newPath = blockToPlace.Code.Path;
-            if (newPath.Contains("-lit"))
-            {
-                newPath = newPath.Replace("-lit", "-unlit");
-                blockToPlace = api.World.GetBlock(blockToPlace.CodeWithPath(newPath));
-                world.BlockAccessor.SetBlock(blockToPlace.BlockId, blockSel.Position);
-                return true;
-            }
-        }       
-        return base.OnBlockInteractStart(world, byPlayer, blockSel);
+            return base.OnBlockInteractStart(world, byPlayer, blockSel);
+        }
     }
 }

@@ -1,9 +1,12 @@
 using Vintagestory.API.Common;
 
-public class BlockNailSpike : Block
+namespace primitiveSurvival
 {
-    public override bool TryPlaceBlock(IWorldAccessor world, IPlayer byPlayer, ItemStack itemstack, BlockSelection blockSel, ref string failureCode)
+    public class BlockNailSpike : Block
     {
-        return false;
+        public override bool TryPlaceBlock(IWorldAccessor world, IPlayer byPlayer, ItemStack itemstack, BlockSelection blockSel, ref string failureCode)
+        {
+            return false;
+        }
     }
 }

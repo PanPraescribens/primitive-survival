@@ -374,7 +374,7 @@
 
     "block-metalbucket-empty-*": "Metal Bucket",
     "block-metalbucket-filled-*": "Metal Bucket",
-    "blockdesc-metalbucket-filled-*": "Contents:\n10 litres of Lava",
+
 
     "item-buckethandle-copper": "Bucket Handle (Copper)",
     "item-buckethandle-tinbronze": "Bucket Handle (Tin Bronze)",
@@ -543,5 +543,11 @@
     "block-woodlantern-oak*": "Wooden Lantern (Oak)",
     "block-woodlantern-pine*": "Wooden Lantern (Pine)",
 
-    "block-raft-*": "Raft"
+    "block-raft-*": "Raft",
+
+    "block-blood-still-7" :  "Blood",
+    "item-bloodportion": "Portion of Blood (1 litre)",
+    "itemdesc-bloodportion": "Blood",
+    "item-lavaportion": "Portion of Lava (1 litre)",
+    "itemdesc-lavaportion": "Lava"
 }

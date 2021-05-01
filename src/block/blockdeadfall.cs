@@ -3,64 +3,66 @@ using Vintagestory.API.Common;
 using Vintagestory.API.MathTools;
 using System;
 using Vintagestory.API.Common.Entities;
-using primitiveSurvival;
+using System.Diagnostics;
 
-public class BlockDeadfall : Block
+namespace primitiveSurvival
 {
-
-    public AssetLocation tickSound = new AssetLocation("game", "tick");
-    public override void OnEntityCollide(IWorldAccessor world, Entity entity, BlockPos pos, BlockFacing facing, Vec3d collideSpeed, bool isImpact)
+    public class BlockDeadfall : Block
     {
-        if (isImpact)
+
+        public AssetLocation tickSound = new AssetLocation("game", "tick");
+        public override void OnEntityCollide(IWorldAccessor world, Entity entity, BlockPos pos, BlockFacing facing, Vec3d collideSpeed, bool isImpact)
         {
-            Block block = api.World.BlockAccessor.GetBlock(pos);
-            string blockPath = block.Code.Path;
-            string state = block.FirstCodePart(1);
-            double maxanimalheight = PrimitiveSurvivalConfig.Loaded.deadfallMaxAnimalHeight;
-            int maxdamage = PrimitiveSurvivalConfig.Loaded.deadfallMaxDamageBaited;
-            if (state == "set")
-            { maxdamage = PrimitiveSurvivalConfig.Loaded.deadfallMaxDamageSet; }
-            if (state != "tripped")
+            if (isImpact)
             {
-                int dmg = 3;
-                //System.Diagnostics.Debug.WriteLine("Eye height " + entity.Properties.EyeHeight);
-
-                if (entity.Properties.EyeHeight < maxanimalheight)
+                Block block = api.World.BlockAccessor.GetBlock(pos);
+                string blockPath = block.Code.Path;
+                string state = block.FirstCodePart(1);
+                double maxanimalheight = PrimitiveSurvivalConfig.Loaded.deadfallMaxAnimalHeight;
+                int maxdamage = PrimitiveSurvivalConfig.Loaded.deadfallMaxDamageBaited;
+                if (state == "set")
+                { maxdamage = PrimitiveSurvivalConfig.Loaded.deadfallMaxDamageSet; }
+                if (state != "tripped")
                 {
-                    Random rnd = new Random();
-                    dmg = rnd.Next(5, maxdamage);
-                }
+                    int dmg = 3;
+                    //Debug.WriteLine("Eye height " + entity.Properties.EyeHeight);
 
-                entity.ReceiveDamage(new DamageSource { SourceEntity = null, Type = EnumDamageType.BluntAttack }, dmg);
-                BEDeadfall bedc = world.BlockAccessor.GetBlockEntity(pos) as BEDeadfall;
-                if (bedc != null) bedc.tripTrap(pos);
-                world.PlaySoundAt(tickSound, entity.Pos.X, entity.Pos.Y, entity.Pos.Z);
+                    if (entity.Properties.EyeHeight < maxanimalheight)
+                    {
+                        Random rnd = new Random();
+                        dmg = rnd.Next(5, maxdamage);
+                    }
+
+                    entity.ReceiveDamage(new DamageSource { SourceEntity = null, Type = EnumDamageType.BluntAttack }, dmg);
+                    BEDeadfall bedc = world.BlockAccessor.GetBlockEntity(pos) as BEDeadfall;
+                    if (bedc != null) bedc.tripTrap(pos);
+                    world.PlaySoundAt(tickSound, entity.Pos.X, entity.Pos.Y, entity.Pos.Z);
+                }
             }
         }
-    }
 
 
-    public override bool TryPlaceBlock(IWorldAccessor world, IPlayer byPlayer, ItemStack itemstack, BlockSelection blockSel, ref string failureCode)
-    {
-        string facing = SuggestedHVOrientation(byPlayer, blockSel)[0].ToString();
-        bool placed;
-        placed = base.TryPlaceBlock(world, byPlayer, itemstack, blockSel, ref failureCode);
-        if (placed)
+        public override bool TryPlaceBlock(IWorldAccessor world, IPlayer byPlayer, ItemStack itemstack, BlockSelection blockSel, ref string failureCode)
         {
-            Block block = api.World.BlockAccessor.GetBlock(blockSel.Position);
-            string newPath = block.Code.Path;
-            newPath = newPath.Replace("north", facing);
-            block = api.World.GetBlock(block.CodeWithPath(newPath));
-            api.World.BlockAccessor.SetBlock(block.BlockId, blockSel.Position);
+            string facing = SuggestedHVOrientation(byPlayer, blockSel)[0].ToString();
+            bool placed;
+            placed = base.TryPlaceBlock(world, byPlayer, itemstack, blockSel, ref failureCode);
+            if (placed)
+            {
+                Block block = api.World.BlockAccessor.GetBlock(blockSel.Position);
+                string newPath = block.Code.Path;
+                newPath = newPath.Replace("north", facing);
+                block = api.World.GetBlock(block.CodeWithPath(newPath));
+                api.World.BlockAccessor.SetBlock(block.BlockId, blockSel.Position);
+            }
+            return placed;
         }
-        return placed;
-    }
 
 
-    public override bool OnBlockInteractStart(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel)
-    {
-        //if (byPlayer.Entity.Controls.Sneak)
-        //{
+        public override bool OnBlockInteractStart(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel)
+        {
+            //if (byPlayer.Entity.Controls.Sneak)
+            //{
             Block block = world.BlockAccessor.GetBlock(blockSel.Position);
             string path = block.Code.Path;
             if (path.Contains("-tripped"))
@@ -69,38 +71,32 @@ public class BlockDeadfall : Block
                 block = world.GetBlock(block.CodeWithPath(path));
                 world.BlockAccessor.SetBlock(block.BlockId, blockSel.Position);
                 return true;
+            }
+
+            //}
+
+            BEDeadfall bedc = world.BlockAccessor.GetBlockEntity(blockSel.Position) as BEDeadfall;
+            if (bedc != null) return bedc.OnInteract(byPlayer, blockSel);
+            return base.OnBlockInteractStart(world, byPlayer, blockSel);
         }
-            
-        //}
-
-        BEDeadfall bedc = world.BlockAccessor.GetBlockEntity(blockSel.Position) as BEDeadfall;
-        if (bedc != null) return bedc.OnInteract(byPlayer, blockSel);
-        return base.OnBlockInteractStart(world, byPlayer, blockSel);
-    }
 
 
-    public MeshData GenMesh(ICoreClientAPI capi, string shapePath, ITexPositionSource texture, int slot, bool tripped, ITesselatorAPI tesselator = null)
-    {
-        Shape shape = null;
-        tesselator = capi.Tesselator;
-        shape = capi.Assets.TryGet(shapePath + ".json").ToObject<Shape>();
-        MeshData mesh;
-        tesselator.TesselateShape(shapePath, shape, out mesh, texture, new Vec3f(0, 0, 0));
-        if (slot == 0) //bait
+        public MeshData GenMesh(ICoreClientAPI capi, string shapePath, ITexPositionSource texture, int slot, bool tripped, ITesselatorAPI tesselator = null)
         {
-            if (tripped)
-                mesh.Translate(-0.1f, 0f, -0.3f);
-            else
-                mesh.Translate(-0.1f, 0f, -0.2f);
+            Shape shape = null;
+            tesselator = capi.Tesselator;
+            shape = capi.Assets.TryGet(shapePath + ".json").ToObject<Shape>();
+            MeshData mesh;
+            tesselator.TesselateShape(shapePath, shape, out mesh, texture, new Vec3f(0, 0, 0));
+            if (slot == 0) //bait
+            {
+                if (tripped)
+                    mesh.Translate(-0.1f, 0f, -0.3f);
+                else
+                    mesh.Translate(-0.1f, 0f, -0.2f);
+            }
+            mesh.Rotate(new Vec3f(0.5f, 0, 0.5f), 0, Shape.rotateY * GameMath.DEG2RAD, 0); //orient based on direction last
+            return mesh;
         }
-        mesh.Rotate(new Vec3f(0.5f, 0, 0.5f), 0, Shape.rotateY * GameMath.DEG2RAD, 0); //orient based on direction last
-        return mesh;
     }
-
-
-
-
-
-
-
 }

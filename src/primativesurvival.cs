@@ -20,6 +20,7 @@ namespace primitiveSurvival
 			
 			api.RegisterBlockBehaviorClass ("RightClickPickupSpawnWorm", typeof(RightClickPickupSpawnWorm));
             api.RegisterBlockBehaviorClass("RightClickPickupRaft", typeof(RightClickPickupRaft));
+            api.RegisterBlockBehaviorClass("FiniteLiquid", typeof(FiniteLiquid));
 
             api.RegisterBlockEntityClass("bedeadfall", typeof(BEDeadfall));
             api.RegisterBlockEntityClass("besnare", typeof(BESnare));
@@ -57,6 +58,7 @@ namespace primitiveSurvival
             api.RegisterBlockClass("blockhide", typeof(BlockHide));
             api.RegisterBlockClass("blocknailspike", typeof(BlockNailSpike));
             api.RegisterBlockClass("blockraft", typeof(BlockRaft));
+            api.RegisterBlockClass("blockblood", typeof(BlockBlood));
 
             api.RegisterItemClass("itemfishinghook", typeof(ItemFishingHook));
             api.RegisterItemClass("itemcordage", typeof(ItemCordage));

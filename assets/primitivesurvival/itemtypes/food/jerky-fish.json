@@ -28,7 +28,7 @@
             "useFirepitModel": "Spit"
         },
         "nutritionPropsWhenInMeal": {
-            "satiety": 18,
+            "satiety": 36,
             "foodcategory": "Protein"
         },
         "handbook": {

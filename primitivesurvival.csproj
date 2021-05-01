@@ -62,6 +62,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\game\textures\block\liquid\blood.png" />
     <Content Include="assets\primitivesurvival\blocktypes\clay\mold\pslargemold.json" />
     <Content Include="assets\primitivesurvival\blocktypes\fishing\fishbasket.json" />
     <Content Include="assets\primitivesurvival\blocktypes\fishing\fishbasketinwater.json" />
@@ -232,6 +233,8 @@
     <Content Include="assets\primitivesurvival\shapes\item\fishing\hookbait.json" />
     <Content Include="assets\primitivesurvival\shapes\item\food\meat\jerky-bushmeat.json" />
     <Content Include="assets\primitivesurvival\shapes\item\food\meat\jerky-red.json" />
+    <Content Include="assets\primitivesurvival\textures\block\liquid\bloodportion.png" />
+    <Content Include="assets\primitivesurvival\textures\block\liquid\blood.png" />
     <Content Include="assets\primitivesurvival\textures\block\necronomicon.png" />
     <Content Include="assets\primitivesurvival\textures\block\relic.png" />
     <Content Include="assets\primitivesurvival\textures\block\stake.png" />
@@ -320,8 +323,11 @@
     <Content Include="assets\primitivesurvival\textures\item\resource\rustygear.png" />
     <Content Include="assets\primitivesurvival\textures\item\resource\temporalgear.png" />
     <Content Include="modinfo.json" />
+    <Compile Include="src\blockbehavior\rightclickpickupraft.cs" />
+    <Compile Include="src\blockbehavior\finiteliquid.cs" />
     <Compile Include="src\blockbehavior\rightclickpickupspawnworm.cs" />
     <Compile Include="src\blockentity\beraft.cs" />
+    <Compile Include="src\block\blockblood.cs" />
     <Compile Include="src\block\blockraft.cs" />
     <Compile Include="src\block\blocknailspike.cs" />
     <Compile Include="src\block\blockhide.cs" />
@@ -370,6 +376,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="assets\primitivesurvival\blocktypes\hide\" />
+    <Folder Include="assets\primitivesurvival\blocktypes\liquid\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\primitivesurvival\itemtypes\fishing\fishfillet.json" />
@@ -418,6 +425,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\primitivesurvival\shapes\block\raft\raft.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\primitivesurvival\recipes\grid\raft.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\game\blocktypes\liquid\blood.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\game\itemtypes\liquid\bloodportion.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\game\lang\en.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\primitivesurvival\itemtypes\liquid\lavaportion.json" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

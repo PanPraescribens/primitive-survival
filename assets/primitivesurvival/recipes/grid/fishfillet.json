@@ -21,7 +21,7 @@
         "output": {
             "type": "item",
             "code": "primitivesurvival:fishfillet-raw",
-            "quantity": 2
+            "quantity": 1
         }
     },
     {
@@ -46,7 +46,7 @@
         "output": {
             "type": "item",
             "code": "primitivesurvival:fishfillet-raw",
-            "quantity": 2
+            "quantity": 1
         }
     },
     {
@@ -71,7 +71,7 @@
         "output": {
             "type": "item",
             "code": "primitivesurvival:fishfillet-raw",
-            "quantity": 2
+            "quantity": 1
         }
     },
     {
@@ -96,7 +96,7 @@
         "output": {
             "type": "item",
             "code": "primitivesurvival:fishfillet-raw",
-            "quantity": 4
+            "quantity": 2
         }
     },
     {
@@ -121,7 +121,7 @@
         "output": {
             "type": "item",
             "code": "primitivesurvival:fishfillet-raw",
-            "quantity": 4
+            "quantity": 2
         }
     },
     {
@@ -146,7 +146,7 @@
         "output": {
             "type": "item",
             "code": "primitivesurvival:fishfillet-raw",
-            "quantity": 4
+            "quantity": 2
         }
     },
     {
@@ -171,7 +171,7 @@
         "output": {
             "type": "item",
             "code": "primitivesurvival:fishfillet-raw",
-            "quantity": 4
+            "quantity": 2
         }
     },
     {
@@ -196,7 +196,7 @@
         "output": {
             "type": "item",
             "code": "primitivesurvival:fishfillet-raw",
-            "quantity": 4
+            "quantity": 2
         }
     },
     {
@@ -221,7 +221,7 @@
         "output": {
             "type": "item",
             "code": "primitivesurvival:fishfillet-raw",
-            "quantity": 8
+            "quantity": 4
         }
     }
 ]
