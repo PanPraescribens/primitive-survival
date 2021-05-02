@@ -13,6 +13,7 @@ Roadmap
  - re-enable slippery fish?
  - Fish not updating in a timely fashion when picked up (i.e. apparent duplication?) - Thanks @boten
  - New: Added blood block/portion - creative only item for now 
+ - Change mold decriptions to like Raw blah blah instead of blah blah (Raw) as per game molds
  
 Version 2.5.7 Updates
 
