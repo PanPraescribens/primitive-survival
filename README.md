@@ -13,7 +13,7 @@ Roadmap
  - re-enable slippery fish?
  - Fish not updating in a timely fashion when picked up (i.e. apparent duplication?) - Thanks @boten
  - New: Added blood block/portion - creative only item for now 
- - Change mold decriptions to like Raw blah blah instead of blah blah (Raw) as per game molds
+ 
  
 Version 2.5.7 Updates
 
@@ -29,6 +29,7 @@ Version 2.5.7 Updates
 - Tweak: Different fish stack sizes - catfish = 16, bass,bluegill,mutated = 64, the rest = 32. Thanks @l33tmaan
 - Tweak: Double the monkey bridge recipe output (yet again) - thanks @Quixote
 - Tweak: Reworked fillets/fish jerky because fillet satiety in meals too low, fish jerky satiety too low - thanks @l33tmaan, others
+- Tweak: - Changed mold decriptions to like Raw blah blah instead of blah blah (Raw) as per game molds
 
 
 Version 2.5.6 Updates
