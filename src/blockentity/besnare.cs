@@ -9,7 +9,7 @@ using Vintagestory.API.Config;
 using Vintagestory.API.Common.Entities;
 
 namespace primitiveSurvival
-{
+{ 
     public class BESnare : BlockEntityDisplay, IAnimalFoodSource
     {
         public string[] baitTypes = { "fruit", "grain", "legume", "meat", "vegetable", "jerky", "mushroom", "bread", "poultry", "pickledvegetable", "redmeat", "bushmeat", "cheese", "fishfillet" };

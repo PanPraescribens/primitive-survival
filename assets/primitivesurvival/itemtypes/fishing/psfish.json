@@ -1,6 +1,12 @@
 {
     "code": "psfish",
-    "maxstacksize": 16,
+    "maxstacksizeByType": {
+        "*-bass*": 64,
+        "*-bluegill*": 64,
+        "*-mutated*": 64,
+        "*-catfish*": 16,
+        "*" : 32
+    },
     "attributesByType": {
         "*-bass*": {
             "inFirePitProps": {

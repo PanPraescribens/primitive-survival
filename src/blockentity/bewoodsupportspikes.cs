@@ -50,7 +50,7 @@ namespace primitiveSurvival
         public float ConsumeOnePortion()
         {
             //TryClearContents();
-            return 0f;
+            return 1f; //Was 0f
         }
 
         public string Type

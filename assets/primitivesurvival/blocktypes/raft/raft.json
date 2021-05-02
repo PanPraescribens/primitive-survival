@@ -21,6 +21,13 @@
             "loadFromProperties": "abstract/horizontalorientation"
         }
     ],
+    "drops": [
+        {
+            "type": "block",
+            "code": "primitivesurvival:raft-north",
+            "quantity": { "avg": 1 }
+        }
+    ],
     "shapebytype": {
         "*-north": {
             "base": "block/raft/raft",

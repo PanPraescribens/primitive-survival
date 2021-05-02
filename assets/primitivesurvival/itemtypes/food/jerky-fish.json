@@ -57,11 +57,11 @@
     },
     "nutritionPropsByType": {
         "*-cooked": {
-            "satiety": 12,
+            "satiety": 24,
             "foodcategory": "Protein"
         },
         "*-cured": {
-            "satiety": 10,
+            "satiety": 20,
             "foodcategory": "Protein"
         }
     },

@@ -7,7 +7,7 @@
         "items": [ "*" ],
         "primitive": [ "*" ]
     },
-    "maxstacksize": 64,
+    "maxstacksize": 128,
     "materialDensity": 410,
     "fpHandTransform": {
         "rotation": {

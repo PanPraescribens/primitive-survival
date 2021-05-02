@@ -5,12 +5,9 @@ using Vintagestory.API.Server;
 
 namespace primitiveSurvival
 {
-    public partial class PrimitaveSurvivalMod : ModSystem
+    public partial class PrimitiveSurvivalMod : ModSystem
     {
         string thisModID = "primitivesurvival";
-        string startMsg;
-        string cfgMsg;
-
         ICoreClientAPI capi;
         ICoreServerAPI sapi;
 
@@ -77,26 +74,14 @@ namespace primitiveSurvival
         public override void StartClientSide(ICoreClientAPI Api)
         {
             capi = Api;
-            /*
-            if (startMsg != null) 
-                capi.ShowChatMessage(startMsg);
-            if (cfgMsg != null) 
-                capi.ShowChatMessage(cfgMsg);
-            */
         }
 
         public override void Start(ICoreAPI api)
         {
             base.Start(api);
             RegisterClasses(api);
-
-            string thisName = api.ModLoader.GetMod(thisModID).Info.Name.ToString();
-            string thisVersion = api.ModLoader.GetMod(thisModID).Info.Version.ToString();
-            startMsg = thisName + " " + thisVersion + " loaded...";
-
-            // Load/create common config file in ..\VintageStoryData\ModConfig\PrimitiveSurvival[ver]Config.json
-            string cfgFileName = thisModID + thisVersion.Replace(".","") + "config.json";
-            cfgMsg = "Using config file";
+            // Load/create common config file in ..\VintageStoryData\ModConfig\primitivesurvival.json
+            string cfgFileName = thisModID + ".json";
             try
             {
                 PrimitiveSurvivalConfig FromDisk;
@@ -107,10 +92,8 @@ namespace primitiveSurvival
             }
             catch
             {
-                cfgMsg = "Error in config file";
-                api.StoreModConfig<PrimitiveSurvivalConfig>(PrimitiveSurvivalConfig.Loaded, "PrimitiveSurvivalConfig.json");
+                api.StoreModConfig<PrimitiveSurvivalConfig>(PrimitiveSurvivalConfig.Loaded, cfgFileName);
             }
-            cfgMsg += ": ..\\ModConfig\\" + cfgFileName;
         }
     }
 
