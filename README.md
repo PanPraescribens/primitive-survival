@@ -11,7 +11,6 @@ Roadmap
 
  - Smoking Rack or Pit Smoker - smoked meat good, jerky strips less good @Boomer Bill
  - re-enable slippery fish?
- - Tweak: Reworked fillets/fish jerky because fillet satiety in meals too low, fish jerky satiety too low - thanks @l33tmaan, others
  - is there a reason you can't go from copper plate to the wooden lantern recipe?
  - Fish not updating in a timely fashion when picked up (i.e. apparent duplication?) - Thanks @boten
  - bug fix:  change POI on pit traps like I did to snares/deadfalls to eliminate the farm life conflict - thanks Thranos!
@@ -27,6 +26,7 @@ Version 2.5.7 Updates
 - Fixed: fishing hooks, lures, nails, spikes dont smelt back into the original materials but some sub labeled material... (and wont stack with actual metal) - thanks @TechRabbit
 - Tweak: Different fish stack sizes - catfish = 16, bass,bluegill,mutated = 64, the rest = 32. Thanks @l33tmaan
 - Tweak: Double the monkey bridge recipe output (yet again) - thanks @Quixote
+- Tweak: Reworked fillets/fish jerky because fillet satiety in meals too low, fish jerky satiety too low - thanks @l33tmaan, others
 
 
 
