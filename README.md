@@ -16,15 +16,16 @@ Roadmap
  - different stack sizes? Like keeping catfish at 16, bumping up trout/carp/whatever up to 32, and bluegill/mutants/bass up to 64? Thanks @l33tmaan
  - is there a reason you can't go from copper plate to the wooden lantern recipe?
  - Fish not updating in a timely fashion when picked up (i.e. apparent duplication?) - Thanks @boten
- - raft not always reverting to raft-north when you pick it up/break it - Thanks @Gox
  - bug fix:  change POI on pit traps like I did to snares/deadfalls to eliminate the farm life conflict - thanks Thranos!
  
 Version 2.5.7 Updates
 
-- Added: common configuration file ..\VintagestoryData\ModConfig\primitivesurvival.json to configure raft speed, prevent altars from dropping gold, customize traps and fishing - thanks @techrabbit, @Quixjote
-- Added: right click pick up raft - thanks @PapaCheddar
-- Added: fish fillets as bait for traps and fishing - thanks Ketrai
+- New: Common configuration file ..\VintagestoryData\ModConfig\primitivesurvival.json to configure raft speed, prevent altars from dropping gold, customize traps and fishing - thanks @techrabbit, @Quixjote
+- New: Some code refactoring
+- New: Right click pick up raft - thanks @PapaCheddar
+- New: fish fillets as bait for traps and fishing - thanks Ketrai
 - Fixed: Bug in German language file - thanks @Kiava
+- Fixed: Raft not always reverting to default orientation (raft-north) when you break it - Thanks @Gox
 - Fixed: fishing hooks, lures, nails, spikes dont smelt back into the original materials but some sub labeled material... (and wont stack with actual metal) - thanks @TechRabbit
 
 
