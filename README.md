@@ -12,8 +12,6 @@ Roadmap
  - Smoking Rack or Pit Smoker - smoked meat good, jerky strips less good @Boomer Bill
  - re-enable slippery fish?
  - pair up fillets so they have more satiety in meals - thanks @l33tmaan
- - double the monkey bridge recipe (again) - thanks @Quixote
- - different stack sizes? Like keeping catfish at 16, bumping up trout/carp/whatever up to 32, and bluegill/mutants/bass up to 64? Thanks @l33tmaan
  - is there a reason you can't go from copper plate to the wooden lantern recipe?
  - Fish not updating in a timely fashion when picked up (i.e. apparent duplication?) - Thanks @boten
  - bug fix:  change POI on pit traps like I did to snares/deadfalls to eliminate the farm life conflict - thanks Thranos!
@@ -27,6 +25,8 @@ Version 2.5.7 Updates
 - Fixed: Bug in German language file - thanks @Kiava
 - Fixed: Raft not always reverting to default orientation (raft-north) when you break it - Thanks @Gox
 - Fixed: fishing hooks, lures, nails, spikes dont smelt back into the original materials but some sub labeled material... (and wont stack with actual metal) - thanks @TechRabbit
+- Tweak: Different fish stack sizes - catfish = 16, bass,bluegill,mutated = 64, the rest = 32. Thanks @l33tmaan
+- Tweak: Double the monkey bridge recipe output (yet again) - thanks @Quixote
 
 
 
