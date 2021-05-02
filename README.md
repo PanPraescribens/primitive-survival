@@ -11,7 +11,7 @@ Roadmap
 
  - Smoking Rack or Pit Smoker - smoked meat good, jerky strips less good @Boomer Bill
  - re-enable slippery fish?
- - pair up fillets so they have more satiety in meals - thanks @l33tmaan
+ - Tweak: Reworked fillets/fish jerky because fillet satiety in meals too low, fish jerky satiety too low - thanks @l33tmaan, others
  - is there a reason you can't go from copper plate to the wooden lantern recipe?
  - Fish not updating in a timely fashion when picked up (i.e. apparent duplication?) - Thanks @boten
  - bug fix:  change POI on pit traps like I did to snares/deadfalls to eliminate the farm life conflict - thanks Thranos!
