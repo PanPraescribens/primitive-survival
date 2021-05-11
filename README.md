@@ -26,7 +26,6 @@ Version 2.5.7 Updates
 - Fixed: Raft not always reverting to default orientation (raft-north) when you break it - Thanks @Gox
 - Fixed: fishing hooks, lures, nails, spikes dont smelt back into the original materials but some sub labeled material... (and wont stack with actual metal) - thanks @TechRabbit
 - Fixed: changed POI on pit traps like I did to snares/deadfalls to eliminate the farm life conflict - thanks Thranos!
-- Fixed: small bug in handbook guide - thanks @qexow!
 - Fixed: Reworked lantern recipe so handbook links would function correctly
 - Tweak: Slowed down the raft.
 - Tweak: Different fish stack sizes - catfish = 16, bass,bluegill,mutated = 64, the rest = 32. Thanks @l33tmaan
