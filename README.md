@@ -12,7 +12,7 @@ Roadmap
  - Smoking Rack or Pit Smoker - smoked meat good, jerky strips less good @Boomer Bill
  - re-enable slippery fish?
  - Fish not updating in a timely fashion when picked up (i.e. apparent duplication?) - Thanks @boten
- - New: Added blood block/portion - creative only item for now 
+ 
  
  
 Version 2.5.7 Updates
@@ -23,6 +23,7 @@ Version 2.5.7 Updates
 - New: Some code refactoring
 - New: Right click pick up raft - thanks @PapaCheddar
 - New: fish fillets as bait for traps and fishing - thanks Ketrai
+- New: Added blood block/portion - creative only item for now, intended for worldgen
 - Fixed: Bug in German language file - thanks @Kiava
 - Fixed: Raft not always reverting to default orientation (raft-north) when you break it - Thanks @Gox
 - Fixed: fishing hooks, lures, nails, spikes dont smelt back into the original materials but some sub labeled material... (and wont stack with actual metal) - thanks @TechRabbit
