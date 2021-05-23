@@ -8,11 +8,12 @@
 			"itemsPerLitre": 1,
 			"texture": { "base": "game:block/liquid/blood" },
 			"tintIndex": 1,
+			"allowSpill": true,
 			"whenSpilled": {
-				"action": "PlaceBlock",
+				"action": "DropContents",
 				"stack": {
-					"type": "block",
-					"code": "game:blood-still-3"
+					"type": "item",
+					"code": "game:bloodportion"
 				},
 				"stackByFillLevel": {
 					"10": {

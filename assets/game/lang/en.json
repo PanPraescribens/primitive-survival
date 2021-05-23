@@ -1,7 +1,7 @@
 {
-    "block-blood-still-7": "still Blood",
+    "block-blood-still-7": "Still Blood",
     "incontainer-block-blood-still-7": "Blood",
-    "incontainer-item-bloodportion": "Blood",
-    "incontainer-block-lava-still-7": "Lava",
-    "incontainer-item-lavaportion": "Lava"
+    "item-bloodportion": "Portion of Blood (1 litre)",
+    "itemdesc-bloodportion": "Blood",
+    "incontainer-item-bloodportion": "Blood"
 }

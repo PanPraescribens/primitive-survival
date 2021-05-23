@@ -102,24 +102,24 @@
     "item-psgear-ethereal": "Ethereal Gear",
     "itemdesc-psgear-ethereal": "Weighty like stone, but it's appearance lacks substance.",
 
-    "block-pslargemold-raw-fishinglure": "Fishing Lure Mold (Raw)",
-    "block-pslargemold-burned-fishinglure": "Fishing Lure Mold (Fired)",
+    "block-pslargemold-raw-fishinglure": "Raw fishing lure mold",
+    "block-pslargemold-burned-fishinglure": "Fishing lure mold",
     "blockcraftdesc-pslargemold-raw-fishinglure": "To cast metal lures to attach to Fishing Hooks",
 
-    "block-pslargemold-raw-metalfishinghook": "Fishing Hook Mold (Raw)",
-    "block-pslargemold-burned-metalfishinghook": "Fishing Hook Mold (Fired)",
+    "block-pslargemold-raw-metalfishinghook": "Raw fishing hook mold",
+    "block-pslargemold-burned-metalfishinghook": "Fishing hook mold",
     "blockcraftdesc-pslargemold-raw-metalfishinghook": "To cast metal hooks to attach to limb lines and trotlines",
 
-    "block-pslargemold-raw-spikeplate": "Bed-O-Nails Mold (Raw)",
-    "block-pslargemold-burned-spikeplate": "Bed-O-Nails Mold (Fired)",
+    "block-pslargemold-raw-spikeplate": "Raw Bed-O-Nails mold",
+    "block-pslargemold-burned-spikeplate": "Bed-O-Nails mold",
     "blockcraftdesc-pslargemold-raw-spikeplate": "A spike covered plate for a pit trap",
 
-    "block-pslargemold-raw-nail": "Nail mold (Raw)",
-    "block-pslargemold-burned-nail": "Nail mold (Fired)",
+    "block-pslargemold-raw-nail": "Raw nail mold",
+    "block-pslargemold-burned-nail": "Nail mold",
     "blockcraftdesc-pslargemold-raw-nail": "To cast metal nails for securely attaching things to wood",
 
-    "block-pslargemold-raw-spike": "Spike mold (Raw)",
-    "block-pslargemold-burned-spike": "Spike mold (Fired)",
+    "block-pslargemold-raw-spike": "Raw spike mold",
+    "block-pslargemold-burned-spike": "Spike mold",
     "blockcraftdesc-pslargemold-raw-spike": "To cast metal spikes for securely attaching things to stone",
 
     "block-nail-bismuth-*": "Nail (Bismuth)",
@@ -545,9 +545,9 @@
 
     "block-raft-*": "Raft",
 
-    "block-blood-still-7" :  "Blood",
-    "item-bloodportion": "Portion of Blood (1 litre)",
-    "itemdesc-bloodportion": "Blood",
+    "block-blood-still-7": "Blood",
     "item-lavaportion": "Portion of Lava (1 litre)",
-    "itemdesc-lavaportion": "Lava"
+    "itemdesc-lavaportion": "Lava",
+    "incontainer-block-lava-still-7": "Lava",
+    "incontainer-item-lavaportion": "Lava"
 }

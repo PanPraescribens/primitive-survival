@@ -17,7 +17,7 @@ namespace primitiveSurvival
 			
 			api.RegisterBlockBehaviorClass ("RightClickPickupSpawnWorm", typeof(RightClickPickupSpawnWorm));
             api.RegisterBlockBehaviorClass("RightClickPickupRaft", typeof(RightClickPickupRaft));
-            api.RegisterBlockBehaviorClass("FiniteLiquid", typeof(FiniteLiquid));
+            //api.RegisterBlockBehaviorClass("FiniteLiquid", typeof(FiniteLiquid));
 
             api.RegisterBlockEntityClass("bedeadfall", typeof(BEDeadfall));
             api.RegisterBlockEntityClass("besnare", typeof(BESnare));

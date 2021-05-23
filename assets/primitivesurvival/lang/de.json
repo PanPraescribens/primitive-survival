@@ -102,24 +102,24 @@
     "item-psgear-ethereal": "flüchtiges Zahnrad",
     "itemdesc-psgear-ethereal": "Schwer wie Stein, aber es fehlt der erscheinung an Substanz.",
 
-    "block-pslargemold-raw-fishinglure": "Fischköderform (roh)",
-    "block-pslargemold-burned-fishinglure": "Fischköderform (gebrannt)",
+    "block-pslargemold-raw-fishinglure": "Roh fischköderform",
+    "block-pslargemold-burned-fishinglure": "Fischköderform",
     "blockcraftdesc-pslargemold-raw-fishinglure": "Zum gießen von Metallködern zur Befestigung an Angelhaken",
 
-    "block-pslargemold-raw-metalfishinghook": "Angelhakenform (roh)",
-    "block-pslargemold-burned-metalfishinghook": "Angelhakenform (gebrannt)",
+    "block-pslargemold-raw-metalfishinghook": "Roh Angelhakenform",
+    "block-pslargemold-burned-metalfishinghook": "Angelhakenform",
     "blockcraftdesc-pslargemold-raw-metalfishinghook": "Zum gießen von Metallködern zur Befestigung an Limblines and trotlines",
 
-    "block-pslargemold-raw-spikeplate": "Stachelplattenform (roh)",
-    "block-pslargemold-burned-spikeplate": "Stachelplattenform (gebrannt)",
+    "block-pslargemold-raw-spikeplate": "Roh stachelplattenform",
+    "block-pslargemold-burned-spikeplate": "Stachelplattenform",
     "blockcraftdesc-pslargemold-raw-spikeplate": "Eine mit Stacheln bedeckte Platte für eine Grubenfalle.",
 
-    "block-pslargemold-raw-nail": "Hakennägelform (roh)",
-    "block-pslargemold-burned-nail": "Hakennägelform (gebrannt)",
+    "block-pslargemold-raw-nail": "Roh hakennägelform",
+    "block-pslargemold-burned-nail": "Hakennägelform",
     "blockcraftdesc-pslargemold-raw-nail": "Zum gießen von Metallhakennägeln zur sicheren Befestigung an Holz",
 
-    "block-pslargemold-raw-spike": "Dornenform (roh)",
-    "block-pslargemold-burned-spike": "Dornenform (gebrannt)",
+    "block-pslargemold-raw-spike": "Roh dornenform",
+    "block-pslargemold-burned-spike": "Dornenform",
     "blockcraftdesc-pslargemold-raw-spike": "Zum gießen von Metalldornen zur sicheren Befestigung an Stein",
 
     "block-nail-bismuth-*": "Hakennagel (Wismut)",
@@ -497,5 +497,11 @@
     "block-woodlantern-oak*": "Holzlaterne (Eiche)",
     "block-woodlantern-pine*": "Holzlaterne (Kiefer)",
 
-    "block-raft-*": "Floß"
+    "block-raft-*": "Floß",
+
+    "block-blood-still-7": "Blood",
+    "item-lavaportion": "Portion of Lava (1 litre)",
+    "itemdesc-lavaportion": "Lava",
+    "incontainer-block-lava-still-7": "Lava",
+    "incontainer-item-lavaportion": "Lava"
 }

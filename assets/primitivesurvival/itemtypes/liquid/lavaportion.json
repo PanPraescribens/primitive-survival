@@ -24,7 +24,7 @@
 		}
 	},
 	"shape": { "base": "game:item/liquid" },
-	"texture": { "base": "primitivesurvival:block/liquid/bloodportion" },
+	"texture": { "base": "primitivesurvival:block/metalbucket/lava" },
 	"creativeinventory": {
 		"general": [ "*" ],
 		"items": [ "*" ],
