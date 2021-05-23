@@ -12,22 +12,28 @@ Roadmap
  - Smoking Rack or Pit Smoker - smoked meat good, jerky strips less good @Boomer Bill
  - re-enable slippery fish?
  - Fish not updating in a timely fashion when picked up (i.e. apparent duplication?) - Thanks @boten
- - New: Added blood block/portion - creative only item for now 
+ 
+ 
  
 Version 2.5.7 Updates
 
 - New: Common configuration file ..\VintagestoryData\ModConfig\primitivesurvival.json to configure raft speed, prevent altars from dropping gold, customize traps and fishing - thanks @techrabbit, @Quixjote
+- New: Decreased default raft speed
+- New: Polish translation courtesy of @qexow!
 - New: Some code refactoring
 - New: Right click pick up raft - thanks @PapaCheddar
 - New: fish fillets as bait for traps and fishing - thanks Ketrai
+- New: Added blood block/portion - creative only item for now, intended for worldgen
 - Fixed: Bug in German language file - thanks @Kiava
 - Fixed: Raft not always reverting to default orientation (raft-north) when you break it - Thanks @Gox
 - Fixed: fishing hooks, lures, nails, spikes dont smelt back into the original materials but some sub labeled material... (and wont stack with actual metal) - thanks @TechRabbit
-- Fixed:  changed POI on pit traps like I did to snares/deadfalls to eliminate the farm life conflict - thanks Thranos!
+- Fixed: changed POI on pit traps like I did to snares/deadfalls to eliminate the farm life conflict - thanks Thranos!
 - Fixed: Reworked lantern recipe so handbook links would function correctly
+- Tweak: Slowed down the raft.
 - Tweak: Different fish stack sizes - catfish = 16, bass,bluegill,mutated = 64, the rest = 32. Thanks @l33tmaan
 - Tweak: Double the monkey bridge recipe output (yet again) - thanks @Quixote
 - Tweak: Reworked fillets/fish jerky because fillet satiety in meals too low, fish jerky satiety too low - thanks @l33tmaan, others
+- Tweak: - Changed mold decriptions to like Raw blah blah instead of blah blah (Raw) as per game molds
 
 
 Version 2.5.6 Updates
