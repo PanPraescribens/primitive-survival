@@ -7,7 +7,9 @@ using Vintagestory.API.MathTools;
 using Vintagestory.GameContent;
 using Vintagestory.API.Datastructures;
 using Vintagestory.API.Config;
+using Vintagestory.API.Server;
 using System.Diagnostics;
+
 
 namespace primitiveSurvival
 {
@@ -185,6 +187,19 @@ namespace primitiveSurvival
                             {
                                 if (catchSlot.Empty)
                                 {
+                                    /*********************************************/
+                                    //depletion check
+                                    int rate = PrimitiveSurvivalMod.fishDepletedPercent(Api as ICoreServerAPI, Pos);
+                                    rando = rnd.Next(100);
+                                    if (rando < rate) //depleted!
+                                    { return; }
+                                    else
+                                    {
+                                        // deplete
+                                        PrimitiveSurvivalMod.UpdateChunkInDictionary(Api as ICoreServerAPI, Pos, PrimitiveSurvivalConfig.Loaded.fishChunkDepletionRate);
+                                    }
+                                    /*********************************************/
+                                    
                                     catchStack = new ItemStack(Api.World.GetItem(new AssetLocation("primitivesurvival:psfish-" + fishTypes[rnd.Next(fishTypes.Count())] + "-raw")), 1);
                                     rando = rnd.Next(2);
                                     if (rando == 0)

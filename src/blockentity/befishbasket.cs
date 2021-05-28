@@ -7,6 +7,7 @@ using Vintagestory.API.MathTools;
 using Vintagestory.GameContent;
 using Vintagestory.API.Config;
 using Vintagestory.API.Datastructures;
+using Vintagestory.API.Server;
 using System.Diagnostics;
 
 namespace primitiveSurvival
@@ -267,6 +268,22 @@ namespace primitiveSurvival
             }
             if (inventory[slot].Empty)
             {
+                if (newStack.Collectible.Code.Path.Contains("psfish"))
+                {
+                    /*********************************************/
+                    //depletion check last
+                    int rate = PrimitiveSurvivalMod.fishDepletedPercent(Api as ICoreServerAPI, Pos);
+                    rando = rnd.Next(100);
+                    if (rando < rate) //depleted!
+                    { return false; }
+                    else
+                    {
+                        // deplete
+                        PrimitiveSurvivalMod.UpdateChunkInDictionary(Api as ICoreServerAPI, Pos, PrimitiveSurvivalConfig.Loaded.fishChunkDepletionRate);
+                    }
+                    /*********************************************/
+                }
+
                 inventory[slot].Itemstack = newStack;
                 //Api.World.BlockAccessor.MarkBlockDirty(pos);
                 MarkDirty(true);
@@ -280,6 +297,15 @@ namespace primitiveSurvival
         {
             if (!inventory[slot].Empty)
             {
+                /*********************************************/
+                //Debug.WriteLine("Escaped: " + inventory[slot].Itemstack.Collectible.Code.Path);
+                if (inventory[slot].Itemstack.Collectible.Code.Path.Contains("psfish"))
+                {
+                    //replete (at deplete rate)
+                    PrimitiveSurvivalMod.UpdateChunkInDictionary(Api as ICoreServerAPI, Pos, -PrimitiveSurvivalConfig.Loaded.fishChunkDepletionRate);
+                }
+                /*********************************************/
+
                 inventory[slot].TakeOutWhole();
 
                 Api.World.BlockAccessor.MarkBlockDirty(pos);

@@ -7,10 +7,13 @@ using Vintagestory.API.MathTools;
 using Vintagestory.GameContent;
 using Vintagestory.API.Config;
 using Vintagestory.API.Datastructures;
+using Vintagestory.API.Server;
 using System.Diagnostics;
+
 
 namespace primitiveSurvival
 {
+    
     public class BEWeirTrap : BlockEntityDisplay
     {
         public int catchPercent = PrimitiveSurvivalConfig.Loaded.weirTrapCatchPercent; //4  
@@ -25,7 +28,6 @@ namespace primitiveSurvival
         public string[] shellColors = { "latte", "plain", "seafoam", "darkpurple", "cinnamon", "turquoise" };
         public string[] relics = { "temporalbase", "temporalcube", "temporallectern", "cthulu-statue", "dagon-statue", "hydra-statue", "necronomicon" };
         public static Random rnd = new Random();
-
 
         public override string InventoryClassName
         {
@@ -185,13 +187,17 @@ namespace primitiveSurvival
             else if (!catch1Slot.Empty || !catch2Slot.Empty)
             {
                 if (escaped < escapePercent)
+                {
                     WorldTake(1, Pos);
+                }
             }
             else
             {
                 caught = rnd.Next(100);
                 if (caught < catchPercent)
+                {
                     WorldPut(1, Pos);
+                }
                 else
                 {
                     if (escaped < escapePercent)
@@ -251,6 +257,21 @@ namespace primitiveSurvival
             if (newStack == null) return false;
             if (inventory[slot].Empty)
             {
+                if (newStack.Collectible.Code.Path.Contains("psfish"))
+                {
+                    /*********************************************/
+                    //depletion check last
+                    int rate = PrimitiveSurvivalMod.fishDepletedPercent(Api as ICoreServerAPI, Pos);
+                    int rando = rnd.Next(100);
+                    if (rando < rate) //depleted!
+                    { return false; }
+                    else
+                    {
+                        // deplete
+                        PrimitiveSurvivalMod.UpdateChunkInDictionary(Api as ICoreServerAPI, Pos, PrimitiveSurvivalConfig.Loaded.fishChunkDepletionRate);
+                    }
+                    /*********************************************/
+                }
                 inventory[slot].Itemstack = newStack;
                 //Api.World.BlockAccessor.MarkBlockDirty(pos);
                 MarkDirty(true);
@@ -264,7 +285,17 @@ namespace primitiveSurvival
         {
             if (!inventory[slot].Empty)
             {
+                /*********************************************/
+                //Debug.WriteLine("Escaped: " + inventory[slot].Itemstack.Collectible.Code.Path);
+                if (inventory[slot].Itemstack.Collectible.Code.Path.Contains("psfish"))
+                {
+                    //replete (at deplete rate)
+                    PrimitiveSurvivalMod.UpdateChunkInDictionary(Api as ICoreServerAPI, Pos, -PrimitiveSurvivalConfig.Loaded.fishChunkDepletionRate);
+                }
+                /*********************************************/
+
                 inventory[slot].TakeOutWhole();
+
                 Api.World.BlockAccessor.MarkBlockDirty(pos);
                 MarkDirty();
                 return true;
@@ -401,7 +432,6 @@ namespace primitiveSurvival
                 }
                 sb.AppendLine().AppendLine();
             }
-
         }
 
 

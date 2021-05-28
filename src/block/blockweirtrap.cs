@@ -3,12 +3,11 @@ using Vintagestory.API.Common;
 using Vintagestory.API.MathTools;
 using System.Diagnostics;
 
+
 namespace primitiveSurvival
 {
     public class BlockWeirTrap : Block
     {
-
-
         public MeshData GenMesh(ICoreClientAPI capi, string shapePath, ITexPositionSource texture, int slot, bool alive, ITesselatorAPI tesselator = null)
         {
             Shape shape = null;
