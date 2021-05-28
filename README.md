@@ -18,6 +18,7 @@ Roadmap
 Version 2.5.7 Updates
 
 - New: Common configuration file ..\VintagestoryData\ModConfig\primitivesurvival.json to configure raft speed, prevent altars from dropping gold, customize traps and fishing - thanks @techrabbit, @Quixjote
+- New: Fish chunk depletion
 - New: Decreased default raft speed
 - New: Polish translation courtesy of @qexow!
 - New: Some code refactoring
