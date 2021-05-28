@@ -1,0 +1,132 @@
+using Vintagestory.API.Client;
+using Vintagestory.API.Common;
+using Vintagestory.API.MathTools;
+using System.Diagnostics;
+
+
+namespace primitiveSurvival
+{
+    public class BlockWeirTrap : Block
+    {
+        public MeshData GenMesh(ICoreClientAPI capi, string shapePath, ITexPositionSource texture, int slot, bool alive, ITesselatorAPI tesselator = null)
+        {
+            Shape shape = null;
+            tesselator = capi.Tesselator;
+            //Debug.WriteLine("Oops " + shapePath);
+            shape = capi.Assets.TryGet(shapePath + ".json").ToObject<Shape>();
+            MeshData mesh;
+            tesselator.TesselateShape(shapePath, shape, out mesh, texture, new Vec3f(0, 0, 0));
+            if (slot == 0)
+            {
+                if (shapePath.Contains("seashell"))
+                { mesh.Translate(-0.4f, 0.1f, -0.2f); }
+                else if (shapePath.Contains("temporal") || shapePath.Contains("statue") || shapePath.Contains("necronomicon"))
+                {
+                    mesh.Translate(-0.4f, 0.1f, 0f);
+                    mesh.Rotate(new Vec3f(0.5f, 0.5f, 0.5f), 0, 20 * GameMath.DEG2RAD, 0);
+                }
+                else
+                {
+                    mesh.Translate(0.5f, 1.4f, -0.6f);
+                    mesh.Rotate(new Vec3f(0.5f, 0.5f, 0.5f), 70 * GameMath.DEG2RAD, 100 * GameMath.DEG2RAD, 230 * GameMath.DEG2RAD);
+                    if (shapePath.Contains("catfish"))
+                    {
+                        mesh.Scale(new Vec3f(0.5f, 0, 0.5f), 0.85f, 0.85f, 0.85f);
+                        mesh.Translate(-0.2f, 0f, -0.3f);
+                    }
+                }
+            }
+            else if (slot == 1)
+            {
+                if (shapePath.Contains("seashell"))
+                { mesh.Translate(0.6f, 0.1f, 0f); }
+                else if (shapePath.Contains("temporal") || shapePath.Contains("statue") || shapePath.Contains("necronomicon"))
+                {
+                    mesh.Translate(0.6f, 0.1f, -0.1f);
+                    mesh.Rotate(new Vec3f(0.5f, 0.5f, 0.5f), 0, 340 * GameMath.DEG2RAD, 0);
+                }
+                else
+                {
+                    mesh.Translate(0.5f, 1.4f, 0.7f);
+                    mesh.Rotate(new Vec3f(0.5f, 0.5f, 0.5f), 70 * GameMath.DEG2RAD, 80 * GameMath.DEG2RAD, 230 * GameMath.DEG2RAD);
+
+                    if (shapePath.Contains("catfish"))
+                    {
+                        mesh.Scale(new Vec3f(0.5f, 0, 0.5f), 0.85f, 0.85f, 0.85f);
+                        mesh.Translate(0.2f, 0f, -0.2f);
+                    }
+                }
+            }
+
+
+            if (alive) //let's animate these fishes
+            {
+                double flength = 0.7;
+                if (shapePath.Contains("catfish"))
+                { flength = 0.8; }
+                else if (shapePath.Contains("bluegill"))
+                { flength = 0; } //make the bluegill really wiggly
+
+                int fishWave = VertexFlags.LeavesWindWaveBitMask | VertexFlags.WeakWaveBitMask;
+                for (int vertexNum = 0; vertexNum < mesh.GetVerticesCount(); vertexNum++)
+                {
+                    //tail first, top fins second
+                    if ((mesh.xyz[3 * vertexNum + 2] > flength - 0.25) || (mesh.xyz[3 * vertexNum + 1] > 0.45)) mesh.Flags[vertexNum] |= fishWave;
+                    else mesh.Flags[vertexNum] |= 6144;
+                }
+            }
+
+
+            mesh.Rotate(new Vec3f(0.5f, 0, 0.5f), 0, Shape.rotateY * GameMath.DEG2RAD, 0); //orient based on direction last
+            return mesh;
+        }
+
+
+
+        public override void OnBlockBroken(IWorldAccessor world, BlockPos pos, IPlayer byPlayer, float dropQuantityMultiplier = 1f)
+        {
+            base.OnBlockBroken(world, pos, byPlayer, dropQuantityMultiplier);
+            world.BlockAccessor.SetBlock(world.GetBlock(new AssetLocation("water-still-7")).BlockId, pos);
+            world.BlockAccessor.GetBlock(pos).OnNeighbourBlockChange(world, pos, pos);
+        }
+
+
+        public override void OnNeighbourBlockChange(IWorldAccessor world, BlockPos pos, BlockPos neibpos)
+        {
+            Block neibBlock = world.BlockAccessor.GetBlock(neibpos);
+
+            if (neibBlock != null)
+            {
+                if (neibBlock.BlockId == 0 || (neibBlock.Code.Path.StartsWith("water")))
+                {
+
+                    // check for open in any of the stakes on the four sides
+                    BlockPos[] weirSidesPos = new BlockPos[] { pos.EastCopy(), pos.WestCopy(), pos.NorthCopy(), pos.SouthCopy() };
+                    Block testBlock;
+                    foreach (BlockPos neighbor in weirSidesPos)
+                    {
+                        testBlock = world.BlockAccessor.GetBlock(neighbor);
+                        if (testBlock.Code.Path.Contains("open") && testBlock.Code.Path.Contains("stakeinwater"))
+                        {
+                            world.BlockAccessor.BreakBlock(pos, null);
+                            string newPath = testBlock.Code.Path.Replace("open", "").Replace("we", "ew").Replace("sn", "ns");
+                            testBlock = world.GetBlock(testBlock.CodeWithPath(newPath));
+                            if (testBlock != null)
+                            {
+                                world.BlockAccessor.SetBlock(testBlock.BlockId, neighbor);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        public override bool OnBlockInteractStart(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel)
+        {
+            BEWeirTrap bedc = world.BlockAccessor.GetBlockEntity(blockSel.Position) as BEWeirTrap;
+            if (bedc != null) return bedc.OnInteract(byPlayer, blockSel);
+            return base.OnBlockInteractStart(world, byPlayer, blockSel);
+            //return false;
+        }
+    }
+}
