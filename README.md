@@ -12,9 +12,8 @@ Roadmap
  - Smoking Rack or Pit Smoker - smoked meat good, jerky strips less good @Boomer Bill
  - re-enable slippery fish?
  - Fish not updating in a timely fashion when picked up (i.e. apparent duplication?) - Thanks @boten
- 
- 
- 
+ - ask chunk system to unload the fishing trap chunks - thanks @Capsup
+  
 Version 2.5.7 Updates
 
 - New: Common configuration file ..\VintagestoryData\ModConfig\primitivesurvival.json to configure raft speed, prevent altars from dropping gold, customize traps and fishing - thanks @techrabbit, @Quixjote
