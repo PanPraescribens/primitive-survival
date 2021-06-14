@@ -2,10 +2,6 @@
 
 <h2>Source code for the Vintage Story Primitive Survival mod.</h2>
 
-Documentation and latest download moved here:
-
-https://www.vintagestory.at/forums/topic/2399-primitive-survival-traps-fishing-and-other-surprises/
-
 
 **Roadmap**
 
@@ -133,3 +129,9 @@ https://www.vintagestory.at/forums/topic/2399-primitive-survival-traps-fishing-a
 - added spike and nail mold 
 - fixed RC8 fishing crash (related to meteoric iron)
 
+
+**More Info:**
+
+https://mods.vintagestory.at/show/mod/15
+
+https://www.vintagestory.at/forums/topic/2399-primitive-survival-traps-fishing-and-other-surprises/
