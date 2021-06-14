@@ -1,6 +1,0 @@
-{
-  "code": "textureiron",
-  "textures": {
-    "hookmaterial": { "base": "game:block/metal/ingot/iron" }
-  }
-}

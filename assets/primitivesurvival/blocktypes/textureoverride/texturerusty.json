@@ -1,6 +1,0 @@
-{
-  "code": "texturerusty",
-  "textures": {
-    "rusty-iron": { "base": "item/resource/rustygear" }
-  }
-}
