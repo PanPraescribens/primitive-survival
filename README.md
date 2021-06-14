@@ -20,7 +20,7 @@ Version 2.5.7 Updates
 - New: Fish chunk depletion/repletion, thanks @Gox
 - New: Decreased default raft speed
 - New: Polish translation courtesy of @qexow!
-- New: Some code refactoring
+- New: Refactored code/leveraged Capsup's VS Mod Template: https://gitlab.com/vsmods-public/foundation/vsmodtemplate - - Thanks @Capsup!
 - New: Right click pick up raft - thanks @PapaCheddar
 - New: fish fillets as bait for traps and fishing - thanks Ketrai
 - New: Added blood block/portion - creative only item for now, intended for worldgen
