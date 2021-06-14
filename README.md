@@ -24,6 +24,7 @@ Version 2.5.7 Updates
 - New: Right click pick up raft - thanks @PapaCheddar
 - New: fish fillets as bait for traps and fishing - thanks Ketrai
 - New: Added blood block/portion - creative only item for now, intended for worldgen
+- New: Bald cypress, Larch, Redwood, Ebony, Walnut, Purpleheart wood lantern Variants
 - Fixed: Bug in German language file - thanks @Kiava
 - Fixed: Raft not always reverting to default orientation (raft-north) when you break it - Thanks @Gox
 - Fixed: fishing hooks, lures, nails, spikes dont smelt back into the original materials but some sub labeled material... (and wont stack with actual metal) - thanks @TechRabbit
