@@ -1,0 +1,26 @@
+[
+  {
+    "file": "game:blocktypes/wood/loosestick",
+    "op": "add",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "RightClickPickupSpawnWorm"
+    }
+  },
+  {
+    "file": "game:blocktypes/stone/looseflints",
+    "op": "add",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "RightClickPickupSpawnWorm"
+    }
+  },
+  {
+    "file": "game:blocktypes/stone/loosestones",
+    "op": "add",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "RightClickPickupSpawnWorm"
+    }
+  }
+]

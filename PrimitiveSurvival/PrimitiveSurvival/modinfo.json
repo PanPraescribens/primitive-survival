@@ -1,0 +1,12 @@
+{
+    "type": "code",
+    "modid": "primitivesurvival",
+    "name": "Primitive Survival",
+    "description": "Traps, Fishing, and other Surprises!",
+    "authors": [ "Spear And Fang", "Siddly" ],
+    "version": "2.5.7",
+    "dependency": {
+        "game": "1.15.0"
+    },	"website": "https://gitlab.com/spearandfangVS"
+}
+
