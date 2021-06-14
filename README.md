@@ -14,7 +14,7 @@ Roadmap
  - Fish not updating in a timely fashion when picked up (i.e. apparent duplication?) - Thanks @boten
  - ask chunk system to unload the fishing trap chunks - thanks @Capsup
   
-Version 2.5.7 Updates
+Version 2.5.7 Updates - testing performed under v1.15.0-pre.3 (unstable)
 
 - New: Common configuration file ..\VintagestoryData\ModConfig\primitivesurvival.json to configure raft speed, prevent altars from dropping gold, customize traps and fishing - thanks @techrabbit, @Quixjote
 - New: Fish chunk depletion/repletion, thanks @Gox
