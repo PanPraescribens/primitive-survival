@@ -1,6 +1,5 @@
 {
     "code": "fishinghook",
-    "class": "itemfishinghook",
     "attributes": {
         "displaycaseable": false,
         "shelvable": false

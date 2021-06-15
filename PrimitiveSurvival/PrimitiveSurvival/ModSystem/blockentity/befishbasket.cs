@@ -38,6 +38,8 @@ namespace PrimitiveSurvival.ModSystem
 
         public override InventoryBase Inventory => this.inventory;
 
+        private AssetLocation wetPickupSound;
+        private AssetLocation dryPickupSound;
 
         public BEFishBasket()
         {
@@ -76,9 +78,11 @@ namespace PrimitiveSurvival.ModSystem
             base.Initialize(api);
             if (api.Side.IsServer())
             {
-                this.RegisterGameTickListener(this.ParticleUpdate, this.tickSeconds * 1000);
-                this.RegisterGameTickListener(this.FishBasketUpdate, (int)(this.updateMinutes * 60000));
+                var particleTick = this.RegisterGameTickListener(this.ParticleUpdate, this.tickSeconds * 1000);
+                var updateTick = this.RegisterGameTickListener(this.FishBasketUpdate, (int)(this.updateMinutes * 60000));
             }
+            this.wetPickupSound = new AssetLocation("game", "sounds/environment/smallsplash");
+            this.dryPickupSound = new AssetLocation("game", "sounds/block/cloth");
         }
 
 
@@ -302,7 +306,17 @@ namespace PrimitiveSurvival.ModSystem
             if (slot.Empty)
             {
                 if (this.TryTake(byPlayer))
-                { return true; }
+                {
+                    if (this.Block.Code.Path.Contains("inwater"))
+                    {
+                        this.Api.World.PlaySoundAt(this.wetPickupSound, blockSel.Position.X, blockSel.Position.Y, blockSel.Position.Z);
+                    }
+                    else
+                    {
+                        this.Api.World.PlaySoundAt(this.dryPickupSound, blockSel.Position.X, blockSel.Position.Y, blockSel.Position.Z);
+                    }
+                    return true;
+                }
                 return false;
             }
             else
@@ -311,7 +325,17 @@ namespace PrimitiveSurvival.ModSystem
                 if (colObj.Attributes != null)
                 {
                     if (this.TryPut(slot, blockSel))
-                    { return true; }
+                    {
+                        if (this.Block.Code.Path.Contains("inwater"))
+                        {
+                            this.Api.World.PlaySoundAt(this.wetPickupSound, blockSel.Position.X, blockSel.Position.Y, blockSel.Position.Z);
+                        }
+                        else
+                        {
+                            this.Api.World.PlaySoundAt(this.dryPickupSound, blockSel.Position.X, blockSel.Position.Y, blockSel.Position.Z);
+                        }
+                        return true;
+                    }
                     return false;
                 }
             }

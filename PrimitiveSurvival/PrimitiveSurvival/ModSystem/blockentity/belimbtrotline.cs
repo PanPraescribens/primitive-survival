@@ -34,6 +34,9 @@ namespace PrimitiveSurvival.ModSystem
 
         public override InventoryBase Inventory => this.inventory;
 
+        private AssetLocation wetPickupSound;
+        private AssetLocation dryPickupSound;
+
         public BELimbTrotLineLure()
         {
             this.inventory = new InventoryGeneric(this.maxSlots, null, null);
@@ -79,9 +82,11 @@ namespace PrimitiveSurvival.ModSystem
             base.Initialize(api);
             if (api.Side.IsServer())
             {
-                this.RegisterGameTickListener(this.ParticleUpdate, this.tickSeconds * 1000);
-                this.RegisterGameTickListener(this.LimbTrotLineUpdate, (int)(this.updateMinutes * 60000));
+                var particleTick = this.RegisterGameTickListener(this.ParticleUpdate, this.tickSeconds * 1000);
+                var updateTick = this.RegisterGameTickListener(this.LimbTrotLineUpdate, (int)(this.updateMinutes * 60000));
             }
+            this.wetPickupSound = new AssetLocation("game", "sounds/environment/smallsplash");
+            this.dryPickupSound = new AssetLocation("game", "sounds/block/cloth");
         }
 
 
@@ -233,10 +238,22 @@ namespace PrimitiveSurvival.ModSystem
         internal bool OnInteract(IPlayer byPlayer, BlockSelection blockSel)
         {
             var playerSlot = byPlayer.InventoryManager.ActiveHotbarSlot;
+            var belowblock = new BlockPos(this.Pos.X, this.Pos.Y - 1, this.Pos.Z);
+            var belowBlock = this.Api.World.BlockAccessor.GetBlock(belowblock);
             if (playerSlot.Empty)
             {
                 if (this.TryTake(byPlayer, blockSel))
-                { return true; }
+                {
+                    if ((belowBlock.LiquidCode == "water") && (!belowBlock.Code.Path.Contains("inwater")))
+                    {
+                        this.Api.World.PlaySoundAt(this.wetPickupSound, blockSel.Position.X, blockSel.Position.Y - 1, blockSel.Position.Z, byPlayer);
+                    }
+                    else
+                    {
+                        this.Api.World.PlaySoundAt(this.dryPickupSound, blockSel.Position.X, blockSel.Position.Y, blockSel.Position.Z, byPlayer);
+                    }
+                    return true;
+                }
                 return false;
             }
             else
@@ -246,7 +263,17 @@ namespace PrimitiveSurvival.ModSystem
                 if (colObj.Attributes != null)
                 {
                     if (this.TryPut(playerSlot))
-                    { return true; }
+                    {
+                        if ((belowBlock.LiquidCode == "water") && (!belowBlock.Code.Path.Contains("inwater")))
+                        {
+                            this.Api.World.PlaySoundAt(this.wetPickupSound, blockSel.Position.X, blockSel.Position.Y - 1, blockSel.Position.Z, byPlayer);
+                        }
+                        else
+                        {
+                            this.Api.World.PlaySoundAt(this.dryPickupSound, blockSel.Position.X, blockSel.Position.Y, blockSel.Position.Z, byPlayer);
+                        }
+                        return true;
+                    }
                     return false;
                 }
             }

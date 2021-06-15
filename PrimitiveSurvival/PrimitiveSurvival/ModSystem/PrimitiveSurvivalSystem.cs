@@ -67,11 +67,11 @@ namespace PrimitiveSurvival.ModSystem
             api.RegisterItemClass("itemearthworm", typeof(ItemEarthworm));
         }
 
-        public override void StartServerSide(ICoreServerAPI Api)
+        public override void StartServerSide(ICoreServerAPI api)
         {
-            Api.Event.SaveGameLoaded += this.OnSaveGameLoading;
-            Api.Event.GameWorldSave += this.OnSaveGameSaving;
-            Api.Event.RegisterGameTickListener(this.RepleteFishStocks, 6000);
+            api.Event.SaveGameLoaded += this.OnSaveGameLoading;
+            api.Event.GameWorldSave += this.OnSaveGameSaving;
+            var repleteTick = api.Event.RegisterGameTickListener(this.RepleteFishStocks, 60000 * ModConfig.Loaded.FishRepletionMinutes);
         }
 
 
@@ -118,10 +118,10 @@ namespace PrimitiveSurvival.ModSystem
             fishingChunks.Add(chunk, fishing);
         }
 
-        public static void UpdateChunkInDictionary(ICoreServerAPI api, BlockPos Pos, int rate)
+        public static void UpdateChunkInDictionary(ICoreServerAPI api, BlockPos pos, int rate)
         {
             //deplete
-            var chunk = api.WorldManager.GetChunk(Pos);
+            var chunk = api.WorldManager.GetChunk(pos);
             if (!fishingChunks.ContainsKey(chunk))
             { AddChunkToDictionary(chunk); }
             if (0 <= fishingChunks[chunk] && fishingChunks[chunk] <= 100)

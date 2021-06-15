@@ -33,7 +33,7 @@ namespace PrimitiveSurvival.ModSystem
 
         public override InventoryBase Inventory => this.inventory;
 
-
+        private AssetLocation wetPickupSound;
         public BEWeirTrap()
         {
             this.inventory = new InventoryGeneric(this.maxSlots, null, null);
@@ -63,9 +63,10 @@ namespace PrimitiveSurvival.ModSystem
             base.Initialize(api);
             if (api.Side.IsServer())
             {
-                this.RegisterGameTickListener(this.ParticleUpdate, this.tickSeconds * 1000);
-                this.RegisterGameTickListener(this.WeirTrapUpdate, (int)(this.updateMinutes * 60000));
+                var particleTick = this.RegisterGameTickListener(this.ParticleUpdate, this.tickSeconds * 1000);
+                var updateTick = this.RegisterGameTickListener(this.WeirTrapUpdate, (int)(this.updateMinutes * 60000));
             }
+            this.wetPickupSound = new AssetLocation("game", "sounds/environment/smallsplash");
         }
 
 
@@ -303,13 +304,16 @@ namespace PrimitiveSurvival.ModSystem
         }
 
 
-        internal bool OnInteract(IPlayer byPlayer)
+        internal bool OnInteract(IPlayer byPlayer, BlockSelection blockSel)
         {
             var playerSlot = byPlayer.InventoryManager.ActiveHotbarSlot;
             if (playerSlot.Empty)
             {
                 if (this.TryTake(byPlayer))
-                { return true; }
+                {
+                    this.Api.World.PlaySoundAt(this.wetPickupSound, blockSel.Position.X, blockSel.Position.Y, blockSel.Position.Z);
+                    return true;
+                }
                 return false;
             }
             else
@@ -318,7 +322,10 @@ namespace PrimitiveSurvival.ModSystem
                 if (colObj.Attributes != null)
                 {
                     if (this.TryPut(playerSlot))
-                    { return true; }
+                    {
+                        this.Api.World.PlaySoundAt(this.wetPickupSound, blockSel.Position.X, blockSel.Position.Y, blockSel.Position.Z);
+                        return true;
+                    }
                     return false;
                 }
             }
