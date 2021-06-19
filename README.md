@@ -6,6 +6,7 @@
 
  - Smoking Rack or Pit Smoker - smoked meat good, jerky strips less good @Boomer Bill
  - re-enable slippery fish?
+ - add sound effects to temporal altar (like raft or fishing traps)
  - Fish not updating in a timely fashion when picked up (i.e. apparent duplication?) - Thanks @boten
   
 **Version 2.5.7 Updates - testing performed under v1.15.0-pre.3 (unstable)**
