@@ -18,7 +18,7 @@
 - New: Refactored code/leveraged Capsup's VS Mod Template: https://gitlab.com/vsmods-public/foundation/vsmodtemplate - - Thanks @Capsup!
 - New: Right click pick up raft - thanks @PapaCheddar
 - New: fish fillets as bait for traps and fishing - thanks Ketrai
-- New: more sound effects for fish traps
+- New: more sound effects for fish traps and raft
 - New: Added blood block/portion - creative only item for now, intended for worldgen
 - New: Bald cypress, Larch, Redwood, Ebony, Walnut, Purpleheart wood lantern Variants
 - Fixed: Bug in German language file - thanks @Kiava
