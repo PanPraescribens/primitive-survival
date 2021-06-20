@@ -29,8 +29,9 @@ namespace PrimitiveSurvival.ModSystem
         private readonly string[] shellStates = { "scallop", "sundial", "turritella", "clam", "conch", "seastar", "volute" };
         private readonly string[] shellColors = { "latte", "plain", "seafoam", "darkpurple", "cinnamon", "turquoise" };
         private readonly string[] relics = { "psgear-astral", "psgear-ethereal" };
-
         protected static readonly Random Rnd = new Random();
+
+        private long particleTick;
 
         public override string InventoryClassName => "fishbasket";
 
@@ -78,13 +79,18 @@ namespace PrimitiveSurvival.ModSystem
             base.Initialize(api);
             if (api.Side.IsServer())
             {
-                var particleTick = this.RegisterGameTickListener(this.ParticleUpdate, this.tickSeconds * 1000);
+                this.particleTick = this.RegisterGameTickListener(this.ParticleUpdate, this.tickSeconds * 1000);
                 var updateTick = this.RegisterGameTickListener(this.FishBasketUpdate, (int)(this.updateMinutes * 60000));
             }
             this.wetPickupSound = new AssetLocation("game", "sounds/environment/smallsplash");
             this.dryPickupSound = new AssetLocation("game", "sounds/block/cloth");
         }
 
+        public override void OnBlockUnloaded()
+        {
+            base.OnBlockUnloaded();
+            this.UnregisterGameTickListener(this.particleTick);
+        }
 
         private void GenerateWaterParticles(int slot, string type, BlockPos pos, IWorldAccessor world)
         {

@@ -13,6 +13,7 @@ namespace PrimitiveSurvival.ModSystem
     {
         private readonly string thisModID = "primitivesurvival";
         private static Dictionary<IServerChunk, int> fishingChunks;
+        private ICoreServerAPI sapi;
 
         public void RegisterClasses(ICoreAPI api)
         {
@@ -67,18 +68,12 @@ namespace PrimitiveSurvival.ModSystem
             api.RegisterItemClass("itemearthworm", typeof(ItemEarthworm));
         }
 
+
         public override void StartServerSide(ICoreServerAPI api)
         {
-            api.Event.SaveGameLoaded += this.OnSaveGameLoading;
-            api.Event.GameWorldSave += this.OnSaveGameSaving;
-            var repleteTick = api.Event.RegisterGameTickListener(this.RepleteFishStocks, 60000 * ModConfig.Loaded.FishRepletionMinutes);
-        }
+            base.StartServerSide(api);
+            this.sapi = api;
 
-
-        public override void Start(ICoreAPI api)
-        {
-            base.Start(api);
-            this.RegisterClasses(api);
             // Load/create common config file in ..\VintageStoryData\ModConfig\primitivesurvival.json
             var cfgFileName = this.thisModID + ".json";
             try
@@ -93,22 +88,50 @@ namespace PrimitiveSurvival.ModSystem
             {
                 api.StoreModConfig(ModConfig.Loaded, cfgFileName);
             }
+
+            api.Event.SaveGameLoaded += this.OnSaveGameLoading;
+            api.Event.GameWorldSave += this.OnSaveGameSaving;
+            var repleteTick = api.Event.RegisterGameTickListener(this.RepleteFishStocks, 60000 * ModConfig.Loaded.FishRepletionMinutes);
+        }
+
+
+        public override void Start(ICoreAPI api)
+        {
+            base.Start(api);
+            this.RegisterClasses(api);
         }
 
 
         private void OnSaveGameLoading()
         {
             fishingChunks = new Dictionary<IServerChunk, int>();
+
+            //////////////////////////////////////////////////////////////
+            // attempt to load the (short) list of all active fishing chunks
+            var data = this.sapi.WorldManager.SaveGame.GetData("fishingchunks");
+            if (data != null)
+            {
+                fishingChunks = SerializerUtil.Deserialize<Dictionary<IServerChunk, int>>(data);
+            }
+            //////////////////////////////////////////////////////////////
         }
 
         private void OnSaveGameSaving()
         {
+            var count = 0;
             foreach (var chunk in fishingChunks)
             {
                 if (chunk.Value == 0)
                 { continue; }
+                count++;
                 chunk.Key.SetServerModdata(this.thisModID, SerializerUtil.Serialize(chunk.Value));
             }
+            Debug.WriteLine("----------- Chunk depletion data saved in " + count + " chunks");
+
+            /////////////////////////////////////////////////////////////////
+            // now attempt to save the (short) list of all active fishing chunks
+            this.sapi.WorldManager.SaveGame.StoreData("fishingchunks", SerializerUtil.Serialize(fishingChunks));
+            /////////////////////////////////////////////////////////////////
         }
 
         private static void AddChunkToDictionary(IServerChunk chunk)
@@ -137,18 +160,20 @@ namespace PrimitiveSurvival.ModSystem
             var msg = "depleted (caught)";
             if (rate < 0)
             { msg = "repleted (escaped)"; }
-            Debug.WriteLine("Chunk " + msg + ":" + fishing);
+            Debug.WriteLine("----------- Chunk " + chunk.GetHashCode() + " - " + msg + ":" + fishing);
         }
 
         private void RepleteFishStocks(float par)
         {
+
             foreach (var key in fishingChunks.Keys.ToList())
             {
                 fishingChunks[key] = fishingChunks[key] - ModConfig.Loaded.FishChunkRepletionRate;
                 if (fishingChunks[key] < 0)
                 { fishingChunks[key] = 0; }
                 //Debug
-                Debug.WriteLine("Chunk repletion:" + fishingChunks[key]);
+
+                Debug.WriteLine("----------- Chunk repletion:" + fishingChunks[key]);
             }
         }
 

@@ -3,12 +3,14 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Common;
     using Vintagestory.API.Client;
     using PrimitiveSurvival.ModConfig;
+    using System.Diagnostics;
 
     public class BlockRaft : Block
     {
 
         private long handlerId;
-
+        public ILoadedSound wsound;
+        //private AssetLocation splashSound = new AssetLocation("game", "sounds/environment/waterwaves");
 
         public override bool TryPlaceBlock(IWorldAccessor world, IPlayer byPlayer, ItemStack itemstack, BlockSelection blockSel, ref string failureCode)
         {
@@ -26,9 +28,29 @@ namespace PrimitiveSurvival.ModSystem
             return placed;
         }
 
+        public override void OnHeldInteractStart(ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, bool firstEvent, ref EnumHandHandling handling)
+        {
+            handling = EnumHandHandling.PreventDefault;
+            base.OnHeldInteractStart(slot, byEntity, blockSel, entitySel, firstEvent, ref handling);
+        }
 
         public override void OnHeldIdle(ItemSlot slot, EntityAgent byEntity)
         {
+            if (byEntity.World is IClientWorldAccessor)
+            {
+                if (this.wsound == null)
+                {
+                    byEntity.World.Api.ObjectCache["raftSound"] = this.wsound = (byEntity.World as IClientWorldAccessor).LoadSound(new SoundParams()
+                    {
+                        Location = new AssetLocation("sounds/environment/largesplash1.ogg"),
+                        ShouldLoop = true,
+                        DisposeOnFinish = false,
+                        Volume = 0.3f,
+                        Pitch = 1f
+                    });
+                }
+            }
+
             if (byEntity.World.Side == EnumAppSide.Client)
             {
                 byEntity.World.UnregisterCallback(this.handlerId);
@@ -43,6 +65,11 @@ namespace PrimitiveSurvival.ModSystem
                     //in water
                     byEntity.StartAnimation("swim");
 
+                    this.wsound.SetPosition(byEntity.Pos.XYZ.ToVec3f());
+                    if (!this.wsound.IsPlaying)
+                    {
+                        this.wsound.Start();
+                    }
                     this.FpHandTransform.Rotation.X = -120;
                     this.FpHandTransform.Rotation.Y = 44;
                     this.FpHandTransform.Rotation.Z = 180;
@@ -105,6 +132,19 @@ namespace PrimitiveSurvival.ModSystem
             this.TpHandTransform.Origin.Y = 0.25f;
             this.TpHandTransform.Origin.Z = 0f;
             this.TpHandTransform.Scale = 0.94f;
+
+            if (byEntity.World is IClientWorldAccessor)
+            {
+                if (this.wsound != null)
+                {
+                    if (this.wsound.IsPlaying)
+                    {
+                        this.wsound?.Stop();
+                        this.wsound?.Dispose();
+                        this.wsound = null;
+                    }
+                }
+            }
         }
 
         private void AfterAwhile(float dt)
@@ -116,13 +156,9 @@ namespace PrimitiveSurvival.ModSystem
             if (byEntity.RightHandItemSlot.Itemstack != null)
             { stackname = byEntity.RightHandItemSlot.Itemstack.GetName(); }
             if (stackname != "Raft")
-            { this.CancelRaft(byEntity); }
-        }
-
-        public override void OnHeldInteractStart(ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, bool firstEvent, ref EnumHandHandling handling)
-        {
-            handling = EnumHandHandling.PreventDefault;
-            base.OnHeldInteractStart(slot, byEntity, blockSel, entitySel, firstEvent, ref handling);
+            {
+                this.CancelRaft(byEntity);
+            }
         }
     }
 }

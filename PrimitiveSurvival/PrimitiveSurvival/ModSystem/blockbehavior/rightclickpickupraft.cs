@@ -12,8 +12,10 @@ namespace PrimitiveSurvival.ModSystem
         }
 
 
-        public override void Initialize(JsonObject properties) => base.Initialize(properties);
-
+        public override void Initialize(JsonObject properties)
+        {
+            base.Initialize(properties);
+        }
 
         public override bool OnBlockInteractStart(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel, ref EnumHandling handling)
         {
@@ -42,10 +44,14 @@ namespace PrimitiveSurvival.ModSystem
         }
 
 
-        public override ItemStack OnPickBlock(IWorldAccessor world, BlockPos pos, ref EnumHandling handling) => base.OnPickBlock(world, pos, ref handling);
+        public override ItemStack OnPickBlock(IWorldAccessor world, BlockPos pos, ref EnumHandling handling)
+        {
+            return base.OnPickBlock(world, pos, ref handling);
+        }
 
-
-        public override WorldInteraction[] GetPlacedBlockInteractionHelp(IWorldAccessor world, BlockSelection selection, IPlayer forPlayer, ref EnumHandling handled) => new WorldInteraction[]
+        public override WorldInteraction[] GetPlacedBlockInteractionHelp(IWorldAccessor world, BlockSelection selection, IPlayer forPlayer, ref EnumHandling handled)
+        {
+            return new WorldInteraction[]
             {
                     new WorldInteraction()
                     {
@@ -54,6 +60,7 @@ namespace PrimitiveSurvival.ModSystem
                         RequireFreeHand = true
                     }
             };
+        }
     }
 }
 

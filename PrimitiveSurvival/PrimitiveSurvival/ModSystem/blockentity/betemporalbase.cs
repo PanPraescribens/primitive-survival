@@ -56,6 +56,7 @@ namespace PrimitiveSurvival.ModSystem
         }
 
 
+
         private void GenerateTerrorParticles(BlockPos pos, IWorldAccessor world, int color, int gearcount, float gravityEffect)
         {
             if (gearcount > 0)

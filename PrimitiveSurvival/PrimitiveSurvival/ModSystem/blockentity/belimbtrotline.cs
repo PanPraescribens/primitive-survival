@@ -11,6 +11,7 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Config;
     using Vintagestory.API.Server;
     using PrimitiveSurvival.ModConfig;
+    using System.Diagnostics;
 
     public class BELimbTrotLineLure : BlockEntityDisplay
     {
@@ -26,8 +27,9 @@ namespace PrimitiveSurvival.ModSystem
         private readonly int maxSlots = 4;
         private readonly string[] baitTypes = { "fruit", "grain", "legume", "meat", "vegetable", "jerky", "mushroom", "bread", "poultry", "pickledvegetable", "redmeat", "bushmeat", "earthworm", "cheese", "fishfillet" };
         private readonly string[] fishTypes = { "trout", "perch", "carp", "bass", "pike", "arcticchar", "catfish", "bluegill" };
-
         private static readonly Random Rnd = new Random();
+
+        private long particleTick;
 
         public override string InventoryClassName => "limbtrotlinelure";
         protected InventoryGeneric inventory;
@@ -42,7 +44,6 @@ namespace PrimitiveSurvival.ModSystem
             this.inventory = new InventoryGeneric(this.maxSlots, null, null);
             this.meshes = new MeshData[this.maxSlots];
         }
-
 
         public ItemSlot HookSlot => this.inventory[0];
 
@@ -82,11 +83,18 @@ namespace PrimitiveSurvival.ModSystem
             base.Initialize(api);
             if (api.Side.IsServer())
             {
-                var particleTick = this.RegisterGameTickListener(this.ParticleUpdate, this.tickSeconds * 1000);
+                this.particleTick = this.RegisterGameTickListener(this.ParticleUpdate, this.tickSeconds * 1000);
                 var updateTick = this.RegisterGameTickListener(this.LimbTrotLineUpdate, (int)(this.updateMinutes * 60000));
             }
             this.wetPickupSound = new AssetLocation("game", "sounds/environment/smallsplash");
             this.dryPickupSound = new AssetLocation("game", "sounds/block/cloth");
+        }
+
+
+        public override void OnBlockUnloaded()
+        {
+            base.OnBlockUnloaded();
+            this.UnregisterGameTickListener(this.particleTick);
         }
 
 
@@ -185,7 +193,7 @@ namespace PrimitiveSurvival.ModSystem
                                         PrimitiveSurvivalSystem.UpdateChunkInDictionary(this.Api as ICoreServerAPI, this.Pos, ModConfig.Loaded.FishChunkDepletionRate);
                                     }
                                     /*********************************************/
-
+                                    Debug.WriteLine("fish on hook");
                                     this.CatchStack = new ItemStack(this.Api.World.GetItem(new AssetLocation("primitivesurvival:psfish-" + this.fishTypes[Rnd.Next(this.fishTypes.Count())] + "-raw")), 1);
                                     rando = Rnd.Next(2);
                                     if (rando == 0)
@@ -208,6 +216,19 @@ namespace PrimitiveSurvival.ModSystem
                         {
                             if (this.CatchSlot.Empty)
                             {
+                                /*********************************************/
+                                //depletion check
+                                var rate = PrimitiveSurvivalSystem.FishDepletedPercent(this.Api as ICoreServerAPI, this.Pos);
+                                var rando = Rnd.Next(100);
+                                if (rando < rate) //depleted!
+                                { return; }
+                                else
+                                {
+                                    // deplete
+                                    PrimitiveSurvivalSystem.UpdateChunkInDictionary(this.Api as ICoreServerAPI, this.Pos, ModConfig.Loaded.FishChunkDepletionRate);
+                                }
+                                /*********************************************/
+                                Debug.WriteLine("fish on hook");
                                 this.CatchStack = new ItemStack(this.Api.World.GetItem(new AssetLocation("primitivesurvival:psfish-" + this.fishTypes[Rnd.Next(this.fishTypes.Count())] + "-raw")), 1);
                                 this.MarkDirty();
                                 //Api.World.BlockAccessor.MarkBlockDirty(Pos);

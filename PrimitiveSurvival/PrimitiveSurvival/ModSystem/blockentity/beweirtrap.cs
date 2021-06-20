@@ -28,6 +28,8 @@ namespace PrimitiveSurvival.ModSystem
         private readonly string[] relics = { "temporalbase", "temporalcube", "temporallectern", "cthulu-statue", "dagon-statue", "hydra-statue", "necronomicon" };
         private static readonly Random Rnd = new Random();
 
+        private long particleTick;
+
         public override string InventoryClassName => "weirtrap";
         protected InventoryGeneric inventory;
 
@@ -57,18 +59,22 @@ namespace PrimitiveSurvival.ModSystem
             set => this.inventory[1].Itemstack = value;
         }
 
-
         public override void Initialize(ICoreAPI api)
         {
             base.Initialize(api);
             if (api.Side.IsServer())
             {
-                var particleTick = this.RegisterGameTickListener(this.ParticleUpdate, this.tickSeconds * 1000);
+                this.particleTick = this.RegisterGameTickListener(this.ParticleUpdate, this.tickSeconds * 1000);
                 var updateTick = this.RegisterGameTickListener(this.WeirTrapUpdate, (int)(this.updateMinutes * 60000));
             }
             this.wetPickupSound = new AssetLocation("game", "sounds/environment/smallsplash");
         }
 
+        public override void OnBlockUnloaded()
+        {
+            base.OnBlockUnloaded();
+            this.UnregisterGameTickListener(this.particleTick);
+        }
 
         private void GenerateWaterParticles(int slot, string type, BlockPos pos, IWorldAccessor world)
         {
