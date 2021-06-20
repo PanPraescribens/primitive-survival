@@ -6,8 +6,8 @@
 
  - Smoking Rack or Pit Smoker - smoked meat good, jerky strips less good @Boomer Bill
  - re-enable slippery fish?
+ - add sound effects to temporal altar (like raft or fishing traps)
  - Fish not updating in a timely fashion when picked up (i.e. apparent duplication?) - Thanks @boten
- - ask chunk system to unload the fishing trap chunks - thanks @Capsup
   
 **Version 2.5.7 Updates - testing performed under v1.15.0-pre.3 (unstable)**
 
@@ -18,7 +18,7 @@
 - New: Refactored code/leveraged Capsup's VS Mod Template: https://gitlab.com/vsmods-public/foundation/vsmodtemplate - - Thanks @Capsup!
 - New: Right click pick up raft - thanks @PapaCheddar
 - New: fish fillets as bait for traps and fishing - thanks Ketrai
-- New: more sound effects for fish traps
+- New: more sound effects for fish traps and raft
 - New: Added blood block/portion - creative only item for now, intended for worldgen
 - New: Bald cypress, Larch, Redwood, Ebony, Walnut, Purpleheart wood lantern Variants
 - Fixed: Bug in German language file - thanks @Kiava
@@ -26,6 +26,7 @@
 - Fixed: fishing hooks, lures, nails, spikes dont smelt back into the original materials but some sub labeled material... (and wont stack with actual metal) - thanks @TechRabbit
 - Fixed: changed POI on pit traps like I did to snares/deadfalls to eliminate the farm life conflict - thanks Thranos!
 - Fixed: Reworked lantern recipe so handbook links would function correctly
+- Tweak: Chunk system not unload the fishing trap block entities correctly - fixed MAYBE? - thanks @Capsup
 - Tweak: Different fish stack sizes - catfish = 16, bass,bluegill,mutated = 64, the rest = 32. Thanks @l33tmaan
 - Tweak: Double the monkey bridge recipe output (yet again) - thanks @Quixote
 - Tweak: Reworked fillets/fish jerky because fillet satiety in meals too low, fish jerky satiety too low - thanks @l33tmaan, others
