@@ -9,10 +9,14 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.MathTools;
     using PrimitiveSurvival.ModConfig;
 
+
     public class PrimitiveSurvivalSystem : ModSystem
     {
         private readonly string thisModID = "primitivesurvival";
         private static Dictionary<IServerChunk, int> fishingChunks;
+        public static List<string> chunkList;
+        bool prevChunksLoaded;
+
         private ICoreServerAPI sapi;
 
         public void RegisterClasses(ICoreAPI api)
@@ -71,6 +75,7 @@ namespace PrimitiveSurvival.ModSystem
 
         public override void StartServerSide(ICoreServerAPI api)
         {
+            prevChunksLoaded = false;
             base.StartServerSide(api);
             this.sapi = api;
 
@@ -105,33 +110,36 @@ namespace PrimitiveSurvival.ModSystem
         private void OnSaveGameLoading()
         {
             fishingChunks = new Dictionary<IServerChunk, int>();
-
-            //////////////////////////////////////////////////////////////
             // attempt to load the (short) list of all active fishing chunks
-            var data = this.sapi.WorldManager.SaveGame.GetData("fishingchunks");
-            if (data != null)
+            var data = this.sapi.WorldManager.SaveGame.GetData("chunklist6");
+            chunkList = data == null ? new List<string>() : SerializerUtil.Deserialize<List<string>>(data);
+            foreach (var entry in chunkList)
             {
-                fishingChunks = SerializerUtil.Deserialize<Dictionary<IServerChunk, int>>(data);
+                Debug.WriteLine(entry);
             }
-            //////////////////////////////////////////////////////////////
         }
+
 
         private void OnSaveGameSaving()
         {
-            var count = 0;
+            var chunkcount = 0;
             foreach (var chunk in fishingChunks)
             {
                 if (chunk.Value == 0)
                 { continue; }
-                count++;
-                chunk.Key.SetServerModdata(this.thisModID, SerializerUtil.Serialize(chunk.Value));
-            }
-            Debug.WriteLine("----------- Chunk depletion data saved in " + count + " chunks");
 
-            /////////////////////////////////////////////////////////////////
+                chunk.Key.SetServerModdata(this.thisModID, SerializerUtil.Serialize(chunk.Value));
+                chunkcount++;
+            }
+            Debug.WriteLine("----------- Chunk depletion data saved to " + chunkcount + " chunks");
+
             // now attempt to save the (short) list of all active fishing chunks
-            this.sapi.WorldManager.SaveGame.StoreData("fishingchunks", SerializerUtil.Serialize(fishingChunks));
-            /////////////////////////////////////////////////////////////////
+            this.sapi.WorldManager.SaveGame.StoreData("chunklist6", SerializerUtil.Serialize(chunkList));
+            Debug.WriteLine("----------- Chunk depletion data saved for " + chunkList.Count() + " chunks");
+            foreach (var entry in chunkList)
+            {
+                Debug.WriteLine(entry);
+            }
         }
 
         private static void AddChunkToDictionary(IServerChunk chunk)
@@ -141,12 +149,20 @@ namespace PrimitiveSurvival.ModSystem
             fishingChunks.Add(chunk, fishing);
         }
 
+
         public static void UpdateChunkInDictionary(ICoreServerAPI api, BlockPos pos, int rate)
         {
             //deplete
             var chunk = api.WorldManager.GetChunk(pos);
             if (!fishingChunks.ContainsKey(chunk))
-            { AddChunkToDictionary(chunk); }
+            {
+                AddChunkToDictionary(chunk);
+            }
+            var chunkindex = pos.X.ToString() + "," + pos.Y.ToString() + "," + pos.Z.ToString();
+            if (!chunkList.Contains(chunkindex))
+            {
+                chunkList.Add(chunkindex);
+            }
             if (0 <= fishingChunks[chunk] && fishingChunks[chunk] <= 100)
             { fishingChunks[chunk] += rate; }
 
@@ -155,16 +171,53 @@ namespace PrimitiveSurvival.ModSystem
             if (fishingChunks[chunk] > 100)
             { fishingChunks[chunk] = 100; }
 
+            chunk.MarkModified();
+
             //Debug
             var fishing = fishingChunks[chunk];
             var msg = "depleted (caught)";
             if (rate < 0)
             { msg = "repleted (escaped)"; }
-            Debug.WriteLine("----------- Chunk " + chunk.GetHashCode() + " - " + msg + ":" + fishing);
+            Debug.WriteLine("----------- Chunk " + pos.ToVec3d() + " - " + msg + ":" + fishing);
         }
 
         private void RepleteFishStocks(float par)
         {
+            if (!prevChunksLoaded)
+            {
+                //////////////////////////////////////////////////////////////
+                var chunklistcount = 0;
+                foreach (var chunk in chunkList)
+                {
+                    Debug.WriteLine("1:" + chunk);
+                    var coords = chunk.Split(',');
+                    Debug.WriteLine("2:" + coords);
+                    var pos = new BlockPos
+                    {
+                        X = coords[0].ToInt(),
+                        Y = coords[1].ToInt(),
+                        Z = coords[2].ToInt()
+                    };
+
+                    var getchunk = this.sapi.WorldManager.GetChunk(pos);
+                    //Debug.WriteLine("3:" + getchunk.GetHashCode());
+                    if (getchunk != null)
+                    {
+                        var getdata = getchunk.GetServerModdata("primitivesurvival");
+                        Debug.WriteLine("4:" + getdata);
+                        var fishing = getdata == null ? 0 : SerializerUtil.Deserialize<int>(getdata);
+                        Debug.WriteLine("5:" + fishing);
+                        if (!fishingChunks.ContainsKey(getchunk))
+                        {
+                            fishingChunks.Add(getchunk, fishing);
+                            chunklistcount++;
+                            prevChunksLoaded = true;
+                        }
+                    }
+                }
+                Debug.WriteLine("Chunk data restored for " + chunklistcount + " chunks");
+                //////////////////////////////////////////////////////////////
+            }
 
             foreach (var key in fishingChunks.Keys.ToList())
             {
@@ -172,7 +225,6 @@ namespace PrimitiveSurvival.ModSystem
                 if (fishingChunks[key] < 0)
                 { fishingChunks[key] = 0; }
                 //Debug
-
                 Debug.WriteLine("----------- Chunk repletion:" + fishingChunks[key]);
             }
         }
