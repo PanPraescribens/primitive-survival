@@ -193,7 +193,7 @@ namespace PrimitiveSurvival.ModSystem
                                         PrimitiveSurvivalSystem.UpdateChunkInDictionary(this.Api as ICoreServerAPI, this.Pos, ModConfig.Loaded.FishChunkDepletionRate);
                                     }
                                     /*********************************************/
-                                    Debug.WriteLine("fish on hook");
+                                    //Debug.WriteLine("fish on hook");
                                     this.CatchStack = new ItemStack(this.Api.World.GetItem(new AssetLocation("primitivesurvival:psfish-" + this.fishTypes[Rnd.Next(this.fishTypes.Count())] + "-raw")), 1);
                                     rando = Rnd.Next(2);
                                     if (rando == 0)
@@ -228,7 +228,7 @@ namespace PrimitiveSurvival.ModSystem
                                     PrimitiveSurvivalSystem.UpdateChunkInDictionary(this.Api as ICoreServerAPI, this.Pos, ModConfig.Loaded.FishChunkDepletionRate);
                                 }
                                 /*********************************************/
-                                Debug.WriteLine("fish on hook");
+                                //Debug.WriteLine("fish on hook");
                                 this.CatchStack = new ItemStack(this.Api.World.GetItem(new AssetLocation("primitivesurvival:psfish-" + this.fishTypes[Rnd.Next(this.fishTypes.Count())] + "-raw")), 1);
                                 this.MarkDirty();
                                 //Api.World.BlockAccessor.MarkBlockDirty(Pos);

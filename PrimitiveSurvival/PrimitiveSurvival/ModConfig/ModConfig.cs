@@ -15,9 +15,12 @@ namespace PrimitiveSurvival.ModConfig
         public int FishBasketEscapePercent { get; set; } = 15;
         public double FishBasketUpdateMinutes { get; set; } = 2.2;
         public int FishBasketRotRemovedPercent { get; set; } = 10;
-        public int FishChunkDepletionRate { get; set; } = 10;
+        public int FishChanceOfEggs { get; set; } = 10;
+        public int FishChunkDepletionRate { get; set; } = 5;
         public int FishChunkRepletionRate { get; set; } = 1;
+        public int FishEggsRepletionRate { get; set; } = 5;
         public int FishRepletionMinutes { get; set; } = 30;
+        public int FishChunkMaxDepletionPercent { get; set; } = 90;
         public int LimbTrotlineCatchPercent { get; set; } = 4;
         public int LimbTrotlineBaitedCatchPercent { get; set; } = 10;
         public int LimbTrotlineLuredCatchPercent { get; set; } = 7;

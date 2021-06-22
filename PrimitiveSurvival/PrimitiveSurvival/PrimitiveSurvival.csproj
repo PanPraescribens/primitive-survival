@@ -85,6 +85,9 @@
     <Content Include="assets/**">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Remove="assets\primitivesurvival\itemtypes\fishing\caviar.json" />
+    <None Remove="assets\primitivesurvival\itemtypes\fishing\fisheggs.json" />
+    <None Remove="assets\primitivesurvival\recipes\grid\caviar.json" />
     <None Update="modinfo.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -94,9 +97,5 @@
     <None Update="LICENSE">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="assets/" />
   </ItemGroup>
 </Project>
