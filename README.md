@@ -14,8 +14,9 @@
 - New: Common configuration file ..\VintagestoryData\ModConfig\primitivesurvival.json to configure raft speed, prevent altars from dropping gold, customize traps and fishing - thanks @techrabbit, @Quixjote
 - New: Fish chunk depletion/repletion, thanks @Gox
 - New: Filleting fish sometimes drops fish eggs, either raw or ovulated.  They can be eaten raw, cooked, or salted to make caviar.  Ovulated eggs can be thrown into water to replete fish stocks in that chunk.
-- New:  Slippery fish are back, but a lot less slippery.  If they land in water, they will immediately escape and replete the chunk.
-- New:  Fish can be thrown in water to replete the chunk.  Might make sense for smaller fish (catch and release).
+- New: Slippery fish are back, but a lot less slippery.  If they land in water, they will immediately escape and replete the chunk.
+- New: Fish can be thrown in water to replete the chunk.  Might make sense for smaller fish (catch and release).
+- New: Fish eggs can be used as bait.
 - New: Decreased default raft speed
 - New: Polish translation courtesy of @qexow!
 - New: Refactored code/leveraged Capsup's VS Mod Template: https://gitlab.com/vsmods-public/foundation/vsmodtemplate - - Thanks @Capsup!
