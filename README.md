@@ -5,9 +5,7 @@
 **Roadmap**
 
  - Smoking Rack or Pit Smoker - smoked meat good, jerky strips less good @Boomer Bill
- - re-enable slippery fish?
- - add sound effects to temporal altar (like raft or fishing traps)
- - Fish not updating in a timely fashion when picked up (i.e. apparent duplication?) - Thanks @boten
+ - add sound effects to temporal altar (like I did for the raft and fishing traps, but different)
   
 **Version 2.5.7 Updates - testing performed under v1.15.0-pre.3 (unstable)**
 
@@ -15,7 +13,7 @@
 - New: Fish chunk depletion/repletion, thanks @Gox
 - New: Filleting fish sometimes drops fish eggs, either raw or ovulated.  They can be eaten raw, cooked, or salted to make caviar.  Ovulated eggs can be thrown into water to replete fish stocks in that chunk.
 - New: Slippery fish are back, but a lot less slippery.  If they land in water, they will immediately escape and replete the chunk.
-- New: Fish can be thrown in water to replete the chunk.  Might make sense for smaller fish (catch and release).
+- New: Fish can be thrown in water to replete the chunk.  Might make sense for smaller fish (release and catch something bigger).
 - New: Fish eggs can be used as bait.
 - New: Decreased default raft speed
 - New: Polish translation courtesy of @qexow!
