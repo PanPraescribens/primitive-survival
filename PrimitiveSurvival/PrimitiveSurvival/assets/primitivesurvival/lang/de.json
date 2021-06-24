@@ -510,5 +510,14 @@
   "block-woodlantern-redwood-*": "Holzlaterne (Redwood)",
   "block-woodlantern-ebony-*": "Holzlaterne (Ebony)",
   "block-woodlantern-walnut-*": "Holzlaterne (Walnut)",
-  "block-woodlantern-purpleheart-*": "Holzlaterne (Purpleheart)"
+  "block-woodlantern-purpleheart-*": "Holzlaterne (Purpleheart)",
+
+  "item-fisheggs-raw-normal": "Fish eggs (Raw)",
+  "itemdesc-fisheggs-raw-normal": "Can be cooked or cured",
+  "item-fisheggs-raw-ovulated": "Fish eggs (Ovulated)",
+  "itemdesc-fisheggs-raw-ovulated": "Can be cooked, cured, or thrown into water to replenish fish stocks",
+  "item-fisheggscooked": "Fish eggs (Cooked)",
+  "item-caviar-curing": "Caviar (Curing)",
+  "item-caviar-cured": "Caviar (Cured)"
 }
+

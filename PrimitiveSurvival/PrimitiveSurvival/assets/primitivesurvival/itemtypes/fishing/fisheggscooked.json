@@ -1,32 +1,21 @@
 {
-  "code": "fisheggs",
-  "class": "itemfisheggs",
+  "code": "fisheggscooked",
   "maxstacksize": 64,
-  "variantgroups": [
-    {
-      "code": "state",
-      "states": [ "raw" ]
-    },
-    {
-      "code": "type",
-      "states": [ "normal", "ovulated" ]
-    }
-  ],
   "attributes": {
     "handbook": {
       "groupBy": [ "fisheggs*" ]
     }
    },
   "nutritionPropsByType": {
-    "*": {
-      "satiety": 16,
+    "*-cooked-*": {
+      "satiety": 24,
       "foodcategory": "Protein"
     }
   },
   "shape": { "base": "item/fishing/fisheggs" },
   "texturesbytype": {
     "*": {
-      "normal": { "base": "item/fishing/fisheggs-raw-{type}" }
+      "normal": { "base": "item/fishing/fisheggs-cooked-normal" }
     }
   },
   "creativeinventory": {
@@ -34,10 +23,7 @@
     "items": [ "*" ],
     "primitive": [ "*" ]
   },
-  "materialDensitybyType": {
-    "*-normal": 900,
-    "*-ovulated": 1020
-  },
+  "materialDensity": 900,
   "guiTransform": {
     "translation": {
       "x": 0,
@@ -110,26 +96,12 @@
     },
     "scale": 2.5
   },
-  "combustiblePropsByType": {
-    "*": {
-      "meltingPoint": 150,
-      "maxTemperature": 300,
-      "meltingDuration": 3,
-      "smeltingType": "cook",
-      "smeltedRatio": 1,
-      "smeltedStack": {
-        "type": "item",
-        "code": "fisheggscooked"
-      },
-      "requiresContainer": false
-    }
-  },
   "transitionablePropsByType": {
-    "*": [
+    "*-cooked-*": [
       {
         "type": "Perish",
-        "freshHours": { "avg": 4 },
-        "spoilHours": { "avg": 2 },
+        "freshHours": { "avg": 60 },
+        "spoilHours": { "avg": 18 },
         "transitionedStack": {
           "type": "item",
           "code": "game:rot"

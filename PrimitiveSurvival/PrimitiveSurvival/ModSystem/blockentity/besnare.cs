@@ -13,7 +13,7 @@ namespace PrimitiveSurvival.ModSystem
     public class BESnare : BlockEntityDisplay, IAnimalFoodSource
     {
 
-        private readonly string[] baitTypes = { "fruit", "grain", "legume", "meat", "vegetable", "jerky", "mushroom", "bread", "poultry", "pickledvegetable", "redmeat", "bushmeat", "cheese", "fishfillet" };
+        private readonly string[] baitTypes = { "fruit", "grain", "legume", "meat", "vegetable", "jerky", "mushroom", "bread", "poultry", "pickledvegetable", "redmeat", "bushmeat", "cheese", "fishfillet", "fisheggs", "fisheggscooked" };
         protected static readonly Random Rnd = new Random();
         private readonly int maxSlots = 1;
 

@@ -87,6 +87,7 @@
     </Content>
     <None Remove="assets\primitivesurvival\itemtypes\fishing\caviar.json" />
     <None Remove="assets\primitivesurvival\itemtypes\fishing\fisheggs.json" />
+    <None Remove="assets\primitivesurvival\itemtypes\fishing\fisheggscooked.json" />
     <None Remove="assets\primitivesurvival\recipes\grid\caviar.json" />
     <None Update="modinfo.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

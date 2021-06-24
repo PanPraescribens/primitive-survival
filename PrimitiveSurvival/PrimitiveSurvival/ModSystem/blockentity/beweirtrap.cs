@@ -406,14 +406,13 @@ namespace PrimitiveSurvival.ModSystem
             }
             else if (!this.Catch1Slot.Empty)
             {
-                var rando = Rnd.Next(3);
-                if (rando < 2 && this.Catch1Stack.Item != null) //fish
+                var rando = Rnd.Next(8);
+                if (rando < 1 && this.Catch1Stack.Item != null) //fish
                 {
-                    byPlayer.InventoryManager.TryGiveItemstack(this.Catch1Stack);
-                    //ItemStack drop = catch1Stack.Clone();
-                    //drop.StackSize = 1;
-                    //Api.World.SpawnItemEntity(drop, new Vec3d(Pos.X + 0.5, Pos.Y + 2, Pos.Z + 0.5), null);
-                    //Api.World.SpawnItemEntity(catch1Stack, Pos.ToVec3d().Add(0.5, 2, 0.5)); //slippery
+                    //byPlayer.InventoryManager.TryGiveItemstack(this.Catch1Stack);
+                    var drop = this.Catch1Stack.Clone();
+                    drop.StackSize = 1;
+                    this.Api.World.SpawnItemEntity(drop, new Vec3d(this.Pos.X + 0.5, this.Pos.Y + 2, this.Pos.Z + 0.5), null); //slippery
                 }
                 else
                 { byPlayer.InventoryManager.TryGiveItemstack(this.Catch1Stack); }

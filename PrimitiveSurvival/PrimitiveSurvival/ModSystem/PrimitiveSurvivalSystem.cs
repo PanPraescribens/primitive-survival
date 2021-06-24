@@ -194,13 +194,10 @@ namespace PrimitiveSurvival.ModSystem
         {
             if (!this.prevChunksLoaded)
             {
-                //////////////////////////////////////////////////////////////
                 var chunklistcount = 0;
                 foreach (var chunk in chunkList)
                 {
-                    //Debug.WriteLine("1:" + chunk);
                     var coords = chunk.Split(',');
-                    //Debug.WriteLine("2:" + coords);
                     var pos = new BlockPos
                     {
                         X = coords[0].ToInt(),
@@ -209,13 +206,10 @@ namespace PrimitiveSurvival.ModSystem
                     };
 
                     var getchunk = this.sapi.WorldManager.GetChunk(pos);
-                    //Debug.WriteLine("3:" + getchunk.GetHashCode());
                     if (getchunk != null)
                     {
                         var getdata = getchunk.GetServerModdata("primitivesurvival");
-                        //Debug.WriteLine("4:" + getdata);
                         var fishing = getdata == null ? 0 : SerializerUtil.Deserialize<int>(getdata);
-                        //Debug.WriteLine("5:" + fishing);
                         if (!fishingChunks.ContainsKey(getchunk))
                         {
                             fishingChunks.Add(getchunk, fishing);
@@ -226,7 +220,6 @@ namespace PrimitiveSurvival.ModSystem
                     }
                 }
                 //Debug.WriteLine("Chunk data restored for " + chunklistcount + " chunks");
-                //////////////////////////////////////////////////////////////
             }
 
             foreach (var key in fishingChunks.Keys.ToList())
@@ -235,7 +228,7 @@ namespace PrimitiveSurvival.ModSystem
                 if (fishingChunks[key] < 0)
                 { fishingChunks[key] = 0; }
                 //Debug
-                //Debug.WriteLine("----------- Chunk repletion:" + fishingChunks[key]);
+               // Debug.WriteLine("----------- Chunk repletion:" + fishingChunks[key]);
             }
         }
 

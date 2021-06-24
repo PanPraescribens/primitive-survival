@@ -25,7 +25,7 @@ namespace PrimitiveSurvival.ModSystem
 
         private readonly int tickSeconds = 5;
         private readonly int maxSlots = 4;
-        private readonly string[] baitTypes = { "fruit", "grain", "legume", "meat", "vegetable", "jerky", "mushroom", "bread", "poultry", "pickledvegetable", "redmeat", "bushmeat", "earthworm", "cheese", "fishfillet" };
+        private readonly string[] baitTypes = { "fruit", "grain", "legume", "meat", "vegetable", "jerky", "mushroom", "bread", "poultry", "pickledvegetable", "redmeat", "bushmeat", "earthworm", "cheese", "fishfillet", "fisheggs", "fisheggscooked" };
         private readonly string[] fishTypes = { "trout", "perch", "carp", "bass", "pike", "arcticchar", "catfish", "bluegill" };
         private static readonly Random Rnd = new Random();
 
@@ -395,14 +395,13 @@ namespace PrimitiveSurvival.ModSystem
             if (!this.CatchSlot.Empty)
             {
                 //Debug.WriteLine("Grabbed a " + catchStack.Item.Code.Path);
-                var rando = Rnd.Next(3);
-                if (rando < 2)
+                var rando = Rnd.Next(8);
+                if (rando < 1)
                 {
-                    byPlayer.InventoryManager.TryGiveItemstack(this.CatchStack);
-                    //ItemStack drop = catchStack.Clone();
-                    //drop.StackSize = 1;
-                    //Api.World.SpawnItemEntity(drop, new Vec3d(Pos.X + 0.5, Pos.Y + 0.5, Pos.Z + 0.5), null); //slippery
-                    //Api.World.SpawnItemEntity(catchStack, Pos.ToVec3d()); //slippery
+                    //byPlayer.InventoryManager.TryGiveItemstack(this.CatchStack);
+                    var drop = this.CatchStack.Clone();
+                    drop.StackSize = 1;
+                    this.Api.World.SpawnItemEntity(drop, new Vec3d(this.Pos.X + 0.5, this.Pos.Y + 0.5, this.Pos.Z + 0.5), null); //slippery
                 }
                 else
                 {

@@ -560,5 +560,14 @@
   "block-woodlantern-redwood-*": "деревянный фонарь (Redwood)",
   "block-woodlantern-ebony-*": "деревянный фонарь (Ebony)",
   "block-woodlantern-walnut-*": "деревянный фонарь (Walnut)",
-  "block-woodlantern-purpleheart-*": "деревянный фонарь (Purpleheart)"
+  "block-woodlantern-purpleheart-*": "деревянный фонарь (Purpleheart)",
+
+  "item-fisheggs-raw-normal": "Fish eggs (Raw)",
+  "itemdesc-fisheggs-raw-normal": "Can be cooked or cured",
+  "item-fisheggs-raw-ovulated": "Fish eggs (Ovulated)",
+  "itemdesc-fisheggs-raw-ovulated": "Can be cooked, cured, or thrown into water to replenish fish stocks",
+  "item-fisheggscooked": "Fish eggs (Cooked)",
+  "item-caviar-curing": "Caviar (Curing)",
+  "item-caviar-cured": "Caviar (Cured)"
 }
+
