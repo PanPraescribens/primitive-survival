@@ -31,6 +31,7 @@
 - Fixed: Raft not always reverting to default orientation (raft-north) when you break it - Thanks @Gox
 - Fixed: changed POI on pit traps like I did to snares/deadfalls to eliminate the farm life conflict - thanks Thranos!
 - Fixed: Reworked lantern recipe so handbook links would function correctly
+- Fixed: fishing hooks, lures, nails, spikes dont smelt back into the original materials but some sub labeled material... (and wont stack with actual metal) - thanks @TechRabbit.  Note: This does not apply to the 1.15 releases at all (because of metal bits).
 - Tweak: Chunk system not unloading the fishing trap block entities correctly - fixed MAYBE? - thanks @Capsup
 - Tweak: Different fish stack sizes - catfish = 16, bass,bluegill,mutated = 64, the rest = 32. Thanks @l33tmaan
 - Tweak: Double the monkey bridge recipe output (yet again) - thanks @Quixote
