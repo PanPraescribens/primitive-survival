@@ -8,7 +8,7 @@
  - add sound effects to temporal altar (like I did for the raft and fishing traps, but different)
   
 **Version 2.5.7 Updates - testing performed under v1.15.0-pre.3 (unstable)**
-- New: Added chisel/metal bits recipes for hooks,lures,nails,spikes,bed-o-nails,   AND 
+- New: Added chisel -> metal bits grid recipes for hooks, lures, nails, spikes, and bed-o-nails (but not metal bucket handles or metal buckets).
 - New: Added new wood types to raft recipe
 - New: Common configuration file ..\VintagestoryData\ModConfig\primitivesurvival.json to configure raft speed, prevent altars from dropping gold, customize traps and fishing - thanks @techrabbit, @Quixjote
 - New: Fish chunk depletion/repletion, thanks @Gox
