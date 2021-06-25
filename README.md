@@ -8,7 +8,7 @@
  - add sound effects to temporal altar (like I did for the raft and fishing traps, but different)
   
 **Version 2.5.7 Updates - testing performed under v1.15.0-pre.3 (unstable)**
-
+- New: Added new wood types to raft recipe
 - New: Common configuration file ..\VintagestoryData\ModConfig\primitivesurvival.json to configure raft speed, prevent altars from dropping gold, customize traps and fishing - thanks @techrabbit, @Quixjote
 - New: Fish chunk depletion/repletion, thanks @Gox
 - New: Filleting fish sometimes drops fish eggs, either raw or ovulated.  They can be eaten raw, cooked, or salted to make caviar.  Ovulated eggs can be thrown into water to replete fish stocks in that chunk.
