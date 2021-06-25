@@ -8,7 +8,7 @@
         "type": "item",
         "code": "primitivesurvival:fisheggs-raw-*",
         "allowedVariants": [ "normal", "ovulated" ],
-        "quantity": 4
+        "quantity": 1
       },
       "S": {
         "type": "item",
@@ -22,6 +22,6 @@
     "output": {
       "type": "item",
       "code": "primitivesurvival:caviar-curing",
-      "quantity": 4
+      "quantity": 1
     }
   }

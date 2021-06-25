@@ -5,10 +5,10 @@
     "handbook": {
       "groupBy": [ "fisheggs*" ]
     }
-   },
+  },
   "nutritionPropsByType": {
-    "*-cooked-*": {
-      "satiety": 24,
+    "*": {
+      "satiety": 80,
       "foodcategory": "Protein"
     }
   },

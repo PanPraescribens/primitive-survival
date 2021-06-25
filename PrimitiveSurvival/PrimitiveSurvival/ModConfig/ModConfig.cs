@@ -28,7 +28,7 @@ namespace PrimitiveSurvival.ModConfig
         public int LimbTrotlineBaitStolenPercent { get; set; } = 5;
         public double LimbTrotlineUpdateMinutes { get; set; } = 2.4;
         public int LimbTrotlineRotRemovedPercent { get; set; } = 10;
-        public float RaftWaterSpeedModifier { get; set; } = 0.5f;
+        public float RaftWaterSpeedModifier { get; set; } = 0.2f;
         public float RaftFlotationModifier { get; set; } = 0.03f;
         public float SnareMaxAnimalHeight { get; set; } = 0.8f;
         public int SnareMaxDamageSet { get; set; } = 12;

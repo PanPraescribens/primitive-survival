@@ -316,7 +316,6 @@
     }
   },
   "materialDensity": 150,
-
   "guiTransformByType": {
     "*bluegill*": {
       "translation": {

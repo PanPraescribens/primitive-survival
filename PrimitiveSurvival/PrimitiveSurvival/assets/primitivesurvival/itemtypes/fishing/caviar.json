@@ -20,7 +20,7 @@
   },
   "nutritionPropsByType": {
     "*-cured": {
-      "satiety": 80,
+      "satiety": 160,
       "foodcategory": "Protein"
     }
   },

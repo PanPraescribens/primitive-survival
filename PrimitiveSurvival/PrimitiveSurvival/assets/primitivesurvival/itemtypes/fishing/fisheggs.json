@@ -19,7 +19,7 @@
    },
   "nutritionPropsByType": {
     "*": {
-      "satiety": 16,
+      "satiety": 60,
       "foodcategory": "Protein"
     }
   },
