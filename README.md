@@ -8,6 +8,7 @@
  - add sound effects to temporal altar (like I did for the raft and fishing traps, but different)
  - make slippery fish percentage configurable
  - make trap bait stolen a thing, and configurable
+ - change fishchanceofeggs to fishpercentchanceofeggs - ensure that the next calculation - eggs or ovulated eggs is 50/50
   
 **Version 2.5.7 Updates - testing performed under v1.15.0-pre.3 (unstable)**
 - New: Added chisel -> metal bits grid recipes for hooks, lures, nails, spikes, and bed-o-nails (but not metal bucket handles or metal buckets).
