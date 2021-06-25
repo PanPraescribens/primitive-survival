@@ -8,7 +8,8 @@
  - add sound effects to temporal altar (like I did for the raft and fishing traps, but different)
   
 **Version 2.5.7 Updates - testing performed under v1.15.0-pre.3 (unstable)**
-
+- New: Added chisel -> metal bits grid recipes for hooks, lures, nails, spikes, and bed-o-nails (but not metal bucket handles or metal buckets).
+- New: Added new wood types to raft recipe
 - New: Common configuration file ..\VintagestoryData\ModConfig\primitivesurvival.json to configure raft speed, prevent altars from dropping gold, customize traps and fishing - thanks @techrabbit, @Quixjote
 - New: Fish chunk depletion/repletion, thanks @Gox
 - New: Filleting fish sometimes drops fish eggs, either raw or ovulated.  They can be eaten raw, cooked, or salted to make caviar.  Ovulated eggs can be thrown into water to replete fish stocks in that chunk.
@@ -25,7 +26,6 @@
 - New: Bald cypress, Larch, Redwood, Ebony, Walnut, Purpleheart wood lantern Variants
 - Fixed: Bug in German language file - thanks @Kiava
 - Fixed: Raft not always reverting to default orientation (raft-north) when you break it - Thanks @Gox
-- Fixed: fishing hooks, lures, nails, spikes dont smelt back into the original materials but some sub labeled material... (and wont stack with actual metal) - thanks @TechRabbit
 - Fixed: changed POI on pit traps like I did to snares/deadfalls to eliminate the farm life conflict - thanks Thranos!
 - Fixed: Reworked lantern recipe so handbook links would function correctly
 - Tweak: Chunk system not unloading the fishing trap block entities correctly - fixed MAYBE? - thanks @Capsup
