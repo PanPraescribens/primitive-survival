@@ -7,7 +7,7 @@
  - Smoking Rack or Pit Smoker - smoked meat good, jerky strips less good @Boomer Bill
  - add sound effects to temporal altar (like I did for the raft and fishing traps, but different)
  - make slippery fish percentage configurable
- - make trap bait stolen a thing, and configurable (along with a cooresponding update minutes)
+ - make trap bait stolen a thing, and configurable (along with a cooresponding update minutes) - or better yet, handle it all on collision. i.e. butterflies do nothing, other creatures have a (configurable) chance of simply stealing the bait.
  - change fishchanceofeggs to fishpercentchanceofeggs - ensure that the next calculation - eggs or ovulated eggs is 50/50
   
 **Version 2.5.7 Updates - testing performed under v1.15.0-pre.3 (unstable)**
