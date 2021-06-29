@@ -11,7 +11,6 @@
 
 **Version 2.6.0 Updates - testing performed under v1.15.0-pre.10 (unstable)**
 - Fix: Removed Nails and Spikes and everything related to those
-- Fix: Changed fishchanceofeggs to fishpercentchanceofeggs - ensured that the next calculation - eggs or ovulated eggs is 50/50
 - Tweak: Made deadfall and snare traps easier to tear down
 - Tweak: Added a couple of new configurable behaviors to traps (bait stolen and tripped) to make them less effective (if that's desireable) - thanks @Thalius
 - Tweak: Made it so butterflies can not trip deadfalls, snares, and pit traps
