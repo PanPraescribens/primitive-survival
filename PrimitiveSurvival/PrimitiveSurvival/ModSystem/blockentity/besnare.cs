@@ -9,6 +9,7 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.GameContent;
     using Vintagestory.API.Config;
     using Vintagestory.API.Common.Entities;
+    using System.Diagnostics;
 
     public class BESnare : BlockEntityDisplay, IAnimalFoodSource
     {
@@ -198,20 +199,39 @@ namespace PrimitiveSurvival.ModSystem
         }
 
 
-        public void TripTrap(BlockPos Pos)
+        public void StealBait(BlockPos pos)
         {
-            var block = this.Api.World.BlockAccessor.GetBlock(Pos) as BlockSnare;
+            var block = this.Api.World.BlockAccessor.GetBlock(pos) as BlockSnare;
+            var stack = this.BaitSlot.TakeOut(1);
+            {
+                if (this.Api.Side == EnumAppSide.Server)
+                {
+                    this.Api.ModLoader.GetModSystem<POIRegistry>().RemovePOI(this);
+                    Debug.WriteLine("REMOVE POI");
+                }
+            }
+            var blockPath = block.Code.Path;
+            block = this.Api.World.BlockAccessor.GetBlock(block.CodeWithPath(blockPath)) as BlockSnare;
+            this.Api.World.BlockAccessor.SetBlock(block.BlockId, pos);
+            this.MarkDirty(true);
+            this.updateMesh(0);
+        }
+
+
+        public void TripTrap(BlockPos pos)
+        {
+            var block = this.Api.World.BlockAccessor.GetBlock(pos) as BlockSnare;
             var stack = this.BaitSlot.TakeOut(1);
             if (stack != null)
             {
-                this.Api.World.SpawnItemEntity(stack, Pos.ToVec3d().Add(0.5, 0.5, 0.5));
+                this.Api.World.SpawnItemEntity(stack, pos.ToVec3d().Add(0.5, 0.5, 0.5));
                 if (this.Api.Side == EnumAppSide.Server)
                 { this.Api.ModLoader.GetModSystem<POIRegistry>().RemovePOI(this); }
             }
             var blockPath = block.Code.Path;
             blockPath = blockPath.Replace("set", "tripped");
             block = this.Api.World.BlockAccessor.GetBlock(block.CodeWithPath(blockPath)) as BlockSnare;
-            this.Api.World.BlockAccessor.SetBlock(block.BlockId, Pos);
+            this.Api.World.BlockAccessor.SetBlock(block.BlockId, pos);
             this.MarkDirty(true);
             this.updateMesh(0);
         }

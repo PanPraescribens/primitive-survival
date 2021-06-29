@@ -15,12 +15,12 @@ namespace PrimitiveSurvival.ModSystem
 
     public class BEFishBasket : BlockEntityDisplay
     {
-        private readonly int catchPercent = ModConfig.Loaded.FishBasketCatchPercent; //4
-        private readonly int baitedCatchPercent = ModConfig.Loaded.FishBasketBaitedCatchPercent; //10
-        private readonly int baitStolenPercent = ModConfig.Loaded.FishBasketBaitStolenPercent; //5
-        private readonly int escapePercent = ModConfig.Loaded.FishBasketEscapePercent; //15
-        private readonly double updateMinutes = ModConfig.Loaded.FishBasketUpdateMinutes; //2.2
-        private readonly int rotRemovedPercent = ModConfig.Loaded.FishBasketRotRemovedPercent; //10
+        private readonly int catchPercent = ModConfig.Loaded.FishBasketCatchPercent; 
+        private readonly int baitedCatchPercent = ModConfig.Loaded.FishBasketBaitedCatchPercent;
+        private readonly int baitStolenPercent = ModConfig.Loaded.FishBasketBaitStolenPercent;
+        private readonly int escapePercent = ModConfig.Loaded.FishBasketEscapePercent;
+        private readonly double updateMinutes = ModConfig.Loaded.FishBasketUpdateMinutes;
+        private readonly int rotRemovedPercent = ModConfig.Loaded.FishBasketRotRemovedPercent;
 
         private readonly int tickSeconds = 4;
         private readonly int maxSlots = 3;

@@ -53,50 +53,6 @@
       },
       "I": {
         "type": "block",
-        "code": "primitivesurvival:nail-*-unset-n",
-        "name": "metal"
-      }
-    },
-    "width": 1,
-    "height": 2,
-    "output": {
-      "type": "item",
-      "code": "game:metalbit-{metal}",
-      "quantity": 16
-    }
-  },
-  {
-    "ingredientPattern": "C,I",
-    "ingredients": {
-      "C": {
-        "type": "item",
-        "code": "game:chisel-*",
-        "isTool": true
-      },
-      "I": {
-        "type": "block",
-        "code": "primitivesurvival:spike-*-unset-n",
-        "name": "metal"
-      }
-    },
-    "width": 1,
-    "height": 2,
-    "output": {
-      "type": "item",
-      "code": "game:metalbit-{metal}",
-      "quantity": 33
-    }
-  },
-  {
-    "ingredientPattern": "C,I",
-    "ingredients": {
-      "C": {
-        "type": "item",
-        "code": "game:chisel-*",
-        "isTool": true
-      },
-      "I": {
-        "type": "block",
         "code": "primitivesurvival:spikeplate-*",
         "name": "metal"
       }

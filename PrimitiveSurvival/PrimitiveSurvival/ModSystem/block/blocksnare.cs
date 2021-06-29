@@ -7,17 +7,42 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Config;
     using Vintagestory.API.Common.Entities;
     using PrimitiveSurvival.ModConfig;
+    using System.Diagnostics;
 
     public class BlockSnare : Block
     {
+        protected static readonly Random Rnd = new Random();
 
         private readonly AssetLocation tickSound = new AssetLocation("game", "tick");
 
 
         public override void OnEntityCollide(IWorldAccessor world, Entity entity, BlockPos pos, BlockFacing facing, Vec3d collideSpeed, bool isImpact)
         {
+
+            if (entity.Code.Path.StartsWith("butterfly")) //no effect for butterflies
+            { return; }
+
             if (isImpact)
             {
+                //first check for bait stolen and trap tripped (both without actual damage)
+                var rando = Rnd.Next(100);
+                if ((rando < ModConfig.Loaded.SnareBaitStolenPercent) && (entity.Code.Path != "player"))
+                {
+                    // Don't actually trip the trap, just remove the bait and poi - not applicable to players
+                    if (world.BlockAccessor.GetBlockEntity(pos) is BESnare bedc)
+                    { bedc.StealBait(pos); }
+                    return;
+                }
+                rando = Rnd.Next(100);
+                if (rando < ModConfig.Loaded.SnareTrippedPercent)
+                {
+                    // No damage, just a tripped trap!
+                    if (world.BlockAccessor.GetBlockEntity(pos) is BESnare bedc)
+                    { bedc.TripTrap(pos); }
+                    world.PlaySoundAt(this.tickSound, entity.Pos.X, entity.Pos.Y, entity.Pos.Z);
+                    return;
+                }
+
                 var block = this.api.World.BlockAccessor.GetBlock(pos);
                 var blockPath = block.Code.Path;
                 var state = block.FirstCodePart(1);
@@ -25,6 +50,7 @@ namespace PrimitiveSurvival.ModSystem
                 var maxdamage = ModConfig.Loaded.SnareMaxDamageBaited;
                 if (state == "set")
                 { maxdamage = ModConfig.Loaded.SnareMaxDamageSet; }
+
                 if (state != "tripped")
                 {
                     var dmg = 3;
@@ -33,8 +59,8 @@ namespace PrimitiveSurvival.ModSystem
                         var rnd = new Random();
                         dmg = rnd.Next(6, maxdamage);
                     }
-
                     entity.ReceiveDamage(new DamageSource { SourceEntity = null, Type = EnumDamageType.BluntAttack }, dmg);
+
                     if (world.BlockAccessor.GetBlockEntity(pos) is BESnare bedc)
                     { bedc.TripTrap(pos); }
                     world.PlaySoundAt(this.tickSound, entity.Pos.X, entity.Pos.Y, entity.Pos.Z);
@@ -82,7 +108,7 @@ namespace PrimitiveSurvival.ModSystem
 
             if (world.BlockAccessor.GetBlockEntity(blockSel.Position) is BESnare bedc)
             { return bedc.OnInteract(byPlayer, blockSel); }
-            return base.OnBlockInteractStart(world, byPlayer, blockSel);
+            return true; // base.OnBlockInteractStart(world, byPlayer, blockSel);
         }
 
 

@@ -12,7 +12,7 @@
   "sidesolid": {
     "all": false
   },
-  "resistance": 0.75,
+  "resistance": 0.25,
   "requiredminingtier": 0,
   "sounds": {
     "place": "game:walk/stone1",

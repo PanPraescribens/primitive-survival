@@ -60,7 +60,6 @@ namespace PrimitiveSurvival.ModSystem
             api.RegisterBlockClass("blockmetalbucketfilled", typeof(BlockMetalBucketFilled));
             api.RegisterBlockClass("blockmonkeybridge", typeof(BlockMonkeyBridge));
             api.RegisterBlockClass("blockhide", typeof(BlockHide));
-            api.RegisterBlockClass("blocknailspike", typeof(BlockNailSpike));
             api.RegisterBlockClass("blockraft", typeof(BlockRaft));
             api.RegisterBlockClass("blockblood", typeof(BlockBlood));
 
@@ -98,7 +97,7 @@ namespace PrimitiveSurvival.ModSystem
 
             api.Event.SaveGameLoaded += this.OnSaveGameLoading;
             api.Event.GameWorldSave += this.OnSaveGameSaving;
-            var repleteTick = api.Event.RegisterGameTickListener(this.RepleteFishStocks, 60000 * ModConfig.Loaded.FishRepletionMinutes);
+            var repleteTick = api.Event.RegisterGameTickListener(this.RepleteFishStocks, 60000 * ModConfig.Loaded.FishChunkRepletionMinutes);
         }
 
 

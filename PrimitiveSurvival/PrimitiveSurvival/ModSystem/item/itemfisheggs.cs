@@ -20,7 +20,7 @@ namespace PrimitiveSurvival.ModSystem
             if (entityItem.Swimming && world.Rand.NextDouble() < 0.01 && entityItem.Itemstack.Item.LastCodePart() == "ovulated")
             {
                 //replete
-                PrimitiveSurvivalSystem.UpdateChunkInDictionary(this.api as ICoreServerAPI, entityItem.ServerPos.AsBlockPos, -ModConfig.Loaded.FishEggsRepletionRate);
+                PrimitiveSurvivalSystem.UpdateChunkInDictionary(this.api as ICoreServerAPI, entityItem.ServerPos.AsBlockPos, -ModConfig.Loaded.FishEggsChunkRepletionRate);
                 this.GenerateWaterParticles(entityItem.ServerPos.AsBlockPos, world);
                 entityItem.Die(EnumDespawnReason.Removed, null);
             }

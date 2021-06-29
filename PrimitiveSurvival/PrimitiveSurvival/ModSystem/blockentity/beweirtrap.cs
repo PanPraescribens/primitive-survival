@@ -15,10 +15,10 @@ namespace PrimitiveSurvival.ModSystem
     public class BEWeirTrap : BlockEntityDisplay
     {
 
-        private readonly int catchPercent = ModConfig.Loaded.WeirTrapCatchPercent; //4  
-        private readonly int escapePercent = ModConfig.Loaded.WeirTrapEscapePercent; //10
-        private readonly double updateMinutes = ModConfig.Loaded.WeirTrapUpdateMinutes; //2.6 
-        private readonly int rotRemovedPercent = ModConfig.Loaded.WeirTrapRotRemovedPercent; //10
+        private readonly int catchPercent = ModConfig.Loaded.WeirTrapCatchPercent;
+        private readonly int escapePercent = ModConfig.Loaded.WeirTrapEscapePercent;
+        private readonly double updateMinutes = ModConfig.Loaded.WeirTrapUpdateMinutes;
+        private readonly int rotRemovedPercent = ModConfig.Loaded.WeirTrapRotRemovedPercent;
 
         private readonly int tickSeconds = 3;
         private readonly int maxSlots = 2;

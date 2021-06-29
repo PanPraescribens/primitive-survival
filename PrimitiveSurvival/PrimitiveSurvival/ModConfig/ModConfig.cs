@@ -4,9 +4,11 @@ namespace PrimitiveSurvival.ModConfig
     {
         public static ModConfig Loaded { get; set; } = new ModConfig();
         public bool AltarDropsGold { get; set; } = true;
+        public int DeadfallBaitStolenPercent { get; set; } = 10;
         public float DeadfallMaxAnimalHeight { get; set; } = 0.7f;
         public int DeadfallMaxDamageSet { get; set; } = 10;
         public int DeadfallMaxDamageBaited { get; set; } = 20;
+        public int DeadfallTrippedPercent { get; set; } = 10;
         public int FallDamageMultiplierWoodSpikes { get; set; } = 25;
         public int FallDamageMultiplierMetalSpikes { get; set; } = 80;
         public int FishBasketCatchPercent { get; set; } = 5;
@@ -18,8 +20,8 @@ namespace PrimitiveSurvival.ModConfig
         public int FishChanceOfEggs { get; set; } = 20;
         public int FishChunkDepletionRate { get; set; } = 5;
         public int FishChunkRepletionRate { get; set; } = 1;
-        public int FishEggsRepletionRate { get; set; } = 10;
-        public int FishRepletionMinutes { get; set; } = 15;
+        public int FishChunkRepletionMinutes { get; set; } = 15;
+        public int FishEggsChunkRepletionRate { get; set; } = 10;
         public int FishChunkMaxDepletionPercent { get; set; } = 95;
         public int LimbTrotlineCatchPercent { get; set; } = 5;
         public int LimbTrotlineBaitedCatchPercent { get; set; } = 10;
@@ -30,9 +32,11 @@ namespace PrimitiveSurvival.ModConfig
         public int LimbTrotlineRotRemovedPercent { get; set; } = 10;
         public float RaftWaterSpeedModifier { get; set; } = 0.2f;
         public float RaftFlotationModifier { get; set; } = 0.03f;
+        public int SnareBaitStolenPercent { get; set; } = 10;
         public float SnareMaxAnimalHeight { get; set; } = 0.8f;
         public int SnareMaxDamageSet { get; set; } = 12;
         public int SnareMaxDamageBaited { get; set; } = 24;
+        public int SnareTrippedPercent { get; set; } = 10;
         public int WeirTrapCatchPercent { get; set; } = 5;
         public int WeirTrapEscapePercent { get; set; } = 10;
         public double WeirTrapUpdateMinutes { get; set; } = 2.6;

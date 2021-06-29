@@ -6,17 +6,44 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.MathTools;
     using Vintagestory.API.Common.Entities;
     using PrimitiveSurvival.ModConfig;
+    using System.Diagnostics;
 
     public class BlockDeadfall : Block
     {
+        protected static readonly Random Rnd = new Random();
 
         private readonly AssetLocation tickSound = new AssetLocation("game", "tick");
         public override void OnEntityCollide(IWorldAccessor world, Entity entity, BlockPos pos, BlockFacing facing, Vec3d collideSpeed, bool isImpact)
         {
+            if (entity.Code.Path.StartsWith("butterfly")) //no effect for butterflies
+            { return; }
+
             if (isImpact)
             {
                 var block = this.api.World.BlockAccessor.GetBlock(pos);
                 var state = block.FirstCodePart(1);
+
+                //first check for bait stolen and trap tripped (both without actual damage)
+                var rando = Rnd.Next(100);
+                if ((rando < ModConfig.Loaded.DeadfallBaitStolenPercent) && (entity.Code.Path != "player"))
+                {
+
+                    // Don't actually trip the trap, just remove the bait and poi - not applicable to players
+                    if (world.BlockAccessor.GetBlockEntity(pos) is BESnare bedc)
+                    { bedc.StealBait(pos); }
+                    return;
+                }
+                rando = Rnd.Next(100);
+                if (rando < ModConfig.Loaded.DeadfallTrippedPercent)
+                {
+                    // No damage, just a tripped trap
+                    if (world.BlockAccessor.GetBlockEntity(pos) is BESnare bedc)
+                    { bedc.TripTrap(pos); }
+                    world.PlaySoundAt(this.tickSound, entity.Pos.X, entity.Pos.Y, entity.Pos.Z);
+                    return;
+                }
+
+                
                 double maxanimalheight = ModConfig.Loaded.DeadfallMaxAnimalHeight;
                 var maxdamage = ModConfig.Loaded.DeadfallMaxDamageBaited;
                 if (state == "set")
@@ -70,7 +97,7 @@ namespace PrimitiveSurvival.ModSystem
 
             if (world.BlockAccessor.GetBlockEntity(blockSel.Position) is BEDeadfall bedc)
             { return bedc.OnInteract(byPlayer, blockSel); }
-            return base.OnBlockInteractStart(world, byPlayer, blockSel);
+            return true; //base.OnBlockInteractStart(world, byPlayer, blockSel);
         }
 
 

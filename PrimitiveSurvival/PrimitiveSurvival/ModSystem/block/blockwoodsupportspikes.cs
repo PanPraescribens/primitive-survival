@@ -21,6 +21,9 @@ namespace PrimitiveSurvival.ModSystem
 
         public override void OnEntityCollide(IWorldAccessor world, Entity entity, BlockPos pos, BlockFacing facing, Vec3d collideSpeed, bool isImpact)
         {
+            if (entity.Code.Path.StartsWith("butterfly")) //no effect for butterflies
+            { return; }
+
             base.OnEntityCollide(world, entity, pos, facing, collideSpeed, isImpact);
             if (world.Side == EnumAppSide.Server) // && isImpact)// && facing.Axis == EnumAxis.Y)
             { world.BlockAccessor.BreakBlock(pos, null); }

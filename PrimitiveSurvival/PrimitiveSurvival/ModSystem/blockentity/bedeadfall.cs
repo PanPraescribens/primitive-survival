@@ -12,7 +12,6 @@ namespace PrimitiveSurvival.ModSystem
 
     public class BEDeadfall : BlockEntityDisplay, IAnimalFoodSource
     {
-
         private readonly string[] baitTypes = { "fruit", "grain", "legume", "meat", "vegetable", "jerky", "mushroom", "bread", "poultry", "pickledvegetable", "redmeat", "bushmeat", "cheese", "fishfillet", "fisheggs", "fisheggscooked" };
         protected static readonly Random Rnd = new Random();
         private readonly int maxSlots = 1;
@@ -194,6 +193,23 @@ namespace PrimitiveSurvival.ModSystem
                 return true;
             }
             return false;
+        }
+
+
+        public void StealBait(BlockPos pos)
+        {
+            var block = this.Api.World.BlockAccessor.GetBlock(pos) as BlockSnare;
+            var stack = this.BaitSlot.TakeOut(1);
+            if (stack != null)
+            {
+                if (this.Api.Side == EnumAppSide.Server)
+                { this.Api.ModLoader.GetModSystem<POIRegistry>().RemovePOI(this); }
+            }
+            var blockPath = block.Code.Path;
+            block = this.Api.World.BlockAccessor.GetBlock(block.CodeWithPath(blockPath)) as BlockSnare;
+            this.Api.World.BlockAccessor.SetBlock(block.BlockId, pos);
+            this.MarkDirty(true);
+            this.updateMesh(0);
         }
 
 

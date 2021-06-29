@@ -15,13 +15,13 @@ namespace PrimitiveSurvival.ModSystem
 
     public class BELimbTrotLineLure : BlockEntityDisplay
     {
-        private readonly int catchPercent = ModConfig.Loaded.LimbTrotlineCatchPercent; //4
-        private readonly int baitedCatchPercent = ModConfig.Loaded.LimbTrotlineBaitedCatchPercent; //10
-        private readonly int luredCatchPercent = ModConfig.Loaded.LimbTrotlineLuredCatchPercent; //7
-        private readonly int baitedLuredCatchPercent = ModConfig.Loaded.LimbTrotlineBaitedLuredCatchPercent; //13
-        private readonly int baitStolenPercent = ModConfig.Loaded.LimbTrotlineBaitStolenPercent; //5
-        private readonly double updateMinutes = ModConfig.Loaded.LimbTrotlineUpdateMinutes; //2.4
-        private readonly int rotRemovedPercent = ModConfig.Loaded.LimbTrotlineRotRemovedPercent; //10
+        private readonly int catchPercent = ModConfig.Loaded.LimbTrotlineCatchPercent; 
+        private readonly int baitedCatchPercent = ModConfig.Loaded.LimbTrotlineBaitedCatchPercent;
+        private readonly int luredCatchPercent = ModConfig.Loaded.LimbTrotlineLuredCatchPercent; 
+        private readonly int baitedLuredCatchPercent = ModConfig.Loaded.LimbTrotlineBaitedLuredCatchPercent; 
+        private readonly int baitStolenPercent = ModConfig.Loaded.LimbTrotlineBaitStolenPercent;
+        private readonly double updateMinutes = ModConfig.Loaded.LimbTrotlineUpdateMinutes; 
+        private readonly int rotRemovedPercent = ModConfig.Loaded.LimbTrotlineRotRemovedPercent; 
 
         private readonly int tickSeconds = 5;
         private readonly int maxSlots = 4;
