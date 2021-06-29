@@ -16,7 +16,7 @@
 - Tweak: Made it so butterflies can not trip deadfalls, snares, and pit traps
 
 **Version 2.5.7 Updates - testing performed under v1.15.0-pre.3 (unstable)**
-- New: Added chisel -> metal bits grid recipes for hooks, lures, nails, spikes, and bed-o-nails (but not metal bucket handles or metal buckets).
+- New: Added chisel -> metal bits grid recipes for hooks, lures, and bed-o-nails (but not metal bucket handles or metal buckets).
 - New: Added new wood types to raft recipe
 - New: Common configuration file ..\VintagestoryData\ModConfig\primitivesurvival.json to configure raft speed, prevent altars from dropping gold, customize traps and fishing - thanks @techrabbit, @Quixjote
 - New: Fish chunk depletion/repletion, thanks @Gox
@@ -36,7 +36,7 @@
 - Fixed: Raft not always reverting to default orientation (raft-north) when you break it - Thanks @Gox
 - Fixed: changed POI on pit traps like I did to snares/deadfalls to eliminate the farm life conflict - thanks Thranos!
 - Fixed: Reworked lantern recipe so handbook links would function correctly
-- Fixed: fishing hooks, lures, nails, spikes dont smelt back into the original materials but some sub labeled material... (and wont stack with actual metal) - thanks @TechRabbit.  Note: This does not apply to the 1.15 releases at all (because of metal bits).
+- Fixed: fishing hooks and lures dont smelt back into the original materials but some sub labeled material... (and wont stack with actual metal) - thanks @TechRabbit.  Note: This does not apply to the 1.15 releases at all (because of metal bits).
 - Tweak: Chunk system not unloading the fishing trap block entities correctly - fixed MAYBE? - thanks @Capsup
 - Tweak: Different fish stack sizes - catfish = 16, bass,bluegill,mutated = 64, the rest = 32. Thanks @l33tmaan
 - Tweak: Double the monkey bridge recipe output (yet again) - thanks @Quixote
