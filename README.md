@@ -9,14 +9,12 @@
  - make slippery fish percentage configurable
  - make trap bait stolen a thing, and configurable (along with a cooresponding update minutes) - or better yet, handle it all on collision. i.e. butterflies do nothing, other creatures have a (configurable) chance of simply stealing the bait.
 
-
 **Version 2.6.0 Updates - testing performed under v1.15.0-pre.10 (unstable)**
 - Fix: Removed Nails and Spikes and everything related to those
 - Fix: Changed fishchanceofeggs to fishpercentchanceofeggs - ensured that the next calculation - eggs or ovulated eggs is 50/50
 - Tweak: Made deadfall and snare traps easier to tear down
 - Tweak: Added a couple of new configurable behaviors to traps (bait stolen and tripped) to make them less effective (if that's desireable)
 - Tweak: Made it so butterflies can not trip deadfalls, snares, and pit traps
-
 
 **Version 2.5.7 Updates - testing performed under v1.15.0-pre.3 (unstable)**
 - New: Added chisel -> metal bits grid recipes for hooks, lures, nails, spikes, and bed-o-nails (but not metal bucket handles or metal buckets).
@@ -45,7 +43,6 @@
 - Tweak: Double the monkey bridge recipe output (yet again) - thanks @Quixote
 - Tweak: Reworked fillets/fish jerky because fillet satiety in meals too low, fish jerky satiety too low - thanks @l33tmaan, others
 - Tweak: Changed mold descriptions to like Raw blah blah instead of blah blah (Raw) as per game molds
-
 
 **Version 2.5.6 Updates**
 
