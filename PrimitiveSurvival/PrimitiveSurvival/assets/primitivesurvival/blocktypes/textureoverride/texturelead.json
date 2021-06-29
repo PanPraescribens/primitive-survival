@@ -1,6 +1,0 @@
-{
-  "code": "texturelead",
-  "textures": {
-    "hookmaterial": { "base": "game:block/metal/ingot/lead" }
-  }
-}

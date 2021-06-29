@@ -1,8 +1,0 @@
-[
-  {
-    "op": "add",
-    "path": "/ingredients/H/allowedVariants/0",
-    "value": "small",
-    "file": "game:recipes/grid/oiledhide.json"
-  }
-]

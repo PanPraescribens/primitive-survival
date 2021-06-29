@@ -1,6 +1,0 @@
-{
-  "code": "texturetin",
-  "textures": {
-    "hookmaterial": { "base": "game:block/metal/ingot/tin" }
-  }
-}
