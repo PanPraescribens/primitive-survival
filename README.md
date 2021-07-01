@@ -9,11 +9,8 @@
  - world gen altars and other structures
 
 **Version 2.6.0 Updates - testing performed under v1.15.0-pre.10 (unstable)**
-- Fix: Removed Nails and Spikes and everything related to those unused blocks
-- Tweak: Switched lure, hook, and spike plate molds to the pit kiln method
-- Tweak: Made deadfall and snare traps easier to tear down
-- Tweak: Added a couple of new configurable behaviors to traps (bait stolen and tripped) to make them less effective (if that's desireable) - thanks @Thalius
-- Tweak: Made it so butterflies can not trip deadfalls, snares, and pit traps
+
+- New: Switched lure, hook, and spike plate molds to the 1.15 pit kiln method
 - New: Added chisel -> metal bits grid recipes for hooks, lures, and bed-o-nails (but not metal bucket handles or metal buckets).
 - New: Added new wood types to raft recipe
 - New: Common configuration file ..\VintagestoryData\ModConfig\primitivesurvival.json to configure raft speed, prevent altars from dropping gold, customize traps and fishing - thanks @techrabbit, @Quixjote
@@ -35,6 +32,10 @@
 - Fixed: changed POI on pit traps like I did to snares/deadfalls to eliminate the farm life conflict - thanks Thranos!
 - Fixed: Reworked lantern recipe so handbook links would function correctly
 - Fixed: fishing hooks and lures dont smelt back into the original materials but some sub labeled material... (and wont stack with actual metal) - thanks @TechRabbit.  Note: This does not apply to the 1.15 releases at all (because of metal bits).
+- Tweak: Added a couple of new configurable behaviors to traps (bait stolen and tripped) to make them less effective (if that's desireable) - thanks @Thalius
+- Tweak: Made it so butterflies can not trip deadfalls, snares, and pit traps
+- Tweak: Made deadfall and snare traps easier to tear down
+- Tweak: Removed Nails and Spikes and everything related to those unused blocks
 - Tweak: Chunk system not unloading the fishing trap block entities correctly - fixed MAYBE? - thanks @Capsup
 - Tweak: Different fish stack sizes - catfish = 16, bass,bluegill,mutated = 64, the rest = 32. Thanks @l33tmaan
 - Tweak: Double the monkey bridge recipe output (yet again) - thanks @Quixote
