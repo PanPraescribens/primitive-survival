@@ -112,7 +112,7 @@ namespace PrimitiveSurvival.ModSystem
         {
             fishingChunks = new Dictionary<IServerChunk, int>();
             // attempt to load the (short) list of all active fishing chunks
-            var data = this.sapi.WorldManager.SaveGame.GetData("chunklist6");
+            var data = this.sapi.WorldManager.SaveGame.GetData("chunklist");
             chunkList = data == null ? new List<string>() : SerializerUtil.Deserialize<List<string>>(data);
 
             /*
@@ -138,7 +138,7 @@ namespace PrimitiveSurvival.ModSystem
             //Debug.WriteLine("----------- Chunk depletion data saved to " + chunkcount + " chunks");
 
             // now attempt to save the (short) list of all active fishing chunks
-            this.sapi.WorldManager.SaveGame.StoreData("chunklist6", SerializerUtil.Serialize(chunkList));
+            this.sapi.WorldManager.SaveGame.StoreData("chunklist", SerializerUtil.Serialize(chunkList));
             /*
             Debug.WriteLine("----------- Chunk depletion data saved for " + chunkList.Count() + " chunks");
             foreach (var entry in chunkList)

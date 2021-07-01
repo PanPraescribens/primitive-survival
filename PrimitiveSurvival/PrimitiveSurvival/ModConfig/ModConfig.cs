@@ -17,7 +17,7 @@ namespace PrimitiveSurvival.ModConfig
         public int FishBasketEscapePercent { get; set; } = 15;
         public double FishBasketUpdateMinutes { get; set; } = 2.2;
         public int FishBasketRotRemovedPercent { get; set; } = 10;
-        public int FishChanceOfEggs { get; set; } = 20;
+        public int FishChanceOfEggsPercent { get; set; } = 20;
         public int FishChunkDepletionRate { get; set; } = 5;
         public int FishChunkRepletionRate { get; set; } = 1;
         public int FishChunkRepletionMinutes { get; set; } = 15;

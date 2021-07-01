@@ -5,11 +5,24 @@
     "pslargemold-burned-*": "BlockToolMold"
   },
   "behaviorsByType": {
-    "*-raw-*": [{ "name": "UnstableFalling" }, { "name": "RightClickPickup" }],
-    "*": [{ "name": "UnstableFalling" }]
+    "*-raw-*": [
+      {
+        "name": "GroundStorable",
+        "properties": { "layout": "SingleCenter" }
+      },
+      {
+        "name": "Unplaceable",
+        "__comment": "The ground storable obsoletes this being a block. Should be an item, but is kept a block for backwards compatibility"
+      },
+      { "name": "RightClickPickup" }
+    ],
+    "*": [ { "name": "UnstableFalling" } ]
   },
   "variantgroups": [
-    { "code": "materialtype", "states": ["raw", "burned"] },
+    {
+      "code": "materialtype",
+      "states": [ "raw", "burned" ]
+    },
     {
       "code": "tooltype",
       "states": [
@@ -50,7 +63,8 @@
         "code": "{tooltype}-{metal}",
         "quantity": 1
       }
-    },
+    }
+  },
   "entityClassByType": {
     "pslargemold-burned-*": "ToolMold"
   },
@@ -59,7 +73,7 @@
       "meltingPoint": 650,
       "meltingDuration": 45,
       "smeltedRatio": 1,
-      "smeltingType": "bake",
+      "smeltingType": "fire",
       "smeltedStack": {
         "type": "block",
         "code": "pslargemold-burned-{tooltype}"
@@ -69,9 +83,9 @@
   },
   "blockmaterial": "Ceramic",
   "creativeinventory": {
-    "general": ["*"],
-    "construction": ["*"],
-    "primitive": ["*"]
+    "general": [ "*" ],
+    "construction": [ "*" ],
+    "primitive": [ "*" ]
   },
   "replaceable": 700,
   "resistance": 1.5,
@@ -167,9 +181,21 @@
     }
   },
   "groundTransform": {
-    "translation": { "x": 0, "y": 0, "z": 0 },
-    "rotation": { "x": 0, "y": -45, "z": 0 },
-    "origin": { "x": 0.5, "y": 0, "z": 0.5 },
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": -45,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0,
+      "z": 0.5
+    },
     "scale": 2.2
   }
 }

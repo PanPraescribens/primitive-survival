@@ -9,7 +9,7 @@ namespace PrimitiveSurvival.ModSystem
 
     public class ItemPSFish : Item
     {
-        private readonly int eggsPercent = ModConfig.Loaded.FishChanceOfEggs;
+        private readonly int eggsPercent = ModConfig.Loaded.FishChanceOfEggsPercent;
         private readonly int repleteRate = ModConfig.Loaded.FishChunkDepletionRate; 
         private static readonly Random Rnd = new Random();
         public override void OnConsumedByCrafting(ItemSlot[] allInputSlots, ItemSlot stackInSlot, GridRecipe gridRecipe, CraftingRecipeIngredient fromIngredient, IPlayer byPlayer, int quantity)
