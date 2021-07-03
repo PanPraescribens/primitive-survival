@@ -8,6 +8,10 @@
  - add sound effects to temporal altar (like I did for the raft and fishing traps, but different)
  - world gen altars and other structures
 
+**Version 2.6.1 Updates - testing performed under v1.15.0-pre.12 (unstable)**
+
+- Tweak: Minor change to slipperyfish to hopefully make it more predictable (spawnitementity)
+
 **Version 2.6.0 Updates - testing performed under v1.15.0-pre.10 (unstable)**
 
 - New: Switched lure, hook, and spike plate molds to the 1.15 pit kiln method
