@@ -10,7 +10,7 @@
 
 **Version 2.6.1 Updates - testing performed under v1.15.0-pre.12 (unstable)**
 
-- Tweak: Minor change to slipperyfish to hopefully make it more predictable (spawnitementity)
+- Tweak: Minor change to slippery fish to hopefully make it more predictable (spawnitementity)
 
 **Version 2.6.0 Updates - testing performed under v1.15.0-pre.10 (unstable)**
 
