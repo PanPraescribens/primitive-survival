@@ -12,6 +12,7 @@
 **Version 2.6.1 Updates - testing performed under v1.15.0-pre.12 (unstable)**
 
 - Tweak: Minor change to slippery fish to hopefully make it more predictable (spawnitementity)
+- Fix: Cooking fish eggs death loop fixed - thanks @Lisabet
 
 **Version 2.6.0 Updates - testing performed under v1.15.0-pre.10 (unstable)**
 
