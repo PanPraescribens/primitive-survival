@@ -99,7 +99,7 @@ namespace PrimitiveSurvival.ModSystem
         public override bool OnBlockInteractStart(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel)
         {
             if (world.BlockAccessor.GetBlockEntity(blockSel.Position) is BELimbTrotLineLure bedc)
-            { return bedc.OnInteract(byPlayer, blockSel); }
+            { return bedc.OnInteract(world, byPlayer, blockSel); }
             return base.OnBlockInteractStart(world, byPlayer, blockSel);
         }
     }

@@ -1,29 +1,20 @@
 {
   "code": "fisheggscooked",
   "maxstacksize": 64,
-  "attributes": {
-    "handbook": {
-      "groupBy": [ "fisheggs*" ]
-    }
-  },
-  "nutritionPropsByType": {
-    "*": {
+  "nutritionprops": {
       "satiety": 80,
       "foodcategory": "Protein"
-    }
   },
   "shape": { "base": "item/fishing/fisheggs" },
-  "texturesbytype": {
-    "*": {
+  "textures": {
       "normal": { "base": "item/fishing/fisheggs-cooked-normal" }
-    }
   },
   "creativeinventory": {
     "general": [ "*" ],
     "items": [ "*" ],
     "primitive": [ "*" ]
   },
-  "materialDensity": 900,
+  "materialdensity": 900,
   "guiTransform": {
     "translation": {
       "x": 0,
@@ -96,18 +87,16 @@
     },
     "scale": 2.5
   },
-  "transitionablePropsByType": {
-    "*-cooked-*": [
-      {
-        "type": "Perish",
-        "freshHours": { "avg": 60 },
-        "spoilHours": { "avg": 18 },
-        "transitionedStack": {
-          "type": "item",
-          "code": "game:rot"
-        },
-        "transitionRatio": 1
-      }
-    ]
-  }
+  "transitionableProps": [
+    {
+      "type": "Perish",
+      "freshHours": { "avg": 60 },
+      "spoilHours": { "avg": 18 },
+      "transitionedStack": {
+        "type": "item",
+        "code": "game:rot"
+      },
+      "transitionRatio": 1
+    }
+  ]
 }

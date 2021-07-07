@@ -114,12 +114,12 @@
     "*": {
       "meltingPoint": 150,
       "maxTemperature": 300,
-      "meltingDuration": 3,
+      "meltingDuration": 10,
       "smeltingType": "cook",
       "smeltedRatio": 1,
       "smeltedStack": {
         "type": "item",
-        "code": "fisheggscooked"
+        "code": "primitivesurvival:fisheggscooked"
       },
       "requiresContainer": false
     }

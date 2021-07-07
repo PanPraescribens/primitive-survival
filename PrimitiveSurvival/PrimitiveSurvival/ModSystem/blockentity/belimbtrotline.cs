@@ -256,14 +256,14 @@ namespace PrimitiveSurvival.ModSystem
         }
 
 
-        internal bool OnInteract(IPlayer byPlayer, BlockSelection blockSel)
+        internal bool OnInteract(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel)
         {
             var playerSlot = byPlayer.InventoryManager.ActiveHotbarSlot;
             var belowblock = new BlockPos(this.Pos.X, this.Pos.Y - 1, this.Pos.Z);
             var belowBlock = this.Api.World.BlockAccessor.GetBlock(belowblock);
             if (playerSlot.Empty)
             {
-                if (this.TryTake(byPlayer, blockSel))
+                if (this.TryTake(world, byPlayer, blockSel))
                 {
                     if ((belowBlock.LiquidCode == "water") && (!belowBlock.Code.Path.Contains("inwater")))
                     {
@@ -390,18 +390,18 @@ namespace PrimitiveSurvival.ModSystem
 
 
 
-        private bool TryTake(IPlayer byPlayer, BlockSelection blockSel)
+        private bool TryTake(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel)
         {
             if (!this.CatchSlot.Empty)
             {
                 //Debug.WriteLine("Grabbed a " + catchStack.Item.Code.Path);
                 var rando = Rnd.Next(8);
-                if (rando < 1)
+                if (rando < 10)
                 {
                     //byPlayer.InventoryManager.TryGiveItemstack(this.CatchStack);
                     var drop = this.CatchStack.Clone();
                     drop.StackSize = 1;
-                    this.Api.World.SpawnItemEntity(drop, new Vec3d(this.Pos.X + 0.5, this.Pos.Y + 0.5, this.Pos.Z + 0.5), null); //slippery
+                    world.SpawnItemEntity(drop, new Vec3d(this.Pos.X + 0.5, this.Pos.Y + 0.5, this.Pos.Z + 0.5), null); //slippery
                 }
                 else
                 {
