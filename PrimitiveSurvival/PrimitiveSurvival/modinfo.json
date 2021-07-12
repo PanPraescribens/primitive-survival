@@ -4,7 +4,7 @@
   "name": "Primitive Survival",
   "description": "Traps, Fishing, and other Surprises!",
   "authors": [ "Spear And Fang", "Siddly" ],
-  "version": "2.6.1",
+  "version": "2.6.2",
   "dependency": {
     "game": "1.15.0"
   },

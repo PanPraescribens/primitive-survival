@@ -396,7 +396,7 @@ namespace PrimitiveSurvival.ModSystem
             {
                 //Debug.WriteLine("Grabbed a " + catchStack.Item.Code.Path);
                 var rando = Rnd.Next(8);
-                if (rando < 10)
+                if (rando < 1)
                 {
                     //byPlayer.InventoryManager.TryGiveItemstack(this.CatchStack);
                     var drop = this.CatchStack.Clone();
