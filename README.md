@@ -5,8 +5,9 @@
 **Roadmap**
 
  - Smoking Rack or Pit Smoker - smoked meat good, jerky strips less good @Boomer Bill
- - add sound effects to temporal altar (like I did for the raft and fishing traps, but different)
- - world gen altars and other structures
+ - add sound effects to the existing altars (like I did for the raft and fishing traps, but different)
+ - world gen altars (temporal, astral, ethereal) and other structures, with blood!
+ - snakes
  - if you put a big stack (i.e. jerky) in a barrel and let it rot, does it return a strange number? - thanks @japanhasrice
 
 **Version 2.6.1 Updates - testing performed under v1.15.0-pre.12 (unstable)**
