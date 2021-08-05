@@ -10,6 +10,14 @@
  - snakes
  - if you put a big stack (i.e. jerky) in a barrel and let it rot, does it return a strange number? - thanks @japanhasrice
 
+**Version 2.6.3 Updates**
+
+- Tweak: added charred/baked fish fillets - thanks @l33tmaan
+
+**Version 2.6.2 Updates**
+
+- fix: slippery fish
+
 **Version 2.6.1 Updates - testing performed under v1.15.0-pre.12 (unstable)**
 
 - Tweak: Minor change to slippery fish to hopefully make it more predictable (spawnitementity)
