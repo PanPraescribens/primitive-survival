@@ -13,6 +13,7 @@
 **Version 2.6.3 Updates**
 
 - Tweak: added charred/baked fish fillets - thanks @l33tmaan
+- Fix: Raft speed - WIP
 
 **Version 2.6.2 Updates**
 
