@@ -5,20 +5,15 @@
   "variantgroups": [
     {
       "code": "material",
-      "states": ["temporal", "astral", "ethereal"]
+      "states": [ "temporal", "astral", "ethereal" ]
     },
     {
       "code": "type",
-      "states": ["unlit", "lit"]
+      "states": [ "unlit", "lit" ]
     },
     { "loadFromProperties": "abstract/horizontalorientation" }
   ],
-  "sideopaque": {
-    "all": false
-  },
-  "sidesolid": {
-    "all": false
-  },
+
   "shapebytype": {
     "*-north": {
       "base": "primitivesurvival:block/stone/steatite/alcove-{type}",
@@ -39,26 +34,42 @@
   },
   "drawtype": "json",
   "blockmaterial": "Stone",
+  "renderpassByType": {
+    "*-ethereal*": "transparent"
+  },
+  "sidesolid": {
+    "all": false
+  },
+  "sideopaque": {
+    "all": false
+  },
+  "faceCullModebyType": {
+    "*-ethereal*": "liquid"
+  },
+  "lightabsorptionByType": {
+    "*-ethereal*": 0,
+    "*": 99
+  },
   "lightHsvbyType": {
-    "*ethereal-lit*": [0, 12, 12],
-    "*astral-lit*": [44, 16, 18],
-    "*temporal-lit*": [5, 9, 9],
-    "*": [0, 0, 0]
+    "*ethereal-lit*": [ 0, 12, 12 ],
+    "*astral-lit*": [ 44, 16, 18 ],
+    "*temporal-lit*": [ 5, 9, 9 ],
+    "*": [ 0, 0, 0 ]
   },
   "vertexFlagsbyType": {
-    "*ethereal-lit*": { "glowLevel": 0 },
-    "*astral-lit*": { "glowLevel": 40 },
+    "*ethereal*": { "glowLevel": 32 },
+    "*astral-lit*": { "glowLevel": 40, "reflective": true },
     "*temporal-lit*": { "glowLevel": 0 },
+    "*astral*": { "glowLevel": 0, "reflective": true },
     "*": { "glowLevel": 0 }
   },
   "creativeinventory": {
-    "general": ["*-{material}-unlit-north"],
-    "construction": ["*-{material}-unlit-north"],
-    "primitive": ["*-{material}-unlit-north"]
+    "general": [ "*-{material}-unlit-north" ],
+    "construction": [ "*-{material}-unlit-north" ],
+    "primitive": [ "*-{material}-unlit-north" ]
   },
   "replaceable": 700,
   "resistance": 3,
-  "lightAbsorption": 0,
   "textures": {
     "alcove": {
       "base": "block/stone/steatite/alcove/{material}"

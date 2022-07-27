@@ -8,21 +8,18 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.MathTools;
     using Vintagestory.GameContent;
 
-    public class BEMetalBucket : BlockEntityContainer
+    public class BEMetalBucket : BlockEntityLiquidContainer
     {
-
-        internal InventoryGeneric inventory;
-
-        public override InventoryBase Inventory => this.inventory;
-
         public override string InventoryClassName => "metalbucket";
-
         private MeshData currentMesh;
         private BlockMetalBucket ownBlock;
-
         public float MeshAngle;
 
-        public BEMetalBucket() => this.inventory = new InventoryGeneric(1, null, null);
+
+        public BEMetalBucket()
+        {
+            this.inventory = new InventoryGeneric(1, null, null);
+        }
 
 
         public override void Initialize(ICoreAPI api)
@@ -37,7 +34,7 @@ namespace PrimitiveSurvival.ModSystem
         }
 
 
-        public override void OnBlockBroken()
+        public override void OnBlockBroken(IPlayer forPlayer)
         {
             // Don't drop inventory contents
         }
@@ -54,19 +51,10 @@ namespace PrimitiveSurvival.ModSystem
         }
 
 
-        public ItemStack GetContent() => this.inventory[0].Itemstack;
-
-
-        internal void SetContent(ItemStack stack)
-        {
-            this.inventory[0].Itemstack = stack;
-            this.MarkDirty(true);
-        }
-
-
         internal MeshData GenMesh()
         {
-            if (this.ownBlock == null) return null;
+            if (this.ownBlock == null)
+            { return null; }
             var mesh = this.ownBlock.GenMesh(this.Api as ICoreClientAPI, this.GetContent(), this.Pos);
             if (mesh.CustomInts != null)
             {
@@ -82,10 +70,50 @@ namespace PrimitiveSurvival.ModSystem
 
         public override bool OnTesselation(ITerrainMeshPool mesher, ITesselatorAPI tesselator)
         {
-            var block = this.Api.World.BlockAccessor.GetBlock(this.Pos) as BlockMetalBucket;
-            if (this.currentMesh != null)
+            ITexPositionSource tmpTextureSource;
+            MeshData mesh;
+            var shapePath = "primitivesurvival:shapes/block/metalbucket/empty";
+            var block = this.Api.World.BlockAccessor.GetBlock(this.Pos, BlockLayersAccess.Default) as BlockMetalBucket;
+            if (block != null)
             {
-                mesher.AddMeshData(this.currentMesh.Clone().Rotate(new Vec3f(0.5f, 0.5f, 0.5f), 0, this.MeshAngle, 0));
+                tmpTextureSource = tesselator.GetTexSource(block);
+                mesh = block.GenMesh(this.Api as ICoreClientAPI, shapePath, tmpTextureSource); //, tesselator);
+            }
+            // fruit press or something else?
+            else
+            {
+                tmpTextureSource = tesselator.GetTexSource(this.ownBlock);
+                mesh = this.ownBlock.GenMesh(this.Api as ICoreClientAPI, shapePath, tmpTextureSource); //, tesselator);
+            }
+            mesher.AddMeshData(mesh.Rotate(new Vec3f(0.5f, 0.5f, 0.5f), 0, this.MeshAngle, 0));
+
+            if (this.GetContent() != null)
+            {
+                shapePath = "game:shapes/block/wood/bucket/contents";
+                if (this.GetContent().Block != null)
+                {
+                    tmpTextureSource = ((ICoreClientAPI)this.Api).Tesselator.GetTexSource(this.GetContent().Block);
+                    //fuck this outside of main thread shit again
+                    try
+                    {
+                        mesh = this.ownBlock.GenMesh(this.Api as ICoreClientAPI, this.GetContent(), this.Pos);
+                        mesher.AddMeshData(mesh.Rotate(new Vec3f(0.5f, 0.5f, 0.5f), 0, this.MeshAngle, 0));
+                    }
+                    catch
+                    { }
+                }
+                else if (this.GetContent().Item != null)
+                {
+                    tmpTextureSource = ((ICoreClientAPI)this.Api).Tesselator.GetTextureSource(this.GetContent().Item);
+                    //fuck this outside of main thread shit again
+                    try
+                    {
+                        mesh = this.ownBlock.GenMesh(this.Api as ICoreClientAPI, this.GetContent(), this.Pos);
+                        mesher.AddMeshData(mesh.Rotate(new Vec3f(0.5f, 0.5f, 0.5f), 0, this.MeshAngle, 0));
+                    }
+                    catch { }
+                }
+
             }
             return true;
         }
@@ -116,7 +144,6 @@ namespace PrimitiveSurvival.ModSystem
         public override void GetBlockInfo(IPlayer forPlayer, StringBuilder sb)
         {
             var slot = this.inventory[0];
-            var playerStack = slot.Itemstack;
             if (slot.Empty)
             { sb.AppendLine(Lang.Get("Empty")); }
             else

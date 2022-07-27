@@ -4,7 +4,7 @@
   "behaviors": [
     {
       "name": "CanAttach",
-      "properties": { "sides": ["up", "down"] }
+      "properties": { "sides": [ "up", "down" ] }
     }
   ],
   "attributes": {
@@ -13,7 +13,7 @@
   "variantgroups": [
     {
       "code": "material",
-      "states": ["temporal", "astral", "ethereal"]
+      "states": [ "temporal", "astral", "ethereal" ]
     },
     {
       "code": "type",
@@ -38,13 +38,13 @@
     },
     {
       "code": "cover",
-      "states": ["free"]
+      "states": [ "free" ]
     }
   ],
   "creativeinventory": {
-    "general": ["*-ew-free"],
-    "decorative": ["*-ew-free"],
-    "primitive": ["*-ew-free"]
+    "general": [ "*-ew-free" ],
+    "decorative": [ "*-ew-free" ],
+    "primitive": [ "*-ew-free" ]
   },
   "shapebytype": {
     "*-empty-free": { "base": "block/stone/steatite/rail/empty" },
@@ -117,11 +117,8 @@
     "*-free": "JSON"
   },
   "blockmaterial": "Stone",
-  "replaceable": 700,
-  "resistance": 2,
-  "textures": {
-    "horizontal": { "base": "block/stone/steatite/rail/{material}-horizontal" },
-    "vertical": { "base": "block/stone/steatite/rail/{material}-vertical" }
+  "renderpassByType": {
+    "*-ethereal*": "transparent"
   },
   "sidesolid": {
     "all": false
@@ -129,7 +126,29 @@
   "sideopaque": {
     "all": false
   },
-  "lightAbsorption": 0,
+  "vertexFlagsbyType": {
+    "*-ethereal*": {
+      "zOffset": 1,
+      "glowLevel": 32,
+      "lowContrast": true
+    },
+    "*-astral*": {
+      "reflective": true
+    }
+  },
+  "faceCullModebyType": {
+    "*-ethereal*": "liquid"
+  },
+  "lightabsorptionByType": {
+    "*-ethereal*": 0,
+    "*": 99
+  },
+  "replaceable": 700,
+  "resistance": 2,
+  "textures": {
+    "horizontal": { "base": "block/stone/steatite/rail/{material}-horizontal" },
+    "vertical": { "base": "block/stone/steatite/rail/{material}-vertical" }
+  },
   "sounds": {
     "place": "game:walk/stone1",
     "hit": "game:walk/stone1",

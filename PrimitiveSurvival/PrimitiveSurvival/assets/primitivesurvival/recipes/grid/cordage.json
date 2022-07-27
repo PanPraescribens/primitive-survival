@@ -36,7 +36,28 @@
   {
     "ingredientPattern": "L",
     "ingredients": {
-      "L": { "type": "item", "code": "game:cattailtops", "quantity": 3 }
+      "L": {
+        "type": "item",
+        "code": "game:cattailtops",
+        "quantity": 3
+      }
+    },
+    "width": 1,
+    "height": 1,
+    "output": {
+      "type": "item",
+      "code": "primitivesurvival:cordage",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "L",
+    "ingredients": {
+      "L": {
+        "type": "item",
+        "code": "game:papyrustops",
+        "quantity": 3
+      }
     },
     "width": 1,
     "height": 1,

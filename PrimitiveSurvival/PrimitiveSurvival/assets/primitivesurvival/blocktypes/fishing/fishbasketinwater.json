@@ -32,15 +32,9 @@
       }
     ]
   },
-  "drawtype": "JSONAndWater",
-  "renderpass": "liquid",
-  "matterstate": "liquid",
-  "blockmaterial": "liquid",
-  "faceCullMode": "liquid",
-  "liquidCode": "water",
-  "liquidLevel": 7,
-  "lightAbsorption": 2,
-  "climateColorMap": "climateWaterTint",
+  "drawtype": "JSON",
+  "blockmaterial": "wood",
+  "lightAbsorption": 0,
   "collisionbox": {
     "x1": 0.1,
     "y1": 0,
@@ -77,6 +71,9 @@
     "perchmaterial": {
       "base": "primitivesurvival:item/fishing/fish-perch-raw"
     },
+    "salmonmaterial": {
+      "base": "primitivesurvival:item/fishing/fish-salmon-raw"
+    },
     "carpmaterial": {
       "base": "primitivesurvival:item/fishing/fish-carp-raw"
     },
@@ -89,13 +86,7 @@
     "mutantmaterial": { "base": "item/fishing/fish-mutant-raw" },
     "baitmaterial": {
       "base": "primitivesurvival:item/fishing/bait"
-    },
-    "north": { "base": "game:block/liquid/water" },
-    "east": { "base": "game:block/liquid/water" },
-    "south": { "base": "game:block/liquid/water" },
-    "west": { "base": "game:block/liquid/water" },
-    "up": { "base": "game:block/liquid/water" },
-    "down": { "base": "game:block/liquid/water" }
+    }
   },
   "guiTransform": {
     "translation": {

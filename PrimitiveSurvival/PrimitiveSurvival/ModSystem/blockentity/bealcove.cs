@@ -63,7 +63,7 @@ namespace PrimitiveSurvival.ModSystem
 
         public override void GetBlockInfo(IPlayer forPlayer, StringBuilder sb)
         {
-            var block = this.Api.World.BlockAccessor.GetBlock(this.Pos);
+            var block = this.Api.World.BlockAccessor.GetBlock(this.Pos, BlockLayersAccess.Default);
             if (block.Code.Path.Contains("-unlit"))
             {
                 sb.Append(Lang.Get("Right click with a torch or a candle to light the candle."));

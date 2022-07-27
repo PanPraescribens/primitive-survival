@@ -8,9 +8,9 @@ namespace PrimitiveSurvival.ModSystem
     public class BlockWoodSupportSpikes : Block
     {
 
-        public MeshData GenMesh(ICoreClientAPI capi, string shapePath, ITexPositionSource texture, int slot, ITesselatorAPI tesselator = null)
+        public MeshData GenMesh(ICoreClientAPI capi, string shapePath, ITexPositionSource texture, int slot) //, ITesselatorAPI tesselator = null)
         {
-            tesselator = capi.Tesselator;
+            var tesselator = capi.Tesselator;
             var shape = capi.Assets.TryGet(shapePath + ".json").ToObject<Shape>();
             tesselator.TesselateShape(shapePath, shape, out var mesh, texture, new Vec3f(0, 0, 0));
             if (slot == -1) //spikes
@@ -34,7 +34,7 @@ namespace PrimitiveSurvival.ModSystem
         {
             if (world.BlockAccessor.GetBlockEntity(blockSel.Position) is BEWoodSupportSpikes be)
             {
-                var result = be.OnInteract(byPlayer, blockSel);
+                var result = be.OnInteract(byPlayer); //, blockSel);
                 return result;
             }
             return base.OnBlockInteractStart(world, byPlayer, blockSel);
@@ -51,25 +51,25 @@ namespace PrimitiveSurvival.ModSystem
 
         public override void OnNeighbourBlockChange(IWorldAccessor world, BlockPos pos, BlockPos neibpos)
         {
-            var block = world.BlockAccessor.GetBlock(neibpos);
+            var block = world.BlockAccessor.GetBlock(neibpos, BlockLayersAccess.Default);
             if (block.BlockId <= 0) //block removed
             {
-                block = world.BlockAccessor.GetBlock(neibpos.NorthCopy());
+                block = world.BlockAccessor.GetBlock(neibpos.NorthCopy(), BlockLayersAccess.Default);
                 if (block.FirstCodePart() == "woodsupportspikes")
                 { world.BlockAccessor.BreakBlock(neibpos.NorthCopy(), null); }
-                block = world.BlockAccessor.GetBlock(neibpos.SouthCopy());
+                block = world.BlockAccessor.GetBlock(neibpos.SouthCopy(), BlockLayersAccess.Default);
                 if (block.FirstCodePart() == "woodsupportspikes")
                 { world.BlockAccessor.BreakBlock(neibpos.SouthCopy(), null); }
-                block = world.BlockAccessor.GetBlock(neibpos.EastCopy());
+                block = world.BlockAccessor.GetBlock(neibpos.EastCopy(), BlockLayersAccess.Default);
                 if (block.FirstCodePart() == "woodsupportspikes")
                 { world.BlockAccessor.BreakBlock(neibpos.EastCopy(), null); }
-                block = world.BlockAccessor.GetBlock(neibpos.WestCopy());
+                block = world.BlockAccessor.GetBlock(neibpos.WestCopy(), BlockLayersAccess.Default);
                 if (block.FirstCodePart() == "woodsupportspikes")
                 { world.BlockAccessor.BreakBlock(neibpos.WestCopy(), null); }
             }
             else //block added
             {
-                block = world.BlockAccessor.GetBlock(neibpos.DownCopy());
+                block = world.BlockAccessor.GetBlock(neibpos.DownCopy(), BlockLayersAccess.Default);
                 if (block.FirstCodePart() == "woodsupportspikes")
                 {
                     world.BlockAccessor.BreakBlock(neibpos.DownCopy(), null);

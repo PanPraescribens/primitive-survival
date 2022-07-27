@@ -4,24 +4,49 @@
   "variantgroups": [
     {
       "code": "type",
-      "states": ["plain", "ornate"]
+      "states": [ "plain", "ornate" ]
     },
     {
       "code": "material",
-      "states": ["temporal", "astral", "ethereal"]
+      "states": [ "temporal", "astral", "ethereal" ]
     }
   ],
   "shape": { "base": "game:block/basic/cube" },
   "drawtype": "Cube",
-  "blockmaterial": "Stone",
+  "blockmaterial": "stone",
+  "renderpassByType": {
+    "*-ethereal": "transparent"
+  },
+  "sidesolid": {
+    "all": false
+  },
+  "sideopaque": {
+    "all": false
+  },
+  "vertexFlagsbyType": {
+    "*-ethereal": {
+      "zOffset": 1,
+      "glowLevel": 32,
+      "lowContrast": true
+    },
+    "*-astral": {
+      "reflective": true
+    }
+  },
+  "faceCullModebyType": {
+    "*-ethereal": "liquid"
+  },
+  "lightabsorptionByType": {
+    "*-ethereal": 0,
+    "*":  99
+  },
   "creativeinventory": {
-    "general": ["*-{material}"],
-    "construction": ["*-{material}"],
-    "primitive": ["*-{material}"]
+    "general": [ "*-{material}" ],
+    "construction": [ "*-{material}" ],
+    "primitive": [ "*-{material}" ]
   },
   "replaceable": 700,
   "resistance": 3,
-  "lightAbsorption": 99,
   "texturesByType": {
     "steatite-plain*": {
       "all": {

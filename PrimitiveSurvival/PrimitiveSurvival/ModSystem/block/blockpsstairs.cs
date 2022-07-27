@@ -11,7 +11,7 @@ namespace PrimitiveSurvival.ModSystem
         {
             if (byPlayer.Entity.Controls.Sneak) //sneak place only
             {
-                var targetBlock = world.BlockAccessor.GetBlock(blockSel.Position);
+                var targetBlock = world.BlockAccessor.GetBlock(blockSel.Position, BlockLayersAccess.Default);
                 var newPath = targetBlock.Code.Path;
                 if (newPath.Contains("normal")) //rotate
                 {
@@ -115,7 +115,7 @@ namespace PrimitiveSurvival.ModSystem
                 var outCnt = 0;
                 foreach (var neib in neibPos)
                 {
-                    testBlock = this.api.World.BlockAccessor.GetBlock(neib);
+                    testBlock = this.api.World.BlockAccessor.GetBlock(neib, BlockLayersAccess.Default);
                     if (testBlock.BlockId != 0)
                     {
                         if (testBlock.Code.Path.Contains("stairs"))
@@ -157,7 +157,7 @@ namespace PrimitiveSurvival.ModSystem
                     inCnt = 0;
                     foreach (var neib in neibPos)
                     {
-                        testBlock = this.api.World.BlockAccessor.GetBlock(neib);
+                        testBlock = this.api.World.BlockAccessor.GetBlock(neib, BlockLayersAccess.Default);
                         if (testBlock.BlockId != 0)
                         {
                             if (testBlock.Code.Path.Contains("stairs"))

@@ -4,15 +4,15 @@
   "variantgroups": [
     {
       "code": "material",
-      "states": ["temporal", "astral", "ethereal"]
+      "states": [ "temporal", "astral", "ethereal" ]
     },
     {
       "code": "type",
-      "states": ["normal", "inside", "outside"]
+      "states": [ "normal", "inside", "outside" ]
     },
     {
       "code": "updown",
-      "states": ["up", "down", "sideways"]
+      "states": [ "up", "down", "sideways" ]
     },
 
     {
@@ -30,7 +30,7 @@
     },
     {
       "code": "cover",
-      "states": ["free", "snow"]
+      "states": [ "free", "snow" ]
     }
   ],
   "skipVariants": [
@@ -57,9 +57,9 @@
     "partialAttachable": true
   },
   "creativeinventory": {
-    "general": ["*-{material}-normal-up-north-free"],
-    "construction": ["*-{material}-normal-up-north-free"],
-    "primitive": ["*-{material}-normal-up-north-free"]
+    "general": [ "*-{material}-normal-up-north-free" ],
+    "construction": [ "*-{material}-normal-up-north-free" ],
+    "primitive": [ "*-{material}-normal-up-north-free" ]
   },
   "drops": [
     {
@@ -69,6 +69,26 @@
     }
   ],
   "blockmaterial": "Stone",
+  "renderpassByType": {
+    "*-ethereal*": "transparent"
+  },
+  "vertexFlagsbyType": {
+    "*-ethereal*": {
+      "zOffset": 1,
+      "glowLevel": 32,
+      "lowContrast": true
+    },
+    "*-astral*": {
+      "reflective": true
+    }
+  },
+  "faceCullModebyType": {
+    "*-ethereal*": "liquid"
+  },
+  "lightabsorptionByType": {
+    "*-ethereal*": 0,
+    "*": 99
+  },
   "replaceable": 700,
   "resistance": 3,
   "sidesolidByType": {

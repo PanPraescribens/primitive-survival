@@ -9,7 +9,8 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Common.Entities;
     using Vintagestory.API.Config;
 
-    public class BEWoodSupportSpikes : BlockEntityDisplay, IAnimalFoodSource
+
+    public class BEWoodSupportSpikes : BlockEntityDisplayCase, IAnimalFoodSource
     {
 
         protected static readonly Random Rnd = new Random();
@@ -45,23 +46,30 @@ namespace PrimitiveSurvival.ModSystem
             { this.Api.ModLoader.GetModSystem<POIRegistry>().RemovePOI(this); }
         }
 
-
         #region IAnimalFoodSource impl
+        // ADDED DIET FOR 1.17
+        public bool IsSuitableFor(Entity entity, string[] diet)
+        //public bool IsSuitableFor(Entity entity)
+        {
+            //if (diet == null) //shouldn't need this at all
+            //    return false;
+            return true;
+        }
 
-        public bool IsSuitableFor(Entity entity) => true;
-
-        public float ConsumeOnePortion() =>
+        public float ConsumeOnePortion()
+        {
             //TryClearContents();
-            1f; //Was 0f
+            return 1f; //Was 0f
+        }
 
         public string Type => "food";
 
-        public Vec3d Position => Pos.ToVec3d().Add(0.5, 0.5, 0.5);
+        public Vec3d Position => this.Pos.ToVec3d().Add(0.5, 0.5, 0.5);
         #endregion
 
 
         public override string InventoryClassName => "woodsupportspikes";
-        protected InventoryGeneric inventory;
+        //protected InventoryGeneric inventory;
 
 
         public override InventoryBase Inventory => this.inventory;
@@ -74,7 +82,7 @@ namespace PrimitiveSurvival.ModSystem
         }
 
 
-        internal bool OnInteract(IPlayer byPlayer, BlockSelection blockSel)
+        internal bool OnInteract(IPlayer byPlayer) //, BlockSelection blockSel)
         {
             var playerSlot = byPlayer.InventoryManager.ActiveHotbarSlot;
             if (playerSlot.Empty)
@@ -161,7 +169,7 @@ namespace PrimitiveSurvival.ModSystem
 
             if (usedSlot > -1)
             {
-                var stack = this.inventory[usedSlot].TakeOutWhole();
+                var stack = this.inventory[usedSlot].TakeOut(1);
                 if (stack.StackSize > 0)
                 { byPlayer.InventoryManager.TryGiveItemstack(stack); }
                 this.MarkDirty(true);
@@ -217,11 +225,11 @@ namespace PrimitiveSurvival.ModSystem
         {
             var shapeBase = "primitivesurvival:shapes/";
             string shapePath;
-            var block = this.Api.World.BlockAccessor.GetBlock(this.Pos) as BlockWoodSupportSpikes;
+            var block = this.Api.World.BlockAccessor.GetBlock(this.Pos, BlockLayersAccess.Default) as BlockWoodSupportSpikes;
             var texture = tesselator.GetTexSource(block);
             ITexPositionSource tmpTextureSource;
             shapePath = "block/woodsupportspikes";
-            var mesh = block.GenMesh(this.Api as ICoreClientAPI, shapeBase + shapePath, texture, -1, tesselator);
+            var mesh = block.GenMesh(this.Api as ICoreClientAPI, shapeBase + shapePath, texture, -1); //, tesselator);
             mesher.AddMeshData(mesh);
 
             if (this.inventory != null)
@@ -238,14 +246,14 @@ namespace PrimitiveSurvival.ModSystem
                     var tmpBlock = this.Api.World.GetBlock(block.CodeWithPath("foilage-" + usedSlots.ToString()));
                     shapePath = "block/foilage";
                     tmpTextureSource = tesselator.GetTexSource(tmpBlock);
-                    mesh = block.GenMesh(this.Api as ICoreClientAPI, shapeBase + shapePath, tmpTextureSource, usedSlots, tesselator);
+                    mesh = block.GenMesh(this.Api as ICoreClientAPI, shapeBase + shapePath, tmpTextureSource, usedSlots); //, tesselator);
                     mesher.AddMeshData(mesh);
                 }
                 else if (usedSlots == 4)
                 {
                     shapePath = "block/foilage";
                     tmpTextureSource = tesselator.GetTexSource(this.inventory[3].Itemstack.Block);
-                    mesh = block.GenMesh(this.Api as ICoreClientAPI, shapeBase + shapePath, tmpTextureSource, usedSlots, tesselator);
+                    mesh = block.GenMesh(this.Api as ICoreClientAPI, shapeBase + shapePath, tmpTextureSource, usedSlots); //, tesselator);
                     mesher.AddMeshData(mesh);
                 }
             }

@@ -18,7 +18,7 @@ namespace PrimitiveSurvival.ModSystem
                 if (entity.Alive)
                 {
                     double fallIntoDamageMul = ModConfig.Loaded.FallDamageMultiplierMetalSpikes;
-                    var block = world.BlockAccessor.GetBlock(pos);
+                    var block = world.BlockAccessor.GetBlock(pos, BlockLayersAccess.Default);
                     if (block.Code.Path.Contains("woodspikes"))
                     {
                         fallIntoDamageMul = ModConfig.Loaded.FallDamageMultiplierWoodSpikes;

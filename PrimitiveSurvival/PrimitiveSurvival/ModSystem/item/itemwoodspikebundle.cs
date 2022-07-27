@@ -5,8 +5,10 @@ namespace PrimitiveSurvival.ModSystem
     public class ItemWoodSpikeBundle : Item
     {
 
-        public override void OnHeldInteractStart(ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, bool firstEvent, ref EnumHandHandling handling) => handling = EnumHandHandling.PreventDefaultAction;
-
+        public override void OnHeldInteractStart(ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, bool firstEvent, ref EnumHandHandling handling)
+        {
+            handling = EnumHandHandling.PreventDefaultAction;
+        }
 
         public override void OnHeldInteractStop(float secondsUsed, ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel)
         {
@@ -15,7 +17,7 @@ namespace PrimitiveSurvival.ModSystem
             var world = byEntity.World;
             if (world == null)
             { return; }
-            var block = world.BlockAccessor.GetBlock(blockSel.Position);
+            var block = world.BlockAccessor.GetBlock(blockSel.Position, BlockLayersAccess.Default);
 
             var face = blockSel.Face.ToString();
             if (face == "down")
@@ -26,7 +28,7 @@ namespace PrimitiveSurvival.ModSystem
                 { return; }
                 var blockSelAbove = blockSel.Clone();
                 blockSelAbove.Position.Y += 1;
-                var blockAbove = world.BlockAccessor.GetBlock(blockSelAbove.Position);
+                var blockAbove = world.BlockAccessor.GetBlock(blockSelAbove.Position, BlockLayersAccess.Default);
                 if (blockAbove.BlockId == 0 || blockAbove.Code.Path.Contains("tallgrass-") || block.Code.Path.Contains("tallgrass-"))
                 {
                     var blockNew = world.GetBlock(new AssetLocation("primitivesurvival:woodspikes"));
@@ -50,7 +52,7 @@ namespace PrimitiveSurvival.ModSystem
                 { blockSelBeside.Position.Z -= 1; }
                 else
                 { blockSelBeside.Position.Z += 1; }
-                var blockBeside = world.BlockAccessor.GetBlock(blockSelBeside.Position);
+                var blockBeside = world.BlockAccessor.GetBlock(blockSelBeside.Position, BlockLayersAccess.Default);
 
                 if (blockBeside.BlockId == 0 || block.FirstCodePart() == "woodsupportspikes")
                 {

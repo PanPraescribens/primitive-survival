@@ -1,18 +1,18 @@
 namespace PrimitiveSurvival.ModSystem
 {
+    using System;
     using Vintagestory.API.Client;
     using Vintagestory.API.Common;
     using Vintagestory.API.MathTools;
-    using System;
 
     public class BlockLimbTrotLineLure : Block
     {
         private static readonly Random Rnd = new Random();
 
-        public MeshData GenMesh(ICoreClientAPI capi, string shapePath, ITexPositionSource texture, bool alive, ITesselatorAPI tesselator = null)
+        public MeshData GenMesh(ICoreClientAPI capi, string shapePath, ITexPositionSource texture, bool alive) //, ITesselatorAPI tesselator = null)
         {
-            Shape shape = null;
-            tesselator = capi.Tesselator;
+            Shape shape; // = null;
+            var tesselator = capi.Tesselator;
             shape = capi.Assets.TryGet(shapePath + ".json").ToObject<Shape>();
             tesselator.TesselateShape(shapePath, shape, out var mesh, texture, new Vec3f(this.Shape.rotateX, this.Shape.rotateY, this.Shape.rotateZ));
             if (shapePath.Contains("catfish"))
@@ -34,11 +34,14 @@ namespace PrimitiveSurvival.ModSystem
                 else if (shapePath.Contains("bluegill"))
                 { flength = 0.25; }
 
-                var fishWave = VertexFlags.LeavesWindWaveBitMask | VertexFlags.WeakWaveBitMask;
+                // 1.16
+                //var fishWave = VertexFlags.LeavesWindWaveBitMask | VertexFlags.WeakWaveBitMask;
+                var fishWave = EnumWindBitModeMask.ExtraWeakWind | VertexFlags.LiquidWaterModeBitMask;
+
                 for (var vertexNum = 0; vertexNum < mesh.GetVerticesCount(); vertexNum++)
                 {
                     //tail only
-                    if (mesh.xyz[3 * vertexNum + 1] < -0.2 - flength)
+                    if (mesh.xyz[(3 * vertexNum) + 1] < -0.2 - flength)
                     { mesh.Flags[vertexNum] |= fishWave; }
                     else
                     { mesh.Flags[vertexNum] |= 6144; }
@@ -58,19 +61,19 @@ namespace PrimitiveSurvival.ModSystem
 
         public override void OnNeighbourBlockChange(IWorldAccessor world, BlockPos pos, BlockPos neibpos)
         {
-            var block = world.BlockAccessor.GetBlock(neibpos);
+            var block = world.BlockAccessor.GetBlock(neibpos, BlockLayersAccess.Default);
             if (block.BlockId <= 0) //block removed
             {
-                block = world.BlockAccessor.GetBlock(neibpos.NorthCopy());
+                block = world.BlockAccessor.GetBlock(neibpos.NorthCopy(), BlockLayersAccess.Default);
                 if (block.FirstCodePart() == "limbtrotlinelure" && block.LastCodePart() != "east" && block.LastCodePart() != "west")
                 { world.BlockAccessor.BreakBlock(neibpos.NorthCopy(), null); }
-                block = world.BlockAccessor.GetBlock(neibpos.SouthCopy());
+                block = world.BlockAccessor.GetBlock(neibpos.SouthCopy(), BlockLayersAccess.Default);
                 if (block.FirstCodePart() == "limbtrotlinelure" && block.LastCodePart() != "east" && block.LastCodePart() != "west")
                 { world.BlockAccessor.BreakBlock(neibpos.SouthCopy(), null); }
-                block = world.BlockAccessor.GetBlock(neibpos.EastCopy());
+                block = world.BlockAccessor.GetBlock(neibpos.EastCopy(), BlockLayersAccess.Default);
                 if (block.FirstCodePart() == "limbtrotlinelure" && block.LastCodePart() != "north" && block.LastCodePart() != "south")
                 { world.BlockAccessor.BreakBlock(neibpos.EastCopy(), null); }
-                block = world.BlockAccessor.GetBlock(neibpos.WestCopy());
+                block = world.BlockAccessor.GetBlock(neibpos.WestCopy(), BlockLayersAccess.Default);
                 if (block.FirstCodePart() == "limbtrotlinelure" && block.LastCodePart() != "north" && block.LastCodePart() != "south")
                 { world.BlockAccessor.BreakBlock(neibpos.WestCopy(), null); }
             }
@@ -80,7 +83,7 @@ namespace PrimitiveSurvival.ModSystem
         public override void OnBlockBroken(IWorldAccessor world, BlockPos pos, IPlayer byPlayer, float dropQuantityMultiplier = 1)
         {
             if (world.BlockAccessor.GetBlockEntity(pos) is BELimbTrotLineLure bedc)
-            { bedc.OnBreak(byPlayer, pos); } //empty the inventory onto the ground
+            { bedc.OnBreak(); } // (byPlayer, pos); } //empty the inventory onto the ground
             base.OnBlockBroken(world, pos, byPlayer, dropQuantityMultiplier);
         }
 
@@ -88,8 +91,8 @@ namespace PrimitiveSurvival.ModSystem
         public override bool TryPlaceBlock(IWorldAccessor world, IPlayer byPlayer, ItemStack itemstack, BlockSelection blockSel, ref string failureCode)
         {
             blockSel = blockSel.Clone();
-            var block = this.api.World.BlockAccessor.GetBlock(blockSel.Position);
-            var placed = base.TryPlaceBlock(world, byPlayer, itemstack, blockSel, ref failureCode);
+            var block = this.api.World.BlockAccessor.GetBlock(blockSel.Position, BlockLayersAccess.Default);
+            //var placed = base.TryPlaceBlock(world, byPlayer, itemstack, blockSel, ref failureCode);
             block = this.api.World.GetBlock(block.CodeWithPath(block.Code.Path));
             this.api.World.BlockAccessor.SetBlock(block.BlockId, blockSel.Position);
             return false;
@@ -99,7 +102,8 @@ namespace PrimitiveSurvival.ModSystem
         public override bool OnBlockInteractStart(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel)
         {
             if (world.BlockAccessor.GetBlockEntity(blockSel.Position) is BELimbTrotLineLure bedc)
-            { return bedc.OnInteract(world, byPlayer, blockSel); }
+            //{ return bedc.OnInteract(world, byPlayer, blockSel); }
+            { return bedc.OnInteract(byPlayer, blockSel); }
             return base.OnBlockInteractStart(world, byPlayer, blockSel);
         }
     }

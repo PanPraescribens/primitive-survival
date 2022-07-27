@@ -6,7 +6,7 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.MathTools;
     using Vintagestory.API.Common.Entities;
     using PrimitiveSurvival.ModConfig;
-    using System.Diagnostics;
+    //using System.Diagnostics;
 
     public class BlockDeadfall : Block
     {
@@ -20,7 +20,7 @@ namespace PrimitiveSurvival.ModSystem
 
             if (isImpact)
             {
-                var block = this.api.World.BlockAccessor.GetBlock(pos);
+                var block = this.api.World.BlockAccessor.GetBlock(pos, BlockLayersAccess.Default);
                 var state = block.FirstCodePart(1);
 
                 //first check for bait stolen and trap tripped (both without actual damage)
@@ -43,7 +43,7 @@ namespace PrimitiveSurvival.ModSystem
                     return;
                 }
 
-                
+
                 double maxanimalheight = ModConfig.Loaded.DeadfallMaxAnimalHeight;
                 var maxdamage = ModConfig.Loaded.DeadfallMaxDamageBaited;
                 if (state == "set")
@@ -73,7 +73,7 @@ namespace PrimitiveSurvival.ModSystem
             placed = base.TryPlaceBlock(world, byPlayer, itemstack, blockSel, ref failureCode);
             if (placed)
             {
-                var block = this.api.World.BlockAccessor.GetBlock(blockSel.Position);
+                var block = this.api.World.BlockAccessor.GetBlock(blockSel.Position, BlockLayersAccess.Default);
                 var newPath = block.Code.Path;
                 newPath = newPath.Replace("north", facing);
                 block = this.api.World.GetBlock(block.CodeWithPath(newPath));
@@ -85,7 +85,7 @@ namespace PrimitiveSurvival.ModSystem
 
         public override bool OnBlockInteractStart(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel)
         {
-            var block = world.BlockAccessor.GetBlock(blockSel.Position);
+            var block = world.BlockAccessor.GetBlock(blockSel.Position, BlockLayersAccess.Default);
             var path = block.Code.Path;
             if (path.Contains("-tripped"))
             {
@@ -96,14 +96,14 @@ namespace PrimitiveSurvival.ModSystem
             }
 
             if (world.BlockAccessor.GetBlockEntity(blockSel.Position) is BEDeadfall bedc)
-            { return bedc.OnInteract(byPlayer, blockSel); }
+            { return bedc.OnInteract(byPlayer); } //, blockSel); }
             return true; //base.OnBlockInteractStart(world, byPlayer, blockSel);
         }
 
 
-        public MeshData GenMesh(ICoreClientAPI capi, string shapePath, ITexPositionSource texture, int slot, bool tripped, ITesselatorAPI tesselator = null)
+        public MeshData GenMesh(ICoreClientAPI capi, string shapePath, ITexPositionSource texture, int slot, bool tripped) //, ITesselatorAPI tesselator = null)
         {
-            tesselator = capi.Tesselator;
+            var tesselator = capi.Tesselator;
             var shape = capi.Assets.TryGet(shapePath + ".json").ToObject<Shape>();
             tesselator.TesselateShape(shapePath, shape, out var mesh, texture, new Vec3f(0, 0, 0));
             if (slot == 0) //bait

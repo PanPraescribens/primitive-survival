@@ -4,17 +4,18 @@ namespace PrimitiveSurvival.ModSystem
     using System.Text;
     using Vintagestory.API.Client;
     using Vintagestory.API.Common;
-    using Vintagestory.API.MathTools;
+    //using Vintagestory.API.MathTools;
     using Vintagestory.GameContent;
     using Vintagestory.API.Config;
 
-    public class BETemporallectern : BlockEntityDisplay
+
+    public class BETemporallectern : BlockEntityDisplayCase
     {
 
         private readonly int maxSlots = 2;
 
         public override string InventoryClassName => "temporallectern";
-        protected InventoryGeneric inventory;
+        //protected InventoryGeneric inventory;
 
         public override InventoryBase Inventory => this.inventory;
 
@@ -43,15 +44,17 @@ namespace PrimitiveSurvival.ModSystem
         }
 
 
-        public override void Initialize(ICoreAPI api) => base.Initialize(api);
+        public override void Initialize(ICoreAPI api)
+        {
+            base.Initialize(api);
+        }
 
-
-        internal bool OnInteract(IPlayer byPlayer, BlockSelection blockSel)
+        internal bool OnInteract(IPlayer byPlayer) //, BlockSelection blockSel)
         {
             var playerSlot = byPlayer.InventoryManager.ActiveHotbarSlot;
             if (playerSlot.Empty)
             {
-                if (this.TryTake(byPlayer, blockSel))
+                if (this.TryTake(byPlayer)) //, blockSel))
                 { return true; }
                 return false;
             }
@@ -64,7 +67,7 @@ namespace PrimitiveSurvival.ModSystem
         }
 
 
-        internal void OnBreak(IPlayer byPlayer, BlockPos pos)
+        internal void OnBreak() //IPlayer byPlayer, BlockPos pos)
         {
             for (var index = this.maxSlots - 1; index >= 0; index--)
             {
@@ -107,7 +110,7 @@ namespace PrimitiveSurvival.ModSystem
                 var path = playerStack.Item.Code.Path;
                 if (path.Contains("gear-"))
                 {
-                    var dir = this.Api.World.BlockAccessor.GetBlock(this.Pos).LastCodePart();
+                    var dir = this.Api.World.BlockAccessor.GetBlock(this.Pos, BlockLayersAccess.Default).LastCodePart();
                     var facing = byPlayer.CurrentBlockSelection.Face.Opposite.ToString();
 
                     if (facing == dir && this.GearSlot.Empty)
@@ -125,24 +128,24 @@ namespace PrimitiveSurvival.ModSystem
         }
 
 
-        private bool TryTake(IPlayer byPlayer, BlockSelection blockSel)
+        private bool TryTake(IPlayer byPlayer) //, BlockSelection blockSel)
         {
             var facing = byPlayer.CurrentBlockSelection.Face.Opposite;
             var playerFacing = facing.ToString();
-            var tmpblock = this.Api.World.BlockAccessor.GetBlock(this.Pos);
+            var tmpblock = this.Api.World.BlockAccessor.GetBlock(this.Pos, BlockLayersAccess.Default);
             var blockFacing = tmpblock.LastCodePart();
 
             if (playerFacing == blockFacing && !this.GearSlot.Empty)
             {
                 byPlayer.InventoryManager.TryGiveItemstack(this.GearStack);
-                this.GearSlot.TakeOutWhole();
+                this.GearSlot.TakeOut(1);
                 this.MarkDirty(true);
                 return true;
             }
             else if (!this.TopSlot.Empty)
             {
                 byPlayer.InventoryManager.TryGiveItemstack(this.TopStack);
-                this.TopSlot.TakeOutWhole();
+                this.TopSlot.TakeOut(1);
                 this.MarkDirty(true);
                 return true;
             }
@@ -159,16 +162,16 @@ namespace PrimitiveSurvival.ModSystem
         public override bool OnTesselation(ITerrainMeshPool mesher, ITesselatorAPI tesselator)
         {
             var shapeBase = "primitivesurvival:shapes/";
-            var shapePath = "";
-            var index = -1;
+            string shapePath;
+            //var index = -1;
 
-            var block = this.Api.World.BlockAccessor.GetBlock(this.Pos) as BlockTemporallectern;
+            var block = this.Api.World.BlockAccessor.GetBlock(this.Pos, BlockLayersAccess.Default) as BlockTemporallectern;
             Block tmpBlock;
             var texture = tesselator.GetTexSource(block);
 
             var newPath = "temporallectern";
             shapePath = "block/relic/" + newPath;
-            var mesh = block.GenMesh(this.Api as ICoreClientAPI, shapeBase + shapePath, texture, index, tesselator);
+            var mesh = block.GenMesh(this.Api as ICoreClientAPI, shapeBase + shapePath, texture); //, index, tesselator);
             mesher.AddMeshData(mesh);
 
             if (this.inventory != null)
@@ -181,7 +184,7 @@ namespace PrimitiveSurvival.ModSystem
                     { gearType = "temporal"; }
                     shapePath = "game:shapes/item/gear-" + gearType;
                     texture = ((ICoreClientAPI)this.Api).Tesselator.GetTexSource(tmpBlock);
-                    mesh = block.GenMesh(this.Api as ICoreClientAPI, shapePath, texture, 1, tesselator);
+                    mesh = block.GenMesh(this.Api as ICoreClientAPI, shapePath, texture); // ,1, tesselator);
                     mesher.AddMeshData(mesh);
                 }
 
@@ -193,7 +196,7 @@ namespace PrimitiveSurvival.ModSystem
                         tmpBlock = this.Api.World.GetBlock(block.CodeWithPath("necronomicon-north"));
                         texture = ((ICoreClientAPI)this.Api).Tesselator.GetTexSource(tmpBlock);
                         shapePath = "block/relic/" + newPath + "-closed";
-                        mesh = block.GenMesh(this.Api as ICoreClientAPI, shapeBase + shapePath, texture, index, tesselator);
+                        mesh = block.GenMesh(this.Api as ICoreClientAPI, shapeBase + shapePath, texture); //, index, tesselator);
                         mesher.AddMeshData(mesh);
                     }
                 }

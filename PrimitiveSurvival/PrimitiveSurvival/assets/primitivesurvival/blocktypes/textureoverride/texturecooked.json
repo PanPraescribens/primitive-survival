@@ -3,6 +3,7 @@
   "textures": {
     "troutmaterial": { "base": "item/fishing/fish-trout-cooked" },
     "perchmaterial": { "base": "item/fishing/fish-perch-cooked" },
+    "salmonmaterial": { "base": "item/fishing/fish-salmon-cooked" },
     "carpmaterial": { "base": "item/fishing/fish-carp-cooked" },
     "bassmaterial": { "base": "item/fishing/fish-bass-cooked" },
     "pikematerial": { "base": "item/fishing/fish-pike-cooked" },

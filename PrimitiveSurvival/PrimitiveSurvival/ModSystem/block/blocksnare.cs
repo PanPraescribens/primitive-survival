@@ -7,7 +7,7 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Config;
     using Vintagestory.API.Common.Entities;
     using PrimitiveSurvival.ModConfig;
-    using System.Diagnostics;
+    //using System.Diagnostics;
 
     public class BlockSnare : Block
     {
@@ -43,8 +43,8 @@ namespace PrimitiveSurvival.ModSystem
                     return;
                 }
 
-                var block = this.api.World.BlockAccessor.GetBlock(pos);
-                var blockPath = block.Code.Path;
+                var block = this.api.World.BlockAccessor.GetBlock(pos, BlockLayersAccess.Default);
+                //var blockPath = block.Code.Path;
                 var state = block.FirstCodePart(1);
                 double maxanimalheight = ModConfig.Loaded.SnareMaxAnimalHeight;
                 var maxdamage = ModConfig.Loaded.SnareMaxDamageBaited;
@@ -72,8 +72,8 @@ namespace PrimitiveSurvival.ModSystem
         public override bool TryPlaceBlock(IWorldAccessor world, IPlayer byPlayer, ItemStack itemstack, BlockSelection blockSel, ref string failureCode)
         {
             var blockSrc = blockSel.Clone();
-            blockSrc.Position.Y = blockSrc.Position.Y - 1;
-            var block = world.BlockAccessor.GetBlock(blockSrc.Position);
+            blockSrc.Position.Y--;
+            var block = world.BlockAccessor.GetBlock(blockSrc.Position, BlockLayersAccess.Default);
             if (block.Fertility <= 0)
             {
                 failureCode = Lang.Get("you need more suitable ground to place this trap");
@@ -84,7 +84,7 @@ namespace PrimitiveSurvival.ModSystem
             placed = base.TryPlaceBlock(world, byPlayer, itemstack, blockSel, ref failureCode);
             if (placed)
             {
-                block = this.api.World.BlockAccessor.GetBlock(blockSel.Position);
+                block = this.api.World.BlockAccessor.GetBlock(blockSel.Position, BlockLayersAccess.Default);
                 var newPath = block.Code.Path;
                 newPath = newPath.Replace("north", facing);
                 block = this.api.World.GetBlock(block.CodeWithPath(newPath));
@@ -96,7 +96,7 @@ namespace PrimitiveSurvival.ModSystem
 
         public override bool OnBlockInteractStart(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel)
         {
-            var block = world.BlockAccessor.GetBlock(blockSel.Position);
+            var block = world.BlockAccessor.GetBlock(blockSel.Position, BlockLayersAccess.Default);
             var path = block.Code.Path;
             if (path.Contains("-tripped"))
             {
@@ -107,14 +107,14 @@ namespace PrimitiveSurvival.ModSystem
             }
 
             if (world.BlockAccessor.GetBlockEntity(blockSel.Position) is BESnare bedc)
-            { return bedc.OnInteract(byPlayer, blockSel); }
+            { return bedc.OnInteract(byPlayer); } //, blockSel); }
             return true; // base.OnBlockInteractStart(world, byPlayer, blockSel);
         }
 
 
-        public MeshData GenMesh(ICoreClientAPI capi, string shapePath, ITexPositionSource texture, int slot, bool tripped, ITesselatorAPI tesselator = null)
+        public MeshData GenMesh(ICoreClientAPI capi, string shapePath, ITexPositionSource texture, int slot, bool tripped) //, ITesselatorAPI tesselator = null)
         {
-            tesselator = capi.Tesselator;
+            var tesselator = capi.Tesselator;
             var shape = capi.Assets.TryGet(shapePath + ".json").ToObject<Shape>();
             tesselator.TesselateShape(shapePath, shape, out var mesh, texture, new Vec3f(0, 0, 0));
             if (slot == 0) //bait

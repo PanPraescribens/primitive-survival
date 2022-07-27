@@ -11,8 +11,10 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Datastructures;
     using Vintagestory.API.Server;
     using PrimitiveSurvival.ModConfig;
+    //using System.Diagnostics;
 
-    public class BEWeirTrap : BlockEntityDisplay
+
+    public class BEWeirTrap : BlockEntityDisplayCase
     {
 
         private readonly int catchPercent = ModConfig.Loaded.WeirTrapCatchPercent;
@@ -22,16 +24,16 @@ namespace PrimitiveSurvival.ModSystem
 
         private readonly int tickSeconds = 3;
         private readonly int maxSlots = 2;
-        private readonly string[] fishTypes = { "trout", "perch", "carp", "bass", "pike", "arcticchar", "catfish", "bluegill" };
+        private readonly string[] fishTypes = { "trout", "perch", "salmon", "carp", "bass", "pike", "arcticchar", "catfish", "bluegill" };
         private readonly string[] shellStates = { "scallop", "sundial", "turritella", "clam", "conch", "seastar", "volute" };
         private readonly string[] shellColors = { "latte", "plain", "seafoam", "darkpurple", "cinnamon", "turquoise" };
-        private readonly string[] relics = { "temporalbase", "temporalcube", "temporallectern", "cthulu-statue", "dagon-statue", "hydra-statue", "necronomicon" };
+        private readonly string[] relics = { "temporalbase", "temporalcube", "temporallectern", "cthulu-statue", "dagon-statue", "hydra-statue", "nephrenka-statue", "necronomicon" };
         private static readonly Random Rnd = new Random();
 
         private long particleTick;
 
         public override string InventoryClassName => "weirtrap";
-        protected InventoryGeneric inventory;
+        //protected InventoryGeneric inventory;
 
         public override InventoryBase Inventory => this.inventory;
 
@@ -78,7 +80,7 @@ namespace PrimitiveSurvival.ModSystem
 
         private void GenerateWaterParticles(int slot, string type, BlockPos pos, IWorldAccessor world)
         {
-            var block = this.Api.World.BlockAccessor.GetBlock(this.Pos) as BlockWeirTrap;
+            var block = this.Api.World.BlockAccessor.GetBlock(this.Pos, BlockLayersAccess.Default) as BlockWeirTrap;
             var dir = block.LastCodePart();
             float minQuantity = 1;
             float maxQuantity = 8;
@@ -193,7 +195,7 @@ namespace PrimitiveSurvival.ModSystem
             var escaped = Rnd.Next(100);
             var caught = Rnd.Next(100);
             if (caught < this.catchPercent)
-            { this.WorldPut(0, this.Pos); }
+            { this.WorldPut(0); } //, this.Pos); }
             else if (!this.Catch1Slot.Empty || !this.Catch2Slot.Empty)
             {
                 if (escaped < this.escapePercent)
@@ -203,7 +205,7 @@ namespace PrimitiveSurvival.ModSystem
             {
                 caught = Rnd.Next(100);
                 if (caught < this.catchPercent)
-                { this.WorldPut(1, this.Pos); }
+                { this.WorldPut(1); } //, this.Pos); }
                 else
                 {
                     if (escaped < this.escapePercent)
@@ -238,7 +240,7 @@ namespace PrimitiveSurvival.ModSystem
         }
 
 
-        public bool WorldPut(int slot, BlockPos pos)
+        public bool WorldPut(int slot) //, BlockPos pos)
         {
             ItemStack newStack = null;
             if (slot == 0 || slot == 1)
@@ -301,7 +303,7 @@ namespace PrimitiveSurvival.ModSystem
                 }
                 /*********************************************/
 
-                this.inventory[slot].TakeOutWhole();
+                this.inventory[slot].TakeOut(1);
                 this.Api.World.BlockAccessor.MarkBlockDirty(pos);
                 this.MarkDirty();
                 return true;
@@ -388,34 +390,36 @@ namespace PrimitiveSurvival.ModSystem
         {
             if (!this.Catch2Slot.Empty)
             {
-                var rando = Rnd.Next(3);
+                /*var rando = Rnd.Next(8);
                 if (rando < 2 && this.Catch2Stack.Item != null) //fish
                 {
-                    //ItemStack drop = catch2Stack.Clone();
-                    //drop.StackSize = 1;
-                    //Api.World.SpawnItemEntity(drop, new Vec3d(Pos.X + 0.5, Pos.Y + 2, Pos.Z + 0.5), null);
-                    byPlayer.InventoryManager.TryGiveItemstack(this.Catch2Stack);
+                    var drop = this.Catch2Stack.Clone();
+                    drop.StackSize = 1;
+                    Api.World.SpawnItemEntity(drop, new Vec3d(this.Pos.X + 0.5, this.Pos.Y, this.Pos.Z + 0.5), null);
                 }
                 else
                 {
                     byPlayer.InventoryManager.TryGiveItemstack(this.Catch2Stack);
-                }
+                }*/
+                byPlayer.InventoryManager.TryGiveItemstack(this.Catch2Stack);
                 this.Catch2Slot.TakeOut(1);
                 this.MarkDirty(true);
                 return true;
             }
             else if (!this.Catch1Slot.Empty)
             {
-                var rando = Rnd.Next(8);
+                /*var rando = Rnd.Next(8);
                 if (rando < 1 && this.Catch1Stack.Item != null) //fish
                 {
-                    //byPlayer.InventoryManager.TryGiveItemstack(this.Catch1Stack);
                     var drop = this.Catch1Stack.Clone();
                     drop.StackSize = 1;
-                    this.Api.World.SpawnItemEntity(drop, new Vec3d(this.Pos.X + 0.5, this.Pos.Y + 2, this.Pos.Z + 0.5), null); //slippery
+                    this.Api.World.SpawnItemEntity(drop, new Vec3d(this.Pos.X + 0.5, this.Pos.Y, this.Pos.Z + 0.5), null); //slippery
                 }
                 else
-                { byPlayer.InventoryManager.TryGiveItemstack(this.Catch1Stack); }
+                {
+                    byPlayer.InventoryManager.TryGiveItemstack(this.Catch1Stack);
+                }*/
+                byPlayer.InventoryManager.TryGiveItemstack(this.Catch1Stack);
                 this.Catch1Slot.TakeOut(1);
                 this.MarkDirty(true);
                 return true;
@@ -436,7 +440,7 @@ namespace PrimitiveSurvival.ModSystem
                     { }
                     else if (!this.Catch1Stack.Item.Code.Path.Contains("psfish"))
                     { sb.Append(" " + Lang.Get("It smells a little funky in there.")); }
-                    rot = true;
+                    //rot = true;
                 }
                 else if (!this.Catch2Slot.Empty && !rot)
                 {
@@ -467,7 +471,7 @@ namespace PrimitiveSurvival.ModSystem
             string shapePath;
             Block tmpBlock;
             bool alive;
-            var block = this.Api.World.BlockAccessor.GetBlock(this.Pos) as BlockWeirTrap;
+            var block = this.Api.World.BlockAccessor.GetBlock(this.Pos, BlockLayersAccess.Default) as BlockWeirTrap;
             var texture = tesselator.GetTexSource(block);
             var tmpTextureSource = texture;
 
@@ -514,7 +518,7 @@ namespace PrimitiveSurvival.ModSystem
                         }
                         if (shapePath != "")
                         {
-                            mesh = block.GenMesh(this.Api as ICoreClientAPI, shapePath, tmpTextureSource, i, alive, tesselator);
+                            mesh = block.GenMesh(this.Api as ICoreClientAPI, shapePath, tmpTextureSource, i, alive); //, tesselator);
                             mesher.AddMeshData(mesh);
                         }
                     }

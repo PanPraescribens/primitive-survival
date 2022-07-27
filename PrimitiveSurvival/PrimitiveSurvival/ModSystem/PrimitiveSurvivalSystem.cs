@@ -2,29 +2,78 @@ namespace PrimitiveSurvival.ModSystem
 {
     using System.Linq;
     using System.Collections.Generic;
-    using System.Diagnostics;
     using Vintagestory.API.Common;
     using Vintagestory.API.Server;
+    using Vintagestory.API.Client;
     using Vintagestory.API.Util;
     using Vintagestory.API.MathTools;
+    using Vintagestory.GameContent;
     using PrimitiveSurvival.ModConfig;
+    using Vintagestory.Client.NoObf;
+    //using System.Diagnostics;
 
 
     public class PrimitiveSurvivalSystem : ModSystem
     {
+        public IShaderProgram EntityGenericShaderProgram { get; private set; }
+
         private readonly string thisModID = "primitivesurvival";
         private static Dictionary<IServerChunk, int> fishingChunks;
+
         public static List<string> chunkList;
-        bool prevChunksLoaded;
+
+        private bool prevChunksLoaded;
 
         private ICoreServerAPI sapi;
+        private ICoreClientAPI capi;
+
+        //readonly IShaderProgram overlayShaderProg;
+        private VenomOverlayRenderer vrenderer;
+
+        public override void StartClientSide(ICoreClientAPI api)
+        {
+            this.capi = api;
+
+            this.capi.Event.ReloadShader += this.LoadCustomShaders;
+            this.LoadCustomShaders();
+
+            this.capi.RegisterEntityRendererClass("entitygenericshaperenderer", typeof(EntityGenericShapeRenderer));
+
+            this.vrenderer = new VenomOverlayRenderer(api);
+            api.Event.RegisterRenderer(this.vrenderer, EnumRenderStage.Ortho);
+        }
+
+        public bool LoadCustomShaders()
+        {
+
+            this.EntityGenericShaderProgram = this.capi.Shader.NewShaderProgram();
+            // 1.17 My custom shader broke, but the built in shader works really well
+            (this.EntityGenericShaderProgram as ShaderProgram).AssetDomain = "game"; // this.Mod.Info.ModID;
+            //this.capi.Shader.RegisterFileShaderProgram("entitygenericshader", this.EntityGenericShaderProgram);
+            this.capi.Shader.RegisterFileShaderProgram("entityanimated", this.EntityGenericShaderProgram);
+            this.EntityGenericShaderProgram.Compile();
+            return true;
+        }
 
         public void RegisterClasses(ICoreAPI api)
         {
             api.RegisterEntity("entityearthworm", typeof(EntityEarthworm));
+            api.RegisterEntity("entityfireflies", typeof(EntityFireflies));
+            api.RegisterEntity("entitypsglowingagent", typeof(EntityPSGlowingAgent));
+            api.RegisterEntity("entitylivingdead", typeof(EntityLivingDead));
+            api.RegisterEntity("entitygenericglowingagent", typeof(EntityGenericGlowingAgent));
+            api.RegisterEntity("entityskullofthedead", typeof(EntitySkullOfTheDead));
+            api.RegisterEntity("entitywillowisp", typeof(EntityWillowisp));
+            api.RegisterEntity("entitybioluminescent", typeof(EntityBioluminescent));
+
+            api.RegisterEntityBehaviorClass("carryable", typeof(EntityBehaviorCarryable));
+
+            AiTaskRegistry.Register("meleeattackvenomous", typeof(AiTaskMeleeAttackVenomous));
+            AiTaskRegistry.Register("meleeattackcrab", typeof(AiTaskMeleeAttackCrab));
 
             api.RegisterBlockBehaviorClass("RightClickPickupSpawnWorm", typeof(RightClickPickupSpawnWorm));
             api.RegisterBlockBehaviorClass("RightClickPickupRaft", typeof(RightClickPickupRaft));
+            api.RegisterBlockBehaviorClass("RightClickPickupFireflies", typeof(RightClickPickupFireflies));
 
             api.RegisterBlockEntityClass("bedeadfall", typeof(BEDeadfall));
             api.RegisterBlockEntityClass("besnare", typeof(BESnare));
@@ -38,8 +87,18 @@ namespace PrimitiveSurvival.ModSystem
             api.RegisterBlockEntityClass("bealcove", typeof(BEAlcove));
             api.RegisterBlockEntityClass("bemetalbucket", typeof(BEMetalBucket));
             api.RegisterBlockEntityClass("bemetalbucketfilled", typeof(BEMetalBucketFilled));
+            api.RegisterBlockEntityClass("befireflies", typeof(BEFireflies));
+            api.RegisterBlockEntityClass("befirework", typeof(BEFirework));
+            api.RegisterBlockEntityClass("befuse", typeof(BEFuse));
+            api.RegisterBlockEntityClass("beparticulator", typeof(BEParticulator));
+            api.RegisterBlockEntityClass("betreehollowgrown", typeof(BETreeHollowGrown));
+            api.RegisterBlockEntityClass("betreehollowplaced", typeof(BETreeHollowPlaced));
+            api.RegisterBlockEntityClass("bebombfuse", typeof(BEBombFuse));
+            api.RegisterBlockEntityClass("besupport", typeof(BESupport));
+            api.RegisterBlockEntityClass("beirrigationvessel", typeof(BEIrrigationVessel));
 
             api.RegisterBlockClass("blockstake", typeof(BlockStake));
+            api.RegisterBlockClass("blockfuse", typeof(BlockFuse));
             api.RegisterBlockClass("blockstakeinwater", typeof(BlockStakeInWater));
             api.RegisterBlockClass("blockdeadfall", typeof(BlockDeadfall));
             api.RegisterBlockClass("blocksnare", typeof(BlockSnare));
@@ -62,15 +121,35 @@ namespace PrimitiveSurvival.ModSystem
             api.RegisterBlockClass("blockhide", typeof(BlockHide));
             api.RegisterBlockClass("blockraft", typeof(BlockRaft));
             api.RegisterBlockClass("blockblood", typeof(BlockBlood));
+            api.RegisterBlockClass("blockfireflies", typeof(BlockFireflies));
+            api.RegisterBlockClass("blockfirework", typeof(BlockFirework));
+            api.RegisterBlockClass("blockparticulator", typeof(BlockParticulator));
+            api.RegisterBlockClass("blockbstairs", typeof(BlockBStairs));
+            api.RegisterBlockClass("blocktreehollowgrown", typeof(BlockTreeHollowGrown));
+            api.RegisterBlockClass("blocktreehollowplaced", typeof(BlockTreeHollowPlaced));
+            api.RegisterBlockClass("blockhandofthedead", typeof(BlockHandOfTheDead));
+            api.RegisterBlockClass("blockskullofthedead", typeof(BlockSkullOfTheDead));
+            api.RegisterBlockClass("blockbombfuse", typeof(BlockBombFuse));
+            api.RegisterBlockClass("blocksupport", typeof(BlockSupport));
+            api.RegisterBlockClass("blockpipe", typeof(BlockPipe));
+            api.RegisterBlockClass("blockirrigationvessel", typeof(BlockIrrigationVessel));
 
             api.RegisterItemClass("itemcordage", typeof(ItemCordage));
+            api.RegisterItemClass("itemfuse", typeof(ItemFuse));
             api.RegisterItemClass("itemwoodspikebundle", typeof(ItemWoodSpikeBundle));
             api.RegisterItemClass("itempsgear", typeof(ItemPSGear));
             api.RegisterItemClass("itemmonkeybridge", typeof(ItemMonkeyBridge));
             api.RegisterItemClass("itemhide", typeof(ItemHide));
             api.RegisterItemClass("itemearthworm", typeof(ItemEarthworm));
+            api.RegisterItemClass("itemsnake", typeof(ItemSnake));
+            api.RegisterItemClass("itemcrab", typeof(ItemCrab));
             api.RegisterItemClass("itempsfish", typeof(ItemPSFish));
             api.RegisterItemClass("itemfisheggs", typeof(ItemFishEggs));
+            api.RegisterItemClass("itemlinktool", typeof(ItemLinkTool));
+            api.RegisterItemClass("itemlivingdead", typeof(ItemLivingDead));
+            api.RegisterItemClass("itemwillowisp", typeof(ItemWillowisp));
+            api.RegisterItemClass("itembioluminescent", typeof(ItemBioluminescent));
+            api.RegisterItemClass("itemstick", typeof(ItemStick));
         }
 
 
@@ -114,12 +193,9 @@ namespace PrimitiveSurvival.ModSystem
             // attempt to load the (short) list of all active fishing chunks
             var data = this.sapi.WorldManager.SaveGame.GetData("chunklist");
             chunkList = data == null ? new List<string>() : SerializerUtil.Deserialize<List<string>>(data);
-
             /*
             foreach (var entry in chunkList)
-            {
-                Debug.WriteLine(entry);
-            }
+            { Debug.WriteLine(entry); }
             */
         }
 
@@ -136,7 +212,6 @@ namespace PrimitiveSurvival.ModSystem
                 chunkcount++;
             }
             //Debug.WriteLine("----------- Chunk depletion data saved to " + chunkcount + " chunks");
-
             // now attempt to save the (short) list of all active fishing chunks
             this.sapi.WorldManager.SaveGame.StoreData("chunklist", SerializerUtil.Serialize(chunkList));
             /*
@@ -226,8 +301,7 @@ namespace PrimitiveSurvival.ModSystem
                 fishingChunks[key] = fishingChunks[key] - ModConfig.Loaded.FishChunkRepletionRate;
                 if (fishingChunks[key] < 0)
                 { fishingChunks[key] = 0; }
-                //Debug
-               // Debug.WriteLine("----------- Chunk repletion:" + fishingChunks[key]);
+                // Debug.WriteLine("----------- Chunk repletion:" + fishingChunks[key]);
             }
         }
 
@@ -243,6 +317,9 @@ namespace PrimitiveSurvival.ModSystem
         }
     }
 }
+
+
+
 
 
 

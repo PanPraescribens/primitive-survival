@@ -1,20 +1,24 @@
 namespace PrimitiveSurvival.ModSystem
 {
+    using System;
     using Vintagestory.API.Common;
     using Vintagestory.API.MathTools;
-    using System;
+    using Vintagestory.API.Server;
+    //using System.Diagnostics;
 
     public class ItemMonkeyBridge : Item
     {
 
-        private static BlockPos[] AreaAround(BlockPos pos) => new BlockPos[]
-            {  pos.NorthCopy(),pos.SouthCopy(),pos.EastCopy(),pos.WestCopy(),pos.NorthCopy().EastCopy(), pos.SouthCopy().WestCopy(),pos.SouthCopy().EastCopy(), pos.NorthCopy().WestCopy() };
-
+        private static BlockPos[] AreaAround(BlockPos pos)
+        {
+            return new BlockPos[]
+{  pos.NorthCopy(),pos.SouthCopy(),pos.EastCopy(),pos.WestCopy(),pos.NorthCopy().EastCopy(), pos.SouthCopy().WestCopy(),pos.SouthCopy().EastCopy(), pos.NorthCopy().WestCopy() };
+        }
 
         public static string BlockHeight(IBlockAccessor blockAccessor, BlockPos pos)
         {
             var heightStr = "small";
-            var blockChk = blockAccessor.GetBlock(pos);
+            var blockChk = blockAccessor.GetBlock(pos, BlockLayersAccess.Default);
             if (blockChk.BlockId > 0)
             {
                 var sbs = blockChk.GetSelectionBoxes(blockAccessor, pos);
@@ -35,7 +39,7 @@ namespace PrimitiveSurvival.ModSystem
         public static string BlockWidth(IBlockAccessor blockAccessor, BlockPos pos)
         {
             var widthStr = "small";
-            var blockChk = blockAccessor.GetBlock(pos);
+            var blockChk = blockAccessor.GetBlock(pos, BlockLayersAccess.Default);
             if (blockChk.BlockId > 0)
             {
                 if (blockChk.Code.Path.Contains("stake-") || blockChk.Code.Path.Contains("stakeinwater-"))
@@ -52,13 +56,14 @@ namespace PrimitiveSurvival.ModSystem
                     }
                 }
             }
+            //Debug.WriteLine("Block Width: " + widthStr);
             return widthStr;
         }
 
 
         public static bool ValidEndpoint(IBlockAccessor blockAccessor, BlockPos testpos)
         {
-            var blockChk = blockAccessor.GetBlock(testpos);
+            var blockChk = blockAccessor.GetBlock(testpos, BlockLayersAccess.Default);
             bool validEnd;
             if (blockChk.Code.GetName().Contains("limbtrotlinelure"))
             { validEnd = false; }
@@ -72,7 +77,7 @@ namespace PrimitiveSurvival.ModSystem
                 var around = AreaAround(aroundPos);
                 foreach (var neighbor in around)
                 {
-                    blockChk = blockAccessor.GetBlock(neighbor);
+                    blockChk = blockAccessor.GetBlock(neighbor, BlockLayersAccess.Default);
                     if (blockChk.BlockId > 0)
                     {
                         if (BlockHeight(blockAccessor, neighbor) != "small" && !blockChk.Code.Path.Contains("monkeybridge"))
@@ -87,7 +92,7 @@ namespace PrimitiveSurvival.ModSystem
                     around = AreaAround(aroundPos);
                     foreach (var neighbor in around)
                     {
-                        blockChk = blockAccessor.GetBlock(neighbor);
+                        blockChk = blockAccessor.GetBlock(neighbor, BlockLayersAccess.Default);
                         if (blockChk.BlockId > 0)
                         {
                             if (BlockHeight(blockAccessor, neighbor) != "small" && !blockChk.Code.Path.Contains("monkeybridge"))
@@ -96,6 +101,7 @@ namespace PrimitiveSurvival.ModSystem
                     }
                 }
             }
+            //Debug.WriteLine("Valid Endpoint: " + validEnd);
             return validEnd;
         }
 
@@ -113,7 +119,7 @@ namespace PrimitiveSurvival.ModSystem
             {
                 count++;
                 testpos = testpos.Offset(facing);
-                blockChk = blockAccessor.GetBlock(testpos);
+                blockChk = blockAccessor.GetBlock(testpos, BlockLayersAccess.Default);
                 if (!blockChk.IsReplacableBy(testBlock))
                 {
                     if ((BlockHeight(blockAccessor, testpos) != "small") || blockChk.Code.GetName().Contains("monkeybridge-"))
@@ -131,12 +137,15 @@ namespace PrimitiveSurvival.ModSystem
             while ((foundEnd == false) && (count < maxLength));
             if (!foundEnd)
             { return 1; }
+            //Debug.WriteLine("Line Length: " + count);
             return count;
         }
 
 
-        public override void OnHeldInteractStart(ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, bool firstEvent, ref EnumHandHandling handling) => handling = EnumHandHandling.PreventDefaultAction;
-
+        public override void OnHeldInteractStart(ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, bool firstEvent, ref EnumHandHandling handling)
+        {
+            handling = EnumHandHandling.PreventDefaultAction;
+        }
 
         public override void OnHeldInteractStop(float secondsUsed, ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel)
         {
@@ -150,6 +159,10 @@ namespace PrimitiveSurvival.ModSystem
             var blockAccessor = byEntity.World.BlockAccessor;
             var currPos = blockSel.Position.Copy();
             var validStart = ValidEndpoint(blockAccessor, currPos);
+            var splr = byPlayer as IServerPlayer;
+
+            if (!validStart)
+            { splr?.SendIngameError("invalidstart", "One of the endpoints is invalid, or there is debris nearby"); }
 
             if (facing.IsHorizontal && validStart)
             {
@@ -161,6 +174,10 @@ namespace PrimitiveSurvival.ModSystem
                 {
                     if (linelength > 60)
                     { linelength = 1; } //every once in a while linelength loses its s*&t maybe this prevents that???
+                    if (linelength <= 1)
+                    {
+                        splr?.SendIngameError("invalidlength", "It looks like you need more pieces of monkey bridge");
+                    }
                     if (linelength > 1)
                     {
                         var blockSize = BlockWidth(blockAccessor, currPos);

@@ -1,15 +1,55 @@
 namespace PrimitiveSurvival.ModSystem
 {
     using System;
-    using System.Text;
     using System.Collections.Generic;
     using Vintagestory.API.Client;
     using Vintagestory.API.Common;
-    using Vintagestory.API.Config;
     using Vintagestory.API.MathTools;
+    using Vintagestory.GameContent;
+    using Vintagestory.API.Util;
+    //using System.Diagnostics;
 
     public class BlockMetalBucketFilled : Block
     {
+        protected WorldInteraction[] interactions;
+
+        public override void OnLoaded(ICoreAPI api)
+        {
+            base.OnLoaded(api);
+
+            if (api.Side != EnumAppSide.Client)
+            { return; }
+            var capi = api as ICoreClientAPI;
+
+            this.interactions = ObjectCacheUtil.GetOrCreate(api, "metalbucketfilled", () =>
+            {
+                var liquidContainerStacks = new List<ItemStack>();
+                foreach (var obj in api.World.Collectibles)
+                {
+                    if (obj is ILiquidSource || obj is ILiquidSink || obj is BlockWateringCan)
+                    {
+                        var stacks = obj.GetHandBookStacks(capi);
+                        if (stacks == null)
+                        { continue; }
+
+                        foreach (var stack in stacks)
+                        {
+                            stack.StackSize = 1;
+                            liquidContainerStacks.Add(stack);
+                        }
+                    }
+                }
+                var lcstacks = liquidContainerStacks.ToArray();
+                return new WorldInteraction[] {
+                    new WorldInteraction()
+                    {
+                        ActionLangCode = "blockhelp-behavior-rightclickpickup",
+                        MouseButton = EnumMouseButton.Right,
+                        RequireFreeHand = true
+                    }
+                };
+            });
+        }
 
         public override bool TryPlaceBlock(IWorldAccessor world, IPlayer byPlayer, ItemStack itemstack, BlockSelection blockSel, ref string failureCode)
         {
@@ -29,7 +69,7 @@ namespace PrimitiveSurvival.ModSystem
             { return; }
             var bucketPath = slot.Itemstack.Block.Code.Path;
             var pos = blockSel.Position;
-            var block = byEntity.World.BlockAccessor.GetBlock(pos);
+            var block = byEntity.World.BlockAccessor.GetBlock(pos, BlockLayersAccess.Default);
 
             if (byEntity.Controls.Sprint && (this.api.World.Side == EnumAppSide.Server))
             {
@@ -48,13 +88,16 @@ namespace PrimitiveSurvival.ModSystem
                 else
                 { targetPos = blockSel.Position.AddCopy(blockSel.Face); }
                 this.api.World.BlockAccessor.SetBlock(newblock.BlockId, targetPos); //put lava above
+                newblock.OnNeighbourBlockChange(byEntity.World, targetPos, targetPos.NorthCopy());
+                this.api.World.BlockAccessor.TriggerNeighbourBlockUpdate(targetPos);
                 this.api.World.BlockAccessor.MarkBlockDirty(targetPos); //let the server know the lava's there
             }
 
             if ((byEntity as EntityPlayer) != null)  //bucket dumping lava animation
+            {
                 if (((byEntity as EntityPlayer).Player as IClientPlayer) != null)
                 { ((byEntity as EntityPlayer).Player as IClientPlayer).TriggerFpAnimation(EnumHandInteract.HeldItemInteract); }
-
+            }
             handHandling = EnumHandHandling.PreventDefault;
             return;
         }
@@ -84,22 +127,19 @@ namespace PrimitiveSurvival.ModSystem
         {
             Dictionary<int, MeshRef> meshrefs = null;
             if (capi.ObjectCache.TryGetValue("bucketMeshRefs", out var obj))
-            {
-                meshrefs = obj as Dictionary<int, MeshRef>;
-            }
+            { meshrefs = obj as Dictionary<int, MeshRef>; }
             else
-            {
-                capi.ObjectCache["bucketMeshRefs"] = meshrefs = new Dictionary<int, MeshRef>();
-            }
+            { capi.ObjectCache["bucketMeshRefs"] = meshrefs = new Dictionary<int, MeshRef>(); }
         }
 
 
+        /*
         public int GetBucketHashCode(IClientWorldAccessor world, ItemStack contentStack)
         {
             var s = contentStack.StackSize + "x" + contentStack.Collectible.Code.ToShortString();
             return s.GetHashCode();
         }
-
+        */
 
         public override void OnUnloaded(ICoreAPI api)
         {
@@ -116,7 +156,8 @@ namespace PrimitiveSurvival.ModSystem
             }
         }
 
-        public MeshData GenMesh(ICoreClientAPI capi, ItemStack contentStack, BlockPos forBlockPos = null)
+
+        public MeshData GenMesh(ICoreClientAPI capi)
         {
             var shape = capi.Assets.TryGet("primitivesurvival:shapes/block/metalbucket/filled.json").ToObject<Shape>();
             capi.Tesselator.TesselateShape(this, shape, out var bucketmesh);
@@ -124,67 +165,25 @@ namespace PrimitiveSurvival.ModSystem
         }
 
 
-        public static string PerishableInfoCompact(ICoreAPI Api, ItemSlot contentSlot, float ripenRate, bool withStackName = true)
+        public override WorldInteraction[] GetHeldInteractionHelp(ItemSlot inSlot)
         {
-            var dsc = new StringBuilder();
-            if (withStackName)
+            return new WorldInteraction[]
             {
-                dsc.Append(contentSlot.Itemstack.GetName());
-            }
-            TransitionState[] transitionStates = null;
-            if (contentSlot.Itemstack != null)
-            {
-                transitionStates = contentSlot.Itemstack.Collectible.UpdateAndGetTransitionStates(Api.World, contentSlot);
-            }
-
-            if (transitionStates != null)
-            {
-                for (var i = 0; i < transitionStates.Length; i++)
+                new WorldInteraction()
                 {
-                    var comma = ", ";
-                    var state = transitionStates[i];
-                    var prop = state.Props;
-                    var perishRate = contentSlot.Itemstack.Collectible.GetTransitionRateMul(Api.World, contentSlot, prop.Type);
-                    if (perishRate <= 0)
-                    { continue; }
-                    var transitionLevel = state.TransitionLevel;
-                    var freshHoursLeft = state.FreshHoursLeft / perishRate;
-                    switch (prop.Type)
-                    {
-                        case EnumTransitionType.Perish:
-                            if (transitionLevel > 0)
-                            { dsc.Append(comma + Lang.Get("{0}% spoiled", (int)Math.Round(transitionLevel * 100))); }
-                            else
-                            {
-                                double hoursPerday = Api.World.Calendar.HoursPerDay;
-                                if (freshHoursLeft / hoursPerday >= Api.World.Calendar.DaysPerYear)
-                                { dsc.Append(comma + Lang.Get("fresh for {0} years", Math.Round(freshHoursLeft / hoursPerday / Api.World.Calendar.DaysPerYear, 1))); }
-                                else if (freshHoursLeft > hoursPerday)
-                                { dsc.Append(comma + Lang.Get("fresh for {0} days", Math.Round(freshHoursLeft / hoursPerday, 1))); }
-                                else
-                                { dsc.Append(comma + Lang.Get("fresh for {0} hours", Math.Round(freshHoursLeft, 1))); }
-                            }
-                            break;
-
-                        case EnumTransitionType.Ripen:
-
-                            if (transitionLevel > 0)
-                            { dsc.Append(comma + Lang.Get("{1:0.#} days left to ripen ({0}%)", (int)Math.Round(transitionLevel * 100), (state.TransitionHours - state.TransitionedHours) / Api.World.Calendar.HoursPerDay / ripenRate)); }
-                            else
-                            {
-                                double hoursPerday = Api.World.Calendar.HoursPerDay;
-                                if (freshHoursLeft / hoursPerday >= Api.World.Calendar.DaysPerYear)
-                                { dsc.Append(comma + Lang.Get("will ripen in {0} years", Math.Round(freshHoursLeft / hoursPerday / Api.World.Calendar.DaysPerYear, 1))); }
-                                else if (freshHoursLeft > hoursPerday)
-                                { dsc.Append(comma + Lang.Get("will ripen in {0} days", Math.Round(freshHoursLeft / hoursPerday, 1))); }
-                                else
-                                { dsc.Append(comma + Lang.Get("will ripen in {0} hours", Math.Round(freshHoursLeft, 1))); }
-                            }
-                            break;
-                    }
+                    ActionLangCode = "heldhelp-empty",
+                    HotKeyCode = "sprint",
+                    MouseButton = EnumMouseButton.Right,
+                    ShouldApply = (wi, bs, es) => true
+                },
+                new WorldInteraction()
+                {
+                    ActionLangCode = "heldhelp-place",
+                    HotKeyCode = "sneak",
+                    MouseButton = EnumMouseButton.Right,
+                    ShouldApply = (wi, bs, es) => true
                 }
-            }
-            return dsc.ToString();
+            };
         }
     }
 }

@@ -5,7 +5,7 @@
 	"attributes": {
 		"waterTightContainerProps": {
 			"containable": true,
-			"itemsPerLitre": 1,
+			"itemsPerLitre": 100,
 			"texture": { "base": "game:block/liquid/blood" },
 			"tintIndex": 1,
 			"allowSpill": true,
@@ -31,7 +31,7 @@
 		"items": [ "*" ],
 		"primitive": [ "*" ]
 	},
-	"maxstacksize": 16,
+	"maxstacksize": 5000,
 	"materialDensity": 200,
 	"guiTransform": {
 		"rotation": {

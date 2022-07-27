@@ -8,7 +8,7 @@ namespace PrimitiveSurvival.ModSystem
 
         public override bool TryPlaceBlock(IWorldAccessor world, IPlayer byPlayer, ItemStack itemstack, BlockSelection blockSel, ref string failureCode)
         {
-            var block = world.BlockAccessor.GetBlock(blockSel.Position);
+            var block = world.BlockAccessor.GetBlock(blockSel.Position, BlockLayersAccess.Default);
             if (!this.CanPlaceBlock(world, byPlayer, blockSel, ref failureCode))
             { return false; }
 
@@ -51,9 +51,9 @@ namespace PrimitiveSurvival.ModSystem
                 var done = false;
                 string neibPath;
                 var belowPos = blockSel.Position.DownCopy();
-                var belowBlock = this.api.World.BlockAccessor.GetBlock(belowPos);
+                var belowBlock = this.api.World.BlockAccessor.GetBlock(belowPos, BlockLayersAccess.Default);
                 var abovePos = blockSel.Position.UpCopy();
-                var aboveBlock = this.api.World.BlockAccessor.GetBlock(abovePos);
+                var aboveBlock = this.api.World.BlockAccessor.GetBlock(abovePos, BlockLayersAccess.Default);
                 if (face == "up")
                 {
                     if (belowBlock.FirstCodePart() != "steatitepillar")

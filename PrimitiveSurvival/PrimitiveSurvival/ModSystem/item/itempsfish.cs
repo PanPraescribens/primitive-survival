@@ -5,12 +5,12 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.MathTools;
     using Vintagestory.API.Server;
     using PrimitiveSurvival.ModConfig;
-    using System.Diagnostics;
+    //using System.Diagnostics;
 
     public class ItemPSFish : Item
     {
         private readonly int eggsPercent = ModConfig.Loaded.FishChanceOfEggsPercent;
-        private readonly int repleteRate = ModConfig.Loaded.FishChunkDepletionRate; 
+        private readonly int repleteRate = ModConfig.Loaded.FishChunkDepletionRate;
         private static readonly Random Rnd = new Random();
         public override void OnConsumedByCrafting(ItemSlot[] allInputSlots, ItemSlot stackInSlot, GridRecipe gridRecipe, CraftingRecipeIngredient fromIngredient, IPlayer byPlayer, int quantity)
         {

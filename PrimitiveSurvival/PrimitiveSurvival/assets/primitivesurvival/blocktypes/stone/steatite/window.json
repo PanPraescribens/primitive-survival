@@ -4,16 +4,10 @@
   "variantgroups": [
     {
       "code": "material",
-      "states": ["temporal", "astral", "ethereal"]
+      "states": [ "temporal", "astral", "ethereal" ]
     },
     { "loadFromProperties": "abstract/horizontalorientation" }
   ],
-  "sideopaque": {
-    "all": false
-  },
-  "sidesolid": {
-    "all": false
-  },
   "shapebytype": {
     "*-north": {
       "base": "primitivesurvival:block/stone/steatite/window",
@@ -34,14 +28,39 @@
   },
   "drawtype": "json",
   "blockmaterial": "Stone",
+  "renderpassByType": {
+    "*-ethereal*": "transparent"
+  },
+  "sidesolid": {
+    "all": false
+  },
+  "sideopaque": {
+    "all": false
+  },
+  "vertexFlagsbyType": {
+    "*-ethereal*": {
+      "zOffset": 1,
+      "glowLevel": 32,
+      "lowContrast": true
+    },
+    "*-astral*": {
+      "reflective": true
+    }
+  },
+  "faceCullModebyType": {
+    "*-ethereal*": "liquid"
+  },
+  "lightabsorptionByType": {
+    "*-ethereal*": 0,
+    "*": 99
+  },
   "creativeinventory": {
-    "general": ["*-{material}-north"],
-    "construction": ["*-{material}-north"],
-    "primitive": ["*-{material}-north"]
+    "general": [ "*-{material}-north" ],
+    "construction": [ "*-{material}-north" ],
+    "primitive": [ "*-{material}-north" ]
   },
   "replaceable": 700,
   "resistance": 3,
-  "lightAbsorption": 99,
   "textures": {
     "horizontal": {
       "base": "block/stone/steatite/window/{material}-horizontal"

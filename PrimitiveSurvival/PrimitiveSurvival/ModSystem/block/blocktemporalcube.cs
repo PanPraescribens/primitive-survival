@@ -7,9 +7,9 @@ namespace PrimitiveSurvival.ModSystem
     public class BlockTemporalCube : Block
     {
 
-        public MeshData GenMesh(ICoreClientAPI capi, string shapePath, ITexPositionSource texture, int index, ITesselatorAPI tesselator = null)
+        public MeshData GenMesh(ICoreClientAPI capi, string shapePath, ITexPositionSource texture, int index) //, ITesselatorAPI tesselator = null)
         {
-            tesselator = capi.Tesselator;
+            var tesselator = capi.Tesselator;
             var shape = capi.Assets.TryGet(shapePath + ".json").ToObject<Shape>();
             tesselator.TesselateShape(shapePath, shape, out var mesh, texture, new Vec3f(0f, 0, 0f));
 
@@ -46,7 +46,7 @@ namespace PrimitiveSurvival.ModSystem
             placed = base.TryPlaceBlock(world, byPlayer, itemstack, blockSel, ref failureCode);
             if (placed)
             {
-                var block = this.api.World.BlockAccessor.GetBlock(blockSel.Position);
+                var block = this.api.World.BlockAccessor.GetBlock(blockSel.Position, BlockLayersAccess.Default);
                 var newPath = block.Code.Path;
                 newPath = newPath.Replace("north", facing);
                 block = this.api.World.GetBlock(block.CodeWithPath(newPath));
@@ -59,7 +59,7 @@ namespace PrimitiveSurvival.ModSystem
         public override void OnBlockBroken(IWorldAccessor world, BlockPos pos, IPlayer byPlayer, float dropQuantityMultiplier = 1)
         {
             if (world.BlockAccessor.GetBlockEntity(pos) is BETemporalCube be)
-            { be.OnBreak(byPlayer, pos); } //empty the inventory onto the ground
+            { be.OnBreak(); } // byPlayer, pos); } //empty the inventory onto the ground
             base.OnBlockBroken(world, pos, byPlayer, dropQuantityMultiplier);
         }
 
@@ -67,7 +67,7 @@ namespace PrimitiveSurvival.ModSystem
         public override bool OnBlockInteractStart(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel)
         {
             if (world.BlockAccessor.GetBlockEntity(blockSel.Position) is BETemporalCube be)
-            { return be.OnInteract(byPlayer, blockSel); }
+            { return be.OnInteract(byPlayer); } //, blockSel); }
             return base.OnBlockInteractStart(world, byPlayer, blockSel);
         }
     }

@@ -14,18 +14,18 @@
   "variantgroups": [
     {
       "code": "material",
-      "states": ["temporal", "astral", "ethereal"]
+      "states": [ "temporal", "astral", "ethereal" ]
     },
     {
       "code": "rot",
-      "states": ["north", "east", "south", "west", "up", "down"]
+      "states": [ "north", "east", "south", "west", "up", "down" ]
     },
     {
       "code": "cover",
-      "states": ["free", "snow"]
+      "states": [ "free", "snow" ]
     }
   ],
-  "skipVariants": ["*-up-snow"],
+  "skipVariants": [ "*-up-snow" ],
   "attributes": {
     "canChisel": true,
     "chiselShapeFromCollisionBox": true,
@@ -35,14 +35,40 @@
     }
   },
   "creativeinventory": {
-    "general": ["*-{material}-down-free"],
-    "construction": ["*-{material}-down-free"],
-    "primitive": ["*-{material}-down-free"]
+    "general": [ "*-{material}-down-free" ],
+    "construction": [ "*-{material}-down-free" ],
+    "primitive": [ "*-{material}-down-free" ]
   },
   "blockmaterial": "Stone",
+  "renderpassByType": {
+    "*-ethereal*": "transparent"
+  },
+  "sidesolid": {
+    "all": false
+  },
+  "sideopaque": {
+    "all": false
+  },
+  "vertexFlagsbyType": {
+    "*-ethereal*": {
+      "zOffset": 1,
+      "glowLevel": 32,
+      "lowContrast": true
+    },
+    "*-astral*": {
+      "reflective": true
+    }
+  },
+  "faceCullModebyType": {
+    "*-ethereal*": "liquid"
+  },
+  "lightabsorptionByType": {
+    "*-ethereal*": 0,
+    "*": 99
+  },
   "replaceable": 700,
   "resistance": 3,
-  "drops": [{ "code": "steatiteslab-{material}-down-free" }],
+  "drops": [ { "code": "steatiteslab-{material}-down-free" } ],
   "shapeByType": {
     "*-snow": { "base": "game:block/basic/slab/snow-slab-{rot}" },
     "*": { "base": "game:block/basic/slab/slab-{rot}" }

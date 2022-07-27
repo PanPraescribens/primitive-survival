@@ -64,16 +64,10 @@
   },
   "maxstacksize": 64,
   "drops": [{ "type": "block", "code": "stake-empty" }],
-  "drawtype": "JSONAndWater",
-  "renderpass": "liquid",
-  "blockmaterial": "liquid",
-  "faceCullMode": "liquid",
-  "liquidCode": "water",
-  "liquidLevel": 7,
-  "replaceable": 3000,
-  "lightAbsorption": 2,
+  "drawtype": "JSON",
+  "blockmaterial": "wood",
+  "lightAbsorption": 0,
   "resistance": 1,
-  "climateColorMap": "climatePlantTint",
   "combustibleProps": {
     "burnTemperature": 400,
     "burnDuration": 5
@@ -641,19 +635,13 @@
   },
   "requiredminingtier": 0,
   "sounds": {
-    "place": "game:block/water",
-    "walk": "game:block/water"
+    "place": "game:block/planks",
+    "walk": "game:block/planks"
   },
   "textures": {
     "woodmaterial": {
-      "base": "block/stakeinwater"
-    },
-    "north": { "base": "game:block/liquid/water" },
-    "east": { "base": "game:block/liquid/water" },
-    "south": { "base": "game:block/liquid/water" },
-    "west": { "base": "game:block/liquid/water" },
-    "up": { "base": "game:block/liquid/water" },
-    "down": { "base": "game:block/liquid/water" }
+      "base": "block/stake"
+    }
   },
 
   "guiTransform": {

@@ -11,28 +11,29 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Config;
     using Vintagestory.API.Server;
     using PrimitiveSurvival.ModConfig;
-    using System.Diagnostics;
+    //using System.Diagnostics;
 
-    public class BELimbTrotLineLure : BlockEntityDisplay
+
+    public class BELimbTrotLineLure : BlockEntityDisplayCase
     {
-        private readonly int catchPercent = ModConfig.Loaded.LimbTrotlineCatchPercent; 
+        private readonly int catchPercent = ModConfig.Loaded.LimbTrotlineCatchPercent;
         private readonly int baitedCatchPercent = ModConfig.Loaded.LimbTrotlineBaitedCatchPercent;
-        private readonly int luredCatchPercent = ModConfig.Loaded.LimbTrotlineLuredCatchPercent; 
-        private readonly int baitedLuredCatchPercent = ModConfig.Loaded.LimbTrotlineBaitedLuredCatchPercent; 
+        private readonly int luredCatchPercent = ModConfig.Loaded.LimbTrotlineLuredCatchPercent;
+        private readonly int baitedLuredCatchPercent = ModConfig.Loaded.LimbTrotlineBaitedLuredCatchPercent;
         private readonly int baitStolenPercent = ModConfig.Loaded.LimbTrotlineBaitStolenPercent;
-        private readonly double updateMinutes = ModConfig.Loaded.LimbTrotlineUpdateMinutes; 
-        private readonly int rotRemovedPercent = ModConfig.Loaded.LimbTrotlineRotRemovedPercent; 
+        private readonly double updateMinutes = ModConfig.Loaded.LimbTrotlineUpdateMinutes;
+        private readonly int rotRemovedPercent = ModConfig.Loaded.LimbTrotlineRotRemovedPercent;
 
         private readonly int tickSeconds = 5;
         private readonly int maxSlots = 4;
         private readonly string[] baitTypes = { "fruit", "grain", "legume", "meat", "vegetable", "jerky", "mushroom", "bread", "poultry", "pickledvegetable", "redmeat", "bushmeat", "earthworm", "cheese", "fishfillet", "fisheggs", "fisheggscooked" };
-        private readonly string[] fishTypes = { "trout", "perch", "carp", "bass", "pike", "arcticchar", "catfish", "bluegill" };
+        private readonly string[] fishTypes = { "trout", "perch", "salmon", "carp", "bass", "pike", "arcticchar", "catfish", "bluegill" };
         private static readonly Random Rnd = new Random();
 
         private long particleTick;
 
         public override string InventoryClassName => "limbtrotlinelure";
-        protected InventoryGeneric inventory;
+        //protected InventoryGeneric inventory;
 
         public override InventoryBase Inventory => this.inventory;
 
@@ -136,7 +137,7 @@ namespace PrimitiveSurvival.ModSystem
             if (!this.CatchSlot.Empty)
             {
                 var belowblock = new BlockPos(this.Pos.X, this.Pos.Y - 1, this.Pos.Z);
-                var belowBlock = this.Api.World.BlockAccessor.GetBlock(belowblock);
+                var belowBlock = this.Api.World.BlockAccessor.GetBlock(belowblock, BlockLayersAccess.Default);
                 if ((belowBlock.LiquidCode == "water") && (!belowBlock.Code.Path.Contains("inwater")))
                 {
                     var rando = Rnd.Next(3);
@@ -152,7 +153,7 @@ namespace PrimitiveSurvival.ModSystem
             if (!this.HookSlot.Empty && this.CatchSlot.Empty)
             {
                 var belowblock = new BlockPos(this.Pos.X, this.Pos.Y - 1, this.Pos.Z);
-                var belowBlock = this.Api.World.BlockAccessor.GetBlock(belowblock);
+                var belowBlock = this.Api.World.BlockAccessor.GetBlock(belowblock, BlockLayersAccess.Default);
                 if ((belowBlock.LiquidCode == "water") && (!belowBlock.Code.Path.Contains("inwater")))
                 {
                     var caught = Rnd.Next(100);
@@ -163,7 +164,7 @@ namespace PrimitiveSurvival.ModSystem
                         {
                             if (!this.BaitSlot.Empty)
                             {
-                                this.BaitSlot.TakeOutWhole();
+                                this.BaitSlot.TakeOut(1);
                                 this.GenerateWaterParticles(this.Pos, this.Api.World);
                                 this.MarkDirty();
                                 //Api.World.BlockAccessor.MarkBlockDirty(Pos);
@@ -197,7 +198,7 @@ namespace PrimitiveSurvival.ModSystem
                                     this.CatchStack = new ItemStack(this.Api.World.GetItem(new AssetLocation("primitivesurvival:psfish-" + this.fishTypes[Rnd.Next(this.fishTypes.Count())] + "-raw")), 1);
                                     rando = Rnd.Next(2);
                                     if (rando == 0)
-                                    { this.BaitSlot.TakeOutWhole(); }
+                                    { this.BaitSlot.TakeOut(1); }
                                     this.MarkDirty();
                                     //Api.World.BlockAccessor.MarkBlockDirty(Pos);
                                     //Api.World.BlockAccessor.MarkBlockEntityDirty(Pos);
@@ -246,7 +247,7 @@ namespace PrimitiveSurvival.ModSystem
                 {
                     var rando = Rnd.Next(100);
                     if (rando < this.rotRemovedPercent)
-                    { this.CatchSlot.TakeOutWhole(); }
+                    { this.CatchSlot.TakeOut(1); }
                     this.MarkDirty();
                     //Api.World.BlockAccessor.MarkBlockDirty(Pos);
                     //Api.World.BlockAccessor.MarkBlockEntityDirty(Pos);
@@ -256,14 +257,16 @@ namespace PrimitiveSurvival.ModSystem
         }
 
 
-        internal bool OnInteract(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel)
+        //internal bool OnInteract(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel)
+        internal bool OnInteract(IPlayer byPlayer, BlockSelection blockSel)
         {
             var playerSlot = byPlayer.InventoryManager.ActiveHotbarSlot;
             var belowblock = new BlockPos(this.Pos.X, this.Pos.Y - 1, this.Pos.Z);
-            var belowBlock = this.Api.World.BlockAccessor.GetBlock(belowblock);
+            var belowBlock = this.Api.World.BlockAccessor.GetBlock(belowblock, BlockLayersAccess.Default);
             if (playerSlot.Empty)
             {
-                if (this.TryTake(world, byPlayer, blockSel))
+                //if (this.TryTake(world, byPlayer, blockSel))
+                if (this.TryTake(byPlayer))
                 {
                     if ((belowBlock.LiquidCode == "water") && (!belowBlock.Code.Path.Contains("inwater")))
                     {
@@ -301,7 +304,8 @@ namespace PrimitiveSurvival.ModSystem
             return false;
         }
 
-        internal void OnBreak(IPlayer byPlayer, BlockPos pos)
+        //internal void OnBreak(IPlayer byPlayer, BlockPos pos)
+        internal void OnBreak()
         {
             for (var index = 3; index >= 0; index--)
             {
@@ -390,12 +394,13 @@ namespace PrimitiveSurvival.ModSystem
 
 
 
-        private bool TryTake(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel)
+        //private bool TryTake(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel)
+        private bool TryTake(IPlayer byPlayer)
         {
             if (!this.CatchSlot.Empty)
             {
                 //Debug.WriteLine("Grabbed a " + catchStack.Item.Code.Path);
-                var rando = Rnd.Next(8);
+                /*var rando = Rnd.Next(8);
                 if (rando < 1)
                 {
                     //byPlayer.InventoryManager.TryGiveItemstack(this.CatchStack);
@@ -406,29 +411,30 @@ namespace PrimitiveSurvival.ModSystem
                 else
                 {
                     byPlayer.InventoryManager.TryGiveItemstack(this.CatchStack);
-                }
-                this.CatchSlot.TakeOutWhole();
+                }*/
+                byPlayer.InventoryManager.TryGiveItemstack(this.CatchStack);
+                this.CatchSlot.TakeOut(1);
                 this.MarkDirty(true);
                 return true;
             }
             else if (!this.BaitSlot.Empty)
             {
                 byPlayer.InventoryManager.TryGiveItemstack(this.BaitStack);
-                this.BaitSlot.TakeOutWhole();
+                this.BaitSlot.TakeOut(1);
                 this.MarkDirty(true);
                 return true;
             }
             else if (!this.LureSlot.Empty)
             {
                 byPlayer.InventoryManager.TryGiveItemstack(this.LureStack);
-                this.LureSlot.TakeOutWhole();
+                this.LureSlot.TakeOut(1);
                 this.MarkDirty(true);
                 return true;
             }
             else if (!this.HookSlot.Empty)
             {
                 byPlayer.InventoryManager.TryGiveItemstack(this.HookStack);
-                this.HookSlot.TakeOutWhole();
+                this.HookSlot.TakeOut(1);
                 this.MarkDirty(true);
                 return true;
             }
@@ -510,12 +516,12 @@ namespace PrimitiveSurvival.ModSystem
         {
             MeshData mesh;
             var shapeBase = "primitivesurvival:shapes/";
-            var shapePath = "";
+            string shapePath;
             string hookType;
             string lureType;
             var alive = false;
 
-            var block = this.Api.World.BlockAccessor.GetBlock(this.Pos) as BlockLimbTrotLineLure;
+            var block = this.Api.World.BlockAccessor.GetBlock(this.Pos, BlockLayersAccess.Default) as BlockLimbTrotLineLure;
             Block tmpBlock;
             var texture = tesselator.GetTexSource(block);
             var tmpTextureSource = texture;
@@ -523,31 +529,31 @@ namespace PrimitiveSurvival.ModSystem
             if (block.Code.Path.Contains("-middle"))
             {
                 shapePath = "block/limbtrotline/limbtrotline-middle";
-                mesh = block.GenMesh(this.Api as ICoreClientAPI, shapeBase + shapePath, texture, alive, tesselator);
+                mesh = block.GenMesh(this.Api as ICoreClientAPI, shapeBase + shapePath, texture, alive); //, tesselator);
                 mesher.AddMeshData(mesh);
             }
             if (block.Code.Path.Contains("small"))
             {
                 shapePath = "block/limbtrotline/limbtrotline-end-small";
-                mesh = block.GenMesh(this.Api as ICoreClientAPI, shapeBase + shapePath, texture, alive, tesselator);
+                mesh = block.GenMesh(this.Api as ICoreClientAPI, shapeBase + shapePath, texture, alive); //, tesselator);
                 mesher.AddMeshData(mesh);
             }
             else if (block.Code.Path.Contains("medium"))
             {
                 shapePath = "block/limbtrotline/limbtrotline-end-medium";
-                mesh = block.GenMesh(this.Api as ICoreClientAPI, shapeBase + shapePath, texture, alive, tesselator);
+                mesh = block.GenMesh(this.Api as ICoreClientAPI, shapeBase + shapePath, texture, alive); //, tesselator);
                 mesher.AddMeshData(mesh);
             }
             else if (block.Code.Path.Contains("large"))
             {
                 shapePath = "block/limbtrotline/limbtrotline-end-large";
-                mesh = block.GenMesh(this.Api as ICoreClientAPI, shapeBase + shapePath, texture, alive, tesselator);
+                mesh = block.GenMesh(this.Api as ICoreClientAPI, shapeBase + shapePath, texture, alive); //, tesselator);
                 mesher.AddMeshData(mesh);
             }
             if (block.Code.Path.Contains("-withmiddle"))
             {
                 shapePath = "block/limbtrotline/limbtrotline-end-extension";
-                mesh = block.GenMesh(this.Api as ICoreClientAPI, shapeBase + shapePath, texture, alive, tesselator);
+                mesh = block.GenMesh(this.Api as ICoreClientAPI, shapeBase + shapePath, texture, alive); //, tesselator);
                 mesher.AddMeshData(mesh);
             }
 
@@ -561,7 +567,7 @@ namespace PrimitiveSurvival.ModSystem
                     tmpTextureSource = ((ICoreClientAPI)this.Api).Tesselator.GetTexSource(tempblock);
 
                     shapePath = "item/fishing/fishinghook";
-                    mesh = block.GenMesh(this.Api as ICoreClientAPI, shapeBase + shapePath, tmpTextureSource, alive, tesselator);
+                    mesh = block.GenMesh(this.Api as ICoreClientAPI, shapeBase + shapePath, tmpTextureSource, alive); //, tesselator);
                     mesher.AddMeshData(mesh);
                 }
                 if (!this.LureSlot.Empty)
@@ -572,7 +578,7 @@ namespace PrimitiveSurvival.ModSystem
                     tmpTextureSource = ((ICoreClientAPI)this.Api).Tesselator.GetTexSource(tempblock);
 
                     shapePath = "item/fishing/fishinglure";
-                    mesh = block.GenMesh(this.Api as ICoreClientAPI, shapeBase + shapePath, tmpTextureSource, alive, tesselator);
+                    mesh = block.GenMesh(this.Api as ICoreClientAPI, shapeBase + shapePath, tmpTextureSource, alive); //, tesselator);
                     mesher.AddMeshData(mesh);
                 }
                 if (!this.BaitSlot.Empty)
@@ -598,7 +604,7 @@ namespace PrimitiveSurvival.ModSystem
                         { tmpTextureSource = texture; }
                     }
                     shapePath = "item/fishing/hookbait"; //baited (for now)
-                    mesh = block.GenMesh(this.Api as ICoreClientAPI, shapeBase + shapePath, tmpTextureSource, alive, tesselator);
+                    mesh = block.GenMesh(this.Api as ICoreClientAPI, shapeBase + shapePath, tmpTextureSource, alive); //, tesselator);
                     mesher.AddMeshData(mesh);
                 }
                 if (!this.CatchSlot.Empty) //fish or rot
@@ -623,7 +629,7 @@ namespace PrimitiveSurvival.ModSystem
                             alive = true;
                         }
                     }
-                    mesh = block.GenMesh(this.Api as ICoreClientAPI, shapePath, tmpTextureSource, alive, tesselator);
+                    mesh = block.GenMesh(this.Api as ICoreClientAPI, shapePath, tmpTextureSource, alive); //, tesselator);
                     mesher.AddMeshData(mesh);
                 }
             }

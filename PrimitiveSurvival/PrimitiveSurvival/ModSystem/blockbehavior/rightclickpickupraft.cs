@@ -4,6 +4,7 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Common;
     using Vintagestory.API.Datastructures;
     using Vintagestory.API.MathTools;
+    using Vintagestory.API.Util;
 
     public class RightClickPickupRaft : BlockBehavior
     {
@@ -28,6 +29,14 @@ namespace PrimitiveSurvival.ModSystem
                 if (world.Side == EnumAppSide.Server)
                 {
                     var raftBlock = world.GetBlock(new AssetLocation("primitivesurvival:raft-north"));
+                    if (world.BlockAccessor.GetBlock(blockSel.Position, BlockLayersAccess.Default).Code.Path.Contains("raftkk"))
+                    {
+                        raftBlock = world.GetBlock(new AssetLocation("primitivesurvival:raftkk-north"));
+                    }
+                    else if (world.BlockAccessor.GetBlock(blockSel.Position, BlockLayersAccess.Default).Code.Path.Contains("raftps"))
+                    {
+                        raftBlock = world.GetBlock(new AssetLocation("primitivesurvival:raftps-north"));
+                    }
                     var newStack = new ItemStack(raftBlock);
                     if (byPlayer.InventoryManager.TryGiveItemstack(newStack, true))
                     {
@@ -59,7 +68,7 @@ namespace PrimitiveSurvival.ModSystem
                         MouseButton = EnumMouseButton.Right,
                         RequireFreeHand = true
                     }
-            };
+            }.Append(base.GetPlacedBlockInteractionHelp(world, selection, forPlayer, ref handled));
         }
     }
 }

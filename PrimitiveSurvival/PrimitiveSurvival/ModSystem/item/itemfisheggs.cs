@@ -4,7 +4,7 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Server;
     using Vintagestory.API.MathTools;
     using PrimitiveSurvival.ModConfig;
-    using System.Diagnostics;
+    //using System.Diagnostics;
 
     public class ItemFishEggs : Item
     {
@@ -37,7 +37,7 @@ namespace PrimitiveSurvival.ModSystem
             var minVelocity = new Vec3f(0f, 0f, 0f);
             var maxVelocity = new Vec3f(0.3f, 0.3f, 0.3f);
             var lifeLength = 2f;
-            var gravityEffect = 0.03f; 
+            var gravityEffect = 0.03f;
             var minSize = 0.2f;
             var maxSize = 0.2f;
 

@@ -45,6 +45,10 @@
       }
     ]
   },
+  "vertexFlags": {
+    "zOffset": 5,
+    "windMode": "Water"
+  },
   "drawtype": "JSON",
   "materialDensity": 700,
   "lightabsorption": 0,
@@ -138,6 +142,7 @@
   "sidesolid": {
     "all": false
   },
+  "facecullmode": "nevercull",
   "resistance": 0.75,
   "requiredminingtier": 0,
   "sounds": {
@@ -155,6 +160,9 @@
       },
       "perchmaterial": {
         "base": "primitivesurvival:item/fishing/fish-perch-raw"
+      },
+      "salmonmaterial": {
+        "base": "primitivesurvival:item/fishing/fish-salmon-raw"
       },
       "carpmaterial": {
         "base": "primitivesurvival:item/fishing/fish-carp-raw"

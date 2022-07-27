@@ -5,6 +5,7 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.MathTools;
     using Vintagestory.API.Config;
 
+    //1.17.pre.5 OBSOLETE - USE BLOCKSTAKEINWATER 
     public class BlockStake : Block
     {
 
@@ -34,13 +35,13 @@ namespace PrimitiveSurvival.ModSystem
             bool placed;
             bool inwater;
             var pos = blockSel.Position;
-            var block = world.BlockAccessor.GetBlock(pos);
+            var block = world.BlockAccessor.GetBlock(pos, BlockLayersAccess.Default);
             if (block.Code.Path.Contains("stakeinwater-") || block.Code.Path.Contains("fishbasket-"))
             { return false; }
             inwater = block.LiquidCode == "water";
             var blockSelBelow = blockSel.Clone();
             blockSelBelow.Position.Y -= 1;
-            var blockBelow = world.BlockAccessor.GetBlock(blockSelBelow.Position);
+            var blockBelow = world.BlockAccessor.GetBlock(blockSelBelow.Position, BlockLayersAccess.Default);
             if (blockBelow.Fertility <= 0)
             {
                 failureCode = Lang.Get("you need more suitable ground to place this stake");
@@ -81,11 +82,14 @@ namespace PrimitiveSurvival.ModSystem
         }
 
 
-        public override BlockDropItemStack[] GetDropsForHandbook(ItemStack handbookStack, IPlayer forPlayer) => new BlockDropItemStack[] { new BlockDropItemStack(handbookStack) };
+        public override BlockDropItemStack[] GetDropsForHandbook(ItemStack handbookStack, IPlayer forPlayer)
+        {
+            return new BlockDropItemStack[] { new BlockDropItemStack(handbookStack) };
+        }
 
         public bool ShouldConnectAt(IWorldAccessor world, BlockPos ownPos, BlockFacing side)
         {
-            var block = world.BlockAccessor.GetBlock(ownPos.AddCopy(side));
+            var block = world.BlockAccessor.GetBlock(ownPos.AddCopy(side), BlockLayersAccess.Default);
             return block.FirstCodePart() == this.FirstCodePart() || block.SideSolid[side.Opposite.Index];
         }
 

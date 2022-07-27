@@ -13,9 +13,9 @@ namespace PrimitiveSurvival.ModSystem
     using PrimitiveSurvival.ModConfig;
 
 
-    public class BEFishBasket : BlockEntityDisplay
+    public class BEFishBasket : BlockEntityDisplayCase
     {
-        private readonly int catchPercent = ModConfig.Loaded.FishBasketCatchPercent; 
+        private readonly int catchPercent = ModConfig.Loaded.FishBasketCatchPercent;
         private readonly int baitedCatchPercent = ModConfig.Loaded.FishBasketBaitedCatchPercent;
         private readonly int baitStolenPercent = ModConfig.Loaded.FishBasketBaitStolenPercent;
         private readonly int escapePercent = ModConfig.Loaded.FishBasketEscapePercent;
@@ -25,7 +25,7 @@ namespace PrimitiveSurvival.ModSystem
         private readonly int tickSeconds = 4;
         private readonly int maxSlots = 3;
         private readonly string[] baitTypes = { "fruit", "grain", "legume", "meat", "vegetable", "jerky", "mushroom", "bread", "poultry", "pickledvegetable", "redmeat", "bushmeat", "earthworm", "cheese", "fishfillet", "fisheggs", "fisheggscooked" };
-        private readonly string[] fishTypes = { "trout", "perch", "carp", "bass", "pike", "arcticchar", "catfish", "bluegill" };
+        private readonly string[] fishTypes = { "trout", "perch", "salmon", "carp", "bass", "pike", "arcticchar", "catfish", "bluegill" };
         private readonly string[] shellStates = { "scallop", "sundial", "turritella", "clam", "conch", "seastar", "volute" };
         private readonly string[] shellColors = { "latte", "plain", "seafoam", "darkpurple", "cinnamon", "turquoise" };
         private readonly string[] relics = { "psgear-astral", "psgear-ethereal" };
@@ -35,7 +35,7 @@ namespace PrimitiveSurvival.ModSystem
 
         public override string InventoryClassName => "fishbasket";
 
-        protected InventoryGeneric inventory;
+        //protected InventoryGeneric inventory;
 
         public override InventoryBase Inventory => this.inventory;
 
@@ -92,7 +92,8 @@ namespace PrimitiveSurvival.ModSystem
             this.UnregisterGameTickListener(this.particleTick);
         }
 
-        private void GenerateWaterParticles(int slot, string type, BlockPos pos, IWorldAccessor world)
+        //private void GenerateWaterParticles(int slot, string type, BlockPos pos, IWorldAccessor world)
+        private void GenerateWaterParticles(string type, BlockPos pos, IWorldAccessor world)
         {
             float minQuantity = 1;
             float maxQuantity = 8;
@@ -145,9 +146,11 @@ namespace PrimitiveSurvival.ModSystem
                         if (!this.inventory[slot].Empty)
                         {
                             if (this.inventory[slot].Itemstack.Item != null) //fish
-                            { this.GenerateWaterParticles(slot, "fish", this.Pos, this.Api.World); }
+                            //{ this.GenerateWaterParticles(slot, "fish", this.Pos, this.Api.World); }
+                            { this.GenerateWaterParticles("fish", this.Pos, this.Api.World); }
                             else if (this.inventory[slot].Itemstack.Block != null) //seashell
-                            { this.GenerateWaterParticles(slot, "seashell", this.Pos, this.Api.World); }
+                            //{ this.GenerateWaterParticles(slot, "seashell", this.Pos, this.Api.World); }
+                            { this.GenerateWaterParticles("seashell", this.Pos, this.Api.World); }
                         }
                     }
                 }
@@ -165,7 +168,7 @@ namespace PrimitiveSurvival.ModSystem
             // Examine sides 
             foreach (var neib in neibPos)
             {
-                testBlock = this.Api.World.BlockAccessor.GetBlock(neib);
+                testBlock = this.Api.World.BlockAccessor.GetBlock(neib, BlockLayersAccess.Default);
                 if (testBlock.LiquidCode != "water")
                 { waterAllAround = false; }
             }
@@ -179,18 +182,19 @@ namespace PrimitiveSurvival.ModSystem
                     if (rando < this.baitStolenPercent)
                     {
                         if (this.WorldTake(0, this.Pos))
-                        { this.GenerateWaterParticles(1, "fish", this.Pos, this.Api.World); }
+                        //{ this.GenerateWaterParticles(1, "fish", this.Pos, this.Api.World); }
+                        { this.GenerateWaterParticles("fish", this.Pos, this.Api.World); }
                     }
                 }
                 var caughtOk = false;
                 if ((!this.BaitSlot.Empty && caught < this.baitedCatchPercent) || (this.BaitSlot.Empty && caught < this.catchPercent))
                 {
                     rando = Rnd.Next(2);
-                    caughtOk = this.WorldPut(rando + 1, this.Pos);
+                    caughtOk = this.WorldPut(rando + 1); //, this.Pos);
                     if (!caughtOk)
                     {
                         rando = 1 - rando;
-                        caughtOk = this.WorldPut(rando + 1, this.Pos);
+                        caughtOk = this.WorldPut(rando + 1); //, this.Pos);
                     }
                 }
                 if (!caughtOk && (!this.Catch1Slot.Empty || !this.Catch2Slot.Empty))
@@ -198,7 +202,7 @@ namespace PrimitiveSurvival.ModSystem
                     escaped = Rnd.Next(100);
                     if (escaped < this.escapePercent)
                     {
-                        var escapedOk = false;
+                        bool escapedOk; // = false;
                         rando = Rnd.Next(2);
                         escapedOk = this.WorldTake(rando + 1, this.Pos);
                         if (!escapedOk)
@@ -207,7 +211,8 @@ namespace PrimitiveSurvival.ModSystem
                             escapedOk = this.WorldTake(rando + 1, this.Pos);
                         }
                         if (escapedOk)
-                        { this.GenerateWaterParticles(2, "fish", this.Pos, this.Api.World); }
+                        //{ this.GenerateWaterParticles( 2, "fish", this.Pos, this.Api.World); }
+                        { this.GenerateWaterParticles("fish", this.Pos, this.Api.World); }
                     }
                 }
 
@@ -240,9 +245,9 @@ namespace PrimitiveSurvival.ModSystem
         }
 
 
-        public bool WorldPut(int slot, BlockPos pos)
+        public bool WorldPut(int slot) //, BlockPos pos)
         {
-            ItemStack newStack = null;
+            ItemStack newStack; // = null;
             var rando = Rnd.Next(5);
             if (rando < 1) // 20% chance of a seashell or relic
             {
@@ -297,7 +302,7 @@ namespace PrimitiveSurvival.ModSystem
                     PrimitiveSurvivalSystem.UpdateChunkInDictionary(this.Api as ICoreServerAPI, this.Pos, -ModConfig.Loaded.FishChunkDepletionRate);
                 }
                 /*********************************************/
-                this.inventory[slot].TakeOutWhole();
+                this.inventory[slot].TakeOut(1);
                 this.Api.World.BlockAccessor.MarkBlockDirty(pos);
                 this.MarkDirty();
                 return true;
@@ -330,7 +335,7 @@ namespace PrimitiveSurvival.ModSystem
                 var colObj = slot.Itemstack.Collectible;
                 if (colObj.Attributes != null)
                 {
-                    if (this.TryPut(slot, blockSel))
+                    if (this.TryPut(slot)) //, blockSel))
                     {
                         if (this.Block.Code.Path.Contains("inwater"))
                         {
@@ -349,7 +354,7 @@ namespace PrimitiveSurvival.ModSystem
         }
 
 
-        private bool TryPut(ItemSlot playerSlot, BlockSelection blockSel)
+        private bool TryPut(ItemSlot playerSlot) //, BlockSelection blockSel)
         {
             var index = -1;
             var moved = 0;
@@ -403,7 +408,7 @@ namespace PrimitiveSurvival.ModSystem
         {
             if (!this.Catch2Slot.Empty)
             {
-                var rando = Rnd.Next(8);
+                /*var rando = Rnd.Next(8);
                 if (rando < 1 && this.Catch2Stack.Item != null) //fish
                 {
                     //byPlayer.InventoryManager.TryGiveItemstack(this.Catch2Stack);
@@ -412,14 +417,15 @@ namespace PrimitiveSurvival.ModSystem
                     this.Api.World.SpawnItemEntity(drop, new Vec3d(this.Pos.X + 0.5, this.Pos.Y + 0.5, this.Pos.Z + 0.5), null); //slippery
                 }
                 else
-                { byPlayer.InventoryManager.TryGiveItemstack(this.Catch2Stack); }
-                this.Catch2Slot.TakeOutWhole();
+                { byPlayer.InventoryManager.TryGiveItemstack(this.Catch2Stack); } */
+                byPlayer.InventoryManager.TryGiveItemstack(this.Catch2Stack);
+                this.Catch2Slot.TakeOut(1);
                 this.MarkDirty(true);
                 return true;
             }
             else if (!this.Catch1Slot.Empty)
             {
-                var rando = Rnd.Next(3);
+                /*var rando = Rnd.Next(3);
                 if (rando < 2 && this.Catch1Stack.Item != null) //fish
                 {
                     //ItemStack drop = catch1Stack.Clone();
@@ -430,15 +436,16 @@ namespace PrimitiveSurvival.ModSystem
                 else
                 {
                     byPlayer.InventoryManager.TryGiveItemstack(this.Catch1Stack);
-                }
-                this.Catch1Slot.TakeOutWhole();
+                } */
+                byPlayer.InventoryManager.TryGiveItemstack(this.Catch1Stack);
+                this.Catch1Slot.TakeOut(1);
                 this.MarkDirty(true);
                 return true;
             }
             else if (!this.BaitSlot.Empty)
             {
                 byPlayer.InventoryManager.TryGiveItemstack(this.BaitStack);
-                this.BaitSlot.TakeOutWhole();
+                this.BaitSlot.TakeOut(1);
                 this.MarkDirty(true);
                 return true;
             }
@@ -448,7 +455,7 @@ namespace PrimitiveSurvival.ModSystem
 
         public override void GetBlockInfo(IPlayer forPlayer, StringBuilder sb)
         {
-            var block = this.Api.World.BlockAccessor.GetBlock(this.Pos);
+            var block = this.Api.World.BlockAccessor.GetBlock(this.Pos, BlockLayersAccess.Default);
             if (block.Code.Path.Contains("inwater"))
             {
                 var rot = false;
@@ -517,7 +524,7 @@ namespace PrimitiveSurvival.ModSystem
             string shapePath;
             var alive = false;
             Block tmpBlock;
-            var block = this.Api.World.BlockAccessor.GetBlock(this.Pos) as BlockFishBasket;
+            var block = this.Api.World.BlockAccessor.GetBlock(this.Pos, BlockLayersAccess.Default) as BlockFishBasket;
             var texture = tesselator.GetTexSource(block);
             var tmpTextureSource = texture;
             shapePath = "primitivesurvival:shapes/block/fishbasket/fishbasket";

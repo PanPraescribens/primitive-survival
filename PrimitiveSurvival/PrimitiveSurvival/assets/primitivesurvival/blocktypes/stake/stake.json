@@ -1,6 +1,6 @@
 {
   "code": "stake",
-  "class": "blockstake",
+  "class": "blockstakeinwater",
   "behaviors": [
     { "name": "Unstable" },
     { "name": "CanAttach", "properties": { "sides": ["up", "down"] } }

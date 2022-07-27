@@ -4,6 +4,7 @@
     "baitmaterial": { "base": "item/fishing/rot" },
     "troutmaterial": { "base": "item/fishing/rot" },
     "perchmaterial": { "base": "item/fishing/rot" },
+    "salmonmaterial": { "base": "item/fishing/rot" },
     "carpmaterial": { "base": "item/fishing/rot" },
     "bassmaterial": { "base": "item/fishing/rot" },
     "pikematerial": { "base": "item/fishing/rot" },

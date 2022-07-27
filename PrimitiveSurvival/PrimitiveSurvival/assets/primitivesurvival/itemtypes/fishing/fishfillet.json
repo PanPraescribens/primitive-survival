@@ -28,12 +28,57 @@
         "nutritionPropsWhenInMeal": {
             "satiety": 144,
             "foodcategory": "Protein"
-        }
+        },
+		bakingPropertiesByType: {
+			"*-raw": {
+				temp: 150,
+				levelFrom: 0.0,
+				levelTo: 0.25,
+				startScaleY: 1.0,
+				endScaleY: 1.0,
+				resultCode: "primitivesurvival:fishfillet-partbaked",
+			},
+			"*-partbaked": {
+				temp: 150,
+				levelFrom: 0.25,
+				levelTo: 0.5,
+				startScaleY: 1.0,
+				endScaleY: 1.0,
+				resultCode: "primitivesurvival:fishfillet-cooked",
+				initialCode: "primitivesurvival:fishfillet-raw"
+			},
+			"*-cooked": {
+				temp: 150,
+				levelFrom: 0.5,
+				levelTo: 0.75,
+				startScaleY: 1.0,
+				endScaleY: 1.0,
+				resultCode: "primitivesurvival:fishfillet-charred",
+				initialCode: "primitivesurvival:fishfillet-partbaked"
+			},
+			"*-charred": {
+				temp: 150,
+				levelFrom: 0.75,
+				levelTo: 1.0,
+				startScaleY: 1.0,
+				endScaleY: 0.9,
+				initialCode: "primitivesurvival:fishfillet-cooked"
+			},
+		},
+		onDisplayTransformByType: { 
+			"*": {
+				translation: { x: 0, y: -0.2, z: 0 },
+				scale: 0.6 
+			},
+		},
+    		inPiePropertiesByType: {
+      			"*-raw": { texture: "game:block/food/pie/fill-fish", partType: 'Filling' },
+    		},
     },
     "variantgroups": [
         {
             "code": "state",
-            "states": [ "raw", "cooked" ]
+            "states": [ "raw", "partbaked", "cooked", "charred" ]
         }
     ],
     "shape": { "base": "item/fishing/fish-fillet" },
@@ -48,8 +93,16 @@
         "primitive": [ "*" ]
     },
     "nutritionPropsByType": {
+        "*-partbaked": {
+            "satiety": 86,
+            "foodcategory": "Protein"
+        },
         "*-cooked": {
             "satiety": 96,
+            "foodcategory": "Protein"
+        },
+        "*-charred": {
+            "satiety": 76,
             "foodcategory": "Protein"
         }
     },
@@ -140,11 +193,35 @@
         }
     },
     "transitionablePropsByType": {
+        "*-partbaked": [
+            {
+                "type": "Perish",
+                "freshHours": { "avg": 120 },
+                "spoilHours": { "avg": 36 },
+                "transitionedStack": {
+                    "type": "item",
+                    "code": "game:rot"
+                },
+                "transitionRatio": 1
+            }
+        ],
         "*-cooked": [
             {
                 "type": "Perish",
                 "freshHours": { "avg": 120 },
                 "spoilHours": { "avg": 36 },
+                "transitionedStack": {
+                    "type": "item",
+                    "code": "game:rot"
+                },
+                "transitionRatio": 1
+            }
+        ],
+        "*-charred": [
+            {
+                "type": "Perish",
+                "freshHours": { "avg": 240 },
+                "spoilHours": { "avg": 72 },
                 "transitionedStack": {
                     "type": "item",
                     "code": "game:rot"

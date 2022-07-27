@@ -1,7 +1,7 @@
 {
   "ingredientPattern": "K,B",
   "enabled": true,
-  "shapeless": true,
+  "shapeless": false,
   "ingredients": {
     "K": { "type": "item", "code": "game:knife-*", "isTool": true },
     "B": { "type": "item", "code": "game:bone", "quantity": 1 }

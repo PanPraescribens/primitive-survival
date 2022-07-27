@@ -5,23 +5,19 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Common;
     using Vintagestory.API.Datastructures;
     using Vintagestory.API.MathTools;
-    using Vintagestory.GameContent;
+    //using System.Diagnostics;
 
-    public class BEMetalBucketFilled : BlockEntityContainer
+    public class BEMetalBucketFilled : BlockEntity
     {
-
         internal InventoryGeneric inventory;
-
-        public override InventoryBase Inventory => this.inventory;
-
-        public override string InventoryClassName => "metalbucketfilled";
-
         private MeshData currentMesh;
         private BlockMetalBucketFilled ownBlock;
-
         public float MeshAngle;
 
-        public BEMetalBucketFilled() => this.inventory = new InventoryGeneric(1, null, null);
+        public BEMetalBucketFilled()
+        {
+            this.inventory = new InventoryGeneric(1, null, null);
+        }
 
 
         public override void Initialize(ICoreAPI api)
@@ -36,7 +32,7 @@ namespace PrimitiveSurvival.ModSystem
         }
 
 
-        public override void OnBlockBroken()
+        public override void OnBlockBroken(IPlayer forPlayer)
         {
             // Don't drop inventory contents
         }
@@ -53,7 +49,10 @@ namespace PrimitiveSurvival.ModSystem
         }
 
 
-        public ItemStack GetContent() => this.inventory[0].Itemstack;
+        public ItemStack GetContent()
+        {
+            return this.inventory[0].Itemstack;
+        }
 
 
         internal void SetContent(ItemStack stack)
@@ -67,7 +66,7 @@ namespace PrimitiveSurvival.ModSystem
         {
             if (this.ownBlock == null)
             { return null; }
-            var mesh = this.ownBlock.GenMesh(this.Api as ICoreClientAPI, this.GetContent(), this.Pos);
+            var mesh = this.ownBlock.GenMesh(this.Api as ICoreClientAPI);
             if (mesh.CustomInts != null)
             {
                 for (var i = 0; i < mesh.CustomInts.Count; i++)
@@ -82,7 +81,6 @@ namespace PrimitiveSurvival.ModSystem
 
         public override bool OnTesselation(ITerrainMeshPool mesher, ITesselatorAPI tesselator)
         {
-            var block = this.Api.World.BlockAccessor.GetBlock(this.Pos) as BlockMetalBucketFilled;
             if (this.currentMesh != null)
             {
                 mesher.AddMeshData(this.currentMesh.Clone().Rotate(new Vec3f(0.5f, 0.5f, 0.5f), 0, this.MeshAngle, 0));
@@ -117,6 +115,5 @@ namespace PrimitiveSurvival.ModSystem
         {
             //do nothing to override perishable info
         }
-
     }
 }

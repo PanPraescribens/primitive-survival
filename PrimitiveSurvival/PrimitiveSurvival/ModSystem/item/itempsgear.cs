@@ -7,7 +7,9 @@ namespace PrimitiveSurvival.ModSystem
     public class ItemPSGear : Item
     {
 
+
         public SimpleParticleProperties particlesHeld;
+
 
         public override void OnLoaded(ICoreAPI api)
         {
@@ -35,8 +37,10 @@ namespace PrimitiveSurvival.ModSystem
         }
 
 
-        public override void InGuiIdle(IWorldAccessor world, ItemStack stack) => this.GuiTransform.Rotation.Y = GameMath.Mod(world.ElapsedMilliseconds / 50f, 360);
-
+        public override void InGuiIdle(IWorldAccessor world, ItemStack stack)
+        {
+            this.GuiTransform.Rotation.Y = GameMath.Mod(world.ElapsedMilliseconds / 50f, 360);
+        }
 
         public override void OnGroundIdle(EntityItem entityItem)
         {
@@ -61,8 +65,10 @@ namespace PrimitiveSurvival.ModSystem
         }
 
 
-        public override void OnHeldInteractStart(ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, bool firstEvent, ref EnumHandHandling handling) => handling = EnumHandHandling.PreventDefaultAction;
-
+        public override void OnHeldInteractStart(ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, bool firstEvent, ref EnumHandHandling handling)
+        {
+            handling = EnumHandHandling.PreventDefaultAction;
+        }
 
         private void SpawnParticles(IWorldAccessor world, Vec3d pos, bool final)
         {

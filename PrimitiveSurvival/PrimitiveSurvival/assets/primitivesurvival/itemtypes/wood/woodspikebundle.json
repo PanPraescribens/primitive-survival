@@ -23,19 +23,20 @@
         },
         "scale": 3.39
     },
-    "guiTransform": {
-        "rotation": {
-            "x": -98,
-            "y": 56,
-            "z": 67
-        },
-        "origin": {
-            "x": 0.6,
-            "y": 0.35,
-            "z": 0.2
-        },
-        "scale": 2.39
+  "guiTransform": {
+    "rotate": true,
+    "rotation": {
+      "x": -180,
+      "y": -121,
+      "z": 43
     },
+    "origin": {
+      "x": 0.6,
+      "y": 0.25,
+      "z": 0.1
+    },
+    "scale": 2.25
+  },
     "tpHandTransform": {
         "translation": {
             "x": -2.5,

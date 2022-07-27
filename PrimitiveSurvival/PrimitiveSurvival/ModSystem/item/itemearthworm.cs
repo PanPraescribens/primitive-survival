@@ -9,8 +9,10 @@ namespace PrimitiveSurvival.ModSystem
     public class ItemEarthworm : Item
     {
 
-        public override string GetHeldTpUseAnimation(ItemSlot activeHotbarSlot, Entity byEntity) => null;
-
+        public override string GetHeldTpUseAnimation(ItemSlot activeHotbarSlot, Entity byEntity)
+        {
+            return null;
+        }
 
         public override void OnHeldInteractStart(ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, bool firstEvent, ref EnumHandHandling handHandling)
         {
@@ -55,7 +57,9 @@ namespace PrimitiveSurvival.ModSystem
         }
 
 
-        public override WorldInteraction[] GetHeldInteractionHelp(ItemSlot inSlot) => new WorldInteraction[] {
+        public override WorldInteraction[] GetHeldInteractionHelp(ItemSlot inSlot)
+        {
+            return new WorldInteraction[] {
                     new WorldInteraction()
                     {
                         HotKeyCode = "sneak",
@@ -63,5 +67,6 @@ namespace PrimitiveSurvival.ModSystem
                         MouseButton = EnumMouseButton.Right,
                     }
                 }.Append(base.GetHeldInteractionHelp(inSlot));
+        }
     }
 }

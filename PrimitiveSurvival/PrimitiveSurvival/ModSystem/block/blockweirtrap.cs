@@ -7,9 +7,9 @@ namespace PrimitiveSurvival.ModSystem
     public class BlockWeirTrap : Block
     {
 
-        public MeshData GenMesh(ICoreClientAPI capi, string shapePath, ITexPositionSource texture, int slot, bool alive, ITesselatorAPI tesselator = null)
+        public MeshData GenMesh(ICoreClientAPI capi, string shapePath, ITexPositionSource texture, int slot, bool alive) //, ITesselatorAPI tesselator = null)
         {
-            tesselator = capi.Tesselator;
+            var tesselator = capi.Tesselator;
             var shape = capi.Assets.TryGet(shapePath + ".json").ToObject<Shape>();
             tesselator.TesselateShape(shapePath, shape, out var mesh, texture, new Vec3f(0, 0, 0));
             if (slot == 0)
@@ -56,17 +56,30 @@ namespace PrimitiveSurvival.ModSystem
 
             if (alive) //let's animate these fishes
             {
-                var flength = 0.7;
-                if (shapePath.Contains("catfish"))
-                { flength = 0.8; }
+                var flength = 0.45;
+                if (shapePath.Contains("catfish") || shapePath.Contains("salmon"))
+                { flength = 0.55; }
+                else if (shapePath.Contains("perch") || shapePath.Contains("bass"))
+                { flength = 0.35; }
                 else if (shapePath.Contains("bluegill"))
                 { flength = 0; } //make the bluegill really wiggly
 
-                var fishWave = VertexFlags.LeavesWindWaveBitMask | VertexFlags.WeakWaveBitMask;
+                var fheight = 0.45;
+                if (shapePath.Contains("salmon"))
+                { fheight = 0.5; }
+                else if (shapePath.Contains("pike"))
+                { fheight = 0.39; }
+                else if (shapePath.Contains("bluegill"))
+                { fheight = 0; }
+
+                // 1.16
+                //var fishWave = VertexFlags.LeavesWindWaveBitMask | VertexFlags.WeakWaveBitMask;
+                var fishWave = EnumWindBitModeMask.ExtraWeakWind | VertexFlags.LiquidWaterModeBitMask;
+
                 for (var vertexNum = 0; vertexNum < mesh.GetVerticesCount(); vertexNum++)
                 {
                     //tail first, top fins second
-                    if ((mesh.xyz[3 * vertexNum + 2] > flength - 0.25) || (mesh.xyz[3 * vertexNum + 1] > 0.45))
+                    if ((mesh.xyz[(3 * vertexNum) + 2] > flength) || (mesh.xyz[(3 * vertexNum) + 1] > fheight))
                     { mesh.Flags[vertexNum] |= fishWave; }
                     else
                     { mesh.Flags[vertexNum] |= 6144; }
@@ -81,13 +94,13 @@ namespace PrimitiveSurvival.ModSystem
         {
             base.OnBlockBroken(world, pos, byPlayer, dropQuantityMultiplier);
             world.BlockAccessor.SetBlock(world.GetBlock(new AssetLocation("water-still-7")).BlockId, pos);
-            world.BlockAccessor.GetBlock(pos).OnNeighbourBlockChange(world, pos, pos);
+            world.BlockAccessor.GetBlock(pos, BlockLayersAccess.Default).OnNeighbourBlockChange(world, pos, pos);
         }
 
 
         public override void OnNeighbourBlockChange(IWorldAccessor world, BlockPos pos, BlockPos neibpos)
         {
-            var neibBlock = world.BlockAccessor.GetBlock(neibpos);
+            var neibBlock = world.BlockAccessor.GetBlock(neibpos, BlockLayersAccess.Default);
             if (neibBlock != null)
             {
                 if (neibBlock.BlockId == 0 || neibBlock.Code.Path.StartsWith("water"))
@@ -96,7 +109,7 @@ namespace PrimitiveSurvival.ModSystem
                     Block testBlock;
                     foreach (var neighbor in weirSidesPos) // check for open in any of the stakes on the four sides
                     {
-                        testBlock = world.BlockAccessor.GetBlock(neighbor);
+                        testBlock = world.BlockAccessor.GetBlock(neighbor, BlockLayersAccess.Default);
                         if (testBlock.Code.Path.Contains("open") && testBlock.Code.Path.Contains("stakeinwater"))
                         {
                             world.BlockAccessor.BreakBlock(pos, null);

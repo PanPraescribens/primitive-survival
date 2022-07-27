@@ -4,11 +4,11 @@
   "variantgroups": [
     {
       "code": "material",
-      "states": ["temporal", "astral", "ethereal"]
+      "states": [ "temporal", "astral", "ethereal" ]
     },
     {
       "code": "type",
-      "states": ["top", "middle", "bottom"]
+      "states": [ "top", "middle", "bottom" ]
     },
     {
       "code": "dir",
@@ -25,15 +25,9 @@
     }
   ],
   "creativeinventory": {
-    "general": ["*-{material}-middle-north"],
-    "construction": ["*-{material}-middle-north"],
-    "primitive": ["*-{material}-middle-north"]
-  },
-  "sideopaque": {
-    "all": false
-  },
-  "sidesolid": {
-    "all": false
+    "general": [ "*-{material}-middle-north" ],
+    "construction": [ "*-{material}-middle-north" ],
+    "primitive": [ "*-{material}-middle-north" ]
   },
   "shapebytype": {
     "*-middle-north": {
@@ -135,6 +129,32 @@
   },
   "drawtype": "json",
   "blockmaterial": "Stone",
+  "renderpassByType": {
+    "*-ethereal*": "transparent"
+  },
+  "sidesolid": {
+    "all": false
+  },
+  "sideopaque": {
+    "all": false
+  },
+  "vertexFlagsbyType": {
+    "*-ethereal*": {
+      "zOffset": 1,
+      "glowLevel": 32,
+      "lowContrast": true
+    },
+    "*-astral*": {
+      "reflective": true
+    }
+  },
+  "faceCullModebyType": {
+    "*-ethereal*": "liquid"
+  },
+  "lightabsorptionByType": {
+    "*-ethereal*": 0,
+    "*": 99
+  },
   "texturesByType": {
     "*": {
       "all": {

@@ -5,7 +5,7 @@
         {
             "name": "FiniteSpreadingLiquid",
             "properties": {
-                "spreadDelay": 1000,
+                "spreadDelay": 250,
                 "liquidCollisionSound": "hotmetal",
                 "sourceReplacementCode": "rock-obsidian",
                 "flowingReplacementCode": "rock-basalt",
@@ -63,7 +63,7 @@
         },
         "waterTightContainerProps": {
             "containable": true,
-            "itemsPerLitre": 1,
+            "itemsPerLitre": 0.01,
             "whenFilled": {
                 "stack": {
                     "type": "item",

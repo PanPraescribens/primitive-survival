@@ -6,7 +6,7 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Common.Entities;
     using Vintagestory.GameContent;
 
-    public class BlockStakeInWater : BlockWaterPlant
+    public class BlockStakeInWater : Block
     {
 
         private string GetOrientations(IWorldAccessor world, BlockPos pos)
@@ -32,14 +32,14 @@ namespace PrimitiveSurvival.ModSystem
 
         public override void OnBlockBroken(IWorldAccessor world, BlockPos pos, IPlayer byPlayer, float dropQuantityMultiplier = 1f)
         {
-            var block = world.BlockAccessor.GetBlock(pos);
+            var block = world.BlockAccessor.GetBlock(pos, BlockLayersAccess.Default);
             if (block.Code.Path.Contains("stakeinwater") && block.Code.Path.Contains("open"))
             {
                 var weirSidesPos = new BlockPos[] { pos.EastCopy(), pos.WestCopy(), pos.NorthCopy(), pos.SouthCopy() };
                 Block testBlock;
                 foreach (var neighbor in weirSidesPos) //scan around this neighbor for a weirtrap and break it
                 {
-                    testBlock = world.BlockAccessor.GetBlock(neighbor);
+                    testBlock = world.BlockAccessor.GetBlock(neighbor, BlockLayersAccess.Default);
                     if (testBlock.Code.Path.Contains("weirtrap"))
                     {
                         world.BlockAccessor.BreakBlock(neighbor, null);
@@ -47,15 +47,17 @@ namespace PrimitiveSurvival.ModSystem
                 }
             }
             base.OnBlockBroken(world, pos, byPlayer, dropQuantityMultiplier);
-            world.BlockAccessor.SetBlock(world.GetBlock(new AssetLocation("water-still-7")).BlockId, pos);
-            world.BlockAccessor.GetBlock(pos).OnNeighbourBlockChange(world, pos, pos);
+
+            //1.17.pre.5 do not replace with water
+            //world.BlockAccessor.SetBlock(world.GetBlock(new AssetLocation("water-still-7")).BlockId, pos);
+            world.BlockAccessor.GetBlock(pos, BlockLayersAccess.Default).OnNeighbourBlockChange(world, pos, pos);
         }
 
 
         public override void OnNeighbourBlockChange(IWorldAccessor world, BlockPos pos, BlockPos neibpos)
         {
-            var neibBlock = world.BlockAccessor.GetBlock(neibpos);
-            var block = world.BlockAccessor.GetBlock(pos);
+            var neibBlock = world.BlockAccessor.GetBlock(neibpos, BlockLayersAccess.Default);
+            var block = world.BlockAccessor.GetBlock(pos, BlockLayersAccess.Default);
 
             if (block.Code.Path.Contains("stakeinwater") && block.Code.Path.Contains("open"))
             {
@@ -67,7 +69,7 @@ namespace PrimitiveSurvival.ModSystem
                     Block testBlock;
                     foreach (var neighbor in weirSidesPos) //scan around this neighbor for a weirtrap and break it
                     {
-                        testBlock = world.BlockAccessor.GetBlock(neighbor);
+                        testBlock = world.BlockAccessor.GetBlock(neighbor, BlockLayersAccess.Default);
                         if (testBlock.Code.Path.Contains("weirtrap"))
                         {
                             world.BlockAccessor.BreakBlock(neighbor, null);
@@ -89,11 +91,14 @@ namespace PrimitiveSurvival.ModSystem
         }
 
 
-        public override BlockDropItemStack[] GetDropsForHandbook(ItemStack handbookStack, IPlayer forPlayer) => new BlockDropItemStack[] { new BlockDropItemStack(handbookStack) };
+        public override BlockDropItemStack[] GetDropsForHandbook(ItemStack handbookStack, IPlayer forPlayer)
+        {
+            return new BlockDropItemStack[] { new BlockDropItemStack(handbookStack) };
+        }
 
         public bool ShouldConnectAt(IWorldAccessor world, BlockPos ownPos, BlockFacing side)
         {
-            var block = world.BlockAccessor.GetBlock(ownPos.AddCopy(side));
+            var block = world.BlockAccessor.GetBlock(ownPos.AddCopy(side), BlockLayersAccess.Default);
             return block.FirstCodePart() == this.FirstCodePart() || block.SideSolid[side.Opposite.Index];
         }
 
@@ -156,7 +161,7 @@ namespace PrimitiveSurvival.ModSystem
             BlockPos[] weirBasesPos;
 
             var pos = blockSel.Position;
-            var block = world.BlockAccessor.GetBlock(blockSel.Position);
+            var block = world.BlockAccessor.GetBlock(blockSel.Position, BlockLayersAccess.Default);
             var path = block.Code.Path;
             var facing = byPlayer.CurrentBlockSelection.Face;
             if (facing.IsHorizontal && (path.EndsWith("-ew") || path.EndsWith("-ns")))
@@ -188,30 +193,30 @@ namespace PrimitiveSurvival.ModSystem
                     weirSidesPos = new BlockPos[] { waterPos.NorthCopy(), waterPos.SouthCopy() };
                     weirBasesPos = new BlockPos[] { waterPos.EastCopy(), waterPos.EastCopy().NorthCopy(), waterPos.EastCopy().SouthCopy() };
                 }
-                waterBlock = world.BlockAccessor.GetBlock(waterPos);
+                waterBlock = world.BlockAccessor.GetBlock(waterPos, BlockLayersAccess.Default);
                 var areaOK = true;
 
                 foreach (var neighbor in weirSidesPos) // Examine sides 
                 {
-                    testBlock = world.BlockAccessor.GetBlock(neighbor);
+                    testBlock = world.BlockAccessor.GetBlock(neighbor, BlockLayersAccess.Default);
                     if (testBlock.FirstCodePart() != "stakeinwater")
                     { areaOK = false; }
                 }
 
                 foreach (var neighbor in weirBasesPos) // Examine bases
                 {
-                    testBlock = world.BlockAccessor.GetBlock(neighbor);
+                    testBlock = world.BlockAccessor.GetBlock(neighbor, BlockLayersAccess.Default);
                     if (testBlock.BlockId == 0 || (testBlock.LiquidCode == "water" && (testBlock.FirstCodePart() != "stakeinwater")))
                     { areaOK = false; }
                 }
 
                 if (waterBlock.LiquidCode == "water" && areaOK)
                 {
-                    path = path + "open";
+                    path += "open";
                     block = world.GetBlock(block.CodeWithPath(path));
                     world.BlockAccessor.SetBlock(block.BlockId, blockSel.Position);
 
-                    testBlock = world.BlockAccessor.GetBlock(waterPos); //make sure it isn't already a weir trap!!!
+                    testBlock = world.BlockAccessor.GetBlock(waterPos, BlockLayersAccess.Default); //make sure it isn't already a weir trap!!!
                     if (!testBlock.Code.Path.Contains("weirtrap"))
                     {
                         testBlock = world.BlockAccessor.GetBlock(new AssetLocation("primitivesurvival:weirtrap-" + facing.ToString()));

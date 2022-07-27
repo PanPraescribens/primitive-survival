@@ -171,6 +171,33 @@
         "foodcategory": "Protein"
       }
     },
+    "*-salmon*": {
+      "inFirePitProps": {
+        "transform": {
+          "scale": 1,
+          "origin": {
+            "x": 0.5,
+            "y": 0,
+            "z": 0.5
+          },
+          "translation": {
+            "x": -0.4,
+            "y": 0.25,
+            "z": -0.049
+          },
+          "rotation": {
+            "x": 90,
+            "y": 0,
+            "z": 120
+          }
+        },
+        "useFirepitModel": "Spit"
+      },
+      "nutritionPropsWhenInMeal": {
+        "satiety": 320,
+        "foodcategory": "Protein"
+      }
+    },
     "*-pike*": {
       "inFirePitProps": {
         "transform": {
@@ -259,6 +286,7 @@
       "states": [
         "trout",
         "perch",
+        "salmon",
         "carp",
         "bass",
         "pike",
@@ -270,7 +298,7 @@
     },
     {
       "code": "state",
-      "states": [ "raw", "cooked" ]
+      "states": ["raw", "cooked"]
     }
   ],
   "shape": { "base": "item/fishing/fish-{type}" },
@@ -278,6 +306,7 @@
     "*": {
       "troutmaterial": { "base": "item/fishing/fish-{type}-{state}" },
       "perchmaterial": { "base": "item/fishing/fish-{type}-{state}" },
+      "salmonmaterial": { "base": "item/fishing/fish-{type}-{state}" },
       "carpmaterial": { "base": "item/fishing/fish-{type}-{state}" },
       "bassmaterial": { "base": "item/fishing/fish-{type}-{state}" },
       "pikematerial": { "base": "item/fishing/fish-{type}-{state}" },
@@ -289,9 +318,9 @@
   },
   "heldRightTpIdleAnimation": "holdinglanternrighthand",
   "creativeinventory": {
-    "general": [ "*" ],
-    "items": [ "*" ],
-    "primitive": [ "*" ]
+    "general": ["*"],
+    "items": ["*"],
+    "primitive": ["*"]
   },
   "nutritionPropsByType": {
     "*catfish-cooked": {
@@ -388,6 +417,24 @@
         "z": 0.44
       },
       "scale": 2.0
+    },
+    "*salmon-*": {
+      "translation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "rotation": {
+        "x": 134,
+        "y": -12,
+        "z": -14
+      },
+      "origin": {
+        "x": 0.34,
+        "y": -0.46,
+        "z": 0.44
+      },
+      "scale": 2
     },
     "*": {
       "translation": {

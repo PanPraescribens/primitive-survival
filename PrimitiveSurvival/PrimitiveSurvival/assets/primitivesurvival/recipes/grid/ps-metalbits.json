@@ -18,7 +18,7 @@
     "output": {
       "type": "item",
       "code": "game:metalbit-{metal}",
-      "quantity": 16
+      "quantity": 3
     }
   },
   {
@@ -40,7 +40,7 @@
     "output": {
       "type": "item",
       "code": "game:metalbit-{metal}",
-      "quantity": 25
+      "quantity": 5
     }
   },
   {
@@ -62,7 +62,7 @@
     "output": {
       "type": "item",
       "code": "game:metalbit-{metal}",
-      "quantity": 33
+      "quantity": 40
     }
   }
 ]

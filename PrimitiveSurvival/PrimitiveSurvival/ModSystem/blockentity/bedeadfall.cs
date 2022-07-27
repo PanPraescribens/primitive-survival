@@ -1,16 +1,17 @@
 namespace PrimitiveSurvival.ModSystem
 {
-    using Vintagestory.API.Common;
-    using Vintagestory.API.MathTools;
     using System;
     using System.Linq;
     using System.Text;
+    using Vintagestory.API.Common;
+    using Vintagestory.API.MathTools;
     using Vintagestory.API.Client;
     using Vintagestory.GameContent;
     using Vintagestory.API.Config;
     using Vintagestory.API.Common.Entities;
 
-    public class BEDeadfall : BlockEntityDisplay, IAnimalFoodSource
+
+    public class BEDeadfall : BlockEntityDisplayCase, IAnimalFoodSource
     {
         private readonly string[] baitTypes = { "fruit", "grain", "legume", "meat", "vegetable", "jerky", "mushroom", "bread", "poultry", "pickledvegetable", "redmeat", "bushmeat", "cheese", "fishfillet", "fisheggs", "fisheggscooked" };
         protected static readonly Random Rnd = new Random();
@@ -68,24 +69,30 @@ namespace PrimitiveSurvival.ModSystem
             { this.Api.ModLoader.GetModSystem<POIRegistry>().RemovePOI(this); }
         }
 
-
         #region IAnimalFoodSource impl
-        public bool IsSuitableFor(Entity entity) => true;
+        // ADDED DIET FOR 1.17
+        public bool IsSuitableFor(Entity entity, string[] diet)
+        //public bool IsSuitableFor(Entity entity)
+        {
+            //if (diet == null) //shouldn't need this at all
+            //    return false;
+            return true;
+        }
 
-
-        public float ConsumeOnePortion() =>
+        public float ConsumeOnePortion()
+        {
             //TryClearContents();
-            1f;
-
+            return 1f;
+        }
 
         public string Type => "food";
 
-        public Vec3d Position => Pos.ToVec3d().Add(0.5, 0.5, 0.5);
+        public Vec3d Position => this.Pos.ToVec3d().Add(0.5, 0.5, 0.5);
         #endregion
 
 
         public override string InventoryClassName => "deadfall";
-        protected InventoryGeneric inventory;
+        //protected InventoryGeneric inventory;
 
         public override InventoryBase Inventory => this.inventory;
 
@@ -101,19 +108,19 @@ namespace PrimitiveSurvival.ModSystem
         {
             if (!this.BaitSlot.Empty)
             {
-                this.BaitSlot.TakeOutWhole();
+                this.BaitSlot.TakeOut(1);
                 return true;
             }
             return false;
         }
 
 
-        internal bool OnInteract(IPlayer byPlayer, BlockSelection blockSel)
+        internal bool OnInteract(IPlayer byPlayer) //, BlockSelection blockSel)
         {
             var playerSlot = byPlayer.InventoryManager.ActiveHotbarSlot;
             if (playerSlot.Empty)
             {
-                if (this.TryTake(byPlayer, blockSel))
+                if (this.TryTake()) // byPlayer, blockSel))
                 {
                     if (this.Api.Side == EnumAppSide.Server)
                     { this.Api.ModLoader.GetModSystem<POIRegistry>().AddPOI(this); }
@@ -170,7 +177,8 @@ namespace PrimitiveSurvival.ModSystem
                 var moved = playerSlot.TryPutInto(this.Api.World, this.inventory[index]);
                 if (moved > 0)
                 {
-                    this.updateMesh(index);
+                    // 1.16
+                    //this.updateMesh(index);
                     this.MarkDirty(true);
                     return moved > 0;
                 }
@@ -181,7 +189,7 @@ namespace PrimitiveSurvival.ModSystem
         }
 
 
-        private bool TryTake(IPlayer byPlayer, BlockSelection blockSel)
+        private bool TryTake() // IPlayer byPlayer, BlockSelection blockSel)
         {
             if (!this.BaitSlot.Empty)
             {
@@ -198,7 +206,7 @@ namespace PrimitiveSurvival.ModSystem
 
         public void StealBait(BlockPos pos)
         {
-            var block = this.Api.World.BlockAccessor.GetBlock(pos) as BlockSnare;
+            var block = this.Api.World.BlockAccessor.GetBlock(pos, BlockLayersAccess.Default) as BlockSnare;
             var stack = this.BaitSlot.TakeOut(1);
             if (stack != null)
             {
@@ -215,7 +223,7 @@ namespace PrimitiveSurvival.ModSystem
 
         public void TripTrap(BlockPos pos)
         {
-            var block = this.Api.World.BlockAccessor.GetBlock(pos) as BlockDeadfall;
+            var block = this.Api.World.BlockAccessor.GetBlock(pos, BlockLayersAccess.Default) as BlockDeadfall;
             var stack = this.BaitSlot.TakeOut(1);
             if (stack != null)
             {
@@ -234,7 +242,7 @@ namespace PrimitiveSurvival.ModSystem
 
         public override void GetBlockInfo(IPlayer forPlayer, StringBuilder sb)
         {
-            var block = this.Api.World.BlockAccessor.GetBlock(this.Pos);
+            var block = this.Api.World.BlockAccessor.GetBlock(this.Pos, BlockLayersAccess.Default);
             if (block.Code.Path.Contains("tripped"))
             { sb.Append(Lang.Get("It's tripped. Sneak click to set it back up.")); }
             else
@@ -268,7 +276,7 @@ namespace PrimitiveSurvival.ModSystem
             MeshData mesh;
             var shapeBase = "primitivesurvival:shapes/";
             string shapePath;
-            var block = this.Api.World.BlockAccessor.GetBlock(this.Pos) as BlockDeadfall;
+            var block = this.Api.World.BlockAccessor.GetBlock(this.Pos, BlockLayersAccess.Default) as BlockDeadfall;
             var texture = tesselator.GetTexSource(block);
             var tmpTextureSource = texture;
 
@@ -276,7 +284,7 @@ namespace PrimitiveSurvival.ModSystem
             { shapePath = "block/deadfall/deadfall-set"; }
             else
             { shapePath = "block/deadfall/deadfall-tripped"; }
-            mesh = block.GenMesh(this.Api as ICoreClientAPI, shapeBase + shapePath, texture, -1, false, tesselator);
+            mesh = block.GenMesh(this.Api as ICoreClientAPI, shapeBase + shapePath, texture, -1, false); //, tesselator);
             mesher.AddMeshData(mesh);
 
             if (this.inventory != null)
@@ -307,7 +315,7 @@ namespace PrimitiveSurvival.ModSystem
                         { tmpTextureSource = texture; }
                     }
                     shapePath = "block/trapbait"; //baited (for now)
-                    mesh = block.GenMesh(this.Api as ICoreClientAPI, shapeBase + shapePath, tmpTextureSource, 0, tripped, tesselator);
+                    mesh = block.GenMesh(this.Api as ICoreClientAPI, shapeBase + shapePath, tmpTextureSource, 0, tripped); //, tesselator);
                     mesher.AddMeshData(mesh);
                 }
             }

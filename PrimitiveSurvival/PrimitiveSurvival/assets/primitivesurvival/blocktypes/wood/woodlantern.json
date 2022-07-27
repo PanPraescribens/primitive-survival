@@ -78,6 +78,11 @@
       "loadFromProperties": "abstract/horizontalorientation"
     }
   ],
+  "attributes": {
+    "handbook": {
+      "groupBy": [ "woodlantern-*" ]
+    }
+  },
   "shapebytype": {
     "*-down": {
       "base": "block/wood/lantern/woodlanternceiling"

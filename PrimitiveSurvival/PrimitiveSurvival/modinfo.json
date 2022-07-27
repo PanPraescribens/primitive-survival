@@ -2,12 +2,9 @@
   "type": "code",
   "modid": "primitivesurvival",
   "name": "Primitive Survival",
-  "description": "Traps, Fishing, and other Surprises!",
-  "authors": [ "Spear And Fang", "Siddly" ],
-  "version": "2.6.2",
-  "dependency": {
-    "game": "1.15.0"
-  },
-  "website": "https://github.com/SpearAndFang"
+  "description": "Traps, Fishing, and More (ft. Siddly, BluryFace, & CaptainOats)",
+  "authors": [ "SpearAndFang" ],
+  "version": "3.0.4",
+  "dependencies": {},
+  "website": "https://mods.vintagestory.at/show/mod/1238"
 }
-

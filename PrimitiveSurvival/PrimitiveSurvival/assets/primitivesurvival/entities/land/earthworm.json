@@ -21,7 +21,8 @@
             "stepHeight": 0.2
         },
 
-        { "code": "interpolateposition" }
+      { "code": "interpolateposition" },
+      { "code": "carryable" }
     ],
     "animations": [
         {

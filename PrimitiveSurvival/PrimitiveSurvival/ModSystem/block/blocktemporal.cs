@@ -14,7 +14,7 @@ namespace PrimitiveSurvival.ModSystem
             placed = base.TryPlaceBlock(world, byPlayer, itemstack, blockSel, ref failureCode);
             if (placed)
             {
-                var block = this.api.World.BlockAccessor.GetBlock(blockSel.Position);
+                var block = this.api.World.BlockAccessor.GetBlock(blockSel.Position, BlockLayersAccess.Default);
                 var newPath = block.Code.Path;
                 newPath = newPath.Replace("north", facing);
                 block = this.api.World.GetBlock(block.CodeWithPath(newPath));

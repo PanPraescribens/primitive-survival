@@ -4,17 +4,18 @@ namespace PrimitiveSurvival.ModSystem
     using System.Text;
     using Vintagestory.API.Client;
     using Vintagestory.API.Common;
-    using Vintagestory.API.MathTools;
+    //using Vintagestory.API.MathTools;
     using Vintagestory.GameContent;
     using Vintagestory.API.Config;
 
-    public class BETemporalCube : BlockEntityDisplay
+
+    public class BETemporalCube : BlockEntityDisplayCase
     {
 
         private readonly int maxSlots = 4;
 
         public override string InventoryClassName => "temporalcube";
-        protected InventoryGeneric inventory;
+        //protected InventoryGeneric inventory;
 
         public override InventoryBase Inventory => this.inventory;
 
@@ -26,15 +27,17 @@ namespace PrimitiveSurvival.ModSystem
         }
 
 
-        public override void Initialize(ICoreAPI api) => base.Initialize(api);
+        public override void Initialize(ICoreAPI api)
+        {
+            base.Initialize(api);
+        }
 
-
-        internal bool OnInteract(IPlayer byPlayer, BlockSelection blockSel)
+        internal bool OnInteract(IPlayer byPlayer) //, BlockSelection blockSel)
         {
             var playerSlot = byPlayer.InventoryManager.ActiveHotbarSlot;
             if (playerSlot.Empty)
             {
-                if (this.TryTake(byPlayer, blockSel))
+                if (this.TryTake(byPlayer)) //, blockSel))
                 { return true; }
                 return false;
             }
@@ -47,7 +50,7 @@ namespace PrimitiveSurvival.ModSystem
         }
 
 
-        internal void OnBreak(IPlayer byPlayer, BlockPos pos)
+        internal void OnBreak() //IPlayer byPlayer, BlockPos pos)
         {
             for (var index = this.maxSlots - 1; index >= 0; index--)
             {
@@ -109,7 +112,7 @@ namespace PrimitiveSurvival.ModSystem
         }
 
 
-        private bool TryTake(IPlayer byPlayer, BlockSelection blockSel)
+        private bool TryTake(IPlayer byPlayer) //, BlockSelection blockSel)
         {
             var facing = byPlayer.CurrentBlockSelection.Face.Opposite;
             var index = -1;
@@ -129,7 +132,7 @@ namespace PrimitiveSurvival.ModSystem
                 if (!this.inventory[index].Empty)
                 {
                     byPlayer.InventoryManager.TryGiveItemstack(this.inventory[index].Itemstack);
-                    this.inventory[index].TakeOutWhole();
+                    this.inventory[index].TakeOut(1);
                     this.MarkDirty(true);
                     return true;
                 }
@@ -148,16 +151,16 @@ namespace PrimitiveSurvival.ModSystem
         {
             MeshData mesh;
             var shapeBase = "primitivesurvival:shapes/";
-            var shapePath = "";
+            string shapePath; // = "";
             var index = -1;
 
-            var block = this.Api.World.BlockAccessor.GetBlock(this.Pos) as BlockTemporalCube;
+            var block = this.Api.World.BlockAccessor.GetBlock(this.Pos, BlockLayersAccess.Default) as BlockTemporalCube;
             Block tmpBlock;
             var texture = tesselator.GetTexSource(block);
 
             var newPath = "temporalcube";
             shapePath = "block/relic/" + newPath;
-            mesh = block.GenMesh(this.Api as ICoreClientAPI, shapeBase + shapePath, texture, index, tesselator);
+            mesh = block.GenMesh(this.Api as ICoreClientAPI, shapeBase + shapePath, texture, index); //, tesselator);
             mesher.AddMeshData(mesh);
 
             if (this.inventory != null)
@@ -172,7 +175,7 @@ namespace PrimitiveSurvival.ModSystem
                         { gearType = "temporal"; }
                         shapePath = "game:shapes/item/gear-" + gearType;
                         texture = ((ICoreClientAPI)this.Api).Tesselator.GetTexSource(tmpBlock);
-                        mesh = block.GenMesh(this.Api as ICoreClientAPI, shapePath, texture, i, tesselator);
+                        mesh = block.GenMesh(this.Api as ICoreClientAPI, shapePath, texture, i); //, tesselator);
                         mesher.AddMeshData(mesh);
                     }
                 }

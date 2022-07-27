@@ -1,7 +1,16 @@
 {
   "code": "hydra-statue",
   "class": "blocktemporal",
-  "behaviors": [{ "name": "UnstableFalling" }],
+  "behaviors": [
+    { "name": "UnstableFalling" },
+    {
+      "name": "RightClickPickup",
+      "properties": {
+        "dropsPickupMode": true,
+        "sound": "game:sounds/block/loosestone"
+      }
+    }
+  ],
   "attributes": {
     "placement": "top",
     "placetype": "statue"

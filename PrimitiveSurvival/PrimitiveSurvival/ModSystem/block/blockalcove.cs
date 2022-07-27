@@ -12,7 +12,7 @@ namespace PrimitiveSurvival.ModSystem
             placed = base.TryPlaceBlock(world, byPlayer, itemstack, blockSel, ref failureCode);
             if (placed)
             {
-                var block = this.api.World.BlockAccessor.GetBlock(blockSel.Position);
+                var block = this.api.World.BlockAccessor.GetBlock(blockSel.Position, BlockLayersAccess.Default);
                 var newPath = block.Code.Path;
                 newPath = newPath.Replace("north", facing);
                 block = this.api.World.GetBlock(block.CodeWithPath(newPath));
@@ -30,7 +30,8 @@ namespace PrimitiveSurvival.ModSystem
                 var playerStack = playerSlot.Itemstack;
                 if (playerStack.Block != null)
                 {
-                    if (playerStack.Block.Code.Path.Contains("torch-up"))
+                    //1.16
+                    if (playerStack.Block.Code.Path.Contains("torch-") && !playerStack.Block.Code.Path.Contains("extinct"))
                     {
                         Block blockToPlace = this;
                         var newPath = blockToPlace.Code.Path;

@@ -19,7 +19,12 @@ namespace PrimitiveSurvival.ModSystem
         }
 
 
-        public override void Initialize(EntityProperties properties, ICoreAPI api, long InChunkIndex3d) => base.Initialize(properties, api, InChunkIndex3d);
+
+        public override void Initialize(EntityProperties properties, ICoreAPI api, long InChunkIndex3d)
+        {
+            base.Initialize(properties, api, InChunkIndex3d);
+        }
+
 
 
         public override void OnInteract(EntityAgent byEntity, ItemSlot slot, Vec3d hitPosition, EnumInteractMode mode)
@@ -45,7 +50,7 @@ namespace PrimitiveSurvival.ModSystem
             {
                 this.cnt = 0;
                 var belowPos = this.Pos.XYZ.AsBlockPos;
-                var blockBelow = this.World.BlockAccessor.GetBlock(belowPos);
+                var blockBelow = this.World.BlockAccessor.GetBlock(belowPos, BlockLayersAccess.Default);
 
                 var conds = this.World.BlockAccessor.GetClimateAt(belowPos, EnumGetClimateMode.NowValues); //small aside - get the temperature and kill the worm if necessary
                 var escaped = Rnd.Next(200); //one in two hundred chance the worm leaves

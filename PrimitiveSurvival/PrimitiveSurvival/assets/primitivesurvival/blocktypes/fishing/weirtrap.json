@@ -61,6 +61,9 @@
     "perchmaterial": {
       "base": "primitivesurvival:item/fishing/fish-perch-raw"
     },
+    "salmonmaterial": {
+      "base": "primitivesurvival:item/fishing/fish-salmon-raw"
+    },
     "carpmaterial": {
       "base": "primitivesurvival:item/fishing/fish-carp-raw"
     },
