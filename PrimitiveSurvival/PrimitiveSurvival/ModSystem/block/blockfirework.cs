@@ -100,7 +100,7 @@ namespace PrimitiveSurvival.ModSystem
             var blockBelow = world.BlockAccessor.GetBlock(blockSelBelow.Position, BlockLayersAccess.Default);
             if ((blockBelow.Fertility <= 0) || inwater)
             {
-                failureCode = Lang.Get("you need more suitable ground to place this stake");
+                failureCode = Lang.Get("blockdesc-firework-suitable-ground-needed");
                 return false;
             }
             return base.TryPlaceBlock(world, byPlayer, itemstack, blockSel, ref failureCode);

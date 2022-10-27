@@ -457,9 +457,9 @@ namespace PrimitiveSurvival.ModSystem
         {
             if (!this.CatchSlot.Empty)
             {
-                sb.Append(Lang.Get("There's something on your hook."));
+                sb.Append(Lang.Get("blockdesc-limbtrotlinelure-catch"));
                 if (!this.CatchStack.Item.Code.Path.Contains("psfish"))
-                { sb.Append(" " + Lang.Get("Unfortunately, it smells a little funky.")); }
+                { sb.Append(" " + Lang.Get("blockdesc-limbtrotlinelure-catch-rotten")); }
             }
             else
             {
@@ -476,9 +476,9 @@ namespace PrimitiveSurvival.ModSystem
                     if (!this.LureSlot.Empty)
                     { luremsg = this.LureStack.GetName().Split('(', ')')[1]; }
 
-                    sb.AppendLine(Lang.Get("Hook type") + ": " + hookmsg);
-                    sb.AppendLine(Lang.Get("Bait type") + ": " + baitmsg);
-                    sb.AppendLine(Lang.Get("Lure type") + ": " + luremsg);
+                    sb.AppendLine(Lang.Get("blockdesc-limbtrotlinelure-hook-type") + ": " + hookmsg);
+                    sb.AppendLine(Lang.Get("blockdesc-limbtrotlinelure-bait-type") + ": " + baitmsg);
+                    sb.AppendLine(Lang.Get("blockdesc-limbtrotlinelure-lure-type") + ": " + luremsg);
 
                     sb.AppendLine();
                 }
@@ -488,24 +488,24 @@ namespace PrimitiveSurvival.ModSystem
                     if (this.BaitStack.Item != null)
                     {
                         if (Array.IndexOf(this.baitTypes, this.BaitStack.Item.FirstCodePart()) < 0)
-                        { sb.Append(Lang.Get("Your bait has gone rotten. Replace it with fresh bait.")); }
+                        { sb.Append(Lang.Get("blockdesc-limbtrotlinelure-bait-rotten")); }
                         else
-                        { sb.Append(Lang.Get("It's baited so your odds of catching something are pretty good.")); }
+                        { sb.Append(Lang.Get("blockdesc-limbtrotlinelure-bait-ok")); }
                     }
                     else if (this.BaitStack.Block != null)
                     {
                         if (Array.IndexOf(this.baitTypes, this.BaitStack.Block.FirstCodePart()) < 0)
-                        { sb.Append(Lang.Get("Your bait has gone rotten. Replace it with fresh bait.")); }
+                        { sb.Append(Lang.Get("blockdesc-limbtrotlinelure-bait-rotten")); }
                         else
-                        { sb.Append(Lang.Get("It's baited so your odds of catching something are pretty good.")); }
+                        { sb.Append(Lang.Get("blockdesc-limbtrotlinelure-bait-ok")); }
                     }
 
                 }
                 else if (this.BaitSlot.Empty && !this.HookSlot.Empty)
-                { sb.Append(Lang.Get("Bait it with some food to increase your odds of catching something.")); }
+                { sb.Append(Lang.Get("blockdesc-limbtrotlinelure-bait-needed")); }
                 else if (this.HookSlot.Empty)
                 {
-                    sb.Append(Lang.Get("Put a hook on that line if you expect to catch something.")).AppendLine().AppendLine();
+                    sb.Append(Lang.Get("blockdesc-limbtrotlinelure-hook-needed")).AppendLine().AppendLine();
                 }
             }
             sb.AppendLine().AppendLine();

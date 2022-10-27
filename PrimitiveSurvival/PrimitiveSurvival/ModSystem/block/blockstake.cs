@@ -44,7 +44,7 @@ namespace PrimitiveSurvival.ModSystem
             var blockBelow = world.BlockAccessor.GetBlock(blockSelBelow.Position, BlockLayersAccess.Default);
             if (blockBelow.Fertility <= 0)
             {
-                failureCode = Lang.Get("you need more suitable ground to place this stake");
+                failureCode = Lang.Get("blockdesc-stake-suitable-ground-needed");
                 return false;
             }
             var orientations = this.GetOrientations(world, pos);

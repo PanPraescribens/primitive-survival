@@ -244,7 +244,7 @@ namespace PrimitiveSurvival.ModSystem
         {
             var block = this.Api.World.BlockAccessor.GetBlock(this.Pos, BlockLayersAccess.Default);
             if (block.Code.Path.Contains("tripped"))
-            { sb.Append(Lang.Get("It's tripped. Sneak click to set it back up.")); }
+            { sb.Append(Lang.Get("blockdesc-deadfall-tripped")); }
             else
             {
                 if (this.BaitStack != null)
@@ -252,20 +252,20 @@ namespace PrimitiveSurvival.ModSystem
                     if (this.BaitStack.Item != null)
                     {
                         if (Array.IndexOf(this.baitTypes, this.BaitStack.Item.FirstCodePart()) < 0)
-                        { sb.Append(Lang.Get("Your bait has gone rotten. Replace it with fresh bait.")); }
+                        { sb.Append(Lang.Get("blockdesc-deadfall-bait-rotten")); }
                         else
-                        { sb.Append(Lang.Get("It's baited so your odds of catching something are pretty good.")); }
+                        { sb.Append(Lang.Get("blockdesc-deadfall-bait-ok")); }
                     }
                     else if (this.BaitStack.Block != null)
                     {
                         if (Array.IndexOf(this.baitTypes, this.BaitStack.Block.FirstCodePart()) < 0)
-                        { sb.Append(Lang.Get("Your bait has gone rotten. Replace it with fresh bait.")); }
+                        { sb.Append(Lang.Get("blockdesc-deadfall-bait-rotten")); }
                         else
-                        { sb.Append(Lang.Get("It's baited so your odds of catching something are pretty good.")); }
+                        { sb.Append(Lang.Get("blockdesc-deadfall-bait-ok")); }
                     }
                 }
                 else if (this.BaitSlot.Empty)
-                { sb.Append(Lang.Get("Bait it with some food to increase your odds of catching something.")); }
+                { sb.Append(Lang.Get("blockdesc-deadfall-bait-needed")); }
             }
             sb.AppendLine().AppendLine();
         }

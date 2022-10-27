@@ -192,7 +192,7 @@ namespace PrimitiveSurvival.ModSystem
                     }
                 }
             }
-            return Lang.Get("Conceal Your Pit");
+            return Lang.Get("blockdesc-woodsuppportspikes-concealment-needed");
         }
 
 
@@ -201,19 +201,23 @@ namespace PrimitiveSurvival.ModSystem
             if (this.inventory != null)
             {
                 var msg = "";
-                if (this.inventory[0].Empty)
-                { msg = Lang.Get("some"); }
-                else if (this.inventory[1].Empty)
-                { msg = Lang.Get("more"); }
-                else if (this.inventory[2].Empty)
-                { msg = Lang.Get("even more"); }
-
-                if (msg != "")
+                for (var i = 0; i < 3; i++)
                 {
-                    sb.Append(Lang.Get("Add") + " ").Append(msg).Append(" " + Lang.Get("dry grass or some other plant based material to conceal your pit"));
+                    if (this.inventory[i].Empty)
+                    {
+                        msg = Lang.Get("blockdesc-woodsuppportspikes-concealment-size-" + i);
+                        break;
+                    }
+                }
+
+                if (!string.IsNullOrEmpty(msg))
+                {
+                    sb.Append(Lang.Get("blockdesc-woodsuppportspikes-concealment-add") + " ").Append(msg).Append(" " + Lang.Get("blockdesc-woodsuppportspikes-concealment-plants"));
                 }
                 else if (this.inventory[3].Empty)
-                { sb.AppendLine(Lang.Get("Add dirt or sand to camouflage your pit")); }
+                {
+                    sb.AppendLine(Lang.Get("blockdesc-woodsuppportspikes-concealment-dirt"));
+                }
 
                 if (this.inventory[3].Empty)
                 { sb.AppendLine().AppendLine(); }

@@ -611,13 +611,13 @@ namespace PrimitiveSurvival.ModSystem
                 if (middletype == "lectern" && gearCount == 1)
                 {
                     if (gearType == "psgear-astral")
-                    { sb.Append(Lang.Get("The book tells of the Mother Hydra and the Father Dagon.  They're awakened by some sort of cosmic energy and rejuvenated by water. Only then can you feed them and be requited.")); }
+                    { sb.Append(Lang.Get("blockdesc-temporalbase-book-dagon-hint")); }
                     else if (gearType == "gear-temporal")
-                    { sb.Append(Lang.Get("The book tells of the Great Cthulhu.  It's awakened by some sort of transitory energy and feeds off the earth itself.  Once those needs are met you can feed it and be requited.")); }
+                    { sb.Append(Lang.Get("blockdesc-temporalbase-book-cthluhu-hint")); }
                     else if (gearType == "psgear-ethereal")
-                    { sb.Append(Lang.Get("The book tells of distant worlds.  The specifics are beyond your comprehension.")); }
+                    { sb.Append(Lang.Get("blockdesc-temporalbase-book-nephrenka-hint")); }
                     else if (gearType == "gear-rusty")
-                    { sb.Append(Lang.Get("It appears to be complete.")); }
+                    { sb.Append(Lang.Get("blockdesc-temporalbase-complete")); }
                 }
                 else //cube
                 {
@@ -645,29 +645,26 @@ namespace PrimitiveSurvival.ModSystem
 
                     if (gearcount > 0 && areaOK)
                     {
-                        var holesize = Lang.Get("fattened hen");
-                        if (gearcount == 2)
-                        { holesize = Lang.Get("wolf pack"); }
-                        else if (gearcount == 3)
-                        { holesize = Lang.Get("fully grown oak"); }
-                        else if (gearcount == 4)
-                        { holesize = Lang.Get("hovel"); }
+                        var holesize = "blockdesc-temporalbase-gateway-size-" + Math.Min(4, gearcount);
 
-                        var endString = "and have unleashed some sort of cosmic horror!";
+                        var endString = "blockdesc-temporalbase-gateway-open-success";
                         if (gearCount < 4 && toptype == "nephrenka")
                         {
-                            endString = "and if it was bigger you might unleash some sort of cosmic horror!";
+                            endString = "blockdesc-temporalbase-gateway-open-failure";
                         }
-                        sb.Append(Lang.Get("You've opened a gateway the size of a") + " " + holesize + " " + Lang.Get(endString));
+
+                        sb.Append(Lang.Get("blockdesc-temporalbase-gateway-open") + " " + holesize + " " + Lang.Get(endString));
                     }
                     else if (gearcount > 0)
-                    { sb.Append(Lang.Get("It appears to be complete and you can feel a strange energy in the air, but the surrounding conditions aren't quite right.")); }
+                    {
+                        sb.Append(Lang.Get("blockdesc-temporalbase-area-needed"));
+                    }
                     else
-                    { sb.Append(Lang.Get("It appears to be complete.")); }
+                    { sb.Append(Lang.Get("blockdesc-temporalbase-complete")); }
                 }
             }
             else
-            { sb.Append(Lang.Get("It looks like something is missing.")); }
+            { sb.Append(Lang.Get("blockdesc-temporalbase-incomplete")); }
             sb.AppendLine().AppendLine();
         }
 

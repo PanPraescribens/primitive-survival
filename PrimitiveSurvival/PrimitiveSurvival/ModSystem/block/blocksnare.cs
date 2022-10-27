@@ -76,7 +76,7 @@ namespace PrimitiveSurvival.ModSystem
             var block = world.BlockAccessor.GetBlock(blockSrc.Position, BlockLayersAccess.Default);
             if (block.Fertility <= 0)
             {
-                failureCode = Lang.Get("you need more suitable ground to place this trap");
+                failureCode = Lang.Get("blockdesc-snare-suitable-ground-needed");
                 return false;
             }
             var facing = SuggestedHVOrientation(byPlayer, blockSel)[0].ToString();

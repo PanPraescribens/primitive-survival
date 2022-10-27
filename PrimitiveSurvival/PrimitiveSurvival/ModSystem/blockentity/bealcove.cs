@@ -66,12 +66,12 @@ namespace PrimitiveSurvival.ModSystem
             var block = this.Api.World.BlockAccessor.GetBlock(this.Pos, BlockLayersAccess.Default);
             if (block.Code.Path.Contains("-unlit"))
             {
-                sb.Append(Lang.Get("Right click with a torch or a candle to light the candle."));
+                sb.Append(Lang.Get("blockdesc-alcove-unlit"));
                 sb.AppendLine().AppendLine();
             }
             else if (block.Code.Path.Contains("-lit"))
             {
-                sb.Append(Lang.Get("Right click with nothing in your hand to extinguish the candle."));
+                sb.Append(Lang.Get("blockdesc-alcove-lit"));
                 sb.AppendLine().AppendLine();
             }
         }

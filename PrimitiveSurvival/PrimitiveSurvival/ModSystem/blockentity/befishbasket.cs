@@ -461,13 +461,13 @@ namespace PrimitiveSurvival.ModSystem
                 var rot = false;
                 if (!this.Catch1Slot.Empty || !this.Catch2Slot.Empty)
                 {
-                    sb.Append(Lang.Get("There's something in your basket."));
+                    sb.Append(Lang.Get("blockdesc-fishbasket-catch"));
                     if (!this.Catch1Slot.Empty)
                     {
                         if (this.Catch1Stack.Block != null)
                         { }
                         else if (!this.Catch1Stack.Item.Code.Path.Contains("psfish"))
-                        { sb.Append(" " + Lang.Get("It smells a little funky in there.")); }
+                        { sb.Append(" " + Lang.Get("blockdesc-fishbasket-catch-rotten")); }
                         rot = true;
                     }
                     if (!this.Catch2Slot.Empty && !rot)
@@ -475,7 +475,7 @@ namespace PrimitiveSurvival.ModSystem
                         if (this.Catch2Stack.Block != null)
                         { }
                         else if (!this.Catch2Stack.Item.Code.Path.Contains("psfish"))
-                        { sb.Append(" " + Lang.Get("It smells a little funky in there.")); }
+                        { sb.Append(" " + Lang.Get("blockdesc-fishbasket-catch-rotten")); }
                     }
                     sb.AppendLine().AppendLine();
                 }
@@ -486,20 +486,20 @@ namespace PrimitiveSurvival.ModSystem
                         if (this.BaitStack.Item != null)
                         {
                             if (Array.IndexOf(this.baitTypes, this.BaitStack.Item.FirstCodePart()) < 0)
-                            { sb.Append(Lang.Get("Your bait has gone rotten. Replace it with fresh bait.")); }
+                            { sb.Append(Lang.Get("blockdesc-fishbasket-bait-rotten")); }
                             else
-                            { sb.Append(Lang.Get("It's baited so your odds of catching something are pretty good.")); }
+                            { sb.Append(Lang.Get("blockdesc-fishbasket-bait-ok")); }
                         }
                         else if (this.BaitStack.Block != null)
                         {
                             if (Array.IndexOf(this.baitTypes, this.BaitStack.Block.FirstCodePart()) < 0)
-                            { sb.Append(Lang.Get("Your bait has gone rotten. Replace it with fresh bait.")); }
+                            { sb.Append(Lang.Get("blockdesc-fishbasket-bait-rotten")); }
                             else
-                            { sb.Append(Lang.Get("It's baited so your odds of catching something are pretty good.")); }
+                            { sb.Append(Lang.Get("blockdesc-fishbasket-bait-ok")); }
                         }
                     }
                     else if (this.BaitSlot.Empty)
-                    { sb.Append(Lang.Get("Bait it with some food to increase your odds of catching something.")); }
+                    { sb.Append(Lang.Get("blockdesc-fishbasket-bait-needed")); }
                     sb.AppendLine().AppendLine();
                 }
             }

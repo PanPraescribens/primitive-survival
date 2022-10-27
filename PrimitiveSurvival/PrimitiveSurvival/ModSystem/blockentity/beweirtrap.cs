@@ -433,13 +433,13 @@ namespace PrimitiveSurvival.ModSystem
             var rot = false;
             if (!this.Catch1Slot.Empty || !this.Catch2Slot.Empty)
             {
-                sb.Append(Lang.Get("There's something in your trap."));
+                sb.Append(Lang.Get("blockdesc-weirtrap-catch"));
                 if (!this.Catch1Slot.Empty)
                 {
                     if (this.Catch1Stack.Block != null)
                     { }
                     else if (!this.Catch1Stack.Item.Code.Path.Contains("psfish"))
-                    { sb.Append(" " + Lang.Get("It smells a little funky in there.")); }
+                    { sb.Append(" " + Lang.Get("blockdesc-weirtrap-catch-rotten")); }
                     //rot = true;
                 }
                 else if (!this.Catch2Slot.Empty && !rot)
@@ -447,7 +447,7 @@ namespace PrimitiveSurvival.ModSystem
                     if (this.Catch2Stack.Block != null)
                     { }
                     else if (!this.Catch2Stack.Item.Code.Path.Contains("psfish"))
-                    { sb.Append(" " + Lang.Get("It smells a little funky in there.")); }
+                    { sb.Append(" " + Lang.Get("blockdesc-weirtrap-catch-rotten")); }
                 }
                 sb.AppendLine().AppendLine();
             }
